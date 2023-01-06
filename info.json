@@ -1,0 +1,12 @@
+{
+  "name": "X-CustomGame",
+  "version": "0.1.1",
+  "title": "Custom Game",
+  "author": "Jia_1001",
+  "factorio_version": "1.1",
+  "dependencies": [
+    "base >= 1.1.74",
+    "stdlib >= 1.4.8"
+  ],
+  "description": "This mod allows you to customize the game."
+}
