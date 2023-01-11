@@ -1,0 +1,10 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.3
+Date: 2023-1-12
+  Changes:
+    - The configuration takes effect for the mod(Advanced Solar High Resolution)
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 2023-1-6
+  Features:
+    - Initial Release
