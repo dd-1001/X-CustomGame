@@ -4,7 +4,7 @@ local common_data_raw = require("common/data_raw")
 local log = common_core.lib_logger("x-custom-game-other.lua")
 
 -- data.raw修改目录
-local data_raw_locomotive_catalog = {
+local data_raw_other_catalog = {
     locomotive = { -- 机车
         orig = {
             "locomotive" -- 内燃机车
@@ -66,12 +66,29 @@ local data_raw_locomotive_catalog = {
                 path = { "speed" } -- 修理速度
             }
         }
+    },
+    container = { -- 箱子
+        orig = {
+            "wooden-chest", -- 木制箱
+            "iron-chest", -- 铁制箱
+            "steel-chest", -- 钢制箱
+        },
+        mod = {
+        },
+        mul = settings.startup["x-custom-game-container-performance-multiplier"].value,
+        modify_parameter = { -- 修改参数
+            {
+                path = { "inventory_size" } -- 库存大小
+            }, {
+                path = { "max_health" } -- 最大血量
+            }
+        }
     }
 }
 
 -- 开始修改
 log("\n\n\n------------------其他 start------------------n\n\n")
 
-common_data_raw:execute_modify(data_raw_locomotive_catalog)
+common_data_raw:execute_modify(data_raw_other_catalog)
 
 log("\n\n\n------------------其他 end------------------n\n\n")

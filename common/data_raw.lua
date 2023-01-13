@@ -1,5 +1,4 @@
 local common_core = require("common/core")
-local lib_serpent = common_core.lib_serpent
 local lib_string = common_core.lib_string
 
 local log = common_core.lib_logger("x-custom-game-data_raw.lua")
@@ -19,6 +18,10 @@ end
 Data_raw.__call = Data_raw.new
 
 function Data_raw:insert_data_raw_field_value(field_path, value)
+
+    if not field_path or not value then
+        return false
+    end
 
     local path_count = #field_path
     local tmp_pos = data.raw
@@ -43,9 +46,15 @@ function Data_raw:insert_data_raw_field_value(field_path, value)
 
     tmp_pos[field_path[path_count]] = value
 
+    return true
+
 end
 
 function Data_raw:set_data_raw_field_value(field_path, new_value)
+
+    if not field_path or not new_value then
+        return nil
+    end
 
     local path_count = #field_path
     local tmp_pos = data.raw
@@ -146,6 +155,12 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
 
                         old_value = lib_string.exponent_number(old_value)
 
+                        -- 如果mul == 0 不做修改
+                        if prot_modify_param.mul == 0 then
+                            log(table.concat(modify_field_path, ".") .. " : mul = 0, Skip this config")
+                            goto SET_NEW_VALUE_END
+                        end
+
                         -- operation = nil : (默认值)做乘法
                         -- operation = Div : 做除法
                         if single_modify_param.operation == nil then
@@ -172,6 +187,8 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                     old_value = self:set_data_raw_field_value(modify_field_path, new_value)
 
                     log(table.concat(modify_field_path, ".") .. " : " .. old_value .. " ---> " .. new_value)
+
+                    ::SET_NEW_VALUE_END::
 
                 elseif single_modify_param.operation == "Extend" then -- 不存在相应字段，进行扩展字段
                     self:insert_data_raw_field_value(modify_field_path, single_modify_param.value)
