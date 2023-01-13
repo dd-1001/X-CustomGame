@@ -24,7 +24,7 @@ ___
 * **机器-------采矿机、抽油机**
 * **管道-------管道、地下管道、管道泵、供水泵、储液罐**
 * **机器人-------物流机器人、建设机器人、机器人指令平台**
-* **其他-------火车、货运车厢、液罐车厢、修理工具**
+* **其他-------火车、货运车厢、液罐车厢、修理工具、箱子**
 ###
 ### 未来可用配置：
 ###
@@ -41,7 +41,7 @@ ___
 * **Machines-------mining machines, oil pumping machines**
 * **Pipelines-------pipelines, underground pipelines, pipeline pumps, water supply pumps, fluid storage tanks**
 * **Robots-------logistics robots, construction robots, robot command platforms**
-* **Other-------trains, freight cars, liquid tank cars, repair tools**
+* **Other-------trains, freight cars, liquid tank cars, repair tools, box**
 ###
 ### Future available configurations:
 ###
