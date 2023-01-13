@@ -10,7 +10,8 @@
 
 ### 可用：  
     1. 原版电力系统相关设施性能修改
-    2. 配置对部分mod生效(Advanced Solar High Resolution)
+    2. 原版燃料系统修改
+    3. 配置对部分mod生效(Advanced Solar High Resolution)
 
 ### 将来可能可用：
     1. 原版其他系统相关设施性能修改
@@ -22,7 +23,8 @@
 
 ### Available:
     1. Original electricity system-related facility performance modification
-    2. The configuration works for some mods(Advanced Solar High Resolution)
+    2. Original fuel system modification
+    3. The configuration works for some mods(Advanced Solar High Resolution)
 
 ### Maybe not so soon:
     1. Original other system-related facilities performance modifications

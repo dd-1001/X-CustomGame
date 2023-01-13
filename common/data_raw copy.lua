@@ -23,21 +23,27 @@ function Data_raw:insert_data_raw_field_value(field_path, value)
     local path_count = #field_path
     local tmp_pos = data.raw
 
-    -- field_path = {"mining-drill", "burner-mining-drill", "module_specification", "module_slots"}
+    -- field_path = {"mining-drill", "burner-mining-drill", "module_specification", "module_slots"} 
     for i = 1, path_count - 1, 1 do
 
-        if type(tmp_pos[field_path[i]]) ~= "nil" then -- 字段存在
+        -- 字段存在
+        if type(tmp_pos[field_path[i]]) ~= "nil" then
+            log("field_path[i] = ", field_path[i])
             tmp_pos = tmp_pos[field_path[i]]
-        else -- 字段不存在
-            -- 当field_path[i] == "_" 插入一个空表
-            if field_path[i] ~= "_" then
-                tmp_pos[field_path[i]] = {}
-                tmp_pos = tmp_pos[field_path[i]]
-            else
-                tmp_pos[#tmp_pos + 1] = {}
-                tmp_pos = tmp_pos[#tmp_pos]
-            end
         end
+
+        -- 字段不存在
+        -- field_path[i] == "_" 插入一个空表
+        if field_path[i] ~= "_" then
+            tmp_pos[field_path[i]] = {}
+            tmp_pos = tmp_pos[field_path[i]]
+        else
+            tmp_pos[#tmp_pos + 1] = {}
+            tmp_pos = tmp_pos[#tmp_pos]
+        end
+        -- i = 1; tmp_pos = data.raw["boiler"]
+        -- i = 2; tmp_pos = data.raw["boiler"]["boiler"]
+        -- i = 3; tmp_pos = data.raw["boiler"]["boiler"]["energy_source"]
 
     end
 
@@ -132,7 +138,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
 
                     local new_value
 
-                    if single_modify_param.value == nil then -- 不存在指定设置的值
+                    if single_modify_param.value == nil then
 
                         -- 获取原字段单位
                         local field_units
@@ -174,6 +180,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                     log(table.concat(modify_field_path, ".") .. " : " .. old_value .. " ---> " .. new_value)
 
                 elseif single_modify_param.operation == "Extend" then -- 不存在相应字段，进行扩展字段
+                    log("goto insert field")
                     self:insert_data_raw_field_value(modify_field_path, single_modify_param.value)
                     log(table.concat(modify_field_path, ".") .. " : insert value ---> " .. single_modify_param.value)
                 else -- 不存在相应字段
@@ -197,5 +204,9 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
 
     return true
 end
+
+-- function Data_raw:show(path)
+--     log(lib_serpent.block(data.raw[path[1]][path[2]], common_core.serialization_format))
+-- end
 
 return Data_raw
