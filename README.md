@@ -21,10 +21,10 @@ ___
 * **电力-------锅炉、发电机、太阳能板、蓄电池、核反应堆、热管、电线杆**
 * **燃料-------燃料的热值**
 * **机械臂-------所有机械臂**
-* **机器-------采矿机、抽油机**
+* **机器-------采矿机、抽油机、熔炉、装配机**
 * **管道-------管道、地下管道、管道泵、供水泵、储液罐**
 * **机器人-------物流机器人、建设机器人、机器人指令平台**
-* **其他-------火车、货运车厢、液罐车厢、修理工具、箱子**
+* **其他-------火车、货运车厢、液罐车厢、修理工具、箱子、车、蜘蛛机甲、研究中心、插件效果分享塔、插件、火箭发射井、卫星**
 ###
 ### 未来可用配置：
 ###
@@ -32,16 +32,16 @@ ___
 
 ___
 
-### Available configurations:(From Google Translate, may not be accurate)
+### Available configurations:
 ###
-* **Conveyors-------conveyors, underground conveyors, shunts**
-* **Electricity-------boilers, generators, solar panels, batteries, nuclear reactors, heat pipes, power poles**
+* **Belt-------transport-belt, underground-belt, splitter**
+* **Electricity-------boiler, generator, solar-panel, accumulator, reactor, heat-pipe**
 * **Fuel-------calorific value of fuel**
-* **Robotic arms-------all robotic arms**
-* **Machines-------mining machines, oil pumping machines**
-* **Pipelines-------pipelines, underground pipelines, pipeline pumps, water supply pumps, fluid storage tanks**
-* **Robots-------logistics robots, construction robots, robot command platforms**
-* **Other-------trains, freight cars, liquid tank cars, repair tools, box**
+* **Inserter-------all of the inserter**
+* **Machines-------mining-drill, furnace, assembling-machine**
+* **Pipe-------pipe, pipe-to-ground, pump, offshore-pump, storage-tank**
+* **Robots-------logistic-robot, construction-robot, roboport**
+* **Other-------locomotive, cargo-wagon, fluid-wagon, repair-tool, container, logistic-container, car, spider-vehicle, lab, beacon, module, rocket-silo, satellite**
 ###
 ### Future available configurations:
 ###

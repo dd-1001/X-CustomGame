@@ -146,7 +146,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                         -- 获取原字段单位
                         local field_units
                         if type(old_value) == "string" then
-                            _, field_units = old_value:match('([%-+]?[0-9]*%.?[0-9]+)([yzafpnumcdhkJMGTPEZY]?)')
+                            _, field_units = old_value:match('([%-+]?[0-9]*%.?[0-9]+)([yzafpnumcdhkKJMGTPEZY]?)')
                             if string.len(field_units) ~= 0 then
                                 -- 有单位，则获取单位
                                 field_units = string.sub(old_value, -1)

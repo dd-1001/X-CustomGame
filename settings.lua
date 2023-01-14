@@ -83,7 +83,7 @@ data:extend({
         setting_type = "startup",
         default_value = 10,
         minimum_value = 0.01,
-        maximum_value = 100,
+        maximum_value = 1000,
         order = "x-custom-game-1010"
     }, {
         type = "double-setting",
@@ -105,9 +105,9 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-locomotive-performance-multiplier", -- 机车
         setting_type = "startup",
-        default_value = 3,
-        minimum_value = 0.1,
-        maximum_value = 10,
+        default_value = 0.5,
+        minimum_value = 0.01,
+        maximum_value = 100,
         order = "x-custom-game-1013"
     }, {
         type = "double-setting",
@@ -157,6 +157,86 @@ data:extend({
         minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-1019"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-car-performance-multiplier", -- 车(包括坦克)
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.1,
+        maximum_value = 10,
+        order = "x-custom-game-1020"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-spider-vehicle-performance-multiplier", -- 蜘蛛机甲
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.1,
+        maximum_value = 10,
+        order = "x-custom-game-1021"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-furnace-performance-multiplier", -- 熔炉
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.1,
+        maximum_value = 10,
+        order = "x-custom-game-1022"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-assembling-machine-performance-multiplier", -- 装配机
+        setting_type = "startup",
+        default_value = 5,
+        minimum_value = 0.1,
+        maximum_value = 10,
+        order = "x-custom-game-1023"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-lab-performance-multiplier", -- 研究中心
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 0.01,
+        maximum_value = 100,
+        order = "x-custom-game-1024"
+    }, {
+        type = "int-setting",
+        name = "x-custom-game-number-of-module-slots", -- 插槽数量
+        setting_type = "startup",
+        default_value = 30,
+        minimum_value = 1,
+        maximum_value = 30,
+        order = "x-custom-game-1025"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-beacon-performance-multiplier", -- 插件效果分享塔
+        setting_type = "startup",
+        default_value = 5,
+        minimum_value = 0.01,
+        maximum_value = 100,
+        order = "x-custom-game-1026"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-module-performance-multiplier", -- 插件
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.01,
+        maximum_value = 100,
+        order = "x-custom-game-1027"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-rocket-silo-performance-multiplier", -- 火箭发射井
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 0.01,
+        maximum_value = 100,
+        order = "x-custom-game-1028"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-satellite-performance-multiplier", -- 卫星
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 0.01,
+        maximum_value = 100,
+        order = "x-custom-game-1029"
     }
 })
 

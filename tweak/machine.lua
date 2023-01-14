@@ -21,7 +21,8 @@ local data_raw_machine_catalog = {
                 path = { "energy_source", "emissions_per_minute" }, -- 每分钟产生污染量
                 operation = "Div"
             }, {
-                path = { "energy_usage" } -- 能源消耗量
+                path = { "energy_usage" }, -- 能源消耗量
+                operation = "Div"
             }, {
                 path = { "mining_speed" } -- 采矿速度
             }, {
@@ -32,7 +33,62 @@ local data_raw_machine_catalog = {
                 max_value = 10
             }, {
                 path = { "module_specification", "module_slots" }, -- 模块插槽数
-                value = 20
+                value = settings.startup["x-custom-game-number-of-module-slots"].value
+            }
+        }
+    },
+    ["furnace"] = { -- 熔炉
+        orig = {
+            "stone-furnace", -- 石炉
+            "steel-furnace", -- 钢炉
+            "electric-furnace" -- 电炉
+        },
+        mod = {
+        },
+        mul = settings.startup["x-custom-game-furnace-performance-multiplier"].value,
+        modify_parameter = { -- 修改参数
+            {
+                path = { "crafting_speed" } -- 制造速度
+            }, {
+                path = { "energy_source", "effectivity" } -- 能源使用效率
+            }, {
+                path = { "energy_source", "emissions_per_minute" }, -- 每分钟产生污染量
+                operation = "Div"
+            }, {
+                path = { "energy_usage" }, -- 能源消耗量
+                operation = "Div"
+            }, {
+                path = { "module_specification", "module_slots" }, -- 模块插槽数
+                -- operation = "Extend",
+                value = settings.startup["x-custom-game-number-of-module-slots"].value
+            }
+        }
+    },
+    ["assembling-machine"] = { -- 装配机
+        orig = {
+            "assembling-machine-1", -- 组装机1型
+            "assembling-machine-2", -- 组装机2型
+            "assembling-machine-3", -- 组装机3型
+            "centrifuge", -- 离心机
+            "chemical-plant", -- 化工厂
+            "oil-refinery" -- 炼油厂
+        },
+        mod = {
+        },
+        mul = settings.startup["x-custom-game-assembling-machine-performance-multiplier"].value,
+        modify_parameter = { -- 修改参数
+            {
+                path = { "crafting_speed" } -- 制造速度
+            }, {
+                path = { "energy_source", "emissions_per_minute" }, -- 每分钟产生污染量
+                operation = "Div"
+            }, {
+                path = { "energy_usage" }, -- 能源消耗量
+                operation = "Div"
+            }, {
+                path = { "module_specification", "module_slots" }, -- 模块插槽数
+                -- operation = "Extend",
+                value = settings.startup["x-custom-game-number-of-module-slots"].value
             }
         }
     }
