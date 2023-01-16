@@ -237,7 +237,40 @@ data:extend({
         minimum_value = 0.01,
         maximum_value = 100,
         order = "x-custom-game-1057"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-gun-performance-multiplier", -- 枪
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-1059"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-land-mine-performance-multiplier", -- 地雷
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-1061"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-ammo-performance-multiplier", -- 弹药
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-1063"
     }
+    -- , {
+    --     type = "double-setting",
+    --     name = "x-custom-game-grenade-performance-multiplier", -- 手雷
+    --     setting_type = "startup",
+    --     default_value = 2,
+    --     minimum_value = 0.01,
+    --     maximum_value = 10,
+    --     order = "x-custom-game-1065"
+    -- }
 })
 
 --[[ 测试

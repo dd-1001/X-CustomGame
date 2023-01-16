@@ -26,6 +26,8 @@ ___
 * **机器-------采矿机、抽油机、熔炉、装配机**
 * **项目-------燃料的热值、卫星**
 * **其他-------火车、车、蜘蛛机甲、修理工具、研究中心、插件效果分享塔、插件、火箭发射井**
+* **武器-------枪、弹药**
+* **抛射物-------**
 
 ###
 ### 未来可用配置：
@@ -45,6 +47,8 @@ ___
 * **Machines-------mining-drill, furnace, assembling-machine**
 * **Item-------calorific value of fuel, satellite**
 * **Other-------locomotive, repair-tool, car, spider-vehicle, lab, beacon, module, rocket-silo**
+* **Weapon-------gun, ammo**
+* **projectile-------**
 
 ###
 ### Future available configurations:

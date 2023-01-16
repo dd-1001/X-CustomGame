@@ -176,6 +176,13 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                             end
                         end
 
+                        -- min_value ~= nil : new_value = min_value
+                        if single_modify_param.min_value then
+                            if new_value < single_modify_param.min_value then
+                                new_value = single_modify_param.min_value
+                            end
+                        end
+
                         -- 添加单位
                         if field_units then
                             new_value = new_value .. field_units
