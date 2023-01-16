@@ -56,8 +56,8 @@ local data_raw_belt_transport_catalog = {
 }
 
 -- 开始修改
-log("\n\n\n------------------传送带系统 start------------------n\n\n")
+log("\n\n\n------------------传送带 start------------------n\n\n")
 
 common_data_raw:execute_modify(data_raw_belt_transport_catalog)
 
-log("\n\n\n------------------传送带系统 end------------------n\n\n")
+log("\n\n\n------------------传送带 end------------------n\n\n")

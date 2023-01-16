@@ -67,19 +67,6 @@ local data_raw_pipe_catalog = {
                 path = { "pumping_speed" } -- 泵送速度
             }
         }
-    },
-    ["storage-tank"] = { -- 储液罐
-        orig = {
-            "storage-tank" -- 储液罐
-        },
-        mod = {
-        },
-        mul = settings.startup["x-custom-game-storage-tank-performance-multiplier"].value,
-        modify_parameter = { -- 修改参数
-            {
-                path = { "fluid_box", "base_area" } -- 流体箱的总流体容量为 base_area × height × 100
-            }
-        }
     }
 }
 

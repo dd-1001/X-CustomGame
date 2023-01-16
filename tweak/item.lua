@@ -5,7 +5,7 @@ local log = common_core.lib_logger("x-custom-game-fuel.lua")
 
 -- data.raw修改目录
 local data_raw_fuel_catalog = {
-    item = { -- 项目
+    item = { -- 燃料的热值
         orig = {
             "wood", -- 木板
             "coal", -- 煤矿
@@ -23,7 +23,7 @@ local data_raw_fuel_catalog = {
             }
         }
     },
-    fluid = { -- 流体
+    fluid = { -- 流体燃料
         orig = {
             "crude-oil", -- 原油
             "heavy-oil", -- 重油
@@ -41,9 +41,26 @@ local data_raw_fuel_catalog = {
     }
 }
 
+local data_raw_satellite_catalog = {
+    item = { -- 卫星
+        orig = {
+            "satellite" -- 卫星
+        },
+        mod = {
+        },
+        mul = settings.startup["x-custom-game-satellite-performance-multiplier"].value,
+        modify_parameter = { -- 修改参数
+            {
+                path = { "rocket_launch_product", 2 }, -- 火箭_发射_产品
+            }
+        }
+    }
+}
+
 -- 开始修改
-log("\n\n\n------------------燃料系统 start------------------n\n\n")
+log("\n\n\n------------------Item start------------------n\n\n")
 
 common_data_raw:execute_modify(data_raw_fuel_catalog)
+common_data_raw:execute_modify(data_raw_satellite_catalog)
 
-log("\n\n\n------------------燃料系统 end------------------n\n\n")
+log("\n\n\n------------------Item end------------------n\n\n")

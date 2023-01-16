@@ -22,36 +22,6 @@ local data_raw_other_catalog = {
             }
         }
     },
-    ["cargo-wagon"] = { -- 货运车厢
-        orig = {
-            "cargo-wagon" -- 货运车厢
-        },
-        mod = {
-        },
-        mul = settings.startup["x-custom-game-locomotive-inventory-size-multiplier"].value,
-        modify_parameter = { -- 修改参数
-            {
-                path = { "inventory_size" } -- 货车库存的大小
-            }, {
-                path = { "max_speed" } -- 最大速度
-            }
-        }
-    },
-    ["fluid-wagon"] = { -- 液罐车厢
-        orig = {
-            "fluid-wagon" -- 液罐车厢
-        },
-        mod = {
-        },
-        mul = settings.startup["x-custom-game-locomotive-inventory-size-multiplier"].value,
-        modify_parameter = { -- 修改参数
-            {
-                path = { "capacity" } -- 容量
-            }, {
-                path = { "max_speed" } -- 最大速度
-            }
-        }
-    },
     ["repair-tool"] = { -- 修理工具
         orig = {
             "repair-pack" -- 修理包
@@ -64,42 +34,6 @@ local data_raw_other_catalog = {
                 path = { "durability" } -- 此工具的耐用性
             }, {
                 path = { "speed" } -- 修理速度
-            }
-        }
-    },
-    container = { -- 箱子
-        orig = {
-            "wooden-chest", -- 木制箱
-            "iron-chest", -- 铁制箱
-            "steel-chest", -- 钢制箱
-        },
-        mod = {
-        },
-        mul = settings.startup["x-custom-game-container-performance-multiplier"].value,
-        modify_parameter = { -- 修改参数
-            {
-                path = { "inventory_size" } -- 库存大小
-            }, {
-                path = { "max_health" } -- 最大血量
-            }
-        }
-    },
-    ["logistic-container"] = { -- 物流箱子
-        orig = {
-            "logistic-chest-active-provider", -- 主动供货箱(紫箱)
-            "logistic-chest-buffer", -- 主动存货箱(绿箱)
-            "logistic-chest-passive-provider", -- 被动供货箱(红箱)
-            "logistic-chest-requester", -- 优先集货箱(蓝箱)
-            "logistic-chest-storage" -- 被动存货箱(黄箱)
-        },
-        mod = {
-        },
-        mul = settings.startup["x-custom-game-container-performance-multiplier"].value,
-        modify_parameter = { -- 修改参数
-            {
-                path = { "inventory_size" } -- 库存大小
-            }, {
-                path = { "max_health" } -- 最大血量
             }
         }
     },
@@ -200,19 +134,6 @@ local data_raw_other_catalog = {
                 value = settings.startup["x-custom-game-number-of-module-slots"].value
             }, {
                 path = { "crafting_speed" } -- 制造速度
-            }
-        }
-    },
-    item = { -- 项目
-        orig = {
-            "satellite" -- 卫星
-        },
-        mod = {
-        },
-        mul = settings.startup["x-custom-game-satellite-performance-multiplier"].value,
-        modify_parameter = { -- 修改参数
-            {
-                path = { "rocket_launch_product", 2 }, -- 模块插槽数
             }
         }
     }

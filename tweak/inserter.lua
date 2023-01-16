@@ -31,8 +31,8 @@ local data_raw_inserter_catalog = {
 }
 
 -- 开始修改
-log("\n\n\n------------------机械臂系统 start------------------n\n\n")
+log("\n\n\n------------------机械臂 start------------------n\n\n")
 
 common_data_raw:execute_modify(data_raw_inserter_catalog)
 
-log("\n\n\n------------------机械臂系统 end------------------n\n\n")
+log("\n\n\n------------------机械臂 end------------------n\n\n")
