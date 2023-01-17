@@ -27,7 +27,7 @@ ___
 * **项目-------燃料的热值、卫星**
 * **其他-------火车、车、蜘蛛机甲、修理工具、研究中心、插件效果分享塔、插件、火箭发射井**
 * **武器-------枪、弹药**
-* **抛射物-------**
+* **抛射物-------手雷**
 
 ###
 ### 未来可用配置：
@@ -48,7 +48,7 @@ ___
 * **Item-------calorific value of fuel, satellite**
 * **Other-------locomotive, repair-tool, car, spider-vehicle, lab, beacon, module, rocket-silo**
 * **Weapon-------gun, ammo**
-* **projectile-------**
+* **projectile-------grenade**
 
 ###
 ### Future available configurations:

@@ -38,9 +38,40 @@ local data_raw_grenade_catalog = {
     }
 }
 
+-- 胶囊（需要进一步修改烟雾伤害["trivial-smoke"]["poison-capsule-smoke"]）
+local data_raw_capsule_catalog = {
+    projectile = { -- 胶囊
+        orig = {
+            "poison-capsule", -- 剧毒胶囊
+            "slowdown-capsule", -- 减速胶囊
+        },
+        mod = {
+        },
+        mul = settings.startup["x-custom-game-grenade-performance-multiplier"].value,
+        modify_parameter = { -- 修改参数
+            {
+                path = { "action", 1, "action_delivery", "target_effects", 2, "repeat_count" } -- 重复次数
+            }, {
+                path = { "action", 1, "action_delivery", "target_effects", 2, "speed_from_center" }
+            }, {
+                path = { "action", 1, "action_delivery", "target_effects", 2, "speed_from_center_deviation" }
+            }, {
+                path = { "smoke", 1, "frequency" } -- 频次
+            }, {
+                path = { "smoke", 1, "starting_frame" } -- 起始框架
+            }, {
+                path = { "smoke", 1, "starting_frame_deviation" } -- 起始框架
+            }, {
+                path = { "smoke", 1, "starting_frame_speed_deviation" } -- 起始框架
+            }
+        }
+    }
+}
+
 -- 开始修改
 log("\n\n\n------------------抛射物 start------------------n\n\n")
 
 common_data_raw:execute_modify(data_raw_grenade_catalog)
+common_data_raw:execute_modify(data_raw_capsule_catalog)
 
 log("\n\n\n------------------抛射物 end------------------n\n\n")

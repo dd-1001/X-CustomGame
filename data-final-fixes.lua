@@ -8,6 +8,6 @@ require("tweak.07_machine") -- 机器-------采矿机、抽油机、熔炉、装
 require("tweak.08_item") -- 项目-------燃料的热值、卫星
 require("tweak.09_other") -- 其他-------火车、车、蜘蛛机甲、修理工具、研究中心、插件效果分享塔、插件、火箭发射井
 require("tweak.10_weapon") -- 武器-------枪、弹药
--- require("tweak.11_projectile") -- 投射物-------
+require("tweak.11_projectile") -- 投射物-------
 
 require("tweak.test")
