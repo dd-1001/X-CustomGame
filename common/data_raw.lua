@@ -155,8 +155,8 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                         old_value = self:exponent_number(old_value)
 
                         -- 如果mul == 0 不做修改
-                        if prot_modify_param.mul == 0 then
-                            log(table.concat(modify_field_path, ".") .. " : mul = 0, Skip this config")
+                        if prot_modify_param.mul == 0 or prot_modify_param.mul == 1 then
+                            log(table.concat(modify_field_path, ".") .. " : mul = 0 or 1, Skip this config")
                             goto SET_NEW_VALUE_END
                         end
 
