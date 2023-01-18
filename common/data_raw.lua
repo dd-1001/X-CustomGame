@@ -1,5 +1,4 @@
 local common_core = require("common/core")
-local lib_string = common_core.lib_string
 
 local log = common_core.lib_logger("x-custom-game-data_raw.lua")
 
@@ -153,7 +152,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                             end
                         end
 
-                        old_value = lib_string.exponent_number(old_value)
+                        old_value = self:exponent_number(old_value)
 
                         -- 如果mul == 0 不做修改
                         if prot_modify_param.mul == 0 then
@@ -220,6 +219,47 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
     end
 
     return true
+end
+
+-- from __stdlib__/stdlib/utils/string，增加一个大写 K
+local exponent_multipliers = {
+    ['y'] = 0.000000000000000000000001,
+    ['z'] = 0.000000000000000000001,
+    ['a'] = 0.000000000000000001,
+    ['f'] = 0.000000000000001,
+    ['p'] = 0.000000000001,
+    ['n'] = 0.000000001,
+    ['u'] = 0.000001,
+    ['m'] = 0.001,
+    ['c'] = 0.01,
+    ['d'] = 0.1,
+    [' '] = 1,
+    ['h'] = 100,
+    ['k'] = 1000,
+    ['K'] = 1000,
+    ['M'] = 1000000,
+    ['G'] = 1000000000,
+    ['T'] = 1000000000000,
+    ['P'] = 1000000000000000,
+    ['E'] = 1000000000000000000,
+    ['Z'] = 1000000000000000000000,
+    ['Y'] = 1000000000000000000000000
+}
+
+-- from __stdlib__/stdlib/utils/string，增加一个大写 K
+--- Convert a metric string prefix to a number value.
+-- @tparam string str
+-- @treturn float
+function Data_raw:exponent_number(str)
+    if type(str) == 'string' then
+        local value, exp = str:match('([%-+]?[0-9]*%.?[0-9]+)([yzafpnumcdhkKMGTPEZY]?)') -- 增加一个大写 K
+        exp = exp or ' '
+        value = (value or 0) * (exponent_multipliers[exp] or 1)
+        return value
+    elseif type(str) == 'number' then
+        return str
+    end
+    return 0
 end
 
 return Data_raw

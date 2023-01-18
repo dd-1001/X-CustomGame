@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+Date: 2023-1-18
+  Features:
+    - Add equipment configuration
+    - Add defense-related configuration
+    -
+    - The basic functions have been completed.
+    - The next step is to refine and adapt the mod.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.10
 Date: 2023-1-18
   Features:

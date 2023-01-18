@@ -277,6 +277,68 @@ data:extend({
         minimum_value = 0.01,
         maximum_value = 10,
         order = "x-custom-game-1067"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-equipment-performance-multiplier", -- 装备模块
+        setting_type = "startup",
+        default_value = 100,
+        minimum_value = 0.01,
+        maximum_value = 1000,
+        order = "x-custom-game-1069"
+    }, {
+        type = "bool-setting",
+        name = "x-custom-game-equipment-size-flags", -- 装备尺寸为1*1
+        setting_type = "startup",
+        default_value = true,
+        order = "x-custom-game-1071"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-wall-performance-multiplier", -- 墙
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-1073"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-ammo-turret-performance-multiplier", -- 弹药炮塔
+        setting_type = "startup",
+        default_value = 5,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-1075"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-electric-turret-performance-multiplier", -- 电炮塔
+        setting_type = "startup",
+        default_value = 5,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-1077"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-fluid-turret-performance-multiplier", -- 流体炮塔
+        setting_type = "startup",
+        default_value = 5,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-1079"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-artillery-turret-performance-multiplier", -- 重炮炮塔
+        setting_type = "startup",
+        default_value = 5,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-1081"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-radar-performance-multiplier", -- 雷达
+        setting_type = "startup",
+        default_value = 5,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-1083"
     }
 })
 

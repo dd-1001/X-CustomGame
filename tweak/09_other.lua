@@ -136,6 +136,35 @@ local data_raw_other_catalog = {
                 path = { "crafting_speed" } -- 制造速度
             }
         }
+    },
+    radar = { -- 雷达
+        orig = {
+            "radar" -- 雷达
+        },
+        mod = {
+        },
+        mul = settings.startup["x-custom-game-radar-performance-multiplier"].value,
+        modify_parameter = { -- 修改参数
+            {
+                path = { "energy_per_nearby_scan" }, -- 每一个近距离扫描的能耗
+                operation = "Div"
+            }, {
+                path = { "energy_per_sector" }, -- 扫描扇区所需的能量
+                operation = "Div"
+            }, {
+                path = { "energy_usage" }, -- 雷达使用的能量
+                operation = "Div"
+            }, {
+                path = { "max_distance_of_nearby_sector_revealed" }, -- 该雷达不断显示的区域半径，以块为单位。
+                max_value = 8
+            }, {
+                path = { "max_distance_of_sector_revealed" }, -- 雷达可以绘制的区域半径，以块为单位。
+                max_value = 16
+            }, {
+                path = { "rotation_speed" }, -- 旋转速度
+                max_value = 0.1
+            }
+        }
     }
 }
 

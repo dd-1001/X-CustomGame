@@ -25,10 +25,12 @@ ___
 * **机器人-------物流机器人、建设机器人、机器人指令平台**
 * **机器-------采矿机、抽油机、熔炉、装配机**
 * **项目-------燃料的热值、卫星**
-* **其他-------火车、车、蜘蛛机甲、修理工具、研究中心、插件效果分享塔、插件、火箭发射井**
+* **其他-------火车、车、蜘蛛机甲、修理工具、研究中心、插件效果分享塔、插件、火箭发射井、雷达**
 * **武器-------枪、弹药**
 * **抛射物-------手雷**
 * **护甲-------所有护甲**
+* **装备-------所有装备模块**
+* **防御-------墙、闸门、炮塔**
 
 ###
 ### 未来可用配置：
@@ -47,10 +49,12 @@ ___
 * **Robots-------logistic-robot, construction-robot, roboport**
 * **Machines-------mining-drill, furnace, assembling-machine**
 * **Item-------calorific value of fuel, satellite**
-* **Other-------locomotive, repair-tool, car, spider-vehicle, lab, beacon, module, rocket-silo**
+* **Other-------locomotive, repair-tool, car, spider-vehicle, lab, beacon, module, rocket-silo, radar**
 * **Weapon-------gun, ammo**
-* **projectile-------grenade**
-* **armor-------all of the armor**
+* **Projectile-------grenade**
+* **Armor-------all of the armor**
+* **Equipment-------All equipment modules**
+* **Defense-------wall, gate, turret**
 
 ###
 ### Future available configurations:
