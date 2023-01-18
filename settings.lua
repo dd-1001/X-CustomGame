@@ -269,6 +269,14 @@ data:extend({
         minimum_value = 0.01,
         maximum_value = 10,
         order = "x-custom-game-1065"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-armor-performance-multiplier", -- 护甲
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-1067"
     }
 })
 
