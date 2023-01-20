@@ -3,7 +3,7 @@ local common_data_raw = require("common/data_raw")
 
 local log = common_core.lib_logger("x-custom-game-container.lua")
 
--- data.raw修改目录
+-- 容器
 local data_raw_container_catalog = {
     container = { -- 箱子
         orig = {
@@ -16,7 +16,8 @@ local data_raw_container_catalog = {
         mul = settings.startup["x-custom-game-container-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
-                path = { "inventory_size" } -- 库存大小
+                path = { "inventory_size" }, -- 库存大小
+                max_value = 2000
             }, {
                 path = { "max_health" } -- 最大血量
             }

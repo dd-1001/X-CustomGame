@@ -16,6 +16,63 @@ end
 
 Data_raw.__call = Data_raw.new
 
+-- 已做修改的类型+名字
+X_CUSTOM_GAME_TAB_RECORD = {}
+
+function Data_raw:record(data_type, data_name)
+    if data_type == nil or data_name == nil then
+        return
+    end
+
+    if X_CUSTOM_GAME_TAB_RECORD[data_type] == nil then
+        X_CUSTOM_GAME_TAB_RECORD[data_type] = {}
+    end
+
+    if X_CUSTOM_GAME_TAB_RECORD[data_type][data_name] == nil then
+        X_CUSTOM_GAME_TAB_RECORD[data_type][data_name] = true
+    end
+
+end
+
+-- check_type == "data.raw" or check_type == "record"
+function Data_raw:check_not_in_record(check_type)
+    local not_in_record = {}
+
+    if check_type == "data.raw" then
+        for data_type, _ in pairs(data.raw) do
+            for data_name, _ in pairs(data.raw[data_type]) do
+                if X_CUSTOM_GAME_TAB_RECORD[data_type] == nil then
+                    -- 没有这个类型
+                    if not_in_record[data_type] == nil then
+                        not_in_record[data_type] = {}
+                    end
+                    table.insert(not_in_record[data_type], data_name)
+                elseif X_CUSTOM_GAME_TAB_RECORD[data_type][data_name] == nil then
+                    -- 没有这个名字
+                    if not_in_record[data_type] == nil then
+                        not_in_record[data_type] = {}
+                    end
+                    table.insert(not_in_record[data_type], data_name)
+                end
+            end
+        end
+    elseif check_type == "record" then
+        for data_type, tab_name in pairs(X_CUSTOM_GAME_TAB_RECORD) do
+            for data_name, _ in pairs(data.raw[data_type]) do
+                -- 不存在名字
+                if tab_name[data_name] == nil then
+                    if not_in_record[data_type] == nil then
+                        not_in_record[data_type] = {}
+                    end
+                    table.insert(not_in_record[data_type], data_name)
+                end
+            end
+        end
+    end
+
+    return not_in_record
+end
+
 function Data_raw:insert_data_raw_field_value(field_path, value)
 
     if not field_path or not value then
@@ -121,7 +178,8 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
         for _, prot_name in ipairs(prot_name_tab) do
             -- prot_name = 原型名字："boiler"...
 
-            -- log(common_core:serialization_table(get_data_raw_field_value({prot_type, prot_name})))
+            -- 做记录
+            self:record(prot_type, prot_name)
 
             for _, single_modify_param in ipairs(prot_modify_param.modify_parameter) do
                 -- single_modify_param 单个修改参数
