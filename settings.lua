@@ -20,7 +20,7 @@ data:extend({
         default_value = 10,
         minimum_value = 0.01,
         maximum_value = 1000,
-        order = "x-custom-game-1003"
+        order = "x-custom-game-101002"
     }, {
         type = "double-setting",
         name = "x-custom-game-locomotive-inventory-size-multiplier", -- 机车车厢库存

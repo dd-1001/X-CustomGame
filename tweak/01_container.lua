@@ -12,6 +12,9 @@ local data_raw_container_catalog = {
             "steel-chest", -- 钢制箱
         },
         mod = {
+            "aai-strongbox", -- aai-containers start
+            "aai-storehouse",
+            "aai-warehouse", -- aai-containers end
         },
         mul = settings.startup["x-custom-game-container-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
