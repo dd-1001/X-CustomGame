@@ -22,28 +22,36 @@ local data_raw_production_catalog = {
                 path = { "energy_source", "emissions_per_minute" }, -- 可选的。一个实体在全能量消耗下每分钟排放的污染。正是实体工具提示中显示的值。
                 operation = "Div" -- Mul 做乘法， Div 做除法
             }, {
+                path = { "energy_source", "fuel_inventory_size" } -- 燃料库存
+            }, {
+                path = { "energy_source", "max_transfer" } -- 最大传输量
+            }, {
                 path = { "energy_source", "specific_heat" }, -- 比热容。吸收能量的多少
                 operation = "Div"
             }, {
-                path = { "fluid_box", "base_area" } -- 必须大于0。液箱的总液体容量为base_area × height × 100
+                path = { "fluid_box", "height" } -- 必须大于0。液箱的总液体容量为base_area × height × 100
             }, {
-                path = { "output_fluid_box", "base_area" } -- 必须大于0。液箱的总液体容量为base_area × height × 100
+                path = { "output_fluid_box", "height" } -- 必须大于0。液箱的总液体容量为base_area × height × 100
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     },
     generator = { -- 发电机
-        orig             = {
+        orig = {
             "steam-engine", -- 蒸汽机
             "steam-turbine" -- 汽轮机
         },
-        mod              = {
+        mod = {
         },
-        mul              = settings.startup["x-custom-game-generator-performance-multiplier"].value,
+        mul = settings.startup["x-custom-game-generator-performance-multiplier"].value,
         modify_parameter = {
             {
                 path = { "effectivity" } -- 效率
             }, {
-                path = { "fluid_box", "base_area" }
+                path = { "fluid_box", "height" }
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     },
@@ -52,14 +60,16 @@ local data_raw_production_catalog = {
             "solar-panel" -- 太阳能板
         },
         mod              = {
-            "advanced-solar", -- 高级太阳能板
-            "elite-solar", -- 精英太阳能板
-            "ultimate-solar" -- 终极太阳能板
+            "advanced-solar", -- Advanced-Electric-Revamped-v16 start
+            "elite-solar",
+            "ultimate-solar" -- Advanced-Electric-Revamped-v16 end
         },
         mul              = settings.startup["x-custom-game-solar-panel-performance-multiplier"].value,
         modify_parameter = {
             {
                 path = { "production" } -- 发电量
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     },
@@ -68,9 +78,9 @@ local data_raw_production_catalog = {
             "accumulator" -- 蓄电池
         },
         mod              = {
-            "advanced-accumulator", -- 高级蓄电池
-            "elite-accumulator", -- 精英蓄电池
-            "ultimate-accumulator" -- 终极蓄电池
+            "advanced-accumulator", -- Advanced-Electric-Revamped-v16 start
+            "elite-accumulator",
+            "ultimate-accumulator" -- Advanced-Electric-Revamped-v16 end
         },
         mul              = settings.startup["x-custom-game-accumulator-performance-multiplier"].value,
         modify_parameter = {
@@ -80,6 +90,8 @@ local data_raw_production_catalog = {
                 path = { "energy_source", "input_flow_limit" } -- 电池输入限制
             }, {
                 path = { "energy_source", "output_flow_limit" } -- 电池输出限制
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     },
@@ -102,6 +114,8 @@ local data_raw_production_catalog = {
             }, {
                 path = { "heat_buffer", "specific_heat" }, -- 比热容
                 operation = "Div"
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     },
@@ -120,6 +134,8 @@ local data_raw_production_catalog = {
             }, {
                 path = { "heat_buffer", "specific_heat" }, -- 比热容
                 operation = "Div"
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     }

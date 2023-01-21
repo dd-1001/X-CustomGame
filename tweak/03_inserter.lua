@@ -3,7 +3,7 @@ local common_data_raw = require("common/data_raw")
 
 local log = common_core.lib_logger("x-custom-game-inserter.lua")
 
--- data.raw修改目录
+-- 机械臂
 local data_raw_inserter_catalog = {
     inserter = { -- 机械臂
         orig = {
@@ -22,9 +22,19 @@ local data_raw_inserter_catalog = {
             {
                 path = { "energy_source", "effectivity" } -- 能源利用效率
             }, {
+                path = { "energy_source", "fuel_inventory_size" } -- 燃料库存
+            }, {
+                path = { "energy_per_movement" }, -- 每次动消耗能量
+                operation = "Div"
+            }, {
+                path = { "energy_per_rotation" }, -- 每次旋转耗能量
+                operation = "Div"
+            }, {
                 path = { "extension_speed" } -- 延伸速度
             }, {
                 path = { "rotation_speed" } -- 旋转速度
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     }

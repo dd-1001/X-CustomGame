@@ -15,6 +15,12 @@ ___
 
 ___
 
+### 可被影响的Mod（Mods that can be affected）：
+* **aai-containers**
+* **Advanced-Electric-Revamped-v16**
+
+___
+
 ### 可用的配置：  
 ###
 * **容器-------箱子、储液罐、物流箱子、货运车厢、液罐车厢**

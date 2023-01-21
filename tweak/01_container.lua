@@ -26,6 +26,41 @@ local data_raw_container_catalog = {
             }
         }
     },
+    ["logistic-container"] = { -- 物流箱子
+        orig = {
+            "logistic-chest-active-provider", -- 主动供货箱(紫箱)
+            "logistic-chest-buffer", -- 主动存货箱(绿箱)
+            "logistic-chest-passive-provider", -- 被动供货箱(红箱)
+            "logistic-chest-requester", -- 优先集货箱(蓝箱)
+            "logistic-chest-storage", -- 被动存货箱(黄箱)
+        },
+        mod = {
+            "aai-strongbox-passive-provider", -- aai-containers start
+            "aai-strongbox-active-provider",
+            "aai-strongbox-storage",
+            "aai-strongbox-buffer",
+            "aai-strongbox-requester",
+            "aai-storehouse-passive-provider",
+            "aai-storehouse-active-provider",
+            "aai-storehouse-storage",
+            "aai-storehouse-buffer",
+            "aai-storehouse-requester",
+            "aai-warehouse-passive-provider",
+            "aai-warehouse-active-provider",
+            "aai-warehouse-storage",
+            "aai-warehouse-buffer",
+            "aai-warehouse-requester", -- aai-containers end
+        },
+        mul = settings.startup["x-custom-game-container-performance-multiplier"].value,
+        modify_parameter = { -- 修改参数
+            {
+                path = { "inventory_size" }, -- 库存大小
+                max_value = 2000
+            }, {
+                path = { "max_health" } -- 最大血量
+            }
+        }
+    },
     ["storage-tank"] = { -- 储液罐
         orig = {
             "storage-tank" -- 储液罐
@@ -35,24 +70,7 @@ local data_raw_container_catalog = {
         mul = settings.startup["x-custom-game-storage-tank-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
-                path = { "fluid_box", "base_area" } -- 流体箱的总流体容量为 base_area × height × 100
-            }
-        }
-    },
-    ["logistic-container"] = { -- 物流箱子
-        orig = {
-            "logistic-chest-active-provider", -- 主动供货箱(紫箱)
-            "logistic-chest-buffer", -- 主动存货箱(绿箱)
-            "logistic-chest-passive-provider", -- 被动供货箱(红箱)
-            "logistic-chest-requester", -- 优先集货箱(蓝箱)
-            "logistic-chest-storage" -- 被动存货箱(黄箱)
-        },
-        mod = {
-        },
-        mul = settings.startup["x-custom-game-container-performance-multiplier"].value,
-        modify_parameter = { -- 修改参数
-            {
-                path = { "inventory_size" } -- 库存大小
+                path = { "fluid_box", "base_area" }, -- 流体箱的总流体容量为 base_area × height × 100
             }, {
                 path = { "max_health" } -- 最大血量
             }
@@ -70,6 +88,8 @@ local data_raw_container_catalog = {
                 path = { "inventory_size" } -- 货车库存的大小
             }, {
                 path = { "max_speed" } -- 最大速度
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     },
@@ -85,6 +105,8 @@ local data_raw_container_catalog = {
                 path = { "capacity" } -- 容量
             }, {
                 path = { "max_speed" } -- 最大速度
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     }
