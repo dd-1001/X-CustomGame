@@ -3,7 +3,7 @@ local common_data_raw = require("common/data_raw")
 
 local log = common_core.lib_logger("x-custom-game-fuel.lua")
 
--- data.raw修改目录
+-- 燃料的热值
 local data_raw_fuel_catalog = {
     item = { -- 燃料的热值
         orig = {

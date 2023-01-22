@@ -266,11 +266,14 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
         end
 
         -- 判断对mod进行处理
-        if not is_moded and settings.startup["x-custom-game-effect-mod-flags"].value then
-            -- if not is_moded and false then
+        if settings.startup["x-custom-game-effect-mod-flags"].value and
+            not is_moded and
+            prot_modify_param.mod then
+
             log("goto MOD lable")
             prot_name_tab = prot_modify_param.mod
             is_moded = true
+            
             goto MOD
         end
 

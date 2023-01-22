@@ -106,6 +106,10 @@ local data_raw_production_catalog = {
             {
                 path = { "consumption" } -- 能量消耗量
             }, {
+                path = { "energy_source", "burnt_inventory_size" } -- 燃料废料库存
+            }, {
+                path = { "energy_source", "fuel_inventory_size" } -- 燃料库存
+            }, {
                 path = { "energy_source", "effectivity" } -- 效率
             }, {
                 path = { "heat_buffer", "max_temperature" } -- 最高温度
@@ -160,6 +164,8 @@ local data_raw_transmission_catalog = {
             }, {
                 path = { "supply_area_distance" }, -- 供应区域距离。最大为64
                 max_value = 64
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     }

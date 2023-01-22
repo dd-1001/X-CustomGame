@@ -33,7 +33,7 @@ ___
 * **项目-------燃料的热值、卫星**
 * **其他-------火车、车、蜘蛛机甲、修理工具、研究中心、插件效果分享塔、插件、火箭发射井、雷达**
 * **武器-------枪、弹药**
-* **抛射物-------手雷**
+* **抛射物-------手雷、悬崖炸药、胶囊、激光**
 * **护甲-------所有护甲**
 * **装备-------所有装备模块**
 * **防御-------墙、闸门、炮塔**
@@ -57,7 +57,7 @@ ___
 * **Item-------calorific value of fuel, satellite**
 * **Other-------locomotive, repair-tool, car, spider-vehicle, lab, beacon, module, rocket-silo, radar**
 * **Weapon-------gun, ammo**
-* **Projectile-------grenade**
+* **Projectile-------grenade, cliff-explosives, capsule, laser**
 * **Armor-------all of the armor**
 * **Equipment-------All equipment modules**
 * **Defense-------wall, gate, turret**

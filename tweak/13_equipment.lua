@@ -160,12 +160,27 @@ local data_raw_equipment_catalog = {
         mul = settings.startup["x-custom-game-equipment-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
-                path = { "energy_source", "buffer_capacity" }, -- 电池容量
+                path = { "attack_parameters", "ammo_type", "action", 1, "action_delivery", 1, "target_effects", 2,
+                    "distance" }, -- 推后距离
+                max_value = 32
+            }, {
+                path = { "attack_parameters", "ammo_type", "action", 2, "duration" }, -- 持续时间
+            }, {
+                path = { "attack_parameters", "ammo_type", "action", 2, "max_length" }, -- 最大长度
+            }, {
+                path = { "attack_parameters", "ammo_type", "action", 1, "radius" }, -- 半径
+                max_value = 32
+            }, {
+                path = { "attack_parameters", "ammo_type", "energy_consumption" }, -- 能量消耗
+                min_value = 20000,
+                operation = "Div"
             }, {
                 path = { "attack_parameters", "cooldown" }, -- 冷却时间
                 operation = "Div"
             }, {
                 path = { "attack_parameters", "damage_modifier" }, -- 伤害修正
+            }, {
+                path = { "attack_parameters", "projectile_creation_distance" }, -- 抛射物创建距离
             }, {
                 path = { "attack_parameters", "range" }, -- 距离
                 max_value = 64
@@ -173,18 +188,14 @@ local data_raw_equipment_catalog = {
                 path = { "attack_parameters", "ammo_type", "action", "action_delivery", "duration" }, -- 持续时间
                 max_value = 64
             }, {
+                path = { "attack_parameters", "ammo_type", "action", "action_delivery", "max_length" }, -- 距离
+                max_value = 64
+            }, {
                 path = { "attack_parameters", "ammo_type", "energy_consumption" }, -- 能量消耗
                 operation = "Div",
                 min_value = 20000
             }, {
-                path = { "attack_parameters", "ammo_type", "action", "action_delivery", "max_length" }, -- 距离
-                max_value = 64
-            }, {
-                path = { "attack_parameters", "ammo_type", "action", 1, "action_delivery", 1, "target_effects", 2, "distance" }, -- 推后距离
-                max_value = 32
-            }, {
-                path = { "attack_parameters", "ammo_type", "action", 1, "radius" }, -- 半径
-                max_value = 32
+                path = { "energy_source", "buffer_capacity" }, -- 电池容量
             }
         }
     }
@@ -350,7 +361,7 @@ local data_raw_equipment_shape_size_catalog = {
 log("\n\n\n------------------装备 start------------------n\n\n")
 
 common_data_raw:execute_modify(data_raw_equipment_catalog)
-if settings.startup["x-custom-game-equipment-size-flags"].value then 
+if settings.startup["x-custom-game-equipment-size-flags"].value then
     common_data_raw:execute_modify(data_raw_equipment_shape_size_catalog)
 end
 

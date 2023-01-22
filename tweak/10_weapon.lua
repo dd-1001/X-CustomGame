@@ -3,7 +3,7 @@ local common_data_raw = require("common/data_raw")
 
 local log = common_core.lib_logger("x-custom-game-weapon.lua")
 
--- data.raw修改目录
+-- 枪
 local data_raw_gun_catalog = {
     gun = { -- 枪
         orig = {
@@ -13,6 +13,11 @@ local data_raw_gun_catalog = {
             "combat-shotgun", -- 冲锋霰弹枪
             "rocket-launcher", -- 火箭筒
             "flamethrower", -- 火焰喷射器
+            "artillery-wagon-cannon", -- 重炮车厢
+            "tank-cannon", -- 坦克炮
+            "tank-flamethrower", -- 车载喷火器
+            "tank-machine-gun", -- 车载机枪
+            "vehicle-machine-gun", -- 车载机枪
         },
         mod = {
         },
@@ -28,6 +33,36 @@ local data_raw_gun_catalog = {
                 path = { "attack_parameters", "projectile_creation_distance" } -- 投射物创建距离
             }, {
                 path = { "attack_parameters", "range" } -- 范围
+            }, {
+                path = { "attack_parameters", "damage_modifier" } -- 伤害修正
+            }
+        }
+    }
+}
+
+-- 蜘蛛机甲火箭筒
+local data_raw_spidertron_rocket_launcher_catalog = {
+    gun = { -- 枪
+        orig = {
+            "spidertron-rocket-launcher-1", -- 蜘蛛机甲火箭筒
+            "spidertron-rocket-launcher-2", -- 蜘蛛机甲火箭筒
+            "spidertron-rocket-launcher-3", -- 蜘蛛机甲火箭筒
+            "spidertron-rocket-launcher-4", -- 蜘蛛机甲火箭筒
+        },
+        mod = {
+        },
+        mul = settings.startup["x-custom-game-gun-performance-multiplier"].value,
+        modify_parameter = { -- 修改参数
+            {
+                path = { "attack_parameters", "cooldown" }, -- 再次射击的冷却时间
+                operation = "Div"
+            }, {
+                path = { "attack_parameters", "projectile_creation_distance" }, -- 投射物创建距离
+                operation = "Div"
+            }, {
+                path = { "attack_parameters", "range" } -- 范围
+            }, {
+                path = { "attack_parameters", "damage_modifier" } -- 伤害修正
             }
         }
     }
@@ -57,7 +92,7 @@ local data_raw_land_mine_catalog = {
 
 -- 弹匣
 local data_raw_ammo_magazine_catalog = {
-    ["ammo"] = { -- 弹药
+    ammo = { -- 弹药
         orig = {
             "firearm-magazine", -- 标准弹匣
             "piercing-rounds-magazine", -- 穿甲弹匣
@@ -68,7 +103,9 @@ local data_raw_ammo_magazine_catalog = {
         mul = settings.startup["x-custom-game-ammo-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
-                path = { "ammo_type", "action", 1, "action_delivery", 1, "target_effects", 2, "damage", "amount" } -- 弹匣伤害
+                path = { "ammo_type", "action", 1, "action_delivery", 1, "target_effects", 2, "damage", "amount" } -- 标准弹匣伤害
+            }, {
+                path = { "ammo_type", "action", "action_delivery", "target_effects", 2, "damage", "amount" } -- 穿甲弹匣伤害
             }, {
                 path = { "magazine_size" }, -- 弹药物品被消耗前的射击次数。必须是>=1。
                 min_value = 1
@@ -111,6 +148,24 @@ local data_raw_ammo_shotgun_shell_catalog = {
     }
 }
 
+-- 霰弹 附加的抛射物效果
+local data_raw_shotgun_additional_effects_catalog = {
+    projectile = { -- 抛射物
+        orig = {
+            "shotgun-pellet", -- 标准霰弹
+            "piercing-shotgun-pellet", -- 穿甲霰弹
+        },
+        mul = settings.startup["x-custom-game-ammo-performance-multiplier"].value,
+        modify_parameter = { -- 修改参数
+            {
+                path = { "acceleration" } -- 加速度
+            }, {
+                path = { "action", "action_delivery", "target_effects", "damage", "amount" } -- 伤害
+            }
+        }
+    }
+}
+
 -- 炮弹
 local data_raw_ammo_cannon_shell_catalog = {
     ["ammo"] = { -- 弹药
@@ -126,9 +181,6 @@ local data_raw_ammo_cannon_shell_catalog = {
         mul = settings.startup["x-custom-game-ammo-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
-                path = { "magazine_size" }, -- 弹药物品被消耗前的射击次数。必须是>=1。
-                min_value = 1
-            }, {
                 path = { "ammo_type", "action", "action_delivery", "direction_deviation" }, -- 方向偏离度
                 operation = "Div"
             }, {
@@ -143,10 +195,38 @@ local data_raw_ammo_cannon_shell_catalog = {
     }
 }
 
+-- 炮弹 附加的抛射物效果
+local data_raw_shell_additional_effects_catalog = {
+    projectile = { -- 抛射物
+        orig = {
+            "cannon-projectile",
+            "explosive-cannon-projectile",
+            "uranium-cannon-projectile",
+            "explosive-uranium-cannon-projectile",
+        },
+        mul = settings.startup["x-custom-game-ammo-performance-multiplier"].value,
+        modify_parameter = { -- 修改参数
+            {
+                path = { "acceleration" } -- 加速度
+            }, {
+                path = { "action", "action_delivery", "target_effects", 1, "damage", "amount" } -- physical伤害
+            }, {
+                path = { "action", "action_delivery", "target_effects", 2, "damage", "amount" } -- explosion伤害
+            }, {
+                path = { "piercing_damage" } -- 穿透伤害
+            }, {
+                path = { "final_action", "action_delivery", "target_effects", 2, "action", "action_delivery", "target_effects", 1, "damage", "amount" } -- explosion伤害
+            }
+        }
+    }
+}
+
 -- 火箭弹
 local data_raw_ammo_atomic_bomb_catalog = {
     ["ammo"] = { -- 弹药
         orig = {
+            "rocket", -- 标准火箭弹
+            "explosive-rocket", -- 爆破火箭弹
             "atomic-bomb", -- 原子火箭弹
         },
         mod = {
@@ -154,9 +234,6 @@ local data_raw_ammo_atomic_bomb_catalog = {
         mul = settings.startup["x-custom-game-ammo-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
-                path = { "magazine_size" }, -- 弹药物品被消耗前的射击次数。必须是>=1。
-                min_value = 1
-            }, {
                 path = { "ammo_type", "action", "action_delivery", "starting_speed" } -- 开始速度
             }, {
                 path = { "ammo_type", "cooldown_modifier" }, -- 冷却修正
@@ -164,6 +241,45 @@ local data_raw_ammo_atomic_bomb_catalog = {
             }, {
                 path = { "ammo_type", "range_modifier" } -- 范围修正
             }
+        }
+    }
+}
+
+-- 火箭弹 附加的抛射物效果
+local data_raw_rocket_additional_effects_catalog = {
+    projectile = { -- 抛射物
+        orig = {
+            "rocket",
+            "explosive-rocket",
+            "atomic-rocket",
+            "atomic-bomb-ground-zero-projectile",
+            "atomic-bomb-wave",
+            "atomic-bomb-wave-spawns-cluster-nuke-explosion",
+            "atomic-bomb-wave-spawns-fire-smoke-explosion",
+            "atomic-bomb-wave-spawns-nuclear-smoke",
+            "atomic-bomb-wave-spawns-nuke-shockwave-explosion",
+            
+        },
+        mul = settings.startup["x-custom-game-ammo-performance-multiplier"].value,
+        modify_parameter = { -- 修改参数
+            {
+                path = { "acceleration" } -- 加速度
+            }, {
+                path = { "action", 1, "action_delivery", "target_effects", "damage", "amount" } -- 伤害
+            }, {
+                path = { "action", 1, "action_delivery", "target_effects", "lower_damage_modifier" } -- 下限伤害修正
+            }, {
+                path = { "action", 1, "action_delivery", "target_effects", "upper_damage_modifier" } -- 上限伤害修正
+            }, {
+                path = { "action", 1, "action_delivery", "target_effects", "upper_distance_threshold" } -- 上限距离阈值
+            }, {
+                path = { "action", "action_delivery", "target_effects", 7, "damage", "amount" } -- 原子火箭弹-火箭 伤害
+            }, {
+                path = { "action", "action_delivery", "target_effects", 2, "damage", "amount" } -- 标准火箭弹-火箭 伤害
+            }
+            -- {
+            --     path = { "action", 1, "radius" } -- 半径
+            -- }
         }
     }
 }
@@ -182,17 +298,22 @@ local data_raw_ammo_flamethrower_catalog = {
                 path = { "magazine_size" }, -- 弹药物品被消耗前的射击次数。必须是>=1。
                 min_value = 1
             }, {
-                path = { "ammo_type",2, "consumption_modifier" }, -- 消耗量修正
+                path = { "ammo_type", 2, "consumption_modifier" }, -- 消耗量修正
                 operation = "Div"
             }
         }
     }
 }
 
+
+
+
+
 -- 开始修改
 log("\n\n\n------------------武器 start------------------n\n\n")
 
 common_data_raw:execute_modify(data_raw_gun_catalog)
+common_data_raw:execute_modify(data_raw_spidertron_rocket_launcher_catalog)
 common_data_raw:execute_modify(data_raw_land_mine_catalog)
 
 common_data_raw:execute_modify(data_raw_ammo_magazine_catalog)
@@ -200,5 +321,9 @@ common_data_raw:execute_modify(data_raw_ammo_shotgun_shell_catalog)
 common_data_raw:execute_modify(data_raw_ammo_cannon_shell_catalog)
 common_data_raw:execute_modify(data_raw_ammo_atomic_bomb_catalog)
 common_data_raw:execute_modify(data_raw_ammo_flamethrower_catalog)
+
+common_data_raw:execute_modify(data_raw_shotgun_additional_effects_catalog)
+common_data_raw:execute_modify(data_raw_shell_additional_effects_catalog)
+common_data_raw:execute_modify(data_raw_rocket_additional_effects_catalog)
 
 log("\n\n\n------------------武器 end------------------n\n\n")

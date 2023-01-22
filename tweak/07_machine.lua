@@ -21,6 +21,8 @@ local data_raw_machine_catalog = {
                 path = { "energy_source", "emissions_per_minute" }, -- 每分钟产生污染量
                 operation = "Div"
             }, {
+                path = { "energy_source", "fuel_inventory_size" } -- 燃料库存
+            }, {
                 path = { "energy_usage" }, -- 能源消耗量
                 operation = "Div"
             }, {
@@ -34,10 +36,12 @@ local data_raw_machine_catalog = {
             }, {
                 path = { "module_specification", "module_slots" }, -- 模块插槽数
                 value = settings.startup["x-custom-game-number-of-module-slots"].value
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     },
-    ["furnace"] = { -- 熔炉
+    furnace = { -- 熔炉
         orig = {
             "stone-furnace", -- 石炉
             "steel-furnace", -- 钢炉
@@ -55,12 +59,15 @@ local data_raw_machine_catalog = {
                 path = { "energy_source", "emissions_per_minute" }, -- 每分钟产生污染量
                 operation = "Div"
             }, {
+                path = { "energy_source", "fuel_inventory_size" } -- 燃料库存
+            }, {
                 path = { "energy_usage" }, -- 能源消耗量
                 operation = "Div"
             }, {
                 path = { "module_specification", "module_slots" }, -- 模块插槽数
-                -- operation = "Extend",
                 value = settings.startup["x-custom-game-number-of-module-slots"].value
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     },
@@ -87,8 +94,9 @@ local data_raw_machine_catalog = {
                 operation = "Div"
             }, {
                 path = { "module_specification", "module_slots" }, -- 模块插槽数
-                -- operation = "Extend",
                 value = settings.startup["x-custom-game-number-of-module-slots"].value
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     }

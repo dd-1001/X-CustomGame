@@ -25,6 +25,8 @@ local data_raw_robot_catalog = {
                 path = { "max_payload_size" } -- 最大负载量
             }, {
                 path = { "speed" } -- 速度
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     },
@@ -48,10 +50,12 @@ local data_raw_robot_catalog = {
                 path = { "max_payload_size" } -- 最大负载量
             }, {
                 path = { "speed" } -- 速度
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     },
-    ["roboport"] = { -- 机器人指令平台
+    roboport = { -- 机器人指令平台
         orig = {
             "roboport" -- 机器人指令平台
         },
@@ -74,6 +78,8 @@ local data_raw_robot_catalog = {
             }, {
                 path = { "energy_usage" }, -- 能源消耗量
                 operation = "Div"
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     }

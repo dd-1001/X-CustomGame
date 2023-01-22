@@ -19,6 +19,8 @@ local data_raw_other_catalog = {
                 path = { "max_power" } -- 最大动力
             }, {
                 path = { "max_speed" } -- 最大速度
+            }, {
+                path = { "max_health" } -- 最大血量
             }
         }
     },
@@ -48,6 +50,8 @@ local data_raw_other_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "braking_power" } -- 动力
+            }, {
+                path = { "burner", "effectivity" } -- 效率
             }, {
                 path = { "consumption" } -- 消耗
             }, {
@@ -126,7 +130,8 @@ local data_raw_other_catalog = {
         mul = settings.startup["x-custom-game-rocket-silo-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
-                path = { "active_energy_usage" } -- 激活时能耗
+                path = { "active_energy_usage" }, -- 激活时能耗
+                operation = "Div"
             }, {
                 path = { "energy_usage" } -- 能耗
             }, {
@@ -162,7 +167,28 @@ local data_raw_other_catalog = {
                 max_value = 16
             }, {
                 path = { "rotation_speed" }, -- 旋转速度
-                max_value = 0.1
+                max_value = 0.05
+            }
+        }
+    }
+}
+
+-- 蜘蛛机甲 装备网格
+local data_raw_spidertron_equipment_grid_catalog = {
+    ["equipment-grid"] = { -- 装备网格
+        orig = {
+            "spidertron-equipment-grid", -- 蜘蛛机甲装备网格
+        },
+        mod = {
+        },
+        mul = settings.startup["x-custom-game-spider-vehicle-performance-multiplier"].value,
+        modify_parameter = { -- 修改参数
+            {
+                path = { "height" }, -- 高度
+                max_value = 16
+            }, {
+                path = { "width" }, -- 宽度
+                max_value = 16
             }
         }
     }
@@ -257,6 +283,7 @@ local data_raw_effectivity_module_catalog = {
 log("\n\n\n------------------其他 start------------------n\n\n")
 
 common_data_raw:execute_modify(data_raw_other_catalog)
+common_data_raw:execute_modify(data_raw_spidertron_equipment_grid_catalog)
 common_data_raw:execute_modify(data_raw_speed_module_catalog)
 common_data_raw:execute_modify(data_raw_productivity_module_catalog)
 common_data_raw:execute_modify(data_raw_effectivity_module_catalog)
