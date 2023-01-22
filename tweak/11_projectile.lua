@@ -52,7 +52,7 @@ local data_raw_capsule_catalog = {
         },
         mod = {
         },
-        mul = settings.startup["x-custom-game-grenade-performance-multiplier"].value,
+        mul = settings.startup["x-custom-game-capsule-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
                 path = { "acceleration" } -- 加速度
@@ -71,7 +71,7 @@ local data_raw_combat_robot_catalog = {
         },
         mod = {
         },
-        mul = settings.startup["x-custom-game-grenade-performance-multiplier"].value,
+        mul = settings.startup["x-custom-game-combat-robot-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
                 path = { "attack_parameters", "ammo_type", "action", "action_delivery", "target_effects", 2, "damage",
@@ -115,7 +115,7 @@ local data_raw_laser_catalog = {
         },
         mod = {
         },
-        mul = settings.startup["x-custom-game-grenade-performance-multiplier"].value,
+        mul = settings.startup["x-custom-game-ammo-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
                 path = { "acceleration" } -- 加速度

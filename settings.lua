@@ -279,6 +279,22 @@ data:extend({
         order = "x-custom-game-111001"
     }, {
         type = "double-setting",
+        name = "x-custom-game-capsule-performance-multiplier", -- 胶囊
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-111002"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-combat-robot-performance-multiplier", -- 战斗机器人
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-111003"
+    }, {
+        type = "double-setting",
         name = "x-custom-game-armor-performance-multiplier", -- 护甲
         setting_type = "startup",
         default_value = 2,
