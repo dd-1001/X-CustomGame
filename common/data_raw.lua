@@ -193,10 +193,9 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                 end
 
                 local old_value = self:get_data_raw_field_value(modify_field_path)
+                local new_value = nil
 
                 if old_value then -- 存在相应字段
-
-                    local new_value
 
                     if single_modify_param.value == nil then -- 不存在指定设置的值
 
@@ -250,13 +249,26 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
 
                     old_value = self:set_data_raw_field_value(modify_field_path, new_value)
 
+                    -- 日志
+                    if type(new_value) == "table" then
+                        new_value = "{ " .. table.concat(new_value, ",") .. " }"
+                    end
+                    if type(old_value) == "table" then
+                        old_value = "{ " .. table.concat(old_value, ",") .. " }"
+                    end
                     log(table.concat(modify_field_path, ".") .. " : " .. old_value .. " ---> " .. new_value)
 
                     ::SET_NEW_VALUE_END::
 
                 elseif single_modify_param.operation == "Extend" then -- 不存在相应字段，进行扩展字段
-                    self:insert_data_raw_field_value(modify_field_path, single_modify_param.value)
-                    log(table.concat(modify_field_path, ".") .. " : insert value ---> " .. single_modify_param.value)
+                    new_value = single_modify_param.value
+                    self:insert_data_raw_field_value(modify_field_path, new_value)
+
+                    -- 日志
+                    if type(new_value) == "table" then
+                        new_value = "{ " .. table.concat(new_value, ",") .. " }"
+                    end
+                    log(table.concat(modify_field_path, ".") .. " : insert value ---> " .. new_value)
                 else -- 不存在相应字段
                     log(table.concat(modify_field_path, ".") .. " is nil")
                 end

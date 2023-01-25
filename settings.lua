@@ -129,7 +129,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-mining-drill-performance-multiplier", -- 采矿-钻探
         setting_type = "startup",
-        default_value = 6,
+        default_value = 3,
         minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-107001"
@@ -137,7 +137,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-furnace-performance-multiplier", -- 熔炉
         setting_type = "startup",
-        default_value = 2,
+        default_value = 3,
         minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-107002"
@@ -145,7 +145,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-assembling-machine-performance-multiplier", -- 装配机
         setting_type = "startup",
-        default_value = 5,
+        default_value = 3,
         minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-107003"
@@ -222,16 +222,14 @@ data:extend({
         maximum_value = 100,
         order = "x-custom-game-109008"
     }, {
-        type = "double-setting",
-        name = "x-custom-game-rocket-silo-performance-multiplier", -- 火箭发射井
+        type = "bool-setting",
+        name = "x-custom-game-module-slot-all-type-allowed-flags", -- 插件槽允许所有类型的插件
         setting_type = "startup",
-        default_value = 10,
-        minimum_value = 0.01,
-        maximum_value = 100,
+        default_value = true,
         order = "x-custom-game-109009"
     }, {
         type = "double-setting",
-        name = "x-custom-game-satellite-performance-multiplier", -- 卫星
+        name = "x-custom-game-rocket-silo-performance-multiplier", -- 火箭发射井
         setting_type = "startup",
         default_value = 10,
         minimum_value = 0.01,
@@ -239,12 +237,20 @@ data:extend({
         order = "x-custom-game-109010"
     }, {
         type = "double-setting",
+        name = "x-custom-game-satellite-performance-multiplier", -- 卫星
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 0.01,
+        maximum_value = 100,
+        order = "x-custom-game-109011"
+    }, {
+        type = "double-setting",
         name = "x-custom-game-radar-performance-multiplier", -- 雷达
         setting_type = "startup",
         default_value = 5,
         minimum_value = 0.01,
         maximum_value = 10,
-        order = "x-custom-game-109011"
+        order = "x-custom-game-109012"
     }, {
         type = "double-setting",
         name = "x-custom-game-gun-performance-multiplier", -- 枪

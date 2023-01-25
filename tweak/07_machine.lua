@@ -3,7 +3,7 @@ local common_data_raw = require("common/data_raw")
 
 local log = common_core.lib_logger("x-custom-game-machine.lua")
 
--- data.raw修改目录
+-- 采矿-钻探
 local data_raw_machine_catalog = {
     ["mining-drill"] = { -- 采矿-钻探
         orig = {
@@ -37,6 +37,10 @@ local data_raw_machine_catalog = {
                 path = { "module_specification", "module_slots" }, -- 模块插槽数
                 value = settings.startup["x-custom-game-number-of-module-slots"].value
             }, {
+                path = { "base_productivity" }, -- 基础产能加成
+                operation = "Extend",
+                value = settings.startup["x-custom-game-mining-drill-performance-multiplier"].value
+            }, {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -67,6 +71,10 @@ local data_raw_machine_catalog = {
                 path = { "module_specification", "module_slots" }, -- 模块插槽数
                 value = settings.startup["x-custom-game-number-of-module-slots"].value
             }, {
+                path = { "base_productivity" }, -- 基础产能加成
+                operation = "Extend",
+                value = settings.startup["x-custom-game-furnace-performance-multiplier"].value
+            }, {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -95,6 +103,10 @@ local data_raw_machine_catalog = {
             }, {
                 path = { "module_specification", "module_slots" }, -- 模块插槽数
                 value = settings.startup["x-custom-game-number-of-module-slots"].value
+            }, {
+                path = { "base_productivity" }, -- 基础产能加成
+                operation = "Extend",
+                value = settings.startup["x-custom-game-assembling-machine-performance-multiplier"].value
             }, {
                 path = { "max_health" } -- 最大血量
             }

@@ -30,6 +30,10 @@ local data_raw_inserter_catalog = {
                 path = { "energy_per_rotation" }, -- 每次旋转耗能量
                 operation = "Div"
             }, {
+                path = { "stack_size_bonus" }, -- 固有的堆栈大小奖励
+                operation = "Extend",
+                value = settings.startup["x-custom-game-inserter-performance-multiplier"].value
+            }, {
                 path = { "extension_speed" } -- 延伸速度
             }, {
                 path = { "rotation_speed" } -- 旋转速度

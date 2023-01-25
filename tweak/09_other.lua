@@ -279,6 +279,91 @@ local data_raw_effectivity_module_catalog = {
     }
 }
 
+-- 插件槽允许所有类型
+local data_raw_module_slot_all_type_allowed_catalog = {
+    ["mining-drill"] = { -- 采矿-钻探
+        orig = {
+            "burner-mining-drill", -- 热能采矿机
+            "electric-mining-drill", -- 电力采矿机
+            "pumpjack" -- 抽油机
+        },
+        modify_parameter = {
+            {
+                path = { "allowed_effects" }, -- 允许插件类型
+                value = { "speed", "productivity", "consumption", "pollution" },
+                operation = "Extend"
+            }
+        }
+    },
+    furnace = { -- 熔炉
+        orig = {
+            "stone-furnace", -- 石炉
+            "steel-furnace", -- 钢炉
+            "electric-furnace" -- 电炉
+        },
+        modify_parameter = {
+            {
+                path = { "allowed_effects" }, -- 允许插件类型
+                value = { "speed", "productivity", "consumption", "pollution" },
+                operation = "Extend"
+            }
+        }
+    },
+    ["assembling-machine"] = { -- 装配机
+        orig = {
+            "assembling-machine-1", -- 组装机1型
+            "assembling-machine-2", -- 组装机2型
+            "assembling-machine-3", -- 组装机3型
+            "centrifuge", -- 离心机
+            "chemical-plant", -- 化工厂
+            "oil-refinery" -- 炼油厂
+        },
+        modify_parameter = {
+            {
+                path = { "allowed_effects" }, -- 允许插件类型
+                value = { "speed", "productivity", "consumption", "pollution" },
+                operation = "Extend"
+            }
+        }
+    },
+    lab = { -- 研究中心
+        orig = {
+            "lab" -- 研究中心
+        },
+        modify_parameter = {
+            {
+                path = { "allowed_effects" }, -- 允许插件类型
+                value = { "speed", "productivity", "consumption", "pollution" },
+                operation = "Extend"
+            }
+        }
+    },
+    beacon = { -- 插件效果分享塔
+        orig = {
+            "beacon" -- 研究中心
+        },
+        modify_parameter = {
+            {
+                path = { "allowed_effects" }, -- 允许插件类型
+                value = { "speed", "productivity", "consumption", "pollution" },
+                operation = "Extend"
+            }
+        }
+    },
+    ["rocket-silo"] = { -- 火箭发射井
+        orig = {
+            "rocket-silo" -- 火箭发射井
+        },
+        modify_parameter = {
+            {
+                path = { "allowed_effects" }, -- 允许插件类型
+                value = { "speed", "productivity", "consumption", "pollution" },
+                operation = "Extend"
+            }
+        }
+    }
+}
+
 -- 开始修改
 log("\n\n\n------------------其他 start------------------n\n\n")
 
@@ -287,5 +372,9 @@ common_data_raw:execute_modify(data_raw_spidertron_equipment_grid_catalog)
 common_data_raw:execute_modify(data_raw_speed_module_catalog)
 common_data_raw:execute_modify(data_raw_productivity_module_catalog)
 common_data_raw:execute_modify(data_raw_effectivity_module_catalog)
+
+if settings.startup["x-custom-game-module-slot-all-type-allowed-flags"].value then
+    common_data_raw:execute_modify(data_raw_module_slot_all_type_allowed_catalog)
+end
 
 log("\n\n\n------------------其他 end------------------n\n\n")
