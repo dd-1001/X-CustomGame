@@ -178,7 +178,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog, is_log)
         -- prot_modify_param = 修改参数：{ orig = { "boiler" }, mod = { }, mul = value, modify_parameter = {}...}
 
         local prot_name_tab = prot_modify_param.orig
-        local is_moded = false
+        local is_moded = true
 
         if prot_name_tab == nil then
             goto JUDG_MOD

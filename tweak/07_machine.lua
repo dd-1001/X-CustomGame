@@ -89,9 +89,9 @@ local data_raw_machine_catalog = {
             "oil-refinery" -- 炼油厂
         },
         mod = {
-            "burner-assembling-machine", -- aai-industry start
-            "fuel-processor",
-            "industrial-furnace", -- aai-industry end
+            -- "burner-assembling-machine", -- aai-industry start
+            -- "fuel-processor",
+            -- "industrial-furnace" -- aai-industry end
         },
         mul = settings.startup["x-custom-game-assembling-machine-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
