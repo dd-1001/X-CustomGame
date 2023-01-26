@@ -393,6 +393,14 @@ data:extend({
         minimum_value = 0.5,
         maximum_value = 100,
         order = "x-custom-game-115004"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-character-inventory-size-multiplier", -- 角色库存
+        setting_type = "startup",
+        default_value = 1.5,
+        minimum_value = 0.5,
+        maximum_value = 10,
+        order = "x-custom-game-115005"
     }
 })
 

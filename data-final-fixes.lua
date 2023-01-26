@@ -16,4 +16,6 @@ require("tweak.13_equipment") -- 装备-------所有装备模块
 require("tweak.14_Defense") -- 防御-------墙、闸门、炮塔
 require("tweak.15_character") -- 角色-------角色属性
 
--- require("tweak.test") -- 测试
+require("tweak.99_do_nothing") -- 适配mod时，做记录用
+
+require("tweak.test") -- 测试

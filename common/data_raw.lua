@@ -159,7 +159,7 @@ function Data_raw:get_data_raw_field_value(field_path)
     return tmp_pos
 end
 
-function Data_raw:execute_modify(data_raw_modifi_catalog)
+function Data_raw:execute_modify(data_raw_modifi_catalog, is_log)
     if data_raw_modifi_catalog then
         self.data_raw_modifi_catalog = data_raw_modifi_catalog
     end
@@ -168,21 +168,44 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
         return false
     end
 
+    -- 是否打印日志
+    if is_log == nil then
+        is_log = true
+    end
+
     for prot_type, prot_modify_param in pairs(self.data_raw_modifi_catalog) do
         -- prot_type = 原型类型："boiler", "generator"...
         -- prot_modify_param = 修改参数：{ orig = { "boiler" }, mod = { }, mul = value, modify_parameter = {}...}
 
         local prot_name_tab = prot_modify_param.orig
         local is_moded = false
-        ::MOD::
+
+        if prot_name_tab == nil then
+            goto JUDG_MOD
+        end
+
+        ::PROCESS_PROT_NAME::
         for _, prot_name in ipairs(prot_name_tab) do
             -- prot_name = 原型名字："boiler"...
 
             -- 做记录
             self:record(prot_type, prot_name)
 
+            -- 没有修改参数则跳过此名字
+            if prot_modify_param.modify_parameter == nil then
+                goto NEXT_PROT_NAME
+            end
+
+            -- mul == 0 or 1 跳过此名字
+            if prot_modify_param.mul == 0 or prot_modify_param.mul == 1 then
+                if is_log then
+                    log(prot_type .. "." .. prot_name .. " : mul = " .. prot_modify_param.mul .. ", Skip this config")
+                end
+
+                goto NEXT_PROT_NAME
+            end
+
             for _, single_modify_param in ipairs(prot_modify_param.modify_parameter) do
-                -- single_modify_param 单个修改参数
 
                 -- 组装修改字段路径
                 local modify_field_path = {}
@@ -202,7 +225,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                         -- 获取原字段单位
                         local field_units
                         if type(old_value) == "string" then
-                            _, field_units = old_value:match('([%-+]?[0-9]*%.?[0-9]+)([yzafpnumcdhkKJMGTPEZY]?)')
+                            _, field_units = old_value:match('([%-+]?[0-9]*%.?[0-9]+)([yzafpnumcdhkKMGTPEZYJW]?)')
                             if string.len(field_units) ~= 0 then
                                 -- 有单位，则获取单位
                                 field_units = string.sub(old_value, -1)
@@ -210,12 +233,6 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                         end
 
                         old_value = self:exponent_number(old_value)
-
-                        -- 如果mul == 0 不做修改
-                        if prot_modify_param.mul == 0 or prot_modify_param.mul == 1 then
-                            log(table.concat(modify_field_path, ".") .. " : mul = 0 or 1, Skip this config")
-                            goto SET_NEW_VALUE_END
-                        end
 
                         -- operation = nil : (默认值)做乘法
                         -- operation = Div : 做除法
@@ -250,44 +267,50 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                     old_value = self:set_data_raw_field_value(modify_field_path, new_value)
 
                     -- 日志
-                    if type(new_value) == "table" then
-                        new_value = "{ " .. table.concat(new_value, ",") .. " }"
+                    if is_log then
+                        if type(new_value) == "table" then
+                            new_value = "{ " .. table.concat(new_value, ",") .. " }"
+                        end
+                        if type(old_value) == "table" then
+                            old_value = "{ " .. table.concat(old_value, ",") .. " }"
+                        end
+                        log(table.concat(modify_field_path, ".") .. " : " .. old_value .. " ---> " .. new_value)
                     end
-                    if type(old_value) == "table" then
-                        old_value = "{ " .. table.concat(old_value, ",") .. " }"
-                    end
-                    log(table.concat(modify_field_path, ".") .. " : " .. old_value .. " ---> " .. new_value)
-
-                    ::SET_NEW_VALUE_END::
 
                 elseif single_modify_param.operation == "Extend" then -- 不存在相应字段，进行扩展字段
                     new_value = single_modify_param.value
                     self:insert_data_raw_field_value(modify_field_path, new_value)
 
                     -- 日志
-                    if type(new_value) == "table" then
-                        new_value = "{ " .. table.concat(new_value, ",") .. " }"
+                    if is_log then
+                        if type(new_value) == "table" then
+                            new_value = "{ " .. table.concat(new_value, ",") .. " }"
+                        end
+                        log(table.concat(modify_field_path, ".") .. " : insert value ---> " .. new_value)
                     end
-                    log(table.concat(modify_field_path, ".") .. " : insert value ---> " .. new_value)
                 else -- 不存在相应字段
-                    log(table.concat(modify_field_path, ".") .. " is nil")
+                    if is_log then
+                        log(table.concat(modify_field_path, ".") .. " is nil")
+                    end
                 end
             end
 
-            -- log(common_core:serialization_table(get_data_raw_field_value({prot_type, prot_name})))
+            ::NEXT_PROT_NAME::
+
         end
 
         -- 判断对mod进行处理
+        ::JUDG_MOD::
         if settings.startup["x-custom-game-effect-mod-flags"].value and
             not is_moded and
             prot_modify_param.mod then
 
-            log("goto MOD lable")
             prot_name_tab = prot_modify_param.mod
             is_moded = true
-            
-            goto MOD
+
+            goto PROCESS_PROT_NAME
         end
+
 
     end
 

@@ -22,8 +22,6 @@ local data_raw_production_catalog = {
                 path = { "energy_source", "emissions_per_minute" }, -- 可选的。一个实体在全能量消耗下每分钟排放的污染。正是实体工具提示中显示的值。
                 operation = "Div" -- Mul 做乘法， Div 做除法
             }, {
-                path = { "energy_source", "fuel_inventory_size" } -- 燃料库存
-            }, {
                 path = { "energy_source", "max_transfer" } -- 最大传输量
             }, {
                 path = { "energy_source", "specific_heat" }, -- 比热容。吸收能量的多少
@@ -42,8 +40,6 @@ local data_raw_production_catalog = {
             "steam-engine", -- 蒸汽机
             "steam-turbine" -- 汽轮机
         },
-        mod = {
-        },
         mul = settings.startup["x-custom-game-generator-performance-multiplier"].value,
         modify_parameter = {
             {
@@ -52,6 +48,22 @@ local data_raw_production_catalog = {
                 path = { "fluid_box", "height" }
             }, {
                 path = { "max_health" } -- 最大血量
+            }
+        }
+    },
+    ["burner-generator"] = { -- aai-industry 燃料发电机
+        mod = {
+            "burner-turbine", -- aai-industry
+        },
+        mul = settings.startup["x-custom-game-generator-performance-multiplier"].value,
+        modify_parameter = {
+            {
+                path = { "burner", "effectivity" }
+            }, {
+                path = { "burner", "emissions_per_minute" },
+                operation = "Div"
+            }, {
+                path = { "max_power_output" }
             }
         }
     },
@@ -99,16 +111,10 @@ local data_raw_production_catalog = {
         orig             = {
             "nuclear-reactor" -- 核反应堆
         },
-        mod              = {
-        },
         mul              = settings.startup["x-custom-game-reactor-performance-multiplier"].value,
         modify_parameter = {
             {
                 path = { "consumption" } -- 能量消耗量
-            }, {
-                path = { "energy_source", "burnt_inventory_size" } -- 燃料废料库存
-            }, {
-                path = { "energy_source", "fuel_inventory_size" } -- 燃料库存
             }, {
                 path = { "energy_source", "effectivity" } -- 效率
             }, {
@@ -155,6 +161,7 @@ local data_raw_transmission_catalog = {
             "substation" -- 广域配电站
         },
         mod = {
+            "small-iron-electric-pole", -- aai-industry
         },
         mul = settings.startup["x-custom-game-electricity-transmission-performance-multiplier"].value,
         modify_parameter = { -- 修改参数

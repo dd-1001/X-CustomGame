@@ -17,7 +17,9 @@ ___
 
 ### 可被影响的Mod（Mods that can be affected）：
 * **aai-containers**
+* **aai-industry**
 * **Advanced-Electric-Revamped-v16**
+* **jetpack**
 
 ___
 

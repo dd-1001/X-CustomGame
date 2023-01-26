@@ -45,6 +45,7 @@ local data_raw_other_catalog = {
             "tank" -- 坦克
         },
         mod = {
+            "shield-projector-barrier", -- shield-projector
         },
         mul = settings.startup["x-custom-game-car-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -85,6 +86,7 @@ local data_raw_other_catalog = {
             "lab" -- 研究中心
         },
         mod = {
+            "burner-lab", -- aai-industry
         },
         mul = settings.startup["x-custom-game-lab-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -318,6 +320,11 @@ local data_raw_module_slot_all_type_allowed_catalog = {
             "chemical-plant", -- 化工厂
             "oil-refinery" -- 炼油厂
         },
+        mod = {
+            "burner-assembling-machine", -- aai-industry start
+            "fuel-processor",
+            "industrial-furnace", -- aai-industry end
+        },
         modify_parameter = {
             {
                 path = { "allowed_effects" }, -- 允许插件类型
@@ -329,6 +336,9 @@ local data_raw_module_slot_all_type_allowed_catalog = {
     lab = { -- 研究中心
         orig = {
             "lab" -- 研究中心
+        },
+        mod = {
+            "burner-lab", -- aai-industry
         },
         modify_parameter = {
             {

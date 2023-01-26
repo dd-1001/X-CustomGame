@@ -10,6 +10,8 @@ local data_raw_wall_catalog = {
             "stone-wall", -- 石墙
         },
         mod = {
+            "concrete-wall", -- aai-industry
+            "steel-wall", -- aai-industry
         },
         mul = settings.startup["x-custom-game-wall-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -97,8 +99,6 @@ local data_raw_ammo_turret_catalog = {
                 path = { "attack_parameters", "cooldown" }, -- 冷却时间
                 operation = "Div"
             }, {
-                path = { "attack_parameters", "projectile_creation_distance" }, -- 抛射物创建距离
-            }, {
                 path = { "attack_parameters", "range" }, -- 最大攻击距离
                 max_value = 36
             }, {
@@ -126,6 +126,7 @@ local data_raw_electric_turret_catalog = {
             "laser-turret", -- 激光炮塔
         },
         mod = {
+            "shield-projector", -- shield-projector
         },
         mul = settings.startup["x-custom-game-electric-turret-performance-multiplier"].value,
         modify_parameter = { -- 修改参数

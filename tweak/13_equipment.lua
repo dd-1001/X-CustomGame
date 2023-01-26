@@ -241,6 +241,10 @@ local data_raw_equipment_shape_size_catalog = {
             "battery-mk2-equipment", -- 电池组模块MK2
         },
         mod = {
+            "jetpack-1", -- jetpack start
+            "jetpack-2",
+            "jetpack-3",
+            "jetpack-4", -- jetpack end
         },
         modify_parameter = { -- 修改参数
             {
