@@ -37,6 +37,7 @@ ___
 * **护甲-------所有护甲**
 * **装备-------所有装备模块**
 * **防御-------墙、闸门、炮塔**
+* **角色-------角色属性**
 
 ###
 ### 未来可用配置：
@@ -61,6 +62,7 @@ ___
 * **Armor-------all of the armor**
 * **Equipment-------All equipment modules**
 * **Defense-------wall, gate, turret**
+* **Character-------Character Properties**
 
 ###
 ### Future available configurations:

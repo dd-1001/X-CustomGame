@@ -14,5 +14,6 @@ require("tweak.11_projectile") -- 投射物-------手雷
 require("tweak.12_armor") -- 护甲-------所有护甲
 require("tweak.13_equipment") -- 装备-------所有装备模块
 require("tweak.14_Defense") -- 防御-------墙、闸门、炮塔
+require("tweak.15_character") -- 角色-------角色属性
 
 -- require("tweak.test") -- 测试

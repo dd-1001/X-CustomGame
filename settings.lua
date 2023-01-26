@@ -361,6 +361,38 @@ data:extend({
         minimum_value = 0.01,
         maximum_value = 10,
         order = "x-custom-game-114005"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-character-distance-multiplier", -- 角色距离相关
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.5,
+        maximum_value = 100,
+        order = "x-custom-game-115001"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-character-mining-speed-multiplier", -- 角色采矿速度
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 0.5,
+        maximum_value = 100,
+        order = "x-custom-game-115002"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-character-running-speed-multiplier", -- 角色奔跑速度
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.5,
+        maximum_value = 100,
+        order = "x-custom-game-115003"
+    }, {
+        type = "double-setting",
+        name = "x-custom-game-character-health-multiplier", -- 角色血量
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 0.5,
+        maximum_value = 100,
+        order = "x-custom-game-115004"
     }
 })
 
