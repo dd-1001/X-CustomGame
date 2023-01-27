@@ -93,8 +93,8 @@ local data_raw_production_catalog = {
             "advanced-accumulator", -- Advanced-Electric-Revamped-v16 start
             "elite-accumulator",
             "ultimate-accumulator", -- Advanced-Electric-Revamped-v16 end
-            "se-space-accumulator",
-            "se-space-accumulator-2",
+            "se-space-accumulator", -- space-exploration
+            "se-space-accumulator-2", -- space-exploration
         },
         mul              = settings.startup["x-custom-game-accumulator-performance-multiplier"].value,
         modify_parameter = {

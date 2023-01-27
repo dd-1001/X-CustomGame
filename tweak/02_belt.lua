@@ -12,6 +12,15 @@ local data_raw_belt_transport_catalog = {
             "express-transport-belt" -- 极速传送带
         },
         mod = {
+            "se-space-transport-belt", -- space-exploration
+            "se-deep-space-transport-belt-black",
+            "se-deep-space-transport-belt-white",
+            "se-deep-space-transport-belt-red",
+            "se-deep-space-transport-belt-magenta",
+            "se-deep-space-transport-belt-blue",
+            "se-deep-space-transport-belt-cyan",
+            "se-deep-space-transport-belt-green",
+            "se-deep-space-transport-belt-yellow" -- space-exploration
         },
         mul = settings.startup["x-custom-game-belt-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -29,6 +38,15 @@ local data_raw_belt_transport_catalog = {
             "express-underground-belt" -- 极速地下传送带
         },
         mod = {
+            "se-space-underground-belt", -- space-exploration
+            "se-deep-space-underground-belt-black",
+            "se-deep-space-underground-belt-white",
+            "se-deep-space-underground-belt-red",
+            "se-deep-space-underground-belt-magenta",
+            "se-deep-space-underground-belt-blue",
+            "se-deep-space-underground-belt-cyan",
+            "se-deep-space-underground-belt-green",
+            "se-deep-space-underground-belt-yellow" -- space-exploration
         },
         mul = settings.startup["x-custom-game-belt-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -49,6 +67,15 @@ local data_raw_belt_transport_catalog = {
             "express-splitter" -- 极速分流器
         },
         mod = {
+            "se-space-splitter", -- space-exploration
+            "se-deep-space-splitter-black",
+            "se-deep-space-splitter-white",
+            "se-deep-space-splitter-red",
+            "se-deep-space-splitter-magenta",
+            "se-deep-space-splitter-blue",
+            "se-deep-space-splitter-cyan",
+            "se-deep-space-splitter-green",
+            "se-deep-space-splitter-yellow" -- space-exploration
         },
         mul = settings.startup["x-custom-game-belt-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
