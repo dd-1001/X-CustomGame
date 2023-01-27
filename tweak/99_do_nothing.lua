@@ -20,6 +20,13 @@ local data_raw_do_nothing_catalog = {
             "big-ship-wreck-1",
             "big-ship-wreck-2",
             "big-ship-wreck-3"
+        },
+        mod = {
+            "aai-big-ship-wreck-1",
+            "aai-big-ship-wreck-2",
+            "aai-big-ship-wreck-3",
+            "aai-medium-ship-wreck-1",
+            "aai-medium-ship-wreck-2"
         }
     },
     fluid = {
@@ -208,7 +215,24 @@ local data_raw_do_nothing_catalog = {
             "jetpack-1",
             "jetpack-2",
             "jetpack-3",
-            "jetpack-4"
+            "jetpack-4",
+            "shield-projector",
+            "sand",
+            "glass",
+            "stone-tablet",
+            "motor",
+            "electric-motor",
+            "small-iron-electric-pole",
+            "concrete-wall",
+            "steel-wall",
+            "burner-lab",
+            "burner-assembling-machine",
+            "burner-turbine",
+            "processed-fuel",
+            "fuel-processor",
+            "industrial-furnace",
+            "aai-signal-sender",
+            "aai-signal-receiver"
         }
     },
     ["burner-generator"] = {
@@ -219,6 +243,27 @@ local data_raw_do_nothing_catalog = {
     projectile = {
         mod = {
             "jetpack-sound"
+        }
+    },
+    car = {
+        mod = {
+            "shield-projector-barrier"
+        }
+    },
+    pump = {
+        mod = {
+            "offshore-pump-output"
+        }
+    },
+    roboport = {
+        mod = {
+            "aai-signal-sender",
+            "aai-signal-receiver"
+        }
+    },
+    ["electric-turret"] = {
+        mod = {
+            "shield-projector"
         }
     }
 }

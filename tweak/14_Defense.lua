@@ -125,9 +125,7 @@ local data_raw_electric_turret_catalog = {
         orig = {
             "laser-turret", -- 激光炮塔
         },
-        mod = {
-            "shield-projector", -- shield-projector
-        },
+
         mul = settings.startup["x-custom-game-electric-turret-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {

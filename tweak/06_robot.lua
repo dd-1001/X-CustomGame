@@ -59,8 +59,6 @@ local data_raw_robot_catalog = {
         orig = {
             "roboport" -- 机器人指令平台
         },
-        mod = {
-        },
         mul = settings.startup["x-custom-game-roboport-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
