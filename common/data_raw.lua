@@ -189,6 +189,9 @@ function Data_raw:execute_modify(data_raw_modifi_catalog, is_log)
             -- prot_name = 原型名字："boiler"...
 
             -- 做记录
+            -- if is_log then
+            --     log("prot_type = " .. prot_type .. ", prot_name = " .. prot_name)
+            -- end
             self:record(prot_type, prot_name)
 
             -- 没有修改参数则跳过此名字
