@@ -10,6 +10,10 @@ local data_raw_other_catalog = {
             "locomotive" -- 内燃机车
         },
         mod = {
+            "bob-locomotive-2", -- boblogistics
+            "bob-locomotive-3",
+            "bob-armoured-locomotive",
+            "bob-armoured-locomotive-2" -- boblogistics
         },
         mul = settings.startup["x-custom-game-locomotive-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -29,6 +33,10 @@ local data_raw_other_catalog = {
             "repair-pack" -- 修理包
         },
         mod = {
+            "repair-pack-2", -- boblogistics
+            "repair-pack-3",
+            "repair-pack-4",
+            "repair-pack-5" -- boblogistics
         },
         mul = settings.startup["x-custom-game-repair-tool-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -285,6 +293,9 @@ local data_raw_module_slot_all_type_allowed_catalog = {
             "burner-mining-drill", -- 热能采矿机
             "electric-mining-drill", -- 电力采矿机
             "pumpjack" -- 抽油机
+        },
+        mod = {
+            "area-mining-drill", -- aai-industry
         },
         modify_parameter = {
             {

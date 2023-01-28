@@ -12,6 +12,7 @@ local data_raw_machine_catalog = {
             "pumpjack" -- 抽油机
         },
         mod = {
+            "area-mining-drill", -- aai-industry
         },
         mul = settings.startup["x-custom-game-mining-drill-performance-multiplier"].value,
         modify_parameter = { -- 修改参数

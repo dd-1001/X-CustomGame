@@ -17,6 +17,7 @@ end
 Data_raw.__call = Data_raw.new
 
 -- 已做修改的类型+名字
+X_CUSTOM_GAME_IS_RECORD = false
 X_CUSTOM_GAME_TAB_RECORD = {}
 
 function Data_raw:record(data_type, data_name)
@@ -169,9 +170,9 @@ function Data_raw:execute_modify(data_raw_modifi_catalog, is_log)
     end
 
     -- 是否打印日志
-    if is_log == nil then
-        is_log = true
-    end
+    -- if is_log == nil then
+    --     is_log = true
+    -- end
 
     for prot_type, prot_modify_param in pairs(self.data_raw_modifi_catalog) do
         -- prot_type = 原型类型："boiler", "generator"...
@@ -192,7 +193,9 @@ function Data_raw:execute_modify(data_raw_modifi_catalog, is_log)
             -- if is_log then
             --     log("prot_type = " .. prot_type .. ", prot_name = " .. prot_name)
             -- end
-            self:record(prot_type, prot_name)
+            if X_CUSTOM_GAME_IS_RECORD then
+                self:record(prot_type, prot_name)
+            end
 
             -- 没有修改参数则跳过此名字
             if prot_modify_param.modify_parameter == nil then

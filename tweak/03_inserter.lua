@@ -16,6 +16,20 @@ local data_raw_inserter_catalog = {
             "filter-inserter" -- 筛选机械臂
         },
         mod = {
+            "steam-inserter", -- boblogistics
+            "express-inserter",
+            "express-filter-inserter",
+            "express-stack-inserter",
+            "express-stack-filter-inserter",
+            "yellow-filter-inserter",
+            "red-inserter",
+            "red-filter-inserter",
+            "red-stack-inserter",
+            "red-stack-filter-inserter",
+            "turbo-inserter",
+            "turbo-filter-inserter",
+            "turbo-stack-inserter",
+            "turbo-stack-filter-inserter" -- boblogistics
         },
         mul = settings.startup["x-custom-game-inserter-performance-multiplier"].value,
         modify_parameter = { -- 修改参数

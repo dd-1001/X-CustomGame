@@ -9,7 +9,7 @@ log("\n\n\n------------------test start------------------n\n\n")
 
 -- log(common_core:serialization_table(data.raw))
 
-log("Moded List: \n" .. common_core:serialization_table(X_CUSTOM_GAME_TAB_RECORD))
+-- log("Moded List: \n" .. common_core:serialization_table(X_CUSTOM_GAME_TAB_RECORD))
 
 -- local tab_record = common_data_raw:check_not_in_record("data.raw")
 local tab_record = common_data_raw:check_not_in_record("record")

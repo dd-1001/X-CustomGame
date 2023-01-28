@@ -10,6 +10,10 @@ local data_raw_pipe_catalog = {
             "pipe" -- 管道
         },
         mod = {
+            "stone-pipe", -- boblogistics
+            "copper-pipe",
+            "steel-pipe",
+            "plastic-pipe" -- boblogistics
         },
         mul = settings.startup["x-custom-game-pipe-system-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -26,6 +30,10 @@ local data_raw_pipe_catalog = {
             "pipe-to-ground" -- 地下管道
         },
         mod = {
+            "stone-pipe-to-ground", -- boblogistics
+            "copper-pipe-to-ground",
+            "steel-pipe-to-ground",
+            "plastic-pipe-to-ground" -- boblogistics
         },
         mul = settings.startup["x-custom-game-pipe-system-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -45,6 +53,9 @@ local data_raw_pipe_catalog = {
             "pump" -- 管道泵
         },
         mod = {
+            "bob-pump-2", -- boblogistics
+            "bob-pump-3",
+            "bob-pump-4" -- boblogistics
         },
         mul = settings.startup["x-custom-game-pipe-system-performance-multiplier"].value,
         modify_parameter = { -- 修改参数

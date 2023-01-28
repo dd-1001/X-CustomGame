@@ -12,6 +12,9 @@ local data_raw_belt_transport_catalog = {
             "express-transport-belt" -- 极速传送带
         },
         mod = {
+            "basic-transport-belt", -- boblogistics
+            "turbo-transport-belt",
+            "ultimate-transport-belt", -- boblogistics
             "se-space-transport-belt", -- space-exploration
             "se-deep-space-transport-belt-black",
             "se-deep-space-transport-belt-white",
@@ -38,6 +41,9 @@ local data_raw_belt_transport_catalog = {
             "express-underground-belt" -- 极速地下传送带
         },
         mod = {
+            "basic-underground-belt", -- boblogistics
+            "turbo-underground-belt",
+            "ultimate-underground-belt", -- boblogistics
             "se-space-underground-belt", -- space-exploration
             "se-deep-space-underground-belt-black",
             "se-deep-space-underground-belt-white",
@@ -67,6 +73,9 @@ local data_raw_belt_transport_catalog = {
             "express-splitter" -- 极速分流器
         },
         mod = {
+            "basic-splitter", -- boblogistics
+            "turbo-splitter",
+            "ultimate-splitter", -- boblogistics
             "se-space-splitter", -- space-exploration
             "se-deep-space-splitter-black",
             "se-deep-space-splitter-white",

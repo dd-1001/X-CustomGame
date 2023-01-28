@@ -35,6 +35,16 @@ local data_raw_container_catalog = {
             "logistic-chest-storage", -- 被动存货箱(黄箱)
         },
         mod = {
+            "logistic-chest-passive-provider-2", -- boblogistics
+            "logistic-chest-active-provider-2",
+            "logistic-chest-storage-2",
+            "logistic-chest-buffer-2",
+            "logistic-chest-requester-2",
+            "logistic-chest-passive-provider-3",
+            "logistic-chest-active-provider-3",
+            "logistic-chest-storage-3",
+            "logistic-chest-buffer-3",
+            "logistic-chest-requester-3", -- boblogistics
             "aai-strongbox-passive-provider", -- aai-containers start
             "aai-strongbox-active-provider",
             "aai-strongbox-storage",
@@ -66,6 +76,16 @@ local data_raw_container_catalog = {
             "storage-tank" -- 储液罐
         },
         mod = {
+            "storage-tank-2", -- boblogistics
+            "storage-tank-3",
+            "storage-tank-4",
+            "bob-storage-tank-all-corners",
+            "bob-storage-tank-all-corners-2",
+            "bob-storage-tank-all-corners-3",
+            "bob-storage-tank-all-corners-4",
+            "bob-valve",
+            "bob-overflow-valve",
+            "bob-topup-valve" -- boblogistics
         },
         mul = settings.startup["x-custom-game-storage-tank-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -81,6 +101,10 @@ local data_raw_container_catalog = {
             "cargo-wagon" -- 货运车厢
         },
         mod = {
+            "bob-cargo-wagon-2", -- boblogistics
+            "bob-cargo-wagon-3",
+            "bob-armoured-cargo-wagon",
+            "bob-armoured-cargo-wagon-2" -- boblogistics
         },
         mul = settings.startup["x-custom-game-locomotive-inventory-size-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -98,6 +122,10 @@ local data_raw_container_catalog = {
             "fluid-wagon" -- 液罐车厢
         },
         mod = {
+            "bob-fluid-wagon-2", -- boblogistics
+            "bob-fluid-wagon-3",
+            "bob-armoured-fluid-wagon",
+            "bob-armoured-fluid-wagon-2" -- boblogistics
         },
         mul = settings.startup["x-custom-game-locomotive-inventory-size-multiplier"].value,
         modify_parameter = { -- 修改参数

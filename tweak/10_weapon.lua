@@ -29,9 +29,11 @@ local data_raw_gun_catalog = {
             }, {
                 path = { "attack_parameters", "movement_slow_down_factor" }, -- 移动减速因子
                 operation = "Div"
-            }, {
-                path = { "attack_parameters", "projectile_creation_distance" } -- 投射物创建距离
-            }, {
+            }, 
+            -- {
+            --     path = { "attack_parameters", "projectile_creation_distance" } -- 投射物创建距离
+            -- }, 
+            {
                 path = { "attack_parameters", "range" } -- 范围
             }, {
                 path = { "attack_parameters", "damage_modifier" } -- 伤害修正
