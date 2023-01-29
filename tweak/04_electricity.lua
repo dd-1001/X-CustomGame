@@ -11,6 +11,17 @@ local data_raw_production_catalog = {
             "heat-exchanger" -- 换热器
         },
         mod = {
+            "boiler-2", -- bobpower
+            "boiler-3",
+            "boiler-4",
+            "boiler-5",
+            "oil-boiler",
+            "oil-boiler-2",
+            "oil-boiler-3",
+            "oil-boiler-4",
+            "heat-exchanger-2",
+            "heat-exchanger-3",
+            "heat-exchanger-4" -- bobpower
         },
         mul = settings.startup["x-custom-game-boiler-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -40,6 +51,17 @@ local data_raw_production_catalog = {
             "steam-engine", -- 蒸汽机
             "steam-turbine" -- 汽轮机
         },
+        mod = {
+            "steam-engine-2", -- bobpower
+            "steam-engine-3",
+            "steam-engine-4",
+            "steam-engine-5",
+            "steam-turbine-2",
+            "steam-turbine-3",
+            "fluid-generator",
+            "fluid-generator-2",
+            "fluid-generator-3" -- bobpower
+        },
         mul = settings.startup["x-custom-game-generator-performance-multiplier"].value,
         modify_parameter = {
             {
@@ -51,8 +73,9 @@ local data_raw_production_catalog = {
             }
         }
     },
-    ["burner-generator"] = { -- aai-industry 燃料发电机
+    ["burner-generator"] = { -- 燃料发电机
         mod = {
+            "bob-burner-generator", -- bobpower
             "burner-turbine", -- aai-industry
         },
         mul = settings.startup["x-custom-game-generator-performance-multiplier"].value,
@@ -72,6 +95,14 @@ local data_raw_production_catalog = {
             "solar-panel" -- 太阳能板
         },
         mod              = {
+            "solar-panel-small", -- bobpower
+            "solar-panel-large",
+            "solar-panel-small-2",
+            "solar-panel-2",
+            "solar-panel-large-2",
+            "solar-panel-small-3",
+            "solar-panel-3",
+            "solar-panel-large-3", -- bobpower
             "advanced-solar", -- Advanced-Electric-Revamped-v16 start
             "elite-solar",
             "ultimate-solar" -- Advanced-Electric-Revamped-v16 end
@@ -90,6 +121,14 @@ local data_raw_production_catalog = {
             "accumulator" -- 蓄电池
         },
         mod              = {
+            "fast-accumulator", -- bobpower
+            "slow-accumulator",
+            "large-accumulator-2",
+            "fast-accumulator-2",
+            "slow-accumulator-2",
+            "large-accumulator-3",
+            "fast-accumulator-3",
+            "slow-accumulator-3", -- bobpower
             "advanced-accumulator", -- Advanced-Electric-Revamped-v16 start
             "elite-accumulator",
             "ultimate-accumulator", -- Advanced-Electric-Revamped-v16 end
@@ -112,6 +151,14 @@ local data_raw_production_catalog = {
     reactor = { -- 核反应堆
         orig             = {
             "nuclear-reactor" -- 核反应堆
+        },
+        mod = {
+            "burner-reactor", -- bobpower
+            "burner-reactor-2",
+            "fluid-reactor",
+            "fluid-reactor-2",
+            "nuclear-reactor-2",
+            "nuclear-reactor-3" -- bobpower
         },
         mul              = settings.startup["x-custom-game-reactor-performance-multiplier"].value,
         modify_parameter = {
@@ -136,6 +183,9 @@ local data_raw_production_catalog = {
             "heat-pipe" -- 核反应堆
         },
         mod              = {
+            "heat-pipe-2", -- bobpower
+            "heat-pipe-3",
+            "heat-pipe-4" -- bobpower
         },
         mul              = settings.startup["x-custom-game-heat-pipe-performance-multiplier"].value,
         modify_parameter = {
@@ -163,6 +213,15 @@ local data_raw_transmission_catalog = {
             "substation" -- 广域配电站
         },
         mod = {
+            "medium-electric-pole-2", -- bobpower
+            "medium-electric-pole-3",
+            "medium-electric-pole-4",
+            "big-electric-pole-2",
+            "big-electric-pole-3",
+            "big-electric-pole-4",
+            "substation-2",
+            "substation-3",
+            "substation-4", -- bobpower
             "small-iron-electric-pole", -- aai-industry
         },
         mul = settings.startup["x-custom-game-electricity-transmission-performance-multiplier"].value,

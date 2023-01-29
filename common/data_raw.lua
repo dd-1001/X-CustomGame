@@ -18,6 +18,7 @@ Data_raw.__call = Data_raw.new
 
 -- 已做修改的类型+名字
 X_CUSTOM_GAME_IS_RECORD = false
+-- X_CUSTOM_GAME_IS_RECORD = true
 X_CUSTOM_GAME_TAB_RECORD = {}
 
 function Data_raw:record(data_type, data_name)
@@ -170,9 +171,9 @@ function Data_raw:execute_modify(data_raw_modifi_catalog, is_log)
     end
 
     -- 是否打印日志
-    -- if is_log == nil then
-    --     is_log = true
-    -- end
+    if is_log == nil then
+        -- is_log = true
+    end
 
     for prot_type, prot_modify_param in pairs(self.data_raw_modifi_catalog) do
         -- prot_type = 原型类型："boiler", "generator"...
@@ -284,6 +285,12 @@ function Data_raw:execute_modify(data_raw_modifi_catalog, is_log)
                     end
 
                 elseif single_modify_param.operation == "Extend" then -- 不存在相应字段，进行扩展字段
+
+                    -- 校验是否存在相应的实体
+                    if self:get_data_raw_field_value({prot_type, prot_name}) == nil then
+                        goto NEXT_MODIFY_PARAM
+                    end
+
                     new_value = single_modify_param.value
                     self:insert_data_raw_field_value(modify_field_path, new_value)
 
@@ -299,6 +306,9 @@ function Data_raw:execute_modify(data_raw_modifi_catalog, is_log)
                         log(table.concat(modify_field_path, ".") .. " is nil")
                     end
                 end
+
+                ::NEXT_MODIFY_PARAM::
+
             end
 
             ::NEXT_PROT_NAME::

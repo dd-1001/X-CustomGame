@@ -19,7 +19,9 @@ ___
 * **aai-containers**
 * **aai-industry**
 * **Advanced-Electric-Revamped-v16**
+* **bobassembly**
 * **boblogistics**
+* **bobpower**
 * **jetpack**
 
 ___

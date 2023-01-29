@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.7
+Date: 2023-1-29
+  Features:
+    - Adapted mod: bobpower
+    - Adapted mod: bobassembly
+    - Fix bugs that may cause errors with this mod
+---------------------------------------------------------------------------------------------------
 Version: 1.1.6
 Date: 2023-1-28
   Features:

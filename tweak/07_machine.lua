@@ -53,6 +53,9 @@ local data_raw_machine_catalog = {
             "electric-furnace" -- 电炉
         },
         mod = {
+            "electric-furnace-2", -- bobassembly
+            "electric-furnace-3",
+            "fluid-furnace" -- bobassembly
         },
         mul = settings.startup["x-custom-game-furnace-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -90,6 +93,21 @@ local data_raw_machine_catalog = {
             "oil-refinery" -- 炼油厂
         },
         mod = {
+            "assembling-machine-4", -- bobassembly
+            "assembling-machine-5",
+            "assembling-machine-6",
+            "electronics-machine-1",
+            "electronics-machine-2",
+            "electronics-machine-3",
+            "steam-assembling-machine",
+            "oil-refinery-2",
+            "oil-refinery-3",
+            "oil-refinery-4",
+            "chemical-plant-2",
+            "chemical-plant-3",
+            "chemical-plant-4",
+            "centrifuge-2",
+            "centrifuge-3", -- bobassembly
             "burner-assembling-machine", -- aai-industry start
             "fuel-processor",
             "industrial-furnace" -- aai-industry end
