@@ -295,6 +295,19 @@ local data_raw_module_slot_all_type_allowed_catalog = {
             "pumpjack" -- 抽油机
         },
         mod = {
+            "bob-mining-drill-1", -- bobmining
+            "bob-mining-drill-2",
+            "bob-mining-drill-3",
+            "bob-mining-drill-4",
+            "bob-area-mining-drill-1",
+            "bob-area-mining-drill-2",
+            "bob-area-mining-drill-3",
+            "bob-area-mining-drill-4",
+            "bob-pumpjack-1",
+            "bob-pumpjack-2",
+            "bob-pumpjack-3",
+            "bob-pumpjack-4",
+            "steam-mining-drill", -- bobmining
             "area-mining-drill", -- aai-industry
         },
         modify_parameter = {
