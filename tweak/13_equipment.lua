@@ -10,6 +10,9 @@ local data_raw_equipment_catalog = {
             "solar-panel-equipment", -- 太阳能模块
         },
         mod = {
+            "big-solar-panel-equipment", -- Krastorio2
+            "imersite-solar-panel-equipment",
+            "big-imersite-solar-panel-equipment" -- Krastorio2
         },
         mul = settings.startup["x-custom-game-equipment-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -23,6 +26,11 @@ local data_raw_equipment_catalog = {
             "fusion-reactor-equipment", -- 聚变堆模块
         },
         mod = {
+            "small-portable-generator", -- Krastorio2
+            "portable-generator",
+            "nuclear-reactor-equipment",
+            "antimatter-reactor-equipment",
+            "cyber-potato-equipment", -- Krastorio2
         },
         mul = settings.startup["x-custom-game-equipment-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -37,6 +45,11 @@ local data_raw_equipment_catalog = {
             "battery-mk2-equipment", -- 电池组模块MK2
         },
         mod = {
+            "battery-mk3-equipment", -- Krastorio2
+            "big-battery-equipment",
+            "big-battery-mk2-equipment",
+            "big-battery-mk3-equipment",
+            "energy-absorber", -- Krastorio2
         },
         mul = settings.startup["x-custom-game-equipment-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -68,6 +81,10 @@ local data_raw_equipment_catalog = {
             "exoskeleton-equipment", -- 外骨骼模块
         },
         mod = {
+            "advanced-exoskeleton-equipment", -- Krastorio2
+            "superior-exoskeleton-equipment",
+            "additional-engine",
+            "advanced-additional-engine" -- Krastorio2
         },
         mul = settings.startup["x-custom-game-equipment-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -76,7 +93,7 @@ local data_raw_equipment_catalog = {
                 operation = "Div"
             }, {
                 path = { "movement_bonus" }, -- 移动加成
-                value = 2 -- 默认值为 0.3
+                max_value = 2-- 默认值为 0.3
             }
         }
     },
@@ -86,6 +103,7 @@ local data_raw_equipment_catalog = {
             "personal-roboport-mk2-equipment", -- 机器人指令模块MK2
         },
         mod = {
+            "vehicle-roboport", -- Krastorio2
         },
         mul = settings.startup["x-custom-game-equipment-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -115,6 +133,7 @@ local data_raw_equipment_catalog = {
             "night-vision-equipment", -- 夜视模块
         },
         mod = {
+            "imersite-night-vision-equipment", -- Krastorio2
         },
         mul = settings.startup["x-custom-game-equipment-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -134,6 +153,8 @@ local data_raw_equipment_catalog = {
             "energy-shield-mk2-equipment", -- 能量盾模块MK2
         },
         mod = {
+            "energy-shield-mk3-equipment", -- Krastorio2
+            "energy-shield-mk4-equipment", -- Krastorio2
         },
         mul = settings.startup["x-custom-game-equipment-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -156,6 +177,13 @@ local data_raw_equipment_catalog = {
             "discharge-defense-equipment", -- 放电防御模块
         },
         mod = {
+            "personal-laser-defense-mk2-equipment", -- Krastorio2
+            "personal-laser-defense-mk3-equipment",
+            "personal-laser-defense-mk4-equipment",
+            "personal-submachine-laser-defense-mk1-equipment",
+            "personal-submachine-laser-defense-mk2-equipment",
+            "personal-submachine-laser-defense-mk3-equipment",
+            "personal-submachine-laser-defense-mk4-equipment" -- Krastorio2
         },
         mul = settings.startup["x-custom-game-equipment-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -208,6 +236,9 @@ local data_raw_equipment_shape_size_catalog = {
             "solar-panel-equipment", -- 太阳能模块
         },
         mod = {
+            "big-solar-panel-equipment", -- Krastorio2
+            "imersite-solar-panel-equipment",
+            "big-imersite-solar-panel-equipment" -- Krastorio2
         },
         modify_parameter = { -- 修改参数
             {
@@ -224,6 +255,11 @@ local data_raw_equipment_shape_size_catalog = {
             "fusion-reactor-equipment", -- 聚变堆模块
         },
         mod = {
+            "small-portable-generator", -- Krastorio2
+            "portable-generator",
+            "nuclear-reactor-equipment",
+            "antimatter-reactor-equipment",
+            "cyber-potato-equipment", -- Krastorio2
         },
         modify_parameter = { -- 修改参数
             {
@@ -241,6 +277,11 @@ local data_raw_equipment_shape_size_catalog = {
             "battery-mk2-equipment", -- 电池组模块MK2
         },
         mod = {
+            "battery-mk3-equipment", -- Krastorio2
+            "big-battery-equipment",
+            "big-battery-mk2-equipment",
+            "big-battery-mk3-equipment",
+            "energy-absorber", -- Krastorio2
             "jetpack-1", -- jetpack start
             "jetpack-2",
             "jetpack-3",
@@ -278,6 +319,10 @@ local data_raw_equipment_shape_size_catalog = {
             "exoskeleton-equipment", -- 外骨骼模块
         },
         mod = {
+            "advanced-exoskeleton-equipment", -- Krastorio2
+            "superior-exoskeleton-equipment",
+            "additional-engine",
+            "advanced-additional-engine" -- Krastorio2
         },
         modify_parameter = { -- 修改参数
             {
@@ -312,6 +357,7 @@ local data_raw_equipment_shape_size_catalog = {
             "night-vision-equipment", -- 夜视模块
         },
         mod = {
+            "imersite-night-vision-equipment", -- Krastorio2
         },
         modify_parameter = { -- 修改参数
             {
@@ -329,6 +375,8 @@ local data_raw_equipment_shape_size_catalog = {
             "energy-shield-mk2-equipment", -- 能量盾模块MK2
         },
         mod = {
+            "energy-shield-mk3-equipment", -- Krastorio2
+            "energy-shield-mk4-equipment", -- Krastorio2
         },
         mul = settings.startup["x-custom-game-equipment-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -347,6 +395,13 @@ local data_raw_equipment_shape_size_catalog = {
             "discharge-defense-equipment", -- 放电防御模块
         },
         mod = {
+            "personal-laser-defense-mk2-equipment", -- Krastorio2
+            "personal-laser-defense-mk3-equipment",
+            "personal-laser-defense-mk4-equipment",
+            "personal-submachine-laser-defense-mk1-equipment",
+            "personal-submachine-laser-defense-mk2-equipment",
+            "personal-submachine-laser-defense-mk3-equipment",
+            "personal-submachine-laser-defense-mk4-equipment" -- Krastorio2
         },
         mul = settings.startup["x-custom-game-equipment-performance-multiplier"].value,
         modify_parameter = { -- 修改参数

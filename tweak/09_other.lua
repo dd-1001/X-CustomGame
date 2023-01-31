@@ -10,6 +10,7 @@ local data_raw_other_catalog = {
             "locomotive" -- 内燃机车
         },
         mod = {
+            "kr-nuclear-locomotive", -- Krastorio2
             "bob-locomotive-2", -- boblogistics
             "bob-locomotive-3",
             "bob-armoured-locomotive",
@@ -52,6 +53,9 @@ local data_raw_other_catalog = {
             "car", -- 汽车
             "tank" -- 坦克
         },
+        mod = {
+            "kr-advanced-tank", -- Krastorio2
+        },
         mul = settings.startup["x-custom-game-car-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
@@ -91,6 +95,8 @@ local data_raw_other_catalog = {
             "lab" -- 研究中心
         },
         mod = {
+            "biusart-lab", -- Krastorio2
+            "kr-singularity-lab", -- Krastorio2
             "burner-lab" -- aai-industry
         },
         mul = settings.startup["x-custom-game-lab-performance-multiplier"].value,
@@ -110,6 +116,7 @@ local data_raw_other_catalog = {
             "beacon" -- 研究中心
         },
         mod = {
+            "kr-singularity-beacon", -- Krastorio2
         },
         mul = settings.startup["x-custom-game-beacon-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -154,6 +161,8 @@ local data_raw_other_catalog = {
             "radar" -- 雷达
         },
         mod = {
+            "kr-sentinel", -- Krastorio2
+            "advanced-radar", -- Krastorio2
         },
         mul = settings.startup["x-custom-game-radar-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -295,6 +304,10 @@ local data_raw_module_slot_all_type_allowed_catalog = {
             "pumpjack" -- 抽油机
         },
         mod = {
+            "kr-mineral-water-pumpjack", -- Krastorio2
+            "kr-quarry-drill",
+            "kr-electric-mining-drill-mk2",
+            "kr-electric-mining-drill-mk3", -- Krastorio2
             "bob-mining-drill-1", -- bobmining
             "bob-mining-drill-2",
             "bob-mining-drill-3",
@@ -325,6 +338,9 @@ local data_raw_module_slot_all_type_allowed_catalog = {
             "electric-furnace" -- 电炉
         },
         mod = {
+            "kr-crusher", -- Krastorio2
+            "kr-fluid-burner",
+            "kr-stabilizer-charging-station", -- Krastorio2
             "electric-furnace-2", -- bobassembly
             "electric-furnace-3",
             "fluid-furnace" -- bobassembly
@@ -347,6 +363,26 @@ local data_raw_module_slot_all_type_allowed_catalog = {
             "oil-refinery" -- 炼油厂
         },
         mod = {
+            "kr-advanced-chemical-plant", -- Krastorio2
+            "kr-advanced-furnace",
+            "kr-atmospheric-condenser",
+            "kr-bio-lab",
+            "kr-electrolysis-plant",
+            "kr-filtration-plant",
+            "kr-fuel-refinery",
+            "kr-fusion-reactor",
+            "kr-greenhouse",
+            "kr-matter-assembler",
+            "kr-matter-plant",
+            "kr-quantum-computer",
+            "kr-research-server",
+            "kr-advanced-assembling-machine",
+            "stone-furnace",
+            "electric-furnace",
+            "electric-furnace-2",
+            "electric-furnace-3",
+            "steel-furnace",
+            "fluid-furnace", -- Krastorio2
             "assembling-machine-4", -- bobassembly
             "assembling-machine-5",
             "assembling-machine-6",
@@ -379,7 +415,9 @@ local data_raw_module_slot_all_type_allowed_catalog = {
             "lab" -- 研究中心
         },
         mod = {
-            -- "burner-lab", -- aai-industry
+            "biusart-lab", -- Krastorio2
+            "kr-singularity-lab", -- Krastorio2
+            "burner-lab", -- aai-industry
         },
         modify_parameter = {
             {
@@ -392,6 +430,9 @@ local data_raw_module_slot_all_type_allowed_catalog = {
     beacon = { -- 插件效果分享塔
         orig = {
             "beacon" -- 研究中心
+        },
+        mod = {
+            "kr-singularity-beacon", -- Krastorio2
         },
         modify_parameter = {
             {

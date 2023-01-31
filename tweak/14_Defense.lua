@@ -85,13 +85,11 @@ local data_raw_wall_catalog = {
     }
 }
 
--- 机枪炮塔
-local data_raw_ammo_turret_catalog = {
-    ["ammo-turret"] = { -- 机枪炮塔
+-- 机枪炮塔orig
+local data_raw_ammo_turret_orig_catalog = {
+    ["ammo-turret"] = { -- 机枪炮塔orig
         orig = {
             "gun-turret", -- 机枪炮塔
-        },
-        mod = {
         },
         mul = settings.startup["x-custom-game-ammo-turret-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -119,13 +117,45 @@ local data_raw_ammo_turret_catalog = {
     }
 }
 
--- 激光炮塔
-local data_raw_electric_turret_catalog = {
-    ["electric-turret"] = { -- 电炮塔
+-- 机枪炮塔mod
+local data_raw_ammo_turret_mod_catalog = {
+    ["ammo-turret"] = { -- 机枪炮塔mod
+        mod = {
+            "kr-railgun-turret", -- Krastorio2
+            "kr-rocket-turret" -- Krastorio2
+        },
+        mul = settings.startup["x-custom-game-ammo-turret-performance-multiplier"].value,
+        modify_parameter = { -- 修改参数
+            {
+                path = { "attack_parameters", "cooldown" }, -- 冷却时间
+                operation = "Div"
+            }, {
+                path = { "attack_parameters", "range" }, -- 最大攻击距离
+                max_value = 100
+            }, {
+                path = { "attacking_speed" }, -- 攻击速度
+            }, {
+                path = { "automated_ammo_count" }, -- 自动弹药数量
+            }, {
+                path = { "call_for_help_radius" }, -- 唤醒半径
+                max_value = 72
+            }, {
+                path = { "max_health" }, -- 最大生命值
+            }, {
+                path = { "preparing_speed" }, -- 准备速度
+            }, {
+                path = { "rotation_speed" }, -- 旋转速度
+            }
+        }
+    }
+}
+
+-- 电炮塔orig
+local data_raw_electric_turret_orig_catalog = {
+    ["electric-turret"] = { -- 电炮塔orig
         orig = {
             "laser-turret", -- 激光炮塔
         },
-
         mul = settings.startup["x-custom-game-electric-turret-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
@@ -146,6 +176,52 @@ local data_raw_electric_turret_catalog = {
             }, {
                 path = { "attack_parameters", "range" }, -- 最大攻击距离
                 max_value = 36
+            }, {
+                path = { "call_for_help_radius" }, -- 唤醒半径
+                max_value = 72
+            }, {
+                path = { "energy_source", "buffer_capacity" }, -- 电池容量
+            }, {
+                path = { "energy_source", "input_flow_limit" }, -- 输入限制
+            }, {
+                path = { "folding_speed" }, -- 最大生命值
+            }, {
+                path = { "max_health" }, -- 最大生命值
+            }, {
+                path = { "preparing_speed" }, -- 准备速度
+            }, {
+                path = { "rotation_speed" }, -- 旋转速度
+            }
+        }
+    }
+}
+
+-- 电炮塔mod
+local data_raw_electric_turret_mod_catalog = {
+    ["electric-turret"] = { -- 电炮塔mod
+        mod = {
+            "kr-laser-artillery-turret", -- Krastorio2
+        },
+        mul = settings.startup["x-custom-game-electric-turret-performance-multiplier"].value,
+        modify_parameter = { -- 修改参数
+            {
+                path = { "attack_parameters", "ammo_type", "action", "action_delivery", "duration" }, -- 持续时间
+                operation = "Div"
+            }, {
+                path = { "attack_parameters", "ammo_type", "action", "action_delivery", "max_length" }, -- 最大距离
+                max_value = 360
+            }, {
+                path = { "attack_parameters", "ammo_type", "energy_consumption" }, -- 能量消耗
+                operation = "Div",
+                min_value = 20000
+            }, {
+                path = { "attack_parameters", "cooldown" }, -- 冷却时间
+                operation = "Div"
+            }, {
+                path = { "attack_parameters", "damage_modifier" }, -- 伤害修正
+            }, {
+                path = { "attack_parameters", "range" }, -- 最大攻击距离
+                max_value = 360
             }, {
                 path = { "call_for_help_radius" }, -- 唤醒半径
                 max_value = 72
@@ -259,8 +335,10 @@ local data_raw_artillery_turret_catalog = {
 log("\n\n\n------------------防御 start------------------n\n\n")
 
 common_data_raw:execute_modify(data_raw_wall_catalog)
-common_data_raw:execute_modify(data_raw_ammo_turret_catalog)
-common_data_raw:execute_modify(data_raw_electric_turret_catalog)
+common_data_raw:execute_modify(data_raw_ammo_turret_orig_catalog)
+common_data_raw:execute_modify(data_raw_ammo_turret_mod_catalog)
+common_data_raw:execute_modify(data_raw_electric_turret_orig_catalog)
+common_data_raw:execute_modify(data_raw_electric_turret_mod_catalog)
 common_data_raw:execute_modify(data_raw_fluid_turret_catalog)
 common_data_raw:execute_modify(data_raw_artillery_turret_catalog)
 

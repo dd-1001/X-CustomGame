@@ -52,6 +52,8 @@ local data_raw_production_catalog = {
             "steam-turbine" -- 汽轮机
         },
         mod = {
+            "kr-advanced-steam-turbine", -- Krastorio2
+            "kr-gas-power-station", -- Krastorio2
             "steam-engine-2", -- bobpower
             "steam-engine-3",
             "steam-engine-4",
@@ -75,6 +77,7 @@ local data_raw_production_catalog = {
     },
     ["burner-generator"] = { -- 燃料发电机
         mod = {
+            "kr-antimatter-reactor", -- Krastorio2
             "bob-burner-generator", -- bobpower
             "burner-turbine", -- aai-industry
         },
@@ -95,6 +98,7 @@ local data_raw_production_catalog = {
             "solar-panel" -- 太阳能板
         },
         mod              = {
+            "kr-advanced-solar-panel", -- Krastorio2
             "solar-panel-small", -- bobpower
             "solar-panel-large",
             "solar-panel-small-2",
@@ -121,6 +125,7 @@ local data_raw_production_catalog = {
             "accumulator" -- 蓄电池
         },
         mod              = {
+            "kr-energy-storage", -- Krastorio2
             "fast-accumulator", -- bobpower
             "slow-accumulator",
             "large-accumulator-2",
@@ -152,7 +157,7 @@ local data_raw_production_catalog = {
         orig             = {
             "nuclear-reactor" -- 核反应堆
         },
-        mod = {
+        mod              = {
             "burner-reactor", -- bobpower
             "burner-reactor-2",
             "fluid-reactor",
@@ -213,6 +218,7 @@ local data_raw_transmission_catalog = {
             "substation" -- 广域配电站
         },
         mod = {
+            "kr-substation-mk2", -- Krastorio2
             "medium-electric-pole-2", -- bobpower
             "medium-electric-pole-3",
             "medium-electric-pole-4",

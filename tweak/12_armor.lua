@@ -14,6 +14,8 @@ local data_raw_armor_catalog = {
             "power-armor-mk2", -- 能量装甲MK2
         },
         mod = {
+            "power-armor-mk3", -- Krastorio2
+            "power-armor-mk4" -- Krastorio2
         },
         mul = settings.startup["x-custom-game-armor-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -48,9 +50,16 @@ local data_raw_equipment_grid_catalog = {
             "small-equipment-grid", -- 小型装备网格
             "medium-equipment-grid", -- 中型装备网格
             "large-equipment-grid", -- 大型装备网格
-            -- "spidertron-equipment-grid", -- 蜘蛛机甲装备网格
         },
         mod = {
+            "mk3-armor-grid", -- Krastorio2
+            "mk4-armor-grid",
+            "kr-car-grid",
+            "kr-tank-grid",
+            "kr-tank-grid-2",
+            "kr-locomotive-grid",
+            "kr-wagons-grid",
+            "kr-spidertron-equipment-grid" -- Krastorio2
         },
         mul = settings.startup["x-custom-game-armor-performance-multiplier"].value,
         modify_parameter = { -- 修改参数

@@ -12,6 +12,8 @@ local data_raw_container_catalog = {
             "steel-chest", -- 钢制箱
         },
         mod = {
+            "kr-medium-container", -- Krastorio2
+            "kr-big-container", -- Krastorio2
             "aai-strongbox", -- aai-containers start
             "aai-storehouse",
             "aai-warehouse", -- aai-containers end
@@ -76,6 +78,8 @@ local data_raw_container_catalog = {
             "storage-tank" -- 储液罐
         },
         mod = {
+            "kr-fluid-storage-1", -- Krastorio2
+            "kr-fluid-storage-2", -- Krastorio2
             "storage-tank-2", -- boblogistics
             "storage-tank-3",
             "storage-tank-4",

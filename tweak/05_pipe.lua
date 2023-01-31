@@ -10,6 +10,7 @@ local data_raw_pipe_catalog = {
             "pipe" -- 管道
         },
         mod = {
+            "kr-steel-pipe", -- Krastorio2
             "stone-pipe", -- boblogistics
             "copper-pipe",
             "steel-pipe",
@@ -30,6 +31,7 @@ local data_raw_pipe_catalog = {
             "pipe-to-ground" -- 地下管道
         },
         mod = {
+            "kr-steel-pipe-to-ground", -- Krastorio2
             "stone-pipe-to-ground", -- boblogistics
             "copper-pipe-to-ground",
             "steel-pipe-to-ground",
@@ -53,6 +55,7 @@ local data_raw_pipe_catalog = {
             "pump" -- 管道泵
         },
         mod = {
+            "kr-steel-pump", -- Krastorio2
             "bob-pump-2", -- boblogistics
             "bob-pump-3",
             "bob-pump-4" -- boblogistics

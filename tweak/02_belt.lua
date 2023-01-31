@@ -12,6 +12,8 @@ local data_raw_belt_transport_catalog = {
             "express-transport-belt" -- 极速传送带
         },
         mod = {
+            "kr-advanced-transport-belt", -- Krastorio2
+            "kr-superior-transport-belt", -- Krastorio2
             "basic-transport-belt", -- boblogistics
             "turbo-transport-belt",
             "ultimate-transport-belt", -- boblogistics
@@ -41,6 +43,8 @@ local data_raw_belt_transport_catalog = {
             "express-underground-belt" -- 极速地下传送带
         },
         mod = {
+            "kr-advanced-underground-belt", -- Krastorio2
+            "kr-superior-underground-belt", -- Krastorio2
             "basic-underground-belt", -- boblogistics
             "turbo-underground-belt",
             "ultimate-underground-belt", -- boblogistics
@@ -73,6 +77,8 @@ local data_raw_belt_transport_catalog = {
             "express-splitter" -- 极速分流器
         },
         mod = {
+            "kr-advanced-splitter", -- Krastorio2
+            "kr-superior-splitter", -- Krastorio2
             "basic-splitter", -- boblogistics
             "turbo-splitter",
             "ultimate-splitter", -- boblogistics

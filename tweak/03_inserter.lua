@@ -16,6 +16,10 @@ local data_raw_inserter_catalog = {
             "filter-inserter" -- 筛选机械臂
         },
         mod = {
+            "kr-superior-inserter", -- Krastorio2
+            "kr-superior-long-inserter",
+            "kr-superior-filter-inserter",
+            "kr-superior-long-filter-inserter", -- Krastorio2
             "steam-inserter", -- boblogistics
             "express-inserter",
             "express-filter-inserter",

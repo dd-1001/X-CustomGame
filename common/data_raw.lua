@@ -17,8 +17,8 @@ end
 Data_raw.__call = Data_raw.new
 
 -- 已做修改的类型+名字
--- X_CUSTOM_GAME_IS_RECORD = false
-X_CUSTOM_GAME_IS_RECORD = true
+X_CUSTOM_GAME_IS_RECORD = false
+-- X_CUSTOM_GAME_IS_RECORD = true
 X_CUSTOM_GAME_TAB_RECORD = {}
 
 function Data_raw:record(data_type, data_name)
@@ -172,7 +172,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog, is_log)
 
     -- 是否打印日志
     if is_log == nil then
-        is_log = true
+        -- is_log = true
     end
 
     for prot_type, prot_modify_param in pairs(self.data_raw_modifi_catalog) do

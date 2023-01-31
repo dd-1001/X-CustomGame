@@ -5,7 +5,7 @@ local log = common_core.lib_logger("x-custom-game-projectile.lua")
 
 -- 手雷
 local data_raw_grenade_catalog = {
-    projectile = { -- 抛射物
+    projectile = { -- 雷
         orig = {
             "grenade", -- 标准手雷
             "cluster-grenade", -- 集束手雷
@@ -42,7 +42,7 @@ local data_raw_grenade_catalog = {
 
 -- 胶囊（需要进一步修改烟雾伤害["trivial-smoke"]["poison-capsule-smoke"]）
 local data_raw_capsule_catalog = {
-    projectile = { -- 抛射物
+    projectile = { -- 胶囊
         orig = {
             "poison-capsule", -- 剧毒胶囊
             "slowdown-capsule", -- 减速胶囊
@@ -108,7 +108,7 @@ local data_raw_combat_robot_catalog = {
 
 -- 激光
 local data_raw_laser_catalog = {
-    projectile = { -- 抛射物
+    projectile = { -- 激光
         orig = {
             "laser",
             "blue-laser"

@@ -21,8 +21,10 @@ ___
 * **Advanced-Electric-Revamped-v16**
 * **bobassembly**
 * **boblogistics**
+* **bobmining**
 * **bobpower**
 * **jetpack**
+* **Krastorio2**
 
 ___
 

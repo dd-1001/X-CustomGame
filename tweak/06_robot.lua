@@ -68,6 +68,14 @@ local data_raw_robot_catalog = {
             "roboport" -- 机器人指令平台
         },
         mod = {
+            "kr-small-roboport", -- Krastorio2
+            "kr-small-roboport-logistic-mode",
+            "kr-small-roboport-construction-mode",
+            "kr-large-roboport",
+            "kr-large-roboport-logistic-mode",
+            "kr-large-roboport-construction-mode",
+            "roboport-logistic-mode",
+            "roboport-construction-mode", -- Krastorio2
             "bob-roboport-2", -- boblogistics
             "bob-roboport-3",
             "bob-roboport-4",
