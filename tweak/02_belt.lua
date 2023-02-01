@@ -100,6 +100,52 @@ local data_raw_belt_transport_catalog = {
                 path = { "max_health" } -- 最大血量
             }
         }
+    },
+    loader = { -- 装载机
+        orig = {
+            "express-loader",
+            "fast-loader",
+            "loader"
+        },
+        mod = {
+
+        },
+        mul = settings.startup["x-custom-game-belt-performance-multiplier"].value,
+        modify_parameter = {
+            {
+                path = { "speed" } -- 分流器的速度：speed × 480 = Items/second
+            }, {
+                path = { "max_health" } -- 最大血量
+            }
+        }
+    },
+    ["loader-1x1"] = { -- 装载机1*1
+        orig = {
+            "loader-1x1",
+        },
+        mod = {
+            "miniloader-loader", -- miniloader
+            "filter-miniloader-loader",
+            "fast-miniloader-loader",
+            "fast-filter-miniloader-loader",
+            "express-miniloader-loader",
+            "express-filter-miniloader-loader",
+            "basic-miniloader-loader",
+            "basic-filter-miniloader-loader",
+            "turbo-miniloader-loader",
+            "turbo-filter-miniloader-loader",
+            "ultimate-miniloader-loader",
+            "ultimate-filter-miniloader-loader",
+            "chute-miniloader-loader", -- miniloader
+        },
+        mul = settings.startup["x-custom-game-belt-performance-multiplier"].value,
+        modify_parameter = {
+            {
+                path = { "speed" } -- 分流器的速度：speed × 480 = Items/second
+            }, {
+                path = { "max_health" } -- 最大血量
+            }
+        }
     }
 }
 

@@ -17,7 +17,7 @@ local tab_record = common_data_raw:check_not_in_record("record")
 log("Unmod List: \n" .. common_core:serialization_table(tab_record))
 
 
--- log(common_core:serialization_table(data.raw["roboport"]))
+-- log(common_core:serialization_table(data.raw["loader"]))
 
 
 log("\n\n\n------------------test end------------------n\n\n")

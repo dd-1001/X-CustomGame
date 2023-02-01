@@ -17,8 +17,8 @@ end
 Data_raw.__call = Data_raw.new
 
 -- 已做修改的类型+名字
-X_CUSTOM_GAME_IS_RECORD = false
--- X_CUSTOM_GAME_IS_RECORD = true
+-- X_CUSTOM_GAME_IS_RECORD = false
+X_CUSTOM_GAME_IS_RECORD = true
 X_CUSTOM_GAME_TAB_RECORD = {}
 
 function Data_raw:record(data_type, data_name)

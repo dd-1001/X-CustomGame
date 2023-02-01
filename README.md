@@ -31,7 +31,7 @@ ___
 ### 可用的配置：  
 ###
 * **容器-------箱子、储液罐、物流箱子、货运车厢、液罐车厢**
-* **传送带-------传送带、地下传送带、分流器**
+* **传送带-------传送带、地下传送带、分流器、装卸机**
 * **机械臂-------所有机械臂**
 * **电力-------锅炉、发电机、太阳能板、蓄电池、核反应堆、热管、电线杆**
 * **管道-------管道、地下管道、管道泵、供水泵**
@@ -56,7 +56,7 @@ ___
 ### Available configurations:
 ###
 * **Container-------container, storage-tank, logistic-container, cargo-wagon, fluid-wagon**
-* **Belt-------transport-belt, underground-belt, splitter**
+* **Belt-------transport-belt, underground-belt, splitter, loader**
 * **Inserter-------all of the inserter**
 * **Electricity-------boiler, generator, solar-panel, accumulator, reactor, heat-pipe**
 * **Pipe-------pipe, pipe-to-ground, pump, offshore-pump**

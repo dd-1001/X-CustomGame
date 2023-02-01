@@ -22,6 +22,9 @@ local data_raw_do_nothing_catalog = {
             "big-ship-wreck-3"
         },
         mod = {
+            "miniloader-target-chest",
+            "warehouse-basic",
+            "storehouse-basic",
             "kr-crash-site-chest-1",
             "kr-crash-site-chest-2",
             "kr-shelter-container",
@@ -34,6 +37,20 @@ local data_raw_do_nothing_catalog = {
             "logistic-robot-dropped-cargo"
         }
     },
+    ["logistic-container"] = {
+        mod = {
+            "storehouse-active-provider",
+            "storehouse-passive-provider",
+            "storehouse-storage",
+            "storehouse-buffer",
+            "storehouse-requester",
+            "warehouse-active-provider",
+            "warehouse-passive-provider",
+            "warehouse-storage",
+            "warehouse-buffer",
+            "warehouse-requester",
+        }
+    },
     fluid = {
         orig = {
             "fluid-unknown",
@@ -43,6 +60,10 @@ local data_raw_do_nothing_catalog = {
             "lubricant"
         },
         mod = {
+            "ltn-cargo-warning",
+            "ltn-cargo-alert",
+            "ltn-depot-warning",
+            "ltn-depot-empty",
             "matter",
             "mineral-water",
             "dirty-water",
@@ -207,6 +228,37 @@ local data_raw_do_nothing_catalog = {
             "lubricant-barrel"
         },
         mod = {
+            "miniloader",
+            "filter-miniloader",
+            "fast-miniloader",
+            "fast-filter-miniloader",
+            "express-miniloader",
+            "express-filter-miniloader",
+            "basic-miniloader",
+            "basic-filter-miniloader",
+            "turbo-miniloader",
+            "turbo-filter-miniloader",
+            "ultimate-miniloader",
+            "ultimate-filter-miniloader",
+            "chute-miniloader",
+            "warehouse-basic",
+            "warehouse-passive-provider",
+            "warehouse-storage",
+            "warehouse-active-provider",
+            "warehouse-requester",
+            "warehouse-buffer",
+            "storehouse-basic",
+            "storehouse-passive-provider",
+            "storehouse-storage",
+            "storehouse-active-provider",
+            "storehouse-requester",
+            "storehouse-buffer",
+            "linked-storehouse",
+            "linked-warehouse",
+            "logistic-train-stop",
+            "logistic-train-stop-input",
+            "logistic-train-stop-output",
+            "logistic-train-stop-lamp-control",
             "kr-crash-site-lab-repaired",
             "kr-crash-site-assembling-machine-1-repaired",
             "kr-crash-site-assembling-machine-2-repaired",
@@ -1063,6 +1115,14 @@ local data_raw_do_nothing_catalog = {
     },
     projectile = {
         mod = {
+            "acid-stream-spitter-small-blockable",
+            "acid-stream-spitter-medium-blockable",
+            "acid-stream-spitter-big-blockable",
+            "acid-stream-spitter-behemoth-blockable",
+            "acid-stream-worm-small-blockable",
+            "acid-stream-worm-medium-blockable",
+            "acid-stream-worm-big-blockable",
+            "acid-stream-worm-behemoth-blockable",
             "heavy-explosive-rocket-projectile", -- Krastorio2
             "antimatter-bomb-wave-spawns-matter-shockwave-explosion",
             "antimatter-bomb-wave-spawns-fire-smoke-explosion",
