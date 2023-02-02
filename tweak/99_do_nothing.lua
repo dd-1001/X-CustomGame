@@ -228,6 +228,16 @@ local data_raw_do_nothing_catalog = {
             "lubricant-barrel"
         },
         mod = {
+            "pipe-junction",
+            "pipe-elbow",
+            "pipe-straight",
+            "check-valve",
+            "overflow-valve",
+            "underflow-valve",
+            "kr-advanced-miniloader",
+            "kr-advanced-filter-miniloader",
+            "kr-superior-miniloader",
+            "kr-superior-filter-miniloader",
             "miniloader",
             "filter-miniloader",
             "fast-miniloader",

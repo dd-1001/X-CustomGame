@@ -23,8 +23,10 @@ ___
 * **boblogistics**
 * **bobmining**
 * **bobpower**
+* **Flow Control**
 * **jetpack**
 * **Krastorio2**
+* **miniloader**
 
 ___
 

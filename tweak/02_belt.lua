@@ -137,6 +137,10 @@ local data_raw_belt_transport_catalog = {
             "ultimate-miniloader-loader",
             "ultimate-filter-miniloader-loader",
             "chute-miniloader-loader", -- miniloader
+            "kr-advanced-miniloader-loader", -- Krastorio2
+            "kr-advanced-filter-miniloader-loader",
+            "kr-superior-miniloader-loader",
+            "kr-superior-filter-miniloader-loader", -- Krastorio2
         },
         mul = settings.startup["x-custom-game-belt-performance-multiplier"].value,
         modify_parameter = {

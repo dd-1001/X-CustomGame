@@ -32,7 +32,11 @@ local data_raw_inserter_catalog = {
             "kr-superior-inserter", -- Krastorio2
             "kr-superior-long-inserter",
             "kr-superior-filter-inserter",
-            "kr-superior-long-filter-inserter", -- Krastorio2
+            "kr-superior-long-filter-inserter",
+            "kr-advanced-miniloader-inserter",
+            "kr-advanced-filter-miniloader-inserter",
+            "kr-superior-miniloader-inserter",
+            "kr-superior-filter-miniloader-inserter", -- Krastorio2
             "steam-inserter", -- boblogistics
             "express-inserter",
             "express-filter-inserter",

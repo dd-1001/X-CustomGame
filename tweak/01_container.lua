@@ -78,6 +78,12 @@ local data_raw_container_catalog = {
             "storage-tank" -- 储液罐
         },
         mod = {
+            "check-valve", -- Flow Control
+            "overflow-valve",
+            "underflow-valve",
+            "pipe-elbow",
+            "pipe-junction",
+            "pipe-straight", -- Flow Control
             "kr-fluid-storage-1", -- Krastorio2
             "kr-fluid-storage-2", -- Krastorio2
             "storage-tank-2", -- boblogistics

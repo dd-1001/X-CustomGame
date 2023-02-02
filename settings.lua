@@ -3,7 +3,7 @@ data:extend({
         type = "bool-setting",
         name = "x-custom-game-effect-mod-flags",
         setting_type = "startup",
-        default_value = false,
+        default_value = true,
         order = "1001"
     }, {
         type = "double-setting",
