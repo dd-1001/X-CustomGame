@@ -111,6 +111,8 @@ local data_raw_container_catalog = {
             "cargo-wagon" -- 货运车厢
         },
         mod = {
+            "cargo-wagon-immortal-mk2", -- fast_trans
+            "cargo-wagon-immortal-mk3", -- fast_trans
             "bob-cargo-wagon-2", -- boblogistics
             "bob-cargo-wagon-3",
             "bob-armoured-cargo-wagon",
@@ -132,6 +134,8 @@ local data_raw_container_catalog = {
             "fluid-wagon" -- 液罐车厢
         },
         mod = {
+            "fluid-wagon-immortal-mk2", -- fast_trans
+            "fluid-wagon-immortal-mk3", -- fast_trans
             "bob-fluid-wagon-2", -- boblogistics
             "bob-fluid-wagon-3",
             "bob-armoured-fluid-wagon",

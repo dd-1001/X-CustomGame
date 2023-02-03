@@ -31,12 +31,12 @@ local data_raw_production_catalog = {
                 path = { "energy_source", "effectivity" } -- 可选。1意味着100%的效果。必须大于0。 能量输出的乘数。
             }, {
                 path = { "energy_source", "emissions_per_minute" }, -- 可选的。一个实体在全能量消耗下每分钟排放的污染。正是实体工具提示中显示的值。
-                operation = "Div" -- Mul 做乘法， Div 做除法
+                operation = "Division" -- Mul 做乘法， Division 做除法
             }, {
                 path = { "energy_source", "max_transfer" } -- 最大传输量
             }, {
                 path = { "energy_source", "specific_heat" }, -- 比热容。吸收能量的多少
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "fluid_box", "height" } -- 必须大于0。液箱的总液体容量为base_area × height × 100
             }, {
@@ -87,7 +87,7 @@ local data_raw_production_catalog = {
                 path = { "burner", "effectivity" }
             }, {
                 path = { "burner", "emissions_per_minute" },
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "max_power_output" }
             }
@@ -177,7 +177,7 @@ local data_raw_production_catalog = {
                 path = { "heat_buffer", "max_transfer" } -- 最大传输量
             }, {
                 path = { "heat_buffer", "specific_heat" }, -- 比热容
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "max_health" } -- 最大血量
             }
@@ -200,7 +200,7 @@ local data_raw_production_catalog = {
                 path = { "heat_buffer", "max_transfer" } -- 最大传输量
             }, {
                 path = { "heat_buffer", "specific_heat" }, -- 比热容
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "max_health" } -- 最大血量
             }

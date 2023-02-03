@@ -245,7 +245,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog, is_log)
                         -- operation = Div : 做除法
                         if single_modify_param.operation == nil then
                             new_value = old_value * prot_modify_param.mul
-                        elseif single_modify_param.operation == "Div" then
+                        elseif single_modify_param.operation == "Division" then
                             new_value = old_value / prot_modify_param.mul
                         end
 

@@ -37,12 +37,12 @@ local data_raw_machine_catalog = {
                 path = { "energy_source", "effectivity" } -- 能源利用效率
             }, {
                 path = { "energy_source", "emissions_per_minute" }, -- 每分钟产生污染量
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "energy_source", "fuel_inventory_size" } -- 燃料库存
             }, {
                 path = { "energy_usage" }, -- 能源消耗量
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "mining_speed" } -- 采矿速度
             }, {
@@ -70,6 +70,10 @@ local data_raw_machine_catalog = {
             "electric-furnace" -- 电炉
         },
         mod = {
+            "flare-stack", -- Flare Stack
+            "incinerator",
+            "electric-incinerator",
+            "vent-stack", -- Flare Stack
             "kr-crusher", -- Krastorio2
             "kr-fluid-burner",
             "kr-stabilizer-charging-station", -- Krastorio2
@@ -85,12 +89,12 @@ local data_raw_machine_catalog = {
                 path = { "energy_source", "effectivity" } -- 能源使用效率
             }, {
                 path = { "energy_source", "emissions_per_minute" }, -- 每分钟产生污染量
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "energy_source", "fuel_inventory_size" } -- 燃料库存
             }, {
                 path = { "energy_usage" }, -- 能源消耗量
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "module_specification", "module_slots" }, -- 模块插槽数
                 value = settings.startup["x-custom-game-number-of-module-slots"].value
@@ -158,10 +162,10 @@ local data_raw_machine_catalog = {
                 path = { "crafting_speed" } -- 制造速度
             }, {
                 path = { "energy_source", "emissions_per_minute" }, -- 每分钟产生污染量
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "energy_usage" }, -- 能源消耗量
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "module_specification", "module_slots" }, -- 模块插槽数
                 value = settings.startup["x-custom-game-number-of-module-slots"].value

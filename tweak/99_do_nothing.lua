@@ -39,6 +39,7 @@ local data_raw_do_nothing_catalog = {
     },
     ["logistic-container"] = {
         mod = {
+            "module_inserter_pickup",
             "storehouse-active-provider",
             "storehouse-passive-provider",
             "storehouse-storage",
@@ -228,6 +229,34 @@ local data_raw_do_nothing_catalog = {
             "lubricant-barrel"
         },
         mod = {
+            "hnt-search-light",
+            "big-artillery-turret",
+            "man-big-artillery-turret",
+            "manual-color-module",
+            "giga-fuel",
+            "giga-fuel-mk2",
+            "giga-fuel-mk3",
+            "vent-stack",
+            "flare-stack",
+            "incinerator",
+            "electric-incinerator",
+            "waterfill",
+            "waterfill-dark",
+            "duct-small",
+            "duct",
+            "duct-long",
+            "duct-t-junction",
+            "duct-curve",
+            "duct-cross",
+            "duct-underground",
+            "non-return-duct",
+            "duct-end-point-intake",
+            "duct-end-point-outtake",
+            "module_inserter_pickup",
+            "mi-default-proxy-machine",
+            "balloon-light",
+            "short-balloon-light",
+            "perfect-night-glasses",
             "pipe-junction",
             "pipe-elbow",
             "pipe-straight",
@@ -1169,9 +1198,27 @@ local data_raw_do_nothing_catalog = {
             "shield-projector-barrier"
         }
     },
+    ["pipe-to-ground"] = {
+        mod = {
+            "duct-underground",
+        }
+    },
     pump = {
         mod = {
+            "non-return-duct",
+            "duct-end-point-intake",
+            "duct-end-point-outtake",
             "offshore-pump-output"
+        }
+    },
+    ["storage-tank"] = {
+        mod = {
+            "duct-small",
+            "duct",
+            "duct-long",
+            "duct-t-junction",
+            "duct-curve",
+            "duct-cross"
         }
     },
     roboport = {
@@ -1183,6 +1230,7 @@ local data_raw_do_nothing_catalog = {
     },
     ["electric-turret"] = {
         mod = {
+            "hnt-search-light",
             "shield-projector"
         }
     },
@@ -1211,8 +1259,32 @@ local data_raw_do_nothing_catalog = {
     },
     ["assembling-machine"] = {
         mod = {
+            "mi-default-proxy-machine",
             "kr-crash-site-assembling-machine-1-repaired",
             "kr-crash-site-assembling-machine-2-repaired",
+        }
+    },
+    ["equipment-grid"] = {
+        mod = {
+            "atp-equipment-grid"
+        }
+    },
+    ["artillery-turret"] = {
+        mod = {
+            "big-artillery-turret",
+            "man-big-artillery-turret"
+        }
+    },
+    gun = {
+        mod = {
+            "big-artillery-wagon-cannon"
+        }
+    },
+    lamp = {
+        mod = {
+            "logistic-train-stop-input",
+            "kr-shelter-light",
+            "kr-shelter-plus-light"
         }
     }
 }

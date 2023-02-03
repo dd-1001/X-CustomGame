@@ -68,7 +68,7 @@ local data_raw_equipment_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "energy_consumption" }, -- 能量消耗
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "energy_source", "buffer_capacity" } -- 容量
             }, {
@@ -90,7 +90,7 @@ local data_raw_equipment_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "energy_consumption" }, -- 能量消耗
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "movement_bonus" }, -- 移动加成
                 max_value = 2-- 默认值为 0.3
@@ -133,13 +133,14 @@ local data_raw_equipment_catalog = {
             "night-vision-equipment", -- 夜视模块
         },
         mod = {
+            "perfect-night-glasses", -- AfraidOfTheDark
             "imersite-night-vision-equipment", -- Krastorio2
         },
         mul = settings.startup["x-custom-game-equipment-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
                 path = { "energy_input" }, -- 能量输入
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "energy_source", "buffer_capacity" }, -- 电池容量
             }, {
@@ -160,7 +161,7 @@ local data_raw_equipment_catalog = {
         modify_parameter = { -- 修改参数
             -- {
             --     path = { "energy_per_shield" }, -- 每点护盾值消耗能量，改了太变态，故保持不变
-            --     operation = "Div"
+            --     operation = "Division"
             -- },
             {
                 path = { "energy_source", "buffer_capacity" }, -- 电池容量
@@ -201,10 +202,10 @@ local data_raw_equipment_catalog = {
             }, {
                 path = { "attack_parameters", "ammo_type", "energy_consumption" }, -- 能量消耗
                 min_value = 20000,
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "attack_parameters", "cooldown" }, -- 冷却时间
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "attack_parameters", "damage_modifier" }, -- 伤害修正
             }, {
@@ -220,7 +221,7 @@ local data_raw_equipment_catalog = {
                 max_value = 64
             }, {
                 path = { "attack_parameters", "ammo_type", "energy_consumption" }, -- 能量消耗
-                operation = "Div",
+                operation = "Division",
                 min_value = 20000
             }, {
                 path = { "energy_source", "buffer_capacity" }, -- 电池容量
@@ -236,6 +237,7 @@ local data_raw_equipment_shape_size_catalog = {
             "solar-panel-equipment", -- 太阳能模块
         },
         mod = {
+            "manual-color-module", -- Automatic_Train_Painter
             "big-solar-panel-equipment", -- Krastorio2
             "imersite-solar-panel-equipment",
             "big-imersite-solar-panel-equipment" -- Krastorio2
@@ -357,6 +359,7 @@ local data_raw_equipment_shape_size_catalog = {
             "night-vision-equipment", -- 夜视模块
         },
         mod = {
+            "perfect-night-glasses", -- AfraidOfTheDark
             "imersite-night-vision-equipment", -- Krastorio2
         },
         modify_parameter = { -- 修改参数

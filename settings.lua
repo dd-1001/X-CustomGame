@@ -253,6 +253,14 @@ data:extend({
         order = "x-custom-game-109012"
     }, {
         type = "double-setting",
+        name = "x-custom-game-lamp-performance-multiplier", -- 灯
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.5,
+        maximum_value = 10,
+        order = "x-custom-game-109013"
+    }, {
+        type = "double-setting",
         name = "x-custom-game-gun-performance-multiplier", -- 枪
         setting_type = "startup",
         default_value = 2,

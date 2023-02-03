@@ -95,7 +95,7 @@ local data_raw_ammo_turret_orig_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "attack_parameters", "cooldown" }, -- 冷却时间
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "attack_parameters", "range" }, -- 最大攻击距离
                 max_value = 36
@@ -128,7 +128,7 @@ local data_raw_ammo_turret_mod_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "attack_parameters", "cooldown" }, -- 冷却时间
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "attack_parameters", "range" }, -- 最大攻击距离
                 max_value = 100
@@ -160,17 +160,17 @@ local data_raw_electric_turret_orig_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "attack_parameters", "ammo_type", "action", "action_delivery", "duration" }, -- 持续时间
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "attack_parameters", "ammo_type", "action", "action_delivery", "max_length" }, -- 最大距离
                 max_value = 36
             }, {
                 path = { "attack_parameters", "ammo_type", "energy_consumption" }, -- 能量消耗
-                operation = "Div",
+                operation = "Division",
                 min_value = 20000
             }, {
                 path = { "attack_parameters", "cooldown" }, -- 冷却时间
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "attack_parameters", "damage_modifier" }, -- 伤害修正
             }, {
@@ -206,17 +206,17 @@ local data_raw_electric_turret_mod_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "attack_parameters", "ammo_type", "action", "action_delivery", "duration" }, -- 持续时间
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "attack_parameters", "ammo_type", "action", "action_delivery", "max_length" }, -- 最大距离
                 max_value = 360
             }, {
                 path = { "attack_parameters", "ammo_type", "energy_consumption" }, -- 能量消耗
-                operation = "Div",
+                operation = "Division",
                 min_value = 20000
             }, {
                 path = { "attack_parameters", "cooldown" }, -- 冷却时间
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "attack_parameters", "damage_modifier" }, -- 伤害修正
             }, {
@@ -256,10 +256,10 @@ local data_raw_fluid_turret_catalog = {
                 path = { "activation_buffer_ratio" }, -- 激活的缓冲区比率
             }, {
                 path = { "attack_parameters", "cooldown" }, -- 冷却时间
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "attack_parameters", "fluid_consumption" }, -- 流体消耗
-                operation = "Div",
+                operation = "Division",
                 min_value = 0.05
             }, {
                 path = { "attack_parameters", "range" }, -- 攻击距离
@@ -321,7 +321,7 @@ local data_raw_artillery_turret_catalog = {
                 path = { "manual_range_modifier" }, -- 手动范围修正
             }, {
                 path = { "turn_after_shooting_cooldown" }, -- 射击后的转身_冷却时间
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "turret_rotation_speed" }, -- 炮塔旋转速度
             }, {

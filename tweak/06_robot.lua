@@ -19,10 +19,10 @@ local data_raw_robot_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "energy_per_move" }, -- 移动1米的能量消耗量
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "energy_per_tick" }, -- 每秒消耗的能量
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "max_energy" } -- 机器人电池存储最大能量
             }, {
@@ -48,10 +48,10 @@ local data_raw_robot_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "energy_per_move" }, -- 移动1米的能量消耗量
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "energy_per_tick" }, -- 每秒消耗的能量
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "max_energy" } -- 机器人电池存储最大能量
             }, {
@@ -112,7 +112,7 @@ local data_raw_robot_catalog = {
                 path = { "energy_source", "input_flow_limit" } -- 输入限制
             }, {
                 path = { "energy_usage" }, -- 能源消耗量
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "max_health" } -- 最大血量
             }

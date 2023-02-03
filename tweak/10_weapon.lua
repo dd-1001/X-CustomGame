@@ -28,10 +28,10 @@ local data_raw_gun_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "attack_parameters", "cooldown" }, -- 再次射击的冷却时间
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "attack_parameters", "movement_slow_down_factor" }, -- 移动减速因子
-                operation = "Div"
+                operation = "Division"
             },
             {
                 path = { "attack_parameters", "range" } -- 范围
@@ -64,7 +64,7 @@ local data_raw_spidertron_rocket_launcher_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "attack_parameters", "cooldown" }, -- 再次射击的冷却时间
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "attack_parameters", "range" }, -- 范围
                 max_value = 160
@@ -146,17 +146,17 @@ local data_raw_ammo_shotgun_shell_catalog = {
                 min_value = 1
             }, {
                 path = { "ammo_type", "action", 2, "action_delivery", "direction_deviation" }, -- 方向偏离度
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "ammo_type", "action", 2, "action_delivery", "max_range" }, -- 范围
             }, {
                 path = { "ammo_type", "action", 2, "action_delivery", "range_deviation" }, -- 范围偏离度
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "ammo_type", "action", 2, "action_delivery", "starting_speed" } -- 开始速度
             }, {
                 path = { "ammo_type", "action", 2, "action_delivery", "starting_speed_deviation" }, -- 开始速度偏离度
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "ammo_type", "action", 2, "repeat_count" } -- 重复次数
             }
@@ -204,12 +204,12 @@ local data_raw_ammo_cannon_shell_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "ammo_type", "action", "action_delivery", "direction_deviation" }, -- 方向偏离度
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "ammo_type", "action", "action_delivery", "max_range" }, -- 范围
             }, {
                 path = { "ammo_type", "action", "action_delivery", "range_deviation" }, -- 范围偏离度
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "ammo_type", "action", "action_delivery", "starting_speed" } -- 开始速度
             }
@@ -266,7 +266,7 @@ local data_raw_ammo_atomic_bomb_catalog = {
                 path = { "ammo_type", "action", "action_delivery", "starting_speed" } -- 开始速度
             }, {
                 path = { "ammo_type", "cooldown_modifier" }, -- 冷却修正
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "ammo_type", "range_modifier" } -- 范围修正
             }
@@ -328,7 +328,7 @@ local data_raw_ammo_flamethrower_catalog = {
                 min_value = 1
             }, {
                 path = { "ammo_type", 2, "consumption_modifier" }, -- 消耗量修正
-                operation = "Div"
+                operation = "Division"
             }
         }
     }

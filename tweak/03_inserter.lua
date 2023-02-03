@@ -60,10 +60,10 @@ local data_raw_inserter_catalog = {
                 path = { "energy_source", "fuel_inventory_size" } -- 燃料库存
             }, {
                 path = { "energy_per_movement" }, -- 每次动消耗能量
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "energy_per_rotation" }, -- 每次旋转耗能量
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "stack_size_bonus" }, -- 固有的堆栈大小奖励
                 operation = "Extend",

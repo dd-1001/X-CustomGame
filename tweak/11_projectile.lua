@@ -27,7 +27,7 @@ local data_raw_grenade_catalog = {
                 path = { "action", 2, "action_delivery", "starting_speed" } -- 起始速度
             }, {
                 path = { "action", 2, "action_delivery", "starting_speed_deviation" }, -- 起始速度偏差
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "action", 2, "cluster_count" }, -- 集群数量
                 max_value = 64
@@ -78,10 +78,10 @@ local data_raw_combat_robot_catalog = {
                     "amount" } -- 伤害
             }, {
                 path = { "attack_parameters", "cooldown" }, -- 冷却时间
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "attack_parameters", "cooldown_deviation" }, -- 冷却时间偏差
-                operation = "Div"
+                operation = "Division"
             }, {
                 path = { "attack_parameters", "projectile_creation_distance" }, -- 抛射物创建距离
             }, {
