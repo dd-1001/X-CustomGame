@@ -2,7 +2,7 @@
 Version: 1.1.11
 Date: 2023-2-8
   Features:
-    - Add character collision_box configuration options(Similar to mod: Squeak Through)
+    - Add character collision_box configuration options(Similar to mod: Squeak Through, but stronger than it)
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.10
 Date: 2023-2-3
