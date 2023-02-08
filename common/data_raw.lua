@@ -269,10 +269,10 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                     -- 日志
                     if self.is_log then
                         if type(new_value) == "table" then
-                            new_value = "{ " .. table.concat(new_value, ",") .. " }"
+                            new_value = common_core:serpent_line(new_value)
                         end
                         if type(old_value) == "table" then
-                            old_value = "{ " .. table.concat(old_value, ",") .. " }"
+                            old_value = common_core:serpent_line(old_value)
                         end
                         log(table.concat(modify_field_path, ".") .. " : " .. old_value .. " ---> " .. new_value)
                     end
@@ -290,7 +290,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                     -- 日志
                     if self.is_log then
                         if type(new_value) == "table" then
-                            new_value = "{ " .. table.concat(new_value, ",") .. " }"
+                            new_value = common_core:serpent_line(new_value)
                         end
                         log(table.concat(modify_field_path, ".") .. " : insert value ---> " .. new_value)
                     end

@@ -409,6 +409,13 @@ data:extend({
         minimum_value = 0.5,
         maximum_value = 10,
         order = "x-custom-game-115005"
+    }, {
+        type = "string-setting",
+        name = "x-custom-game-character-collision-box-multiplier", -- 角色碰撞盒子
+        setting_type = "startup",
+        default_value = "25%",
+        allowed_values = {"100%", "75%", "50%", "25%", "0%"},
+        order = "x-custom-game-115006"
     }
 })
 

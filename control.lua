@@ -5,7 +5,7 @@ local function on_init()
     log("\n\n\n------------------control start------------------\n\n\n")
 
 
-    log(common_core:serialization_table(game.forces))
+    log(common_core:serpent_block(game.forces))
 
 
     log("\n\n\n------------------control end------------------\n\n\n")
