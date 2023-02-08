@@ -1,7 +1,7 @@
 local common_core = require("common/core")
 local common_data_raw = require("common/data_raw")
 
-local log = common_core.lib_logger("x-custom-game-inserter.lua")
+local log = common_core.Log
 
 -- 机械臂
 local data_raw_inserter_catalog = {
@@ -80,8 +80,8 @@ local data_raw_inserter_catalog = {
 }
 
 -- 开始修改
-log("\n\n\n------------------机械臂 start------------------n\n\n")
+log("\n\n\n------------------机械臂 start------------------\n\n\n")
 
 common_data_raw:execute_modify(data_raw_inserter_catalog)
 
-log("\n\n\n------------------机械臂 end------------------n\n\n")
+log("\n\n\n------------------机械臂 end------------------\n\n\n")

@@ -1,7 +1,7 @@
 local common_core = require("common/core")
 local common_data_raw = require("common/data_raw")
 
-local log = common_core.lib_logger("x-custom-game-Defense.lua")
+local log = common_core.Log
 
 -- 墙、闸门
 local data_raw_wall_catalog = {
@@ -332,7 +332,7 @@ local data_raw_artillery_turret_catalog = {
 }
 
 -- 开始修改
-log("\n\n\n------------------防御 start------------------n\n\n")
+log("\n\n\n------------------防御 start------------------\n\n\n")
 
 common_data_raw:execute_modify(data_raw_wall_catalog)
 common_data_raw:execute_modify(data_raw_ammo_turret_orig_catalog)
@@ -342,4 +342,4 @@ common_data_raw:execute_modify(data_raw_electric_turret_mod_catalog)
 common_data_raw:execute_modify(data_raw_fluid_turret_catalog)
 common_data_raw:execute_modify(data_raw_artillery_turret_catalog)
 
-log("\n\n\n------------------防御 end------------------n\n\n")
+log("\n\n\n------------------防御 end------------------\n\n\n")

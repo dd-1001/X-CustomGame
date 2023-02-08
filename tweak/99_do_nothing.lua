@@ -229,6 +229,7 @@ local data_raw_do_nothing_catalog = {
             "lubricant-barrel"
         },
         mod = {
+            "stone-waterwell",
             "hnt-search-light",
             "big-artillery-turret",
             "man-big-artillery-turret",
@@ -1289,4 +1290,5 @@ local data_raw_do_nothing_catalog = {
     }
 }
 
-common_data_raw:execute_modify(data_raw_do_nothing_catalog, false)
+common_data_raw.is_log = false
+common_data_raw:execute_modify(data_raw_do_nothing_catalog)

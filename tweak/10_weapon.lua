@@ -1,7 +1,7 @@
 local common_core = require("common/core")
 local common_data_raw = require("common/data_raw")
 
-local log = common_core.lib_logger("x-custom-game-weapon.lua")
+local log = common_core.Log
 
 -- 枪
 local data_raw_gun_catalog = {
@@ -339,7 +339,7 @@ local data_raw_ammo_flamethrower_catalog = {
 
 
 -- 开始修改
-log("\n\n\n------------------武器 start------------------n\n\n")
+log("\n\n\n------------------武器 start------------------\n\n\n")
 
 common_data_raw:execute_modify(data_raw_gun_catalog)
 common_data_raw:execute_modify(data_raw_spidertron_rocket_launcher_catalog)
@@ -355,4 +355,4 @@ common_data_raw:execute_modify(data_raw_shotgun_additional_effects_catalog)
 common_data_raw:execute_modify(data_raw_shell_additional_effects_catalog)
 common_data_raw:execute_modify(data_raw_rocket_additional_effects_catalog)
 
-log("\n\n\n------------------武器 end------------------n\n\n")
+log("\n\n\n------------------武器 end------------------\n\n\n")

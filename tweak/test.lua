@@ -1,11 +1,9 @@
 local common_core = require("common/core")
 local common_data_raw = require("common/data_raw")
 
-local log = common_core.lib_logger("x-custom-game-test.lua")
+local log = common_core.Log
 
-
-
-log("\n\n\n------------------test start------------------n\n\n")
+log("\n\n\n------------------test start------------------\n\n\n")
 
 -- log(common_core:serialization_table(data.raw))
 
@@ -20,4 +18,4 @@ log("Unmod List: \n" .. common_core:serialization_table(tab_record))
 -- log(common_core:serialization_table(data.raw["loader"]))
 
 
-log("\n\n\n------------------test end------------------n\n\n")
+log("\n\n\n------------------test end------------------\n\n\n")

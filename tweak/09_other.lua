@@ -1,7 +1,7 @@
 local common_core = require("common/core")
 local common_data_raw = require("common/data_raw")
 
-local log = common_core.lib_logger("x-custom-game-other.lua")
+local log = common_core.Log
 
 -- data.raw修改目录
 local data_raw_other_catalog = {
@@ -482,7 +482,7 @@ local data_raw_module_slot_all_type_allowed_catalog = {
 }
 
 -- 开始修改
-log("\n\n\n------------------其他 start------------------n\n\n")
+log("\n\n\n------------------其他 start------------------\n\n\n")
 
 common_data_raw:execute_modify(data_raw_other_catalog)
 common_data_raw:execute_modify(data_raw_spidertron_equipment_grid_catalog)
@@ -494,4 +494,4 @@ if settings.startup["x-custom-game-module-slot-all-type-allowed-flags"].value th
     common_data_raw:execute_modify(data_raw_module_slot_all_type_allowed_catalog)
 end
 
-log("\n\n\n------------------其他 end------------------n\n\n")
+log("\n\n\n------------------其他 end------------------\n\n\n")

@@ -1,7 +1,7 @@
 local common_core = require("common/core")
 local common_data_raw = require("common/data_raw")
 
-local log = common_core.lib_logger("x-custom-game-projectile.lua")
+local log = common_core.Log
 
 -- 手雷
 local data_raw_grenade_catalog = {
@@ -127,11 +127,11 @@ local data_raw_laser_catalog = {
 }
 
 -- 开始修改
-log("\n\n\n------------------抛射物 start------------------n\n\n")
+log("\n\n\n------------------抛射物 start------------------\n\n\n")
 
 common_data_raw:execute_modify(data_raw_grenade_catalog)
 common_data_raw:execute_modify(data_raw_capsule_catalog)
 common_data_raw:execute_modify(data_raw_combat_robot_catalog)
 common_data_raw:execute_modify(data_raw_laser_catalog)
 
-log("\n\n\n------------------抛射物 end------------------n\n\n")
+log("\n\n\n------------------抛射物 end------------------\n\n\n")

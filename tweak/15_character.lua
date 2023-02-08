@@ -1,7 +1,7 @@
 local common_core = require("common/core")
 local common_data_raw = require("common/data_raw")
 
-local log = common_core.lib_logger("x-custom-game-character.lua")
+local log = common_core.Log
 
 -- character distance
 local data_raw_character_distance_catalog = {
@@ -107,7 +107,7 @@ local data_raw_character_inventory_size_catalog = {
 }
 
 -- 开始修改
-log("\n\n\n------------------Character start------------------n\n\n")
+log("\n\n\n------------------Character start------------------\n\n\n")
 
 common_data_raw:execute_modify(data_raw_character_distance_catalog)
 common_data_raw:execute_modify(data_raw_character_mining_speed_catalog)
@@ -115,4 +115,4 @@ common_data_raw:execute_modify(data_raw_character_running_speed_catalog)
 common_data_raw:execute_modify(data_raw_character_health_catalog)
 common_data_raw:execute_modify(data_raw_character_inventory_size_catalog)
 
-log("\n\n\n------------------Character end------------------n\n\n")
+log("\n\n\n------------------Character end------------------\n\n\n")

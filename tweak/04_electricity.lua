@@ -1,7 +1,7 @@
 local common_core = require("common/core")
 local common_data_raw = require("common/data_raw")
 
-local log = common_core.lib_logger("x-custom-game-electricity.lua")
+local log = common_core.Log
 
 -- 电力生产相关目录
 local data_raw_production_catalog = {
@@ -246,7 +246,7 @@ local data_raw_transmission_catalog = {
 }
 
 -- 执行修改
-log("\n\n\n------------------电力系统 start------------------n\n\n")
+log("\n\n\n------------------电力系统 start------------------\n\n\n")
 
 -- local data_raw = common_data_raw(data_raw_modifi_catalog)
 -- data_raw:execute_modify()
@@ -254,4 +254,4 @@ log("\n\n\n------------------电力系统 start------------------n\n\n")
 common_data_raw:execute_modify(data_raw_production_catalog)
 common_data_raw:execute_modify(data_raw_transmission_catalog)
 
-log("\n\n\n------------------电力系统 end------------------n\n\n")
+log("\n\n\n------------------电力系统 end------------------\n\n\n")

@@ -1,7 +1,7 @@
 local common_core = require("common/core")
 local common_data_raw = require("common/data_raw")
 
-local log = common_core.lib_logger("x-custom-game-equipment.lua")
+local log = common_core.Log
 
 -- 装备模块
 local data_raw_equipment_catalog = {
@@ -420,11 +420,11 @@ local data_raw_equipment_shape_size_catalog = {
 }
 
 -- 开始修改
-log("\n\n\n------------------装备 start------------------n\n\n")
+log("\n\n\n------------------装备 start------------------\n\n\n")
 
 common_data_raw:execute_modify(data_raw_equipment_catalog)
 if settings.startup["x-custom-game-equipment-size-flags"].value then
     common_data_raw:execute_modify(data_raw_equipment_shape_size_catalog)
 end
 
-log("\n\n\n------------------装备 end------------------n\n\n")
+log("\n\n\n------------------装备 end------------------\n\n\n")

@@ -1,8 +1,9 @@
 local common_core = require("common/core")
 
-local log = common_core.lib_logger("x-custom-game-data_raw.lua")
+local log = common_core.Log
 
 local Data_raw = {
+    is_log = true,
     data_raw_modifi_catalog = nil -- data.raw修改目录
 }
 
@@ -161,18 +162,13 @@ function Data_raw:get_data_raw_field_value(field_path)
     return tmp_pos
 end
 
-function Data_raw:execute_modify(data_raw_modifi_catalog, is_log)
+function Data_raw:execute_modify(data_raw_modifi_catalog)
     if data_raw_modifi_catalog then
         self.data_raw_modifi_catalog = data_raw_modifi_catalog
     end
 
     if self.data_raw_modifi_catalog == nil then
         return false
-    end
-
-    -- 是否打印日志
-    if is_log == nil then
-        -- is_log = true
     end
 
     for prot_type, prot_modify_param in pairs(self.data_raw_modifi_catalog) do
@@ -191,9 +187,6 @@ function Data_raw:execute_modify(data_raw_modifi_catalog, is_log)
             -- prot_name = 原型名字："boiler"...
 
             -- 做记录
-            -- if is_log then
-            --     log("prot_type = " .. prot_type .. ", prot_name = " .. prot_name)
-            -- end
             if X_CUSTOM_GAME_IS_RECORD then
                 self:record(prot_type, prot_name)
             end
@@ -205,7 +198,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog, is_log)
 
             -- mul == 0 or 1 跳过此名字
             if prot_modify_param.mul == 0 or prot_modify_param.mul == 1 then
-                if is_log then
+                if self.is_log then
                     log(prot_type .. "." .. prot_name .. " : mul = " .. prot_modify_param.mul .. ", Skip this config")
                 end
 
@@ -274,7 +267,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog, is_log)
                     old_value = self:set_data_raw_field_value(modify_field_path, new_value)
 
                     -- 日志
-                    if is_log then
+                    if self.is_log then
                         if type(new_value) == "table" then
                             new_value = "{ " .. table.concat(new_value, ",") .. " }"
                         end
@@ -295,14 +288,14 @@ function Data_raw:execute_modify(data_raw_modifi_catalog, is_log)
                     self:insert_data_raw_field_value(modify_field_path, new_value)
 
                     -- 日志
-                    if is_log then
+                    if self.is_log then
                         if type(new_value) == "table" then
                             new_value = "{ " .. table.concat(new_value, ",") .. " }"
                         end
                         log(table.concat(modify_field_path, ".") .. " : insert value ---> " .. new_value)
                     end
                 else -- 不存在相应字段
-                    if is_log then
+                    if self.is_log then
                         log(table.concat(modify_field_path, ".") .. " is nil")
                     end
                 end

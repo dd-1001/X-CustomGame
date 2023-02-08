@@ -1,7 +1,7 @@
 local common_core = require("common/core")
 local common_data_raw = require("common/data_raw")
 
-local log = common_core.lib_logger("x-custom-game-fuel.lua")
+local log = common_core.Log
 
 -- 燃料的热值
 local data_raw_fuel_catalog = {
@@ -58,9 +58,9 @@ local data_raw_satellite_catalog = {
 }
 
 -- 开始修改
-log("\n\n\n------------------Item start------------------n\n\n")
+log("\n\n\n------------------Item start------------------\n\n\n")
 
 common_data_raw:execute_modify(data_raw_fuel_catalog)
 common_data_raw:execute_modify(data_raw_satellite_catalog)
 
-log("\n\n\n------------------Item end------------------n\n\n")
+log("\n\n\n------------------Item end------------------\n\n\n")
