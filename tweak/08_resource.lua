@@ -3,9 +3,9 @@ local common_data_raw = require("common/data_raw")
 
 local log = common_core.Log
 
--- 燃料的热值
+-- 燃料
 local data_raw_fuel_value_catalog = {
-    item = { -- 燃料的热值
+    item = { -- 固体燃料
         orig = {
             "wood", -- 木板
             "coal", -- 煤矿
@@ -79,7 +79,7 @@ common_data_raw:execute_modify(data_raw_satellite_catalog)
 if X_CUSTOM_GAME_IS_DEBUG then
     -- 找出含有热值，但没被修改的项目
     local item_with_fuel_value = common_data_raw:find_item_with_key_word("fuel_value")
-    log("resource with fuel_value list: \n" .. common_core:serpent_block(item_with_fuel_value))
+    -- log("resource with fuel_value list: \n" .. common_core:serpent_block(item_with_fuel_value))
 
     local tab_record = common_data_raw:check_not_in_record("source", item_with_fuel_value)
     log("Unmod resource with fuel_value list: \n" .. common_core:serpent_block(tab_record))
