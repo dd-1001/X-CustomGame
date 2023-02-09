@@ -10,8 +10,8 @@ local Core = {
 
 -- 确定调试模式
 -- true 为调试模式；false 为非调试模式
-X_CUSTOM_GAME_IS_DEBUG = false
--- X_CUSTOM_GAME_IS_DEBUG = true
+-- X_CUSTOM_GAME_IS_DEBUG = false
+X_CUSTOM_GAME_IS_DEBUG = true
 
 setmetatable(Core, Core)
 

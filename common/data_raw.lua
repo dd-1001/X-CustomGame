@@ -34,16 +34,20 @@ function Data_raw:record(data_type, data_name)
     if X_CUSTOM_GAME_TAB_RECORD[data_type][data_name] == nil then
         X_CUSTOM_GAME_TAB_RECORD[data_type][data_name] = true
     end
-
 end
 
--- check_type == "data.raw" or check_type == "record"
-function Data_raw:check_not_in_record(check_type)
+-- check_type == "source" or check_type == "record";
+-- 当source_table为nil，source_table=data.raw
+function Data_raw:check_not_in_record(check_type, source_table)
     local not_in_record = {}
 
-    if check_type == "data.raw" then
-        for data_type, _ in pairs(data.raw) do
-            for data_name, _ in pairs(data.raw[data_type]) do
+    if source_table == nil then
+        source_table = data.raw
+    end
+
+    if check_type == "source" then
+        for data_type, _ in pairs(source_table) do
+            for data_name, _ in pairs(source_table[data_type]) do
                 if X_CUSTOM_GAME_TAB_RECORD[data_type] == nil then
                     -- 没有这个类型
                     if not_in_record[data_type] == nil then
@@ -61,7 +65,7 @@ function Data_raw:check_not_in_record(check_type)
         end
     elseif check_type == "record" then
         for data_type, tab_name in pairs(X_CUSTOM_GAME_TAB_RECORD) do
-            for data_name, _ in pairs(data.raw[data_type]) do
+            for data_name, _ in pairs(source_table[data_type]) do
                 -- 不存在名字
                 if tab_name[data_name] == nil then
                     if not_in_record[data_type] == nil then
@@ -76,8 +80,29 @@ function Data_raw:check_not_in_record(check_type)
     return not_in_record
 end
 
-function Data_raw:insert_data_raw_field_value(field_path, value)
+-- 在data.raw中找出含有keyword的条目
+function Data_raw:find_item_with_key_word(keyword)
+    local item_with_keyword = {}
 
+    for prot_type, prot_type_data in pairs(data.raw) do
+        for prot_name, prot_name_data in pairs(prot_type_data) do
+            -- 有keyword
+            if prot_name_data[keyword] then
+                if item_with_keyword[prot_type] == nil then
+                    item_with_keyword[prot_type] = {}
+                end
+
+                if item_with_keyword[prot_type][prot_name] == nil then
+                    item_with_keyword[prot_type][prot_name] = "Have " .. keyword
+                end
+            end
+        end
+    end
+
+    return item_with_keyword
+end
+
+function Data_raw:insert_data_raw_field_value(field_path, value)
     if not field_path or not value then
         return false
     end
@@ -87,7 +112,6 @@ function Data_raw:insert_data_raw_field_value(field_path, value)
 
     -- field_path = {"mining-drill", "burner-mining-drill", "module_specification", "module_slots"}
     for i = 1, path_count - 1, 1 do
-
         if type(tmp_pos[field_path[i]]) ~= "nil" then -- 字段存在
             tmp_pos = tmp_pos[field_path[i]]
         else -- 字段不存在
@@ -100,17 +124,14 @@ function Data_raw:insert_data_raw_field_value(field_path, value)
                 tmp_pos = tmp_pos[#tmp_pos]
             end
         end
-
     end
 
     tmp_pos[field_path[path_count]] = value
 
     return true
-
 end
 
 function Data_raw:set_data_raw_field_value(field_path, new_value)
-
     if not field_path or not new_value then
         return nil
     end
@@ -128,7 +149,6 @@ function Data_raw:set_data_raw_field_value(field_path, new_value)
         -- i = 1; tmp_pos = data.raw["boiler"]
         -- i = 2; tmp_pos = data.raw["boiler"]["boiler"]
         -- i = 3; tmp_pos = data.raw["boiler"]["boiler"]["energy_source"]
-
     end
 
     local old_value = tmp_pos[field_path[path_count]]
@@ -139,11 +159,9 @@ function Data_raw:set_data_raw_field_value(field_path, new_value)
     end
 
     return old_value
-
 end
 
 function Data_raw:get_data_raw_field_value(field_path)
-
     local tmp_pos = data.raw
 
     -- field_path = {"boiler", "boiler", "energy_source", "emissions_per_minute"}
@@ -206,7 +224,6 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
             end
 
             for _, single_modify_param in ipairs(prot_modify_param.modify_parameter) do
-
                 -- 组装修改字段路径
                 local modify_field_path = {}
                 table.insert(modify_field_path, prot_type)
@@ -219,9 +236,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                 local new_value = nil
 
                 if old_value then -- 存在相应字段
-
                     if single_modify_param.value == nil then -- 不存在指定设置的值
-
                         -- 获取原字段单位
                         local field_units
                         if type(old_value) == "string" then
@@ -276,11 +291,9 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                         end
                         log(table.concat(modify_field_path, ".") .. " : " .. old_value .. " ---> " .. new_value)
                     end
-
                 elseif single_modify_param.operation == "Extend" then -- 不存在相应字段，进行扩展字段
-
                     -- 校验是否存在相应的实体
-                    if self:get_data_raw_field_value({prot_type, prot_name}) == nil then
+                    if self:get_data_raw_field_value({ prot_type, prot_name }) == nil then
                         goto NEXT_MODIFY_PARAM
                     end
 
@@ -301,11 +314,9 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                 end
 
                 ::NEXT_MODIFY_PARAM::
-
             end
 
             ::NEXT_PROT_NAME::
-
         end
 
         -- 判断对mod进行处理
@@ -313,14 +324,11 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
         if settings.startup["x-custom-game-effect-mod-flags"].value and
             not is_moded and
             prot_modify_param.mod then
-
             prot_name_tab = prot_modify_param.mod
             is_moded = true
 
             goto PROCESS_PROT_NAME
         end
-
-
     end
 
     return true
