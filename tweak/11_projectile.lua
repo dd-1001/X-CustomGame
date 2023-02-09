@@ -17,23 +17,31 @@ local data_raw_grenade_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "acceleration" } -- 加速度
-            }, {
+            },
+            {
                 path = { "action", 1, "action_delivery", "target_effects", 4, "radius" } -- 半径
-            }, {
+            },
+            {
                 path = { "action", 2, "action_delivery", "target_effects", 1, "damage", "amount" } -- 伤害
-            }, {
+            },
+            {
                 path = { "action", 2, "radius" } -- 爆炸半径
-            }, {
+            },
+            {
                 path = { "action", 2, "action_delivery", "starting_speed" } -- 起始速度
-            }, {
+            },
+            {
                 path = { "action", 2, "action_delivery", "starting_speed_deviation" }, -- 起始速度偏差
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "action", 2, "cluster_count" }, -- 集群数量
                 max_value = 64
-            }, {
+            },
+            {
                 path = { "action", 2, "distance" } -- 距离
-            }, {
+            },
+            {
                 path = { "action", 2, "distance_deviation" } -- 距离偏差
             }
         }
@@ -76,30 +84,41 @@ local data_raw_combat_robot_catalog = {
             {
                 path = { "attack_parameters", "ammo_type", "action", "action_delivery", "target_effects", 2, "damage",
                     "amount" } -- 伤害
-            }, {
+            },
+            {
                 path = { "attack_parameters", "cooldown" }, -- 冷却时间
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "attack_parameters", "cooldown_deviation" }, -- 冷却时间偏差
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "attack_parameters", "projectile_creation_distance" }, -- 抛射物创建距离
-            }, {
+            },
+            {
                 path = { "attack_parameters", "range" }, -- 范围
-            }, {
+            },
+            {
                 path = { "max_health" }, -- 最大生命值
-            }, {
+            },
+            {
                 path = { "range_from_player" }, -- 距离玩家范围
                 max_value = 32
-            }, {
+            },
+            {
                 path = { "speed" }, -- 速度
-            }, {
+            },
+            {
                 path = { "time_to_live" }, -- 存活时间
-            }, {
+            },
+            {
                 path = { "attack_parameters", "ammo_type", "action", "action_delivery", "duration" }, -- 持续时间
-            }, {
+            },
+            {
                 path = { "attack_parameters", "ammo_type", "action", "action_delivery", "max_length" }, -- 最大长度
-            }, {
+            },
+            {
                 path = { "attack_parameters", "damage_modifier" }, -- 伤害修正
             }
         }
@@ -119,7 +138,8 @@ local data_raw_laser_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "acceleration" } -- 加速度
-            }, {
+            },
+            {
                 path = { "action", "action_delivery", "target_effects", 2, "damage", "amount" } -- 伤害
             }
         }

@@ -16,17 +16,22 @@ local data_raw_character_distance_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "build_distance" } -- 建造距离
-            }, {
-            path = { "drop_item_distance" } -- 掉落物品距离
-        }, {
-            path = { "item_pickup_distance" } -- 物品提取距离
-        }, {
-            path = { "loot_pickup_distance" } -- 捡拾战利品的距离
-        }, {
-            path = { "reach_distance" } -- 够到距离
-        }, {
-            path = { "reach_resource_distance" } -- 够到资源距离
-        }
+            },
+            {
+                path = { "drop_item_distance" } -- 掉落物品距离
+            },
+            {
+                path = { "item_pickup_distance" } -- 物品提取距离
+            },
+            {
+                path = { "loot_pickup_distance" } -- 捡拾战利品的距离
+            },
+            {
+                path = { "reach_distance" } -- 够到距离
+            },
+            {
+                path = { "reach_resource_distance" } -- 够到资源距离
+            }
         }
     }
 }
@@ -81,9 +86,10 @@ local data_raw_character_health_catalog = {
             {
                 path = { "max_health" }, -- 最大血量
                 max_value = 5000
-            }, {
-            path = { "healing_per_tick" } -- 血量恢复
-        }
+            },
+            {
+                path = { "healing_per_tick" } -- 血量恢复
+            }
         }
     }
 }
@@ -110,7 +116,6 @@ local data_raw_character_inventory_size_catalog = {
 local setting_value = settings.startup["x-custom-game-character-collision-box-multiplier"].value
 -- local setting_value = "50%"
 local function get_collision_box()
-
     local mul = 1.0
     if setting_value == "100%" then
         mul = 1.0
@@ -125,7 +130,8 @@ local function get_collision_box()
     end
 
     local box = data.raw["character"]["character"]["collision_box"]
-    return { { box[1][1] * mul, box[1][2] * mul }, { box[2][1] * mul, box[2][2] * mul } }
+    return { { box[1][1] * mul, box[1][2] * mul },
+        { box[2][1] * mul, box[2][2] * mul } }
 end
 
 local new_collision_box = get_collision_box()

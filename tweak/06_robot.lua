@@ -20,16 +20,21 @@ local data_raw_robot_catalog = {
             {
                 path = { "energy_per_move" }, -- 移动1米的能量消耗量
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "energy_per_tick" }, -- 每秒消耗的能量
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "max_energy" } -- 机器人电池存储最大能量
-            }, {
+            },
+            {
                 path = { "max_payload_size" } -- 最大负载量
-            }, {
+            },
+            {
                 path = { "speed" } -- 速度
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -49,16 +54,21 @@ local data_raw_robot_catalog = {
             {
                 path = { "energy_per_move" }, -- 移动1米的能量消耗量
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "energy_per_tick" }, -- 每秒消耗的能量
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "max_energy" } -- 机器人电池存储最大能量
-            }, {
+            },
+            {
                 path = { "max_payload_size" } -- 最大负载量
-            }, {
+            },
+            {
                 path = { "speed" } -- 速度
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -100,20 +110,26 @@ local data_raw_robot_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "charging_energy" } -- 充电站的最大功率
-            }, {
+            },
+            {
                 path = { "construction_radius" }, -- 建设区域半径
                 max_value = 250
-            }, {
+            },
+            {
                 path = { "logistics_radius" }, -- 物流区域半径
                 max_value = 125
-            }, {
+            },
+            {
                 path = { "energy_source", "buffer_capacity" } -- 缓冲区容量
-            }, {
+            },
+            {
                 path = { "energy_source", "input_flow_limit" } -- 输入限制
-            }, {
+            },
+            {
                 path = { "energy_usage" }, -- 能源消耗量
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }

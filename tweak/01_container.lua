@@ -23,7 +23,8 @@ local data_raw_container_catalog = {
             {
                 path = { "inventory_size" }, -- 库存大小
                 max_value = 2000
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -68,7 +69,8 @@ local data_raw_container_catalog = {
             {
                 path = { "inventory_size" }, -- 库存大小
                 max_value = 2000
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -101,7 +103,8 @@ local data_raw_container_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "fluid_box", "base_area" }, -- 流体箱的总流体容量为 base_area × height × 100
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -122,9 +125,11 @@ local data_raw_container_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "inventory_size" } -- 货车库存的大小
-            }, {
+            },
+            {
                 path = { "max_speed" } -- 最大速度
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -145,9 +150,11 @@ local data_raw_container_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "capacity" } -- 容量
-            }, {
+            },
+            {
                 path = { "max_speed" } -- 最大速度
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }

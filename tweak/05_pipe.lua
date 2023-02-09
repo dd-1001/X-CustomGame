@@ -21,7 +21,8 @@ local data_raw_pipe_catalog = {
             {
                 path = { "fluid_box", "base_area" }, -- 流体箱的总流体容量为 base_area × height × 100
                 max_value = 10
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -42,10 +43,12 @@ local data_raw_pipe_catalog = {
             {
                 path = { "fluid_box", "base_area" }, -- 流体箱的总流体容量为 base_area × height × 100
                 max_value = 10
-            }, {
+            },
+            {
                 path = { "fluid_box", "pipe_connections", 2, "max_underground_distance" }, -- 最大地下距离
                 max_value = 81
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -65,9 +68,11 @@ local data_raw_pipe_catalog = {
             {
                 path = { "fluid_box", "height" }, -- 流体箱的总流体容量为 base_area × height × 100
                 max_value = 10
-            }, {
+            },
+            {
                 path = { "pumping_speed" } -- 泵送速度
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -84,9 +89,11 @@ local data_raw_pipe_catalog = {
             {
                 path = { "fluid_box", "base_area" }, -- 流体箱的总流体容量为 base_area × height × 100
                 max_value = 10
-            }, {
+            },
+            {
                 path = { "pumping_speed" } -- 泵送速度
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }

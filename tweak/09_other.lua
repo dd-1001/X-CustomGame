@@ -23,11 +23,14 @@ local data_raw_other_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "burner", "effectivity" } -- 内燃机效率
-            }, {
+            },
+            {
                 path = { "max_power" } -- 最大动力
-            }, {
+            },
+            {
                 path = { "max_speed" } -- 最大速度
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -46,7 +49,8 @@ local data_raw_other_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "durability" } -- 此工具的耐用性
-            }, {
+            },
+            {
                 path = { "speed" } -- 修理速度
             }
         }
@@ -63,13 +67,17 @@ local data_raw_other_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "braking_power" } -- 动力
-            }, {
+            },
+            {
                 path = { "burner", "effectivity" } -- 效率
-            }, {
+            },
+            {
                 path = { "consumption" } -- 消耗
-            }, {
+            },
+            {
                 path = { "effectivity" } -- 效率
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -85,9 +93,11 @@ local data_raw_other_catalog = {
             {
                 path = { "chain_shooting_cooldown_modifier" }, -- 剩余射击冷却时间的乘数(可以为0)：automatic_weapon_cycling | cooldown = (remaining_cooldown × chain_shooting_cooldown_modifier)
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
-            }, {
+            },
+            {
                 path = { "movement_energy_consumption" }, -- 移动能量消耗
                 operation = "Division"
             }
@@ -106,10 +116,12 @@ local data_raw_other_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "max_health" } -- 最大血量
-            }, {
+            },
+            {
                 path = { "module_specification", "module_slots" }, -- 模块插槽数
                 value = settings.startup["x-custom-game-number-of-module-slots"].value
-            }, {
+            },
+            {
                 path = { "researching_speed" } -- 研究速度
             }
         }
@@ -125,14 +137,17 @@ local data_raw_other_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "distribution_effectivity" } -- 共享时模块效果的乘数
-            }, {
+            },
+            {
                 path = { "supply_area_distance" }, -- 最大距离为 64
                 max_value = 64,
                 -- value = 64
-            }, {
+            },
+            {
                 path = { "energy_usage" }, -- 能量消耗
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "module_specification", "module_slots" }, -- 模块插槽数
                 value = settings.startup["x-custom-game-number-of-module-slots"].value
             }
@@ -149,12 +164,15 @@ local data_raw_other_catalog = {
             {
                 path = { "active_energy_usage" }, -- 激活时能耗
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "energy_usage" } -- 能耗
-            }, {
+            },
+            {
                 path = { "module_specification", "module_slots" }, -- 模块插槽数
                 value = settings.startup["x-custom-game-number-of-module-slots"].value
-            }, {
+            },
+            {
                 path = { "crafting_speed" } -- 制造速度
             }
         }
@@ -172,19 +190,24 @@ local data_raw_other_catalog = {
             {
                 path = { "energy_per_nearby_scan" }, -- 每一个近距离扫描的能耗
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "energy_per_sector" }, -- 扫描扇区所需的能量
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "energy_usage" }, -- 雷达使用的能量
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "max_distance_of_nearby_sector_revealed" }, -- 该雷达不断显示的区域半径，以块为单位。
                 max_value = 8
-            }, {
+            },
+            {
                 path = { "max_distance_of_sector_revealed" }, -- 雷达可以绘制的区域半径，以块为单位。
                 max_value = 16
-            }, {
+            },
+            {
                 path = { "rotation_speed" }, -- 旋转速度
                 max_value = 0.05
             }
@@ -203,7 +226,8 @@ local data_raw_other_catalog = {
             {
                 path = { "energy_usage_per_tick" }, -- 能量消耗
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "light", "size" } -- 灯光范围
             }
         }
@@ -223,7 +247,8 @@ local data_raw_spidertron_equipment_grid_catalog = {
             {
                 path = { "height" }, -- 高度
                 max_value = 16
-            }, {
+            },
+            {
                 path = { "width" }, -- 宽度
                 max_value = 16
             }
@@ -247,11 +272,14 @@ local data_raw_speed_module_catalog = {
                 path = { "effect", "consumption", "bonus" }, -- 能耗的乘数（非空闲/排水使用）。最小可能的总和为 -80%。
                 operation = "Division",
                 -- value = 0
-            }, {
+            },
+            {
                 path = { "effect", "speed", "bonus" } -- 制作速度、研究速度等。最小可能的总和为 -80%。
-            }, {
+            },
+            {
                 path = { "effect", "productivity", "bonus" } -- 产能。最小可能的总和为 0%。
-            }, {
+            },
+            {
                 path = { "effect", "pollution", "bonus" }, -- 污染因子的乘数。最小可能的总和为 -80%。
                 operation = "Division",
                 -- value = 0
@@ -275,12 +303,15 @@ local data_raw_productivity_module_catalog = {
             {
                 path = { "effect", "consumption", "bonus" }, -- 能耗的乘数（非空闲/排水使用）。最小可能的总和为 -80%。
                 operation = "Division",
-            }, {
+            },
+            {
                 path = { "effect", "speed", "bonus" }, -- 制作速度、研究速度等。最小可能的总和为 -80%。
                 operation = "Division",
-            }, {
+            },
+            {
                 path = { "effect", "productivity", "bonus" } -- 产能。最小可能的总和为 0%。
-            }, {
+            },
+            {
                 path = { "effect", "pollution", "bonus" }, -- 污染因子的乘数。最小可能的总和为 -80%。
                 operation = "Division",
                 -- value = 0
@@ -303,11 +334,14 @@ local data_raw_effectivity_module_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "effect", "consumption", "bonus" }, -- 能耗的乘数（非空闲/排水使用）。最小可能的总和为 -80%。
-            }, {
+            },
+            {
                 path = { "effect", "speed", "bonus" } -- 制作速度、研究速度等。最小可能的总和为 -80%。
-            }, {
+            },
+            {
                 path = { "effect", "productivity", "bonus" } -- 产能。最小可能的总和为 0%。
-            }, {
+            },
+            {
                 path = { "effect", "pollution", "bonus" }, -- 污染因子的乘数。最小可能的总和为 -80%。
                 operation = "Division",
                 -- value = 0

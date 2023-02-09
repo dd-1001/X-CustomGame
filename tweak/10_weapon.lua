@@ -29,13 +29,15 @@ local data_raw_gun_catalog = {
             {
                 path = { "attack_parameters", "cooldown" }, -- 再次射击的冷却时间
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "attack_parameters", "movement_slow_down_factor" }, -- 移动减速因子
                 operation = "Division"
             },
             {
                 path = { "attack_parameters", "range" } -- 范围
-            }, {
+            },
+            {
                 path = { "attack_parameters", "damage_modifier" } -- 伤害修正
             }
         }
@@ -65,10 +67,12 @@ local data_raw_spidertron_rocket_launcher_catalog = {
             {
                 path = { "attack_parameters", "cooldown" }, -- 再次射击的冷却时间
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "attack_parameters", "range" }, -- 范围
                 max_value = 160
-            }, {
+            },
+            {
                 path = { "attack_parameters", "damage_modifier" } -- 伤害修正
             }
         }
@@ -88,9 +92,11 @@ local data_raw_land_mine_catalog = {
             {
                 path = { "action", "action_delivery", "source_effects", 1, "action", "action_delivery", "target_effects",
                     1, "damage", "amount" } -- 爆炸伤害
-            }, {
+            },
+            {
                 path = { "action", "action_delivery", "source_effects", 1, "action", "radius" } -- 爆炸范围
-            }, {
+            },
+            {
                 path = { "trigger_radius" } -- 触发半径
             }
         }
@@ -120,9 +126,11 @@ local data_raw_ammo_magazine_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "ammo_type", "action", 1, "action_delivery", 1, "target_effects", 2, "damage", "amount" } -- 标准弹匣伤害
-            }, {
+            },
+            {
                 path = { "ammo_type", "action", "action_delivery", "target_effects", 2, "damage", "amount" } -- 穿甲弹匣伤害
-            }, {
+            },
+            {
                 path = { "magazine_size" }, -- 弹药物品被消耗前的射击次数。必须是>=1。
                 min_value = 1
             }
@@ -144,20 +152,26 @@ local data_raw_ammo_shotgun_shell_catalog = {
             {
                 path = { "magazine_size" }, -- 弹药物品被消耗前的射击次数。必须是>=1。
                 min_value = 1
-            }, {
+            },
+            {
                 path = { "ammo_type", "action", 2, "action_delivery", "direction_deviation" }, -- 方向偏离度
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "ammo_type", "action", 2, "action_delivery", "max_range" }, -- 范围
-            }, {
+            },
+            {
                 path = { "ammo_type", "action", 2, "action_delivery", "range_deviation" }, -- 范围偏离度
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "ammo_type", "action", 2, "action_delivery", "starting_speed" } -- 开始速度
-            }, {
+            },
+            {
                 path = { "ammo_type", "action", 2, "action_delivery", "starting_speed_deviation" }, -- 开始速度偏离度
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "ammo_type", "action", 2, "repeat_count" } -- 重复次数
             }
         }
@@ -175,7 +189,8 @@ local data_raw_shotgun_additional_effects_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "acceleration" } -- 加速度
-            }, {
+            },
+            {
                 path = { "action", "action_delivery", "target_effects", "damage", "amount" } -- 伤害
             }
         }
@@ -205,12 +220,15 @@ local data_raw_ammo_cannon_shell_catalog = {
             {
                 path = { "ammo_type", "action", "action_delivery", "direction_deviation" }, -- 方向偏离度
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "ammo_type", "action", "action_delivery", "max_range" }, -- 范围
-            }, {
+            },
+            {
                 path = { "ammo_type", "action", "action_delivery", "range_deviation" }, -- 范围偏离度
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "ammo_type", "action", "action_delivery", "starting_speed" } -- 开始速度
             }
         }
@@ -230,13 +248,17 @@ local data_raw_shell_additional_effects_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "acceleration" } -- 加速度
-            }, {
+            },
+            {
                 path = { "action", "action_delivery", "target_effects", 1, "damage", "amount" } -- physical伤害
-            }, {
+            },
+            {
                 path = { "action", "action_delivery", "target_effects", 2, "damage", "amount" } -- explosion伤害
-            }, {
+            },
+            {
                 path = { "piercing_damage" } -- 穿透伤害
-            }, {
+            },
+            {
                 path = { "final_action", "action_delivery", "target_effects", 2, "action", "action_delivery",
                     "target_effects", 1, "damage", "amount" } -- explosion伤害
             }
@@ -264,10 +286,12 @@ local data_raw_ammo_atomic_bomb_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "ammo_type", "action", "action_delivery", "starting_speed" } -- 开始速度
-            }, {
+            },
+            {
                 path = { "ammo_type", "cooldown_modifier" }, -- 冷却修正
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "ammo_type", "range_modifier" } -- 范围修正
             }
         }
@@ -293,17 +317,23 @@ local data_raw_rocket_additional_effects_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "acceleration" } -- 加速度
-            }, {
+            },
+            {
                 path = { "action", 1, "action_delivery", "target_effects", "damage", "amount" } -- 伤害
-            }, {
+            },
+            {
                 path = { "action", 1, "action_delivery", "target_effects", "lower_damage_modifier" } -- 下限伤害修正
-            }, {
+            },
+            {
                 path = { "action", 1, "action_delivery", "target_effects", "upper_damage_modifier" } -- 上限伤害修正
-            }, {
+            },
+            {
                 path = { "action", 1, "action_delivery", "target_effects", "upper_distance_threshold" } -- 上限距离阈值
-            }, {
+            },
+            {
                 path = { "action", "action_delivery", "target_effects", 7, "damage", "amount" } -- 原子火箭弹-火箭 伤害
-            }, {
+            },
+            {
                 path = { "action", "action_delivery", "target_effects", 2, "damage", "amount" } -- 标准火箭弹-火箭 伤害
             }
             -- {
@@ -326,7 +356,8 @@ local data_raw_ammo_flamethrower_catalog = {
             {
                 path = { "magazine_size" }, -- 弹药物品被消耗前的射击次数。必须是>=1。
                 min_value = 1
-            }, {
+            },
+            {
                 path = { "ammo_type", 2, "consumption_modifier" }, -- 消耗量修正
                 operation = "Division"
             }

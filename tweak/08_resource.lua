@@ -70,11 +70,43 @@ local data_raw_satellite_catalog = {
     }
 }
 
+-- 资源
+local data_raw_resource_catalog = {
+    resource = {
+        orig = {
+            "coal", -- 煤矿
+        },
+        mul = 10,
+        modify_parameter = {
+            {
+                path = { "infinite" },
+                operation = "Extend",
+                value = true
+            },
+            {
+                path = { "minimum" },
+                operation = "Extend",
+                value = 100
+            },
+            {
+                path = { "infinite_depletion_amount" },
+                operation = "Extend",
+                value = 10
+            },
+            {
+                path = { "stage_counts" },
+                value = { 0 },
+            }
+        }
+    }
+}
+
 -- 开始修改
 log("\n\n\n------------------Resource start------------------\n\n\n")
 
 common_data_raw:execute_modify(data_raw_fuel_value_catalog)
 common_data_raw:execute_modify(data_raw_satellite_catalog)
+common_data_raw:execute_modify(data_raw_resource_catalog)
 
 if X_CUSTOM_GAME_IS_DEBUG then
     -- 找出含有热值，但没被修改的项目

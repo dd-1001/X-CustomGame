@@ -35,30 +35,39 @@ local data_raw_machine_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "energy_source", "effectivity" } -- 能源利用效率
-            }, {
+            },
+            {
                 path = { "energy_source", "emissions_per_minute" }, -- 每分钟产生污染量
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "energy_source", "fuel_inventory_size" } -- 燃料库存
-            }, {
+            },
+            {
                 path = { "energy_usage" }, -- 能源消耗量
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "mining_speed" } -- 采矿速度
-            }, {
+            },
+            {
                 path = { "output_fluid_box", "base_area" }, -- 流体箱的总流体容量：base_area × height × 100
                 max_value = 100
-            }, {
+            },
+            {
                 path = { "input_fluid_box", "height" }, -- 流体箱的总流体容量：base_area × height × 100
                 max_value = 10
-            }, {
+            },
+            {
                 path = { "module_specification", "module_slots" }, -- 模块插槽数
                 value = settings.startup["x-custom-game-number-of-module-slots"].value
-            }, {
+            },
+            {
                 path = { "base_productivity" }, -- 基础产能加成
                 operation = "Extend",
                 value = settings.startup["x-custom-game-mining-drill-performance-multiplier"].value
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -85,24 +94,31 @@ local data_raw_machine_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "crafting_speed" } -- 制造速度
-            }, {
+            },
+            {
                 path = { "energy_source", "effectivity" } -- 能源使用效率
-            }, {
+            },
+            {
                 path = { "energy_source", "emissions_per_minute" }, -- 每分钟产生污染量
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "energy_source", "fuel_inventory_size" } -- 燃料库存
-            }, {
+            },
+            {
                 path = { "energy_usage" }, -- 能源消耗量
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "module_specification", "module_slots" }, -- 模块插槽数
                 value = settings.startup["x-custom-game-number-of-module-slots"].value
-            }, {
+            },
+            {
                 path = { "base_productivity" }, -- 基础产能加成
                 operation = "Extend",
                 value = settings.startup["x-custom-game-furnace-performance-multiplier"].value
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -160,20 +176,25 @@ local data_raw_machine_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "crafting_speed" } -- 制造速度
-            }, {
+            },
+            {
                 path = { "energy_source", "emissions_per_minute" }, -- 每分钟产生污染量
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "energy_usage" }, -- 能源消耗量
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "module_specification", "module_slots" }, -- 模块插槽数
                 value = settings.startup["x-custom-game-number-of-module-slots"].value
-            }, {
+            },
+            {
                 path = { "base_productivity" }, -- 基础产能加成
                 operation = "Extend",
                 value = settings.startup["x-custom-game-assembling-machine-performance-multiplier"].value
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }

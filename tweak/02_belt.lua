@@ -31,7 +31,8 @@ local data_raw_belt_transport_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "speed" } -- 皮带的速度：speed × 480 = Items/second
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -62,10 +63,12 @@ local data_raw_belt_transport_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "speed" } -- 地下传送带的速度：speed × 480 = Items/second
-            }, {
+            },
+            {
                 path = { "max_distance" }, -- 地下传送带最大距离
                 max_value = 81
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -96,7 +99,8 @@ local data_raw_belt_transport_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "speed" } -- 分流器的速度：speed × 480 = Items/second
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -114,7 +118,8 @@ local data_raw_belt_transport_catalog = {
         modify_parameter = {
             {
                 path = { "speed" } -- 分流器的速度：speed × 480 = Items/second
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }
@@ -146,7 +151,8 @@ local data_raw_belt_transport_catalog = {
         modify_parameter = {
             {
                 path = { "speed" } -- 分流器的速度：speed × 480 = Items/second
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }

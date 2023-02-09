@@ -285,9 +285,14 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                     if self.is_log then
                         if type(new_value) == "table" then
                             new_value = common_core:serpent_line(new_value)
+                        elseif type(new_value) == "boolean" then
+                            new_value = tostring(new_value)
                         end
+
                         if type(old_value) == "table" then
                             old_value = common_core:serpent_line(old_value)
+                        elseif type(old_value) == "boolean" then
+                            old_value = tostring(old_value)
                         end
                         log(table.concat(modify_field_path, ".") .. " : " .. old_value .. " ---> " .. new_value)
                     end
@@ -304,6 +309,8 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                     if self.is_log then
                         if type(new_value) == "table" then
                             new_value = common_core:serpent_line(new_value)
+                        elseif type(new_value) == "boolean" then
+                            new_value = tostring(new_value)
                         end
                         log(table.concat(modify_field_path, ".") .. " : insert value ---> " .. new_value)
                     end

@@ -21,21 +21,29 @@ local data_raw_armor_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "resistances", 1, "decrease" } -- 物理抗性physical
-            }, {
+            },
+            {
                 path = { "resistances", 2, "decrease" } -- 酸抗性acid
-            }, {
+            },
+            {
                 path = { "resistances", 3, "decrease" } -- 爆炸抗性explosion
-            }, {
+            },
+            {
                 path = { "resistances", 4, "decrease" } -- 火抗性fire
-            }, {
+            },
+            {
                 path = { "resistances", 1, "percent" } -- 物理抗性physical
-            }, {
+            },
+            {
                 path = { "resistances", 2, "percent" } -- 酸抗性acid
-            }, {
+            },
+            {
                 path = { "resistances", 3, "percent" } -- 爆炸抗性explosion
-            }, {
+            },
+            {
                 path = { "resistances", 4, "percent" } -- 火抗性fire
-            }, {
+            },
+            {
                 path = { "inventory_size_bonus" }, -- 增加库存大小
                 max_value = 100
             }
@@ -66,7 +74,8 @@ local data_raw_equipment_grid_catalog = {
             {
                 path = { "height" }, -- 高度
                 max_value = 16
-            }, {
+            },
+            {
                 path = { "width" }, -- 宽度
                 max_value = 16
             }

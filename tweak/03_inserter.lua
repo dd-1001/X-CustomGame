@@ -56,23 +56,30 @@ local data_raw_inserter_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "energy_source", "effectivity" } -- 能源利用效率
-            }, {
+            },
+            {
                 path = { "energy_source", "fuel_inventory_size" } -- 燃料库存
-            }, {
+            },
+            {
                 path = { "energy_per_movement" }, -- 每次动消耗能量
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "energy_per_rotation" }, -- 每次旋转耗能量
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "stack_size_bonus" }, -- 固有的堆栈大小奖励
                 operation = "Extend",
                 value = settings.startup["x-custom-game-inserter-performance-multiplier"].value
-            }, {
+            },
+            {
                 path = { "extension_speed" } -- 延伸速度
-            }, {
+            },
+            {
                 path = { "rotation_speed" } -- 旋转速度
-            }, {
+            },
+            {
                 path = { "max_health" } -- 最大血量
             }
         }

@@ -69,9 +69,11 @@ local data_raw_equipment_catalog = {
             {
                 path = { "energy_consumption" }, -- 能量消耗
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "energy_source", "buffer_capacity" } -- 容量
-            }, {
+            },
+            {
                 path = { "energy_source", "input_flow_limit" } -- 输入限制
             }
         }
@@ -91,9 +93,10 @@ local data_raw_equipment_catalog = {
             {
                 path = { "energy_consumption" }, -- 能量消耗
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "movement_bonus" }, -- 移动加成
-                max_value = 2-- 默认值为 0.3
+                max_value = 2 -- 默认值为 0.3
             }
         }
     },
@@ -110,19 +113,25 @@ local data_raw_equipment_catalog = {
             {
                 path = { "charging_distance" }, -- 充电距离
                 max_value = 5
-            }, {
+            },
+            {
                 path = { "charging_energy" }, -- 充电能量
-            }, {
+            },
+            {
                 path = { "charging_station_count" }, -- 充电点个数
                 max_value = 16
-            }, {
+            },
+            {
                 path = { "construction_radius" }, -- 施工半径
                 max_value = 64
-            }, {
+            },
+            {
                 path = { "energy_source", "buffer_capacity" }, -- 电池容量
-            }, {
+            },
+            {
                 path = { "energy_source", "input_flow_limit" }, -- 输入限制
-            }, {
+            },
+            {
                 path = { "robot_limit" }, -- 机器人个数限制
                 max_value = 64
             }
@@ -141,9 +150,11 @@ local data_raw_equipment_catalog = {
             {
                 path = { "energy_input" }, -- 能量输入
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "energy_source", "buffer_capacity" }, -- 电池容量
-            }, {
+            },
+            {
                 path = { "energy_source", "input_flow_limit" }, -- 输入限制
             }
         }
@@ -165,9 +176,11 @@ local data_raw_equipment_catalog = {
             -- },
             {
                 path = { "energy_source", "buffer_capacity" }, -- 电池容量
-            }, {
+            },
+            {
                 path = { "energy_source", "input_flow_limit" }, -- 能量盾模块MK2
-            }, {
+            },
+            {
                 path = { "max_shield_value" }, -- 最大护盾值
             }
         }
@@ -192,38 +205,50 @@ local data_raw_equipment_catalog = {
                 path = { "attack_parameters", "ammo_type", "action", 1, "action_delivery", 1, "target_effects", 2,
                     "distance" }, -- 推后距离
                 max_value = 32
-            }, {
+            },
+            {
                 path = { "attack_parameters", "ammo_type", "action", 2, "duration" }, -- 持续时间
-            }, {
+            },
+            {
                 path = { "attack_parameters", "ammo_type", "action", 2, "max_length" }, -- 最大长度
-            }, {
+            },
+            {
                 path = { "attack_parameters", "ammo_type", "action", 1, "radius" }, -- 半径
                 max_value = 32
-            }, {
+            },
+            {
                 path = { "attack_parameters", "ammo_type", "energy_consumption" }, -- 能量消耗
                 min_value = 20000,
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "attack_parameters", "cooldown" }, -- 冷却时间
                 operation = "Division"
-            }, {
+            },
+            {
                 path = { "attack_parameters", "damage_modifier" }, -- 伤害修正
-            }, {
+            },
+            {
                 path = { "attack_parameters", "projectile_creation_distance" }, -- 抛射物创建距离
-            }, {
+            },
+            {
                 path = { "attack_parameters", "range" }, -- 距离
                 max_value = 64
-            }, {
+            },
+            {
                 path = { "attack_parameters", "ammo_type", "action", "action_delivery", "duration" }, -- 持续时间
                 max_value = 64
-            }, {
+            },
+            {
                 path = { "attack_parameters", "ammo_type", "action", "action_delivery", "max_length" }, -- 距离
                 max_value = 64
-            }, {
+            },
+            {
                 path = { "attack_parameters", "ammo_type", "energy_consumption" }, -- 能量消耗
                 operation = "Division",
                 min_value = 20000
-            }, {
+            },
+            {
                 path = { "energy_source", "buffer_capacity" }, -- 电池容量
             }
         }
@@ -246,7 +271,8 @@ local data_raw_equipment_shape_size_catalog = {
             {
                 path = { "shape", "height" }, -- 高度
                 value = 1
-            }, {
+            },
+            {
                 path = { "shape", "width" }, -- 宽度
                 value = 1
             }
@@ -267,7 +293,8 @@ local data_raw_equipment_shape_size_catalog = {
             {
                 path = { "shape", "height" }, -- 高度
                 value = 1
-            }, {
+            },
+            {
                 path = { "shape", "width" }, -- 宽度
                 value = 1
             }
@@ -293,7 +320,8 @@ local data_raw_equipment_shape_size_catalog = {
             {
                 path = { "shape", "height" }, -- 高度
                 value = 1
-            }, {
+            },
+            {
                 path = { "shape", "width" }, -- 宽度
                 value = 1
             }
@@ -310,7 +338,8 @@ local data_raw_equipment_shape_size_catalog = {
             {
                 path = { "shape", "height" }, -- 高度
                 value = 1
-            }, {
+            },
+            {
                 path = { "shape", "width" }, -- 宽度
                 value = 1
             }
@@ -330,7 +359,8 @@ local data_raw_equipment_shape_size_catalog = {
             {
                 path = { "shape", "height" }, -- 高度
                 value = 1
-            }, {
+            },
+            {
                 path = { "shape", "width" }, -- 宽度
                 value = 1
             }
@@ -348,7 +378,8 @@ local data_raw_equipment_shape_size_catalog = {
             {
                 path = { "shape", "height" }, -- 高度
                 value = 1
-            }, {
+            },
+            {
                 path = { "shape", "width" }, -- 宽度
                 value = 1
             }
@@ -366,7 +397,8 @@ local data_raw_equipment_shape_size_catalog = {
             {
                 path = { "shape", "height" }, -- 高度
                 value = 1
-            }, {
+            },
+            {
                 path = { "shape", "width" }, -- 宽度
                 value = 1
             }
@@ -386,7 +418,8 @@ local data_raw_equipment_shape_size_catalog = {
             {
                 path = { "shape", "height" }, -- 高度
                 value = 1
-            }, {
+            },
+            {
                 path = { "shape", "width" }, -- 宽度
                 value = 1
             }
@@ -411,7 +444,8 @@ local data_raw_equipment_shape_size_catalog = {
             {
                 path = { "shape", "height" }, -- 高度
                 value = 1
-            }, {
+            },
+            {
                 path = { "shape", "width" }, -- 宽度
                 value = 1
             }
