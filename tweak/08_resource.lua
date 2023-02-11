@@ -75,26 +75,35 @@ local data_raw_resource_catalog = {
     resource = {
         orig = {
             "coal", -- 煤矿
+            "iron-ore", -- 铁矿
+            "copper-ore", -- 铜矿
+            "stone", -- 石矿
+            "uranium-ore", -- 铀矿
+            "crude-oil", -- 原油
         },
-        mul = 10,
         modify_parameter = {
+            -- {
+            --     path = { "infinite" }, -- 无限开采
+            --     operation = "Extend",
+            --     value = true
+            -- },
+            -- {
+            --     path = { "minimum" }, -- 当.infinite = true时，必须不是0
+            --     operation = "Extend",
+            --     value = 100
+            -- },
+            -- {
+            --     path = { "normal" }, -- 当.infinite = true时，必须不是0
+            --     operation = "Extend",
+            --     value = 100
+            -- },
             {
-                path = { "infinite" },
+                path = { "infinite_depletion_amount" }, -- 无限资源的损耗量
                 operation = "Extend",
-                value = true
+                value = 0
             },
             {
-                path = { "minimum" },
-                operation = "Extend",
-                value = 100
-            },
-            {
-                path = { "infinite_depletion_amount" },
-                operation = "Extend",
-                value = 10
-            },
-            {
-                path = { "stage_counts" },
+                path = { "stage_counts" }, -- 阶段_计数
                 value = { 0 },
             }
         }
