@@ -178,6 +178,13 @@ data:extend({
         order = "x-custom-game-108001"
     },
     {
+        type = "bool-setting",
+        name = "x-custom-game-infinite-resources-flag", -- 无限资源
+        setting_type = "startup",
+        default_value = true,
+        order = "x-custom-game-108002"
+    },
+    {
         type = "double-setting",
         name = "x-custom-game-locomotive-performance-multiplier", -- 机车
         setting_type = "startup",

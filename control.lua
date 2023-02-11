@@ -26,10 +26,11 @@ x_resource.resource_catalog = {
         "crude-oil", -- 原油
     },
     mod = {
-
+        "mineral-water", -- Krastorio2
+        "imersite", -- Krastorio2
     },
-    min_amount = 1, -- entity.amount
-    max_amount = 10 -- entity.amount
+    min_amount = 1001, -- entity.amount
+    max_amount = 2002 -- entity.amount
 }
 
 function x_resource.on_nth_tick(NthTickEventData)
@@ -74,7 +75,7 @@ function x_resource.x_refill(entity)
         end
     end
 
-    if false and
+    if settings.startup["x-custom-game-effect-mod-flags"].value and
         not is_need_modify and
         not is_finded then
         is_finded = true
@@ -96,9 +97,9 @@ end
 
 log("\n\n\n------------------Control start------------------\n\n\n")
 
-if true then
+if settings.startup["x-custom-game-infinite-resources-flag"].value then
     -- 定时任务
-    script.on_nth_tick(0.5 * x_resource.real_world_hour, x_resource.on_nth_tick)
+    script.on_nth_tick(10 * x_resource.real_world_minute, x_resource.on_nth_tick)
     -- 资源块生成时
     script.on_event(defines.events.on_chunk_generated, x_resource.x_on_chunk_generated)
     -- 资源达到0或无限资源的最小产量时

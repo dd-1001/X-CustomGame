@@ -81,6 +81,10 @@ local data_raw_resource_catalog = {
             "uranium-ore", -- 铀矿
             "crude-oil", -- 原油
         },
+        mod = {
+            "mineral-water", -- Krastorio2
+            "imersite", -- Krastorio2
+        },
         modify_parameter = {
             -- {
             --     path = { "infinite" }, -- 无限开采

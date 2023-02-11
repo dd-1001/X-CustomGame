@@ -756,6 +756,11 @@ local data_raw_do_nothing_catalog = {
             "kr-shelter-light",
             "kr-shelter-plus-light"
         }
+    },
+    resource = {
+        mod = {
+            "rare-metals",
+        }
     }
 }
 
