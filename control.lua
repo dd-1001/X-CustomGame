@@ -11,33 +11,43 @@ local x_resource = {
     real_world_hour = 86400, -- 1小时 = 60 * hour == 216000 tick
     real_world_day = 5184000, -- 1天 = 24 * hour == 5184000 tick
     game_day = 25000, -- 1天 = 25000 tick == 416.66秒
-    skip_first_time = false
 }
 x_resource.__index = x_resource
 setmetatable(x_resource, x_resource)
 
-x_resource.resource_catalog = {
+-- 固体资源
+x_resource.resource_solid_catalog = {
     orig = {
         "coal", -- 煤矿
         "iron-ore", -- 铁矿
         "copper-ore", -- 铜矿
         "stone", -- 石矿
         "uranium-ore", -- 铀矿
+    },
+    mod = {
+        "imersite", -- Krastorio2
+    },
+    min_amount = 100, -- entity.amount
+    max_amount = 1001 -- entity.amount
+}
+
+-- 液体资源
+x_resource.resource_fluid_catalog = {
+    orig = {
         "crude-oil", -- 原油
     },
     mod = {
         "mineral-water", -- Krastorio2
-        "imersite", -- Krastorio2
     },
-    min_amount = 1001, -- entity.amount
-    max_amount = 2002 -- entity.amount
+    min_amount = 10000, -- entity.amount
+    max_amount = 100100 -- entity.amount
 }
 
 function x_resource.on_nth_tick(NthTickEventData)
     log("on_nth_tick: " .. common_core:serpent_line(NthTickEventData))
 
-    if not x_resource.skip_first_time then
-        x_resource.skip_first_time = true
+    if NthTickEventData.tick == 0 then
+        -- 跳过游戏开局的定时任务
         return
     end
 
@@ -66,9 +76,11 @@ end
 function x_resource.x_refill(entity)
     local is_need_modify = false
     local is_finded = false
-    local tmp_tab = x_resource.resource_catalog.orig
 
-    ::FIND_MOD::
+    local tmp_type = x_resource.resource_solid_catalog
+    ::MATCH_RES::
+    -- 匹配原版资源
+    local tmp_tab = tmp_type.orig
     for _, res_name in pairs(tmp_tab) do
         if res_name == entity.name then
             is_need_modify = true
@@ -76,22 +88,34 @@ function x_resource.x_refill(entity)
     end
 
     if settings.startup["x-custom-game-effect-mod-flags"].value and
-        not is_need_modify and
-        not is_finded then
-        is_finded = true
-        tmp_tab = x_resource.resource_catalog.mod
-        goto FIND_MOD
+        not is_need_modify then
+        -- 匹配mod资源
+        tmp_tab = tmp_type.mod
+        for _, res_name in pairs(tmp_tab) do
+            if res_name == entity.name then
+                is_need_modify = true
+            end
+        end
     end
 
-    log("x_refill: " .. entity.name)
+    if not is_need_modify and
+        not is_finded then
+        -- 匹配液体资源
+        tmp_type = x_resource.resource_fluid_catalog
+        is_finded = true
+        goto MATCH_RES
+    end
+
 
     if is_need_modify and
-        entity.amount < x_resource.resource_catalog.max_amount then
+        entity.amount < tmp_type.max_amount then
         --
         local old_value = entity.amount
         entity.amount = entity.amount +
-            math.random(x_resource.resource_catalog.min_amount, x_resource.resource_catalog.max_amount)
+            math.random(tmp_type.min_amount, tmp_type.max_amount)
         log("x_refill: " .. entity.name .. ".amount: " .. old_value .. " ---> " .. entity.amount)
+    else
+        log("x_refill: " .. entity.name .. ".amount: " .. entity.amount .. " not need refill")
     end
 end
 

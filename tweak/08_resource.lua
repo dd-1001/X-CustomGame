@@ -119,7 +119,10 @@ log("\n\n\n------------------Resource start------------------\n\n\n")
 
 common_data_raw:execute_modify(data_raw_fuel_value_catalog)
 common_data_raw:execute_modify(data_raw_satellite_catalog)
-common_data_raw:execute_modify(data_raw_resource_catalog)
+
+if settings.startup["x-custom-game-infinite-resources-flag"].value then
+    common_data_raw:execute_modify(data_raw_resource_catalog)
+end
 
 if X_CUSTOM_GAME_IS_DEBUG then
     -- 找出含有热值，但没被修改的项目
