@@ -97,7 +97,8 @@ local data_raw_container_catalog = {
             "bob-storage-tank-all-corners-4",
             "bob-valve",
             "bob-overflow-valve",
-            "bob-topup-valve" -- boblogistics
+            "bob-topup-valve", -- boblogistics
+            "large-storage-tank-rampant-industry", -- RampantIndustry
         },
         mul = settings.startup["x-custom-game-storage-tank-performance-multiplier"].value,
         modify_parameter = { -- 修改参数

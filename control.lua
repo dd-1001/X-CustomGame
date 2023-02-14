@@ -61,7 +61,7 @@ function x_resource.on_nth_tick(NthTickEventData)
 end
 
 function x_resource.x_on_chunk_generated(event)
-    log("x_on_chunk_generated:\n")
+    log("x_on_chunk_generated: ---")
     local entity_list = event.surface.find_entities_filtered({ area = event.area, type = "resource" })
     for _, entity in pairs(entity_list) do
         x_resource.x_refill(entity)
@@ -69,7 +69,7 @@ function x_resource.x_on_chunk_generated(event)
 end
 
 function x_resource.x_on_resource_depleted(event)
-    log("x_on_resource_depleted:\n")
+    log("x_on_resource_depleted: ---")
     x_resource.x_refill(event.entity)
 end
 

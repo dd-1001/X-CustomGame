@@ -170,7 +170,14 @@ local data_raw_machine_catalog = {
             "centrifuge-3", -- bobassembly
             "burner-assembling-machine", -- aai-industry start
             "fuel-processor",
-            "industrial-furnace" -- aai-industry end
+            "industrial-furnace", -- aai-industry end
+            "air-filter-rampant-industry", -- RampantIndustry
+            "air-filter-2-rampant-industry",
+            "advanced-oil-refinery-rampant-industry",
+            "advanced-assembler-rampant-industry",
+            "advanced-chemical-plant-rampant-industry",
+            "advanced-furnace-rampant-industry",
+            "advanced-electric-furnace-rampant-industry", -- RampantIndustry
         },
         mul = settings.startup["x-custom-game-assembling-machine-performance-multiplier"].value,
         modify_parameter = { -- 修改参数

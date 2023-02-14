@@ -43,7 +43,8 @@ local data_raw_other_catalog = {
             "repair-pack-2", -- boblogistics
             "repair-pack-3",
             "repair-pack-4",
-            "repair-pack-5" -- boblogistics
+            "repair-pack-5", -- boblogistics
+            "advanced-repair-pack-rampant-industry", -- RampantIndustry
         },
         mul = settings.startup["x-custom-game-repair-tool-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -110,7 +111,8 @@ local data_raw_other_catalog = {
         mod = {
             "biusart-lab", -- Krastorio2
             "kr-singularity-lab", -- Krastorio2
-            "burner-lab" -- aai-industry
+            "burner-lab", -- aai-industry
+            "advanced-lab-rampant-industry", -- RampantIndustry
         },
         mul = settings.startup["x-custom-game-lab-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -459,7 +461,14 @@ local data_raw_module_slot_all_type_allowed_catalog = {
             "centrifuge-3", -- bobassembly
             "burner-assembling-machine", -- aai-industry start
             "fuel-processor",
-            "industrial-furnace" -- aai-industry end
+            "industrial-furnace", -- aai-industry end
+            "air-filter-rampant-industry", -- RampantIndustry
+            "air-filter-2-rampant-industry",
+            "advanced-oil-refinery-rampant-industry",
+            "advanced-assembler-rampant-industry",
+            "advanced-chemical-plant-rampant-industry",
+            "advanced-furnace-rampant-industry",
+            "advanced-electric-furnace-rampant-industry", -- RampantIndustry
         },
         modify_parameter = {
             {
@@ -477,6 +486,7 @@ local data_raw_module_slot_all_type_allowed_catalog = {
             "biusart-lab", -- Krastorio2
             "kr-singularity-lab", -- Krastorio2
             "burner-lab", -- aai-industry
+            "advanced-lab-rampant-industry", -- RampantIndustry
         },
         modify_parameter = {
             {

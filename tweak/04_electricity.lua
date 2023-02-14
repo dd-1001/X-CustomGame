@@ -69,7 +69,8 @@ local data_raw_production_catalog = {
             "steam-turbine-3",
             "fluid-generator",
             "fluid-generator-2",
-            "fluid-generator-3" -- bobpower
+            "fluid-generator-3", -- bobpower
+            "basic-fluid-generator-rampant-industry", -- RampantIndustry
         },
         mul = settings.startup["x-custom-game-generator-performance-multiplier"].value,
         modify_parameter = {
@@ -120,7 +121,8 @@ local data_raw_production_catalog = {
             "solar-panel-large-3", -- bobpower
             "advanced-solar", -- Advanced-Electric-Revamped-v16 start
             "elite-solar",
-            "ultimate-solar" -- Advanced-Electric-Revamped-v16 end
+            "ultimate-solar", -- Advanced-Electric-Revamped-v16 end
+            "advanced-solar-panel-rampant-industry", -- RampantIndustry
         },
         mul              = settings.startup["x-custom-game-solar-panel-performance-multiplier"].value,
         modify_parameter = {
@@ -151,6 +153,7 @@ local data_raw_production_catalog = {
             "ultimate-accumulator", -- Advanced-Electric-Revamped-v16 end
             "se-space-accumulator", -- space-exploration
             "se-space-accumulator-2", -- space-exploration
+            "advanced-accumulator-rampant-industry", -- RampantIndustry
         },
         mul              = settings.startup["x-custom-game-accumulator-performance-multiplier"].value,
         modify_parameter = {
