@@ -171,9 +171,9 @@ log("\n\n\n------------------配方 start------------------\n\n\n")
 
 if settings.startup["x-custom-game-author-custom-recipe-balance-flags"].value then
     if mods["Advanced-Electric-Revamped-v16"] then
-        common_data_raw:execute_modify(data_raw_recipe_ultimate_accumulator_catalog)
-        common_data_raw:execute_modify(data_raw_recipe_elite_accumulator_catalog)
         common_data_raw:execute_modify(data_raw_recipe_advanced_accumulator_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_elite_accumulator_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_ultimate_accumulator_catalog)
         common_data_raw:execute_modify(data_raw_recipe_advanced_solar_catalog)
         common_data_raw:execute_modify(data_raw_recipe_elite_solar_catalog)
         common_data_raw:execute_modify(data_raw_recipe_ultimate_solar_catalog)
