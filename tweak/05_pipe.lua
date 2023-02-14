@@ -10,6 +10,7 @@ local data_raw_pipe_catalog = {
             "pipe" -- 管道
         },
         mod = {
+            "se-space-pipe", -- space-exploration
             "kr-steel-pipe", -- Krastorio2
             "stone-pipe", -- boblogistics
             "copper-pipe",
@@ -32,6 +33,7 @@ local data_raw_pipe_catalog = {
             "pipe-to-ground" -- 地下管道
         },
         mod = {
+            "se-space-pipe-to-ground", -- space-exploration
             "kr-steel-pipe-to-ground", -- Krastorio2
             "stone-pipe-to-ground", -- boblogistics
             "copper-pipe-to-ground",

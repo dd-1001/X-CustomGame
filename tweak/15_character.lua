@@ -10,6 +10,8 @@ local data_raw_character_distance_catalog = {
             "character", -- 角色
         },
         mod = {
+            "se-spaceship-enemy-proxy", -- space-exploration
+            "se-spaceship-enemy-proxy-jetpack", -- space-exploration
             "character-jetpack", -- jetpack
         },
         mul = settings.startup["x-custom-game-character-distance-multiplier"].value,
@@ -43,6 +45,8 @@ local data_raw_character_mining_speed_catalog = {
             "character", -- 角色
         },
         mod = {
+            "se-spaceship-enemy-proxy", -- space-exploration
+            "se-spaceship-enemy-proxy-jetpack", -- space-exploration
             "character-jetpack", -- jetpack
         },
         mul = settings.startup["x-custom-game-character-mining-speed-multiplier"].value,
@@ -61,6 +65,8 @@ local data_raw_character_running_speed_catalog = {
             "character", -- 角色
         },
         mod = {
+            "se-spaceship-enemy-proxy", -- space-exploration
+            "se-spaceship-enemy-proxy-jetpack", -- space-exploration
             "character-jetpack", -- jetpack
         },
         mul = settings.startup["x-custom-game-character-running-speed-multiplier"].value,
@@ -79,6 +85,8 @@ local data_raw_character_health_catalog = {
             "character", -- 角色
         },
         mod = {
+            "se-spaceship-enemy-proxy", -- space-exploration
+            "se-spaceship-enemy-proxy-jetpack", -- space-exploration
             "character-jetpack", -- jetpack
         },
         mul = settings.startup["x-custom-game-character-health-multiplier"].value,
@@ -101,6 +109,8 @@ local data_raw_character_inventory_size_catalog = {
             "character", -- 角色
         },
         mod = {
+            "se-spaceship-enemy-proxy", -- space-exploration
+            "se-spaceship-enemy-proxy-jetpack", -- space-exploration
             "character-jetpack", -- jetpack
         },
         mul = settings.startup["x-custom-game-character-inventory-size-multiplier"].value,
@@ -141,6 +151,8 @@ local data_raw_character_collision_box_catalog = {
             "character", -- 角色
         },
         mod = {
+            "se-spaceship-enemy-proxy", -- space-exploration
+            "se-spaceship-enemy-proxy-jetpack", -- space-exploration
             "character-jetpack", -- jetpack
         },
         modify_parameter = { -- 修改参数

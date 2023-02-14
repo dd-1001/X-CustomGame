@@ -20,6 +20,10 @@ local data_raw_gun_catalog = {
             "vehicle-machine-gun", -- 车载机枪
         },
         mod = {
+            "se-tesla-gun", -- space-exploration
+            "se-cryogun",
+            "se-railgun",
+            "se-biogun", -- space-exploration
             "impulse-rifle", -- Krastorio2
             "heavy-rocket-launcher",
             "anti-material-rifle", -- Krastorio2
@@ -112,6 +116,15 @@ local data_raw_ammo_magazine_catalog = {
             "uranium-rounds-magazine", -- 贫铀弹匣
         },
         mod = {
+            "se-meteor-point-defence-ammo", -- space-exploration
+            "se-meteor-defence-ammo",
+            "se-tesla-ammo",
+            "se-cryogun-ammo",
+            "se-plague-bomb",
+            "se-railgun-ammo",
+            "se-iridium-piledriver",
+            "se-pheromone-ammo",
+            "se-bloater-ammo", -- space-exploration
             "impulse-rifle-ammo", -- Krastorio2
             "rifle-magazine",
             "armor-piercing-rifle-magazine",

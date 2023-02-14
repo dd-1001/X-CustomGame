@@ -26,6 +26,15 @@ x_resource.resource_solid_catalog = {
     },
     mod = {
         "imersite", -- Krastorio2
+        "se-water-ice", -- space-exploration
+        "se-methane-ice",
+        "se-beryllium-ore",
+        "se-cryonite",
+        "se-holmium-ore",
+        "se-iridium-ore",
+        "se-naquium-ore",
+        "se-vulcanite",
+        "se-vitamelange", -- space-exploration
     },
     min_amount = 100, -- entity.amount
     max_amount = 1001 -- entity.amount

@@ -12,6 +12,13 @@ local data_raw_container_catalog = {
             "steel-chest", -- 钢制箱
         },
         mod = {
+            "se-cargo-rocket-cargo-pod", -- space-exploration
+            "se-rocket-landing-pad",
+            "se-rocket-launch-pad",
+            "se-space-capsule",
+            "se-space-capsule-scorched",
+            "se-cartouche-chest",
+            "se-delivery-cannon-chest", -- space-exploration
             "kr-medium-container", -- Krastorio2
             "kr-big-container", -- Krastorio2
             "aai-strongbox", -- aai-containers start
@@ -80,6 +87,14 @@ local data_raw_container_catalog = {
             "storage-tank" -- 储液罐
         },
         mod = {
+            "se-spaceship-rocket-booster-tank", -- space-exploration
+            "se-spaceship-ion-booster-tank",
+            "se-spaceship-antimatter-booster-tank",
+            "se-space-pipe-long-j-3",
+            "se-space-pipe-long-j-5",
+            "se-space-pipe-long-j-7",
+            "se-space-pipe-long-s-9",
+            "se-space-pipe-long-s-15", -- space-exploration
             "check-valve", -- Flow Control
             "overflow-valve",
             "underflow-valve",

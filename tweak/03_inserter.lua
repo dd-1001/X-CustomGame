@@ -16,6 +16,10 @@ local data_raw_inserter_catalog = {
             "filter-inserter" -- 筛选机械臂
         },
         mod = {
+            "space-miniloader-inserter", -- space-exploration
+            "space-filter-miniloader-inserter",
+            "deep-space-miniloader-inserter",
+            "deep-space-filter-miniloader-inserter", -- space-exploration
             "miniloader-inserter", -- miniloader
             "filter-miniloader-inserter",
             "fast-miniloader-inserter",

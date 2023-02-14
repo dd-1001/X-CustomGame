@@ -10,6 +10,7 @@ local data_raw_other_catalog = {
             "locomotive" -- 内燃机车
         },
         mod = {
+            "se-space-elevator-tug", -- space-exploration
             "fast-one", -- fast_trans
             "fast-one-mk2",
             "fast-one-mk3", -- fast_trans
@@ -109,6 +110,7 @@ local data_raw_other_catalog = {
             "lab" -- 研究中心
         },
         mod = {
+            "se-space-science-lab", -- space-exploration
             "biusart-lab", -- Krastorio2
             "kr-singularity-lab", -- Krastorio2
             "burner-lab", -- aai-industry
@@ -133,6 +135,10 @@ local data_raw_other_catalog = {
             "beacon" -- 研究中心
         },
         mod = {
+            "se-compact-beacon", -- space-exploration
+            "se-compact-beacon-2",
+            "se-wide-beacon",
+            "se-wide-beacon-2", -- space-exploration
             "kr-singularity-beacon", -- Krastorio2
         },
         mul = settings.startup["x-custom-game-beacon-performance-multiplier"].value,
@@ -160,6 +166,7 @@ local data_raw_other_catalog = {
             "rocket-silo" -- 火箭发射井
         },
         mod = {
+            "se-space-probe-rocket-silo", -- space-exploration
         },
         mul = settings.startup["x-custom-game-rocket-silo-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -184,6 +191,7 @@ local data_raw_other_catalog = {
             "radar" -- 雷达
         },
         mod = {
+            "se-pylon-construction-radar-radar", -- space-exploration
             "kr-sentinel", -- Krastorio2
             "advanced-radar", -- Krastorio2
         },
@@ -267,6 +275,12 @@ local data_raw_speed_module_catalog = {
             "speed-module-3", -- 速度插件 3
         },
         mod = {
+            "speed-module-4", -- space-exploration
+            "speed-module-5",
+            "speed-module-6",
+            "speed-module-7",
+            "speed-module-8",
+            "speed-module-9", -- space-exploration
         },
         mul = settings.startup["x-custom-game-module-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -299,6 +313,12 @@ local data_raw_productivity_module_catalog = {
             "productivity-module-3", -- 产能插件 3
         },
         mod = {
+            "productivity-module-4", -- space-exploration
+            "productivity-module-5",
+            "productivity-module-6",
+            "productivity-module-7",
+            "productivity-module-8",
+            "productivity-module-9", -- space-exploration
         },
         mul = settings.startup["x-custom-game-module-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -331,6 +351,12 @@ local data_raw_effectivity_module_catalog = {
             "effectivity-module-3", -- 节能插件 3
         },
         mod = {
+            "effectivity-module-4", -- space-exploration
+            "effectivity-module-5",
+            "effectivity-module-6",
+            "effectivity-module-7",
+            "effectivity-module-8",
+            "effectivity-module-9", -- space-exploration
         },
         mul = settings.startup["x-custom-game-module-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -361,6 +387,7 @@ local data_raw_module_slot_all_type_allowed_catalog = {
             "pumpjack" -- 抽油机
         },
         mod = {
+            "se-core-miner-drill", -- space-exploration
             "kr-mineral-water-pumpjack", -- Krastorio2
             "kr-quarry-drill",
             "kr-electric-mining-drill-mk2",
@@ -395,6 +422,8 @@ local data_raw_module_slot_all_type_allowed_catalog = {
             "electric-furnace" -- 电炉
         },
         mod = {
+            "se-condenser-turbine", -- space-exploration
+            "se-big-turbine", -- space-exploration
             "flare-stack", -- Flare Stack
             "incinerator",
             "electric-incinerator",
@@ -424,6 +453,49 @@ local data_raw_module_slot_all_type_allowed_catalog = {
             "oil-refinery" -- 炼油厂
         },
         mod = {
+            "se-casting-machine", -- space-exploration
+            "se-space-astrometrics-laboratory",
+            "se-space-gravimetrics-laboratory",
+            "se-space-decontamination-facility",
+            "se-lifesupport-facility",
+            "se-fuel-refinery",
+            "se-space-genetics-laboratory",
+            "se-space-laser-laboratory",
+            "se-space-radiation-laboratory",
+            "se-space-thermodynamics-laboratory",
+            "se-space-mechanical-laboratory",
+            "se-space-biochemical-laboratory",
+            "se-space-electromagnetics-laboratory",
+            "se-space-growth-facility",
+            "se-recycling-facility",
+            "se-pulveriser",
+            "se-space-particle-accelerator",
+            "se-space-particle-collider",
+            "se-space-material-fabricator",
+            "se-space-hypercooler",
+            "se-space-assembling-machine",
+            "se-space-manufactory",
+            "se-space-plasma-generator",
+            "se-space-radiator",
+            "se-space-radiator-2",
+            "se-space-supercomputer-1",
+            "se-space-supercomputer-2",
+            "se-space-supercomputer-3",
+            "se-space-supercomputer-4",
+            "se-space-telescope",
+            "se-space-telescope-xray",
+            "se-space-telescope-gammaray",
+            "se-space-telescope-microwave",
+            "se-space-telescope-radio",
+            "se-delivery-cannon",
+            "se-electric-boiler",
+            "se-energy-transmitter-emitter",
+            "se-energy-transmitter-injector",
+            "se-nexus",
+            "se-space-elevator",
+            "kr-atmospheric-condenser-_-waterless", -- space-exploration
+            "equipment-gantry", -- equipment-gantry
+            "equipment-gantry-remover", -- equipment-gantry
             "kr-advanced-chemical-plant", -- Krastorio2
             "kr-advanced-furnace",
             "kr-atmospheric-condenser",
@@ -483,6 +555,7 @@ local data_raw_module_slot_all_type_allowed_catalog = {
             "lab" -- 研究中心
         },
         mod = {
+            "se-space-science-lab", -- space-exploration
             "biusart-lab", -- Krastorio2
             "kr-singularity-lab", -- Krastorio2
             "burner-lab", -- aai-industry
@@ -501,6 +574,10 @@ local data_raw_module_slot_all_type_allowed_catalog = {
             "beacon" -- 研究中心
         },
         mod = {
+            "se-compact-beacon", -- space-exploration
+            "se-compact-beacon-2",
+            "se-wide-beacon",
+            "se-wide-beacon-2", -- space-exploration
             "kr-singularity-beacon", -- Krastorio2
         },
         modify_parameter = {
@@ -514,6 +591,9 @@ local data_raw_module_slot_all_type_allowed_catalog = {
     ["rocket-silo"] = { -- 火箭发射井
         orig = {
             "rocket-silo" -- 火箭发射井
+        },
+        mod = {
+            "se-space-probe-rocket-silo", -- space-exploration
         },
         modify_parameter = {
             {

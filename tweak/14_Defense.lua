@@ -64,6 +64,7 @@ local data_raw_wall_catalog = {
             "gate", -- 闸门
         },
         mod = {
+            "se-spaceship-gate", -- space-exploration
         },
         mul = settings.startup["x-custom-game-wall-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -153,6 +154,8 @@ local data_raw_ammo_turret_orig_catalog = {
 local data_raw_ammo_turret_mod_catalog = {
     ["ammo-turret"] = { -- 机枪炮塔mod
         mod = {
+            "se-meteor-defence-container", -- space-exploration
+            "se-meteor-point-defence-container", -- space-exploration
             "kr-railgun-turret", -- Krastorio2
             "kr-rocket-turret" -- Krastorio2
         },
@@ -251,6 +254,9 @@ local data_raw_electric_turret_orig_catalog = {
 local data_raw_electric_turret_mod_catalog = {
     ["electric-turret"] = { -- 电炮塔mod
         mod = {
+            "se-meteor-defence-charger", -- space-exploration
+            "se-meteor-point-defence-charger",
+            "se-meteor-point-defence-charger-overcharged", -- space-exploration
             "kr-laser-artillery-turret", -- Krastorio2
         },
         mul = settings.startup["x-custom-game-electric-turret-performance-multiplier"].value,

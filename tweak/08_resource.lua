@@ -28,6 +28,16 @@ local data_raw_fuel_value_catalog = {
             "advanced-fuel",
             "dt-fuel",
             "charged-antimatter-fuel-cell", -- Krastorio2
+            "se-antimatter-canister", -- space-exploration
+            "se-vitamelange",
+            "se-vitamelange-nugget",
+            "se-vitamelange-bloom",
+            "se-vitamelange-spice",
+            "se-vitamelange-extract",
+            "se-vulcanite",
+            "se-vulcanite-crushed",
+            "se-vulcanite-enriched",
+            "se-vulcanite-block", -- space-exploration
         },
         mul = settings.startup["x-custom-game-fuel-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -43,6 +53,8 @@ local data_raw_fuel_value_catalog = {
             "light-oil", -- 轻油
             "petroleum-gas", -- 石油气
             "biomethanol", -- Krastorio2
+            "se-liquid-rocket-fuel", -- space-exploration
+            "se-antimatter-stream", -- space-exploration
         },
         mul = settings.startup["x-custom-game-fuel-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -84,6 +96,15 @@ local data_raw_resource_catalog = {
         mod = {
             "mineral-water", -- Krastorio2
             "imersite", -- Krastorio2
+            "se-water-ice", -- space-exploration
+            "se-methane-ice",
+            "se-beryllium-ore",
+            "se-cryonite",
+            "se-holmium-ore",
+            "se-iridium-ore",
+            "se-naquium-ore",
+            "se-vulcanite",
+            "se-vitamelange", -- space-exploration
         },
         modify_parameter = {
             -- {

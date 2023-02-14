@@ -156,7 +156,7 @@ local data_raw_recipe_ultimate_accumulator_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
-                value = {{"elite-accumulator", 101}, {"steel-plate", 20}, {"battery", 20}, {"processing-unit", 5}}
+                value = { { "elite-accumulator", 101 }, { "steel-plate", 20 }, { "battery", 20 }, { "processing-unit", 5 } }
             },
             {
                 path = { "results" }, -- 产出
@@ -166,10 +166,29 @@ local data_raw_recipe_ultimate_accumulator_catalog = {
     }
 }
 
+-- ["imersite-powder"]
+local data_raw_recipe_imersite_powder_catalog = {
+    recipe = {
+        orig = {
+            "imersite-powder", -- Krastorio2
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "results" }, -- 产出
+                value = { { "imersite-powder", 3 } }
+            }
+        }
+    }
+}
+
 -- 开始修改
 log("\n\n\n------------------配方 start------------------\n\n\n")
 
 if settings.startup["x-custom-game-author-custom-recipe-balance-flags"].value then
+    if mods["Krastorio2"] then
+        common_data_raw:execute_modify(data_raw_recipe_imersite_powder_catalog)
+    end
+
     if mods["Advanced-Electric-Revamped-v16"] then
         common_data_raw:execute_modify(data_raw_recipe_advanced_accumulator_catalog)
         common_data_raw:execute_modify(data_raw_recipe_elite_accumulator_catalog)

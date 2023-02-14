@@ -26,6 +26,8 @@ local data_raw_equipment_catalog = {
             "fusion-reactor-equipment", -- 聚变堆模块
         },
         mod = {
+            "se-rtg-equipment", -- space-exploration
+            "se-rtg-equipment-2", -- space-exploration
             "small-portable-generator", -- Krastorio2
             "portable-generator",
             "nuclear-reactor-equipment",
@@ -83,6 +85,10 @@ local data_raw_equipment_catalog = {
             "exoskeleton-equipment", -- 外骨骼模块
         },
         mod = {
+            "se-lifesupport-equipment-1", -- space-exploration
+            "se-lifesupport-equipment-2",
+            "se-lifesupport-equipment-3",
+            "se-lifesupport-equipment-4", -- space-exploration
             "advanced-exoskeleton-equipment", -- Krastorio2
             "superior-exoskeleton-equipment",
             "additional-engine",
@@ -165,6 +171,13 @@ local data_raw_equipment_catalog = {
             "energy-shield-mk2-equipment", -- 能量盾模块MK2
         },
         mod = {
+            "se-adaptive-armour-equipment-1", -- space-exploration
+            "se-adaptive-armour-equipment-2",
+            "se-adaptive-armour-equipment-3",
+            "se-adaptive-armour-equipment-4",
+            "se-adaptive-armour-equipment-5",
+            "energy-shield-mk5-equipment",
+            "energy-shield-mk6-equipment", -- space-exploration
             "energy-shield-mk3-equipment", -- Krastorio2
             "energy-shield-mk4-equipment", -- Krastorio2
         },
@@ -283,6 +296,8 @@ local data_raw_equipment_shape_size_catalog = {
             "fusion-reactor-equipment", -- 聚变堆模块
         },
         mod = {
+            "se-rtg-equipment", -- space-exploration
+            "se-rtg-equipment-2", -- space-exploration
             "small-portable-generator", -- Krastorio2
             "portable-generator",
             "nuclear-reactor-equipment",
@@ -350,6 +365,10 @@ local data_raw_equipment_shape_size_catalog = {
             "exoskeleton-equipment", -- 外骨骼模块
         },
         mod = {
+            "se-lifesupport-equipment-1", -- space-exploration
+            "se-lifesupport-equipment-2",
+            "se-lifesupport-equipment-3",
+            "se-lifesupport-equipment-4", -- space-exploration
             "advanced-exoskeleton-equipment", -- Krastorio2
             "superior-exoskeleton-equipment",
             "additional-engine",
@@ -410,6 +429,13 @@ local data_raw_equipment_shape_size_catalog = {
             "energy-shield-mk2-equipment", -- 能量盾模块MK2
         },
         mod = {
+            "se-adaptive-armour-equipment-1", -- space-exploration
+            "se-adaptive-armour-equipment-2",
+            "se-adaptive-armour-equipment-3",
+            "se-adaptive-armour-equipment-4",
+            "se-adaptive-armour-equipment-5",
+            "energy-shield-mk5-equipment",
+            "energy-shield-mk6-equipment", -- space-exploration
             "energy-shield-mk3-equipment", -- Krastorio2
             "energy-shield-mk4-equipment", -- Krastorio2
         },

@@ -14,6 +14,10 @@ local data_raw_armor_catalog = {
             "power-armor-mk2", -- 能量装甲MK2
         },
         mod = {
+            "se-thruster-suit", -- space-exploration
+            "se-thruster-suit-2",
+            "se-thruster-suit-3",
+            "se-thruster-suit-4", -- space-exploration
             "power-armor-mk3", -- Krastorio2
             "power-armor-mk4" -- Krastorio2
         },
@@ -60,6 +64,10 @@ local data_raw_equipment_grid_catalog = {
             "large-equipment-grid", -- 大型装备网格
         },
         mod = {
+            "se-thruster-suit-grid", -- space-exploration
+            "se-thruster-suit-2-grid",
+            "se-thruster-suit-3-grid",
+            "se-thruster-suit-4-grid", -- space-exploration
             "mk3-armor-grid", -- Krastorio2
             "mk4-armor-grid",
             "kr-car-grid",

@@ -129,6 +129,10 @@ local data_raw_belt_transport_catalog = {
             "loader-1x1",
         },
         mod = {
+            "space-miniloader-loader", -- space-exploration
+            "space-filter-miniloader-loader",
+            "deep-space-miniloader-loader",
+            "deep-space-filter-miniloader-loader", -- space-exploration
             "miniloader-loader", -- miniloader
             "filter-miniloader-loader",
             "fast-miniloader-loader",

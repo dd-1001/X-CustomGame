@@ -12,6 +12,7 @@ local data_raw_machine_catalog = {
             "pumpjack" -- 抽油机
         },
         mod = {
+            "se-core-miner-drill", -- space-exploration
             "kr-mineral-water-pumpjack", -- Krastorio2
             "kr-quarry-drill",
             "kr-electric-mining-drill-mk2",
@@ -79,6 +80,8 @@ local data_raw_machine_catalog = {
             "electric-furnace" -- 电炉
         },
         mod = {
+            "se-condenser-turbine", -- space-exploration
+            "se-big-turbine", -- space-exploration
             "flare-stack", -- Flare Stack
             "incinerator",
             "electric-incinerator",
@@ -133,6 +136,49 @@ local data_raw_machine_catalog = {
             "oil-refinery" -- 炼油厂
         },
         mod = {
+            "se-casting-machine", -- space-exploration
+            "se-space-astrometrics-laboratory",
+            "se-space-gravimetrics-laboratory",
+            "se-space-decontamination-facility",
+            "se-lifesupport-facility",
+            "se-fuel-refinery",
+            "se-space-genetics-laboratory",
+            "se-space-laser-laboratory",
+            "se-space-radiation-laboratory",
+            "se-space-thermodynamics-laboratory",
+            "se-space-mechanical-laboratory",
+            "se-space-biochemical-laboratory",
+            "se-space-electromagnetics-laboratory",
+            "se-space-growth-facility",
+            "se-recycling-facility",
+            "se-pulveriser",
+            "se-space-particle-accelerator",
+            "se-space-particle-collider",
+            "se-space-material-fabricator",
+            "se-space-hypercooler",
+            "se-space-assembling-machine",
+            "se-space-manufactory",
+            "se-space-plasma-generator",
+            "se-space-radiator",
+            "se-space-radiator-2",
+            "se-space-supercomputer-1",
+            "se-space-supercomputer-2",
+            "se-space-supercomputer-3",
+            "se-space-supercomputer-4",
+            "se-space-telescope",
+            "se-space-telescope-xray",
+            "se-space-telescope-gammaray",
+            "se-space-telescope-microwave",
+            "se-space-telescope-radio",
+            "se-delivery-cannon",
+            "se-electric-boiler",
+            "se-energy-transmitter-emitter",
+            "se-energy-transmitter-injector",
+            "se-nexus",
+            "se-space-elevator",
+            "kr-atmospheric-condenser-_-waterless", -- space-exploration
+            "equipment-gantry", -- equipment-gantry
+            "equipment-gantry-remover", -- equipment-gantry
             "kr-advanced-chemical-plant", -- Krastorio2
             "kr-advanced-furnace",
             "kr-atmospheric-condenser",

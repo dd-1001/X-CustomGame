@@ -11,6 +11,10 @@ local data_raw_production_catalog = {
             "heat-exchanger" -- 换热器
         },
         mod = {
+            "se-naquium-heat-pipe-long--+--", -- space-exploration
+            "se-naquium-heat-pipe-long--+-----+--",
+            "se-big-heat-exchanger",
+            "se-energy-transmitter-chamber", -- space-exploration
             "boiler-2", -- bobpower
             "boiler-3",
             "boiler-4",
@@ -59,6 +63,10 @@ local data_raw_production_catalog = {
             "steam-turbine" -- 汽轮机
         },
         mod = {
+            "se-condenser-turbine-generator", -- space-exploration
+            "se-fluid-burner-generator",
+            "se-big-turbine-generator-NW",
+            "se-big-turbine-generator-SE", -- space-exploration
             "kr-advanced-steam-turbine", -- Krastorio2
             "kr-gas-power-station", -- Krastorio2
             "steam-engine-2", -- bobpower
@@ -110,6 +118,9 @@ local data_raw_production_catalog = {
             "solar-panel" -- 太阳能板
         },
         mod              = {
+            "se-space-solar-panel", -- space-exploration
+            "se-space-solar-panel-2",
+            "se-space-solar-panel-3", -- space-exploration
             "kr-advanced-solar-panel", -- Krastorio2
             "solar-panel-small", -- bobpower
             "solar-panel-large",
@@ -176,6 +187,9 @@ local data_raw_production_catalog = {
             "nuclear-reactor" -- 核反应堆
         },
         mod              = {
+            "se-antimatter-reactor", -- space-exploration
+            "se-energy-transmitter-injector-reactor",
+            "se-energy-receiver", -- space-exploration
             "burner-reactor", -- bobpower
             "burner-reactor-2",
             "fluid-reactor",
@@ -211,6 +225,7 @@ local data_raw_production_catalog = {
             "heat-pipe" -- 核反应堆
         },
         mod              = {
+            "se-naquium-heat-pipe", -- space-exploration
             "heat-pipe-2", -- bobpower
             "heat-pipe-3",
             "heat-pipe-4" -- bobpower
@@ -244,6 +259,15 @@ local data_raw_transmission_catalog = {
             "substation" -- 广域配电站
         },
         mod = {
+            "se-addon-power-pole", -- space-exploration
+            "se-pylon",
+            "se-pylon-substation",
+            "se-pylon-construction",
+            "se-pylon-construction-radar",
+            "se-spaceship-clamp-power-pole-internal",
+            "se-spaceship-clamp-power-pole-external-west",
+            "se-spaceship-clamp-power-pole-external-east",
+            "se-space-elevator-energy-pole", -- space-exploration
             "kr-substation-mk2", -- Krastorio2
             "medium-electric-pole-2", -- bobpower
             "medium-electric-pole-3",

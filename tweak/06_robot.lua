@@ -78,6 +78,7 @@ local data_raw_robot_catalog = {
             "roboport" -- 机器人指令平台
         },
         mod = {
+            "se-supercharger", -- space-exploration
             "kr-small-roboport", -- Krastorio2
             "kr-small-roboport-logistic-mode",
             "kr-small-roboport-construction-mode",
