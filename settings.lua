@@ -475,6 +475,13 @@ data:extend({
         default_value = "25%",
         allowed_values = { "100%", "75%", "50%", "25%", "0%" },
         order = "x-custom-game-115006"
+    },
+    {
+        type = "bool-setting",
+        name = "x-custom-game-author-custom-recipe-balance-flags", -- 自定义配方
+        setting_type = "startup",
+        default_value = false,
+        order = "x-custom-game-116001"
     }
 })
 
