@@ -82,7 +82,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-solar-panel-performance-multiplier", -- 太阳能板
         setting_type = "startup",
-        default_value = 1,
+        default_value = 2,
         minimum_value = 0.01,
         maximum_value = 100,
         order = "x-custom-game-104004"
