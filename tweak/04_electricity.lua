@@ -119,9 +119,9 @@ local data_raw_production_catalog = {
             "solar-panel-small-3",
             "solar-panel-3",
             "solar-panel-large-3", -- bobpower
-            "advanced-solar", -- Advanced-Electric-Revamped-v16 start
+            "advanced-solar", -- Advanced-Electric-Revamped-v16
             "elite-solar",
-            "ultimate-solar", -- Advanced-Electric-Revamped-v16 end
+            "ultimate-solar", -- Advanced-Electric-Revamped-v16
             "advanced-solar-panel-rampant-industry", -- RampantIndustry
         },
         mul              = settings.startup["x-custom-game-solar-panel-performance-multiplier"].value,
@@ -148,9 +148,9 @@ local data_raw_production_catalog = {
             "large-accumulator-3",
             "fast-accumulator-3",
             "slow-accumulator-3", -- bobpower
-            "advanced-accumulator", -- Advanced-Electric-Revamped-v16 start
+            "advanced-accumulator", -- Advanced-Electric-Revamped-v16
             "elite-accumulator",
-            "ultimate-accumulator", -- Advanced-Electric-Revamped-v16 end
+            "ultimate-accumulator", -- Advanced-Electric-Revamped-v16
             "se-space-accumulator", -- space-exploration
             "se-space-accumulator-2", -- space-exploration
             "advanced-accumulator-rampant-industry", -- RampantIndustry
