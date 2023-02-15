@@ -1,4 +1,4 @@
-Version: 1.2.1
+Version: 1.2.2
 Date: 2023-2-15
   Features:
     - Add technology cost adjustment options
