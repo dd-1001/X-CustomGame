@@ -246,6 +246,42 @@ local data_raw_production_catalog = {
                 path = { "max_health" } -- 最大血量
             }
         }
+    },
+    ["electric-energy-interface"] = { -- 电能接口
+        orig             = {
+            "electric-energy-interface", -- 电能接口
+            "hidden-electric-energy-interface" -- 隐藏电能接口
+        },
+        mod              = {
+            "kr-wind-turbine", -- Krastorio2
+            "kr-activated-intergalactic-transceiver",
+            "kr-crash-site-generator",
+            "kr-logo",
+            "kr-shelter",
+            "kr-shelter-plus",
+            "kr-tesla-coil", -- Krastorio2
+        },
+        mul              = settings.startup["x-custom-game-electric-energy-interface-multiplier"].value,
+        modify_parameter = {
+            {
+                path = { "energy_production" } -- 能源生产
+            },
+            {
+                path = { "energy_source", "buffer_capacity" } -- 容量
+            },
+            {
+                path = { "energy_source", "input_flow_limit" } -- 输入限制
+            },
+            {
+                path = { "energy_source", "output_flow_limit" } -- 输出限制
+            },
+            {
+                path = { "energy_usage" } -- 能量使用
+            },
+            {
+                path = { "max_health" } -- 最大血量
+            }
+        }
     }
 }
 

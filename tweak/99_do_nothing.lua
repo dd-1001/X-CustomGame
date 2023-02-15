@@ -5664,6 +5664,19 @@ local data_raw_do_nothing_catalog = {
         mod = {
             "se-burbulator"
         }
+    },
+    ["electric-energy-interface"] = {
+        mod = {
+            "big-artillery-power",
+            "se-delivery-cannon-energy-interface",
+            "se-delivery-cannon-weapon-energy-interface",
+            "se-dimensional-anchor",
+            "se-energy-beam-defence",
+            "se-gate-energy-interface",
+            "se-nexus-charger",
+            "se-space-elevator-energy-interface",
+            "se-space-elevator-energy-interface-output",
+        }
     }
 }
 

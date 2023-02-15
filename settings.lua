@@ -116,6 +116,15 @@ data:extend({
     },
     {
         type = "double-setting",
+        name = "x-custom-game-electric-energy-interface-multiplier", -- 电能接口
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 0.01,
+        maximum_value = 100,
+        order = "x-custom-game-104008"
+    },
+    {
+        type = "double-setting",
         name = "x-custom-game-pipe-system-performance-multiplier", -- 管道系统
         setting_type = "startup",
         default_value = 2,

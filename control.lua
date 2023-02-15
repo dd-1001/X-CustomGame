@@ -137,7 +137,9 @@ local game_start_bonus_items = {
     { name = "personal-roboport-equipment", count = 1 }, -- 机器人指令模块
     { name = "logistic-robot",              count = 100 }, -- 物流机器人
     { name = "construction-robot",          count = 50 }, -- 建设机器人
-    { name = "roboport",                    count = 2 }, -- 机器人指令平台
+    { name = "roboport",                    count = 10 }, -- 机器人指令平台
+    { name = "logistic-chest-storage",      count = 100 }, -- 被动存货箱(黄箱)
+    { name = "logistic-chest-requester",    count = 100 }, -- 优先集货箱(蓝箱)
     { name = "small-portable-generator",    count = 1 }, -- Krastorio2小型便携式发电机
     { name = "se-rtg-equipment",            count = 1 }, -- space-exploration便携式RTG
 }
@@ -166,7 +168,7 @@ script.on_init(function() init() end)
 
 if settings.startup["x-custom-game-infinite-resources-flag"].value then
     -- 定时任务
-    script.on_nth_tick(10 * x_resource.real_world_minute, x_resource.on_nth_tick)
+    script.on_nth_tick(15 * x_resource.real_world_minute, x_resource.on_nth_tick)
     -- 资源块生成时
     script.on_event(defines.events.on_chunk_generated, x_resource.x_on_chunk_generated)
     -- 资源达到0或无限资源的最小产量时

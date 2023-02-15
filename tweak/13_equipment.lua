@@ -125,11 +125,11 @@ local data_raw_equipment_catalog = {
             },
             {
                 path = { "charging_station_count" }, -- 充电点个数
-                max_value = 16
+                max_value = 25
             },
             {
                 path = { "construction_radius" }, -- 施工半径
-                max_value = 64
+                max_value = 50
             },
             {
                 path = { "energy_source", "buffer_capacity" }, -- 电池容量
@@ -139,7 +139,7 @@ local data_raw_equipment_catalog = {
             },
             {
                 path = { "robot_limit" }, -- 机器人个数限制
-                max_value = 64
+                max_value = 50
             }
         }
     },
