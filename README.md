@@ -48,6 +48,8 @@ ___
 * **装备-------所有装备模块**
 * **防御-------墙、闸门、炮塔**
 * **角色-------角色属性**
+* **配方-------配方属性**
+* **科技-------科技属性**
 
 ###
 ### 未来可用配置：
@@ -73,6 +75,8 @@ ___
 * **Equipment-------All equipment modules**
 * **Defense-------wall, gate, turret**
 * **Character-------Character Properties**
+* **Recipe-------Recipe Properties**
+* **Technology-------Technology Properties**
 
 ###
 ### Future available configurations:

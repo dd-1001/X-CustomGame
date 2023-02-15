@@ -111,9 +111,6 @@ local data_raw_belt_transport_catalog = {
             "fast-loader",
             "loader"
         },
-        mod = {
-
-        },
         mul = settings.startup["x-custom-game-belt-performance-multiplier"].value,
         modify_parameter = {
             {

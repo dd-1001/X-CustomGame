@@ -482,6 +482,29 @@ data:extend({
         setting_type = "startup",
         default_value = false,
         order = "x-custom-game-116001"
+    },
+    {
+        type = "bool-setting",
+        name = "x-custom-game-infinite-technology-flags", -- 无限科技
+        setting_type = "startup",
+        default_value = true,
+        order = "x-custom-game-117001"
+    },
+    {
+        type = "string-setting",
+        name = "x-custom-game-infinite-technology-cost-formula", -- 无限科技花费公式
+        setting_type = "startup",
+        default_value = "1.1^(L-7)*1000",
+        order = "x-custom-game-117002"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-technology-cost-multiplier", -- 科技花费
+        setting_type = "startup",
+        default_value = 0.8,
+        minimum_value = 0.01,
+        maximum_value = 100,
+        order = "x-custom-game-117003"
     }
 })
 
