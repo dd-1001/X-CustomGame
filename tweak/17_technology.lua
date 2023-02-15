@@ -14,8 +14,7 @@ local function modify_infinite_technology_cost_formula()
     end
 end
 
--- local mul = settings.startup["x-custom-game-technology-cost-multiplier"].value
-local mul = 0.01
+local mul = settings.startup["x-custom-game-technology-cost-multiplier"].value
 local function modify_technology_cost()
     for _, tech in pairs(data.raw.technology) do
         if tech.unit.count then

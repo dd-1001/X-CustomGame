@@ -487,7 +487,7 @@ data:extend({
         type = "bool-setting",
         name = "x-custom-game-infinite-technology-flags", -- 无限科技
         setting_type = "startup",
-        default_value = true,
+        default_value = false,
         order = "x-custom-game-117001"
     },
     {
