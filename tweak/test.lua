@@ -20,7 +20,6 @@ local tab_record = common_data_raw:check_not_in_record("record")
 log("Unmod List: \n" .. common_core:serpent_block(tab_record))
 
 
--- log(common_core:serpent_line(data.raw.character.character.collision_box))
 
 
 log("\n\n\n------------------test end------------------\n\n\n")

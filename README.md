@@ -28,6 +28,7 @@ ___
 * **jetpack**
 * **Krastorio2**
 * **miniloader**
+* **space-exploration**
 
 ___
 

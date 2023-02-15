@@ -1428,6 +1428,7 @@ local data_raw_do_nothing_catalog = {
     },
     roboport = {
         mod = {
+            "se-supercharger",
             "se-pylon-construction-roboport",
             "se-pylon-construction-radar-roboport",
             "bob-logistic-zone-interface",

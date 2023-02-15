@@ -128,7 +128,41 @@ function x_resource.x_refill(entity)
     end
 end
 
+local game_start_bonus_items = {
+    { name = "modular-armor",               count = 1 }, -- 模块装甲
+    { name = "solar-panel-equipment",       count = 5 }, -- 太阳能模块
+    { name = "battery-equipment",           count = 5 }, -- 电池组模块
+    { name = "fusion-reactor-equipment",    count = 1 }, -- 聚变堆模块
+    { name = "belt-immunity-equipment",     count = 1 }, -- 锚定模块
+    { name = "personal-roboport-equipment", count = 1 }, -- 机器人指令模块
+    { name = "logistic-robot",              count = 100 }, -- 物流机器人
+    { name = "construction-robot",          count = 50 }, -- 建设机器人
+    { name = "roboport",                    count = 2 }, -- 机器人指令平台
+    { name = "small-portable-generator",    count = 1 }, -- Krastorio2小型便携式发电机
+    { name = "se-rtg-equipment",            count = 1 }, -- space-exploration便携式RTG
+}
+
+local function set_game_start_bonus()
+    if not remote.interfaces["freeplay"] then return end
+
+    local created_items = remote.call("freeplay", "get_created_items")
+    for _, item in pairs(game_start_bonus_items) do
+        if game.item_prototypes[item.name] then
+            created_items[item.name] = item.count
+        end
+    end
+    remote.call("freeplay", "set_created_items", created_items)
+end
+
+local function init()
+    if settings.startup["x-custom-game-start-bouns-items-flag"].value then
+        set_game_start_bonus()
+    end
+end
+
 log("\n\n\n------------------Control start------------------\n\n\n")
+
+script.on_init(function() init() end)
 
 if settings.startup["x-custom-game-infinite-resources-flag"].value then
     -- 定时任务

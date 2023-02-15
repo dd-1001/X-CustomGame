@@ -185,6 +185,13 @@ data:extend({
         order = "x-custom-game-108002"
     },
     {
+        type = "bool-setting",
+        name = "x-custom-game-start-bouns-items-flag", -- 开局物品
+        setting_type = "startup",
+        default_value = true,
+        order = "x-custom-game-108003"
+    },
+    {
         type = "double-setting",
         name = "x-custom-game-locomotive-performance-multiplier", -- 机车
         setting_type = "startup",
@@ -502,8 +509,8 @@ data:extend({
         name = "x-custom-game-technology-cost-multiplier", -- 科技花费
         setting_type = "startup",
         default_value = 0.8,
-        minimum_value = 0.01,
-        maximum_value = 100,
+        minimum_value = 0.001,
+        maximum_value = 1000,
         order = "x-custom-game-117003"
     }
 })
