@@ -197,7 +197,7 @@ data:extend({
         type = "bool-setting",
         name = "x-custom-game-start-bouns-items-flag", -- 开局物品
         setting_type = "startup",
-        default_value = false,
+        default_value = true,
         order = "x-custom-game-108003"
     },
     {

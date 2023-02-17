@@ -1,3 +1,9 @@
+Version: 1.2.3
+Date: 2023-2-17
+  Features:
+    - Add Game-start bouns items options
+    - Add In-game customization to get items options(Modify the configuration to make it effective)
+---------------------------------------------------------------------------------------------------
 Version: 1.2.2
 Date: 2023-2-15
   Features:
