@@ -126,6 +126,11 @@ local data_raw_other_catalog = {
                 value = settings.startup["x-custom-game-number-of-module-slots"].value
             },
             {
+                path = { "base_productivity" }, -- 基础产能加成
+                operation = "Extend",
+                value = settings.startup["x-custom-game-lab-performance-multiplier"].value
+            },
+            {
                 path = { "researching_speed" } -- 研究速度
             }
         }

@@ -1,5 +1,6 @@
 local common_core = require("common/core")
 local log = common_core.Log
+local lib_string = common_core.lib_string
 
 -- local game = game -- 这是个主要对象，大部分的API都是通过它来访问的。
 local script = script -- 提供一个注册事件处理程序的接口
@@ -129,19 +130,34 @@ function x_resource.x_refill(entity)
 end
 
 local game_start_bonus_items = {
-    { name = "modular-armor",               count = 1 }, -- 模块装甲
-    { name = "solar-panel-equipment",       count = 5 }, -- 太阳能模块
-    { name = "battery-equipment",           count = 5 }, -- 电池组模块
-    { name = "fusion-reactor-equipment",    count = 1 }, -- 聚变堆模块
-    { name = "belt-immunity-equipment",     count = 1 }, -- 锚定模块
-    { name = "personal-roboport-equipment", count = 1 }, -- 机器人指令模块
-    { name = "logistic-robot",              count = 100 }, -- 物流机器人
-    { name = "construction-robot",          count = 50 }, -- 建设机器人
-    { name = "roboport",                    count = 10 }, -- 机器人指令平台
-    { name = "logistic-chest-storage",      count = 100 }, -- 被动存货箱(黄箱)
-    { name = "logistic-chest-requester",    count = 100 }, -- 优先集货箱(蓝箱)
-    { name = "small-portable-generator",    count = 1 }, -- Krastorio2小型便携式发电机
-    { name = "se-rtg-equipment",            count = 1 }, -- space-exploration便携式RTG
+    { name = "modular-armor",                count = 1 }, -- 模块装甲
+    { name = "solar-panel-equipment",        count = 10 }, -- 太阳能模块
+    { name = "battery-equipment",            count = 10 }, -- 电池组模块
+    { name = "fusion-reactor-equipment",     count = 1 }, -- 聚变堆模块
+    { name = "belt-immunity-equipment",      count = 1 }, -- 锚定模块
+    { name = "personal-roboport-equipment",  count = 2 }, -- 机器人指令模块
+    { name = "logistic-robot",               count = 100 }, -- 物流机器人
+    { name = "construction-robot",           count = 100 }, -- 建设机器人
+    { name = "roboport",                     count = 10 }, -- 机器人指令平台
+    { name = "logistic-chest-storage",       count = 100 }, -- 被动存货箱(黄箱)
+    { name = "logistic-chest-requester",     count = 100 }, -- 优先集货箱(蓝箱)
+    { name = "medium-electric-pole",         count = 100 }, -- 中型电线杆
+    { name = "transport-belt",               count = 100 }, -- 基础传送带
+    { name = "underground-belt",             count = 100 }, -- 基础地下传送带
+    { name = "steel-furnace",                count = 10 }, -- 钢炉
+    { name = "small-portable-generator",     count = 1 }, -- Krastorio2小型便携式发电机
+    { name = "kr-wind-turbine",              count = 200 }, -- Krastorio2风力发电机
+    { name = "se-rtg-equipment",             count = 1 }, -- space-exploration便携式RTG
+    { name = "se-core-miner",                count = 1 }, -- space-exploration星核钻机
+    { name = "se-pulveriser",                count = 1 }, -- space-exploration粉碎机
+    { name = "miniloader",                   count = 100 }, -- miniloader迷你装卸机
+    { name = "filter-miniloader",            count = 100 }, -- miniloader筛选迷你装卸机
+    { name = "warehouse-basic",              count = 10 }, -- Warehousing大仓库
+    { name = "warehouse-storage",            count = 10 }, -- Warehousing黄仓
+    { name = "bob-storage-tank-all-corners", count = 50 }, -- boblogistics储液罐
+    { name = "bob-overflow-valve",           count = 10 }, -- boblogistics溢流阀
+    { name = "flare-stack",                  count = 10 }, -- Flare Stack流体燃烧器
+    { name = "electric-incinerator",         count = 10 }, -- Flare Stack物品焚烧器
 }
 
 local function set_game_start_bonus()
@@ -156,15 +172,54 @@ local function set_game_start_bonus()
     remote.call("freeplay", "set_created_items", created_items)
 end
 
-local function init()
+local function on_init()
     if settings.startup["x-custom-game-start-bouns-items-flag"].value then
         set_game_start_bonus()
     end
 end
 
+local function on_runtime_mod_setting_changed(event)
+    -- log("on_runtime_mod_setting_changed: event.setting = " .. event.setting)
+
+    if not remote.interfaces["freeplay"] then return end
+
+    -- 获取玩家
+    local player = game.players[event.player_index]
+    if not (player and player.character) then
+        return
+    end
+
+    if event.setting == "x-custom-game-get-items" then
+        -- 整理物品列表
+        local add_item_list = {}
+        local set_value = settings.global["x-custom-game-get-items"].value
+        local item_list = lib_string.split(lib_string.trim(set_value), ";")
+        for _, item_info in ipairs(item_list) do
+            local tmp_tab, tmp_tab2 = lib_string.split(lib_string.trim(item_info), ",")
+            if #tmp_tab == 2 then
+                tmp_tab2 = { name = lib_string.trim(tmp_tab[1]), count = tonumber(tmp_tab[2]) }
+            elseif #tmp_tab == 1 then
+                tmp_tab2 = { name = lib_string.trim(tmp_tab[1]), count = 1 }
+            end
+
+            if game.item_prototypes[tmp_tab2.name] then
+                table.insert(add_item_list, tmp_tab2)
+            end
+        end
+
+        -- 加入物品
+        log("add_item_list: \n" .. common_core:serpent_block(add_item_list))
+        for _, item in ipairs(add_item_list) do
+            player.insert(item)
+        end
+    end
+end
+
 log("\n\n\n------------------Control start------------------\n\n\n")
 
-script.on_init(function() init() end)
+script.on_init(on_init)
+-- 配置改变时
+script.on_event(defines.events.on_runtime_mod_setting_changed, on_runtime_mod_setting_changed)
 
 if settings.startup["x-custom-game-infinite-resources-flag"].value then
     -- 定时任务

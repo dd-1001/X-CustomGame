@@ -2,6 +2,7 @@ local Core = {
     lib_serpent = require("common/serpent"),
     -- lib_serpent = require("__stdlib__/stdlib/vendor/serpent"),
     -- lib_logger = require("__stdlib__/stdlib/misc/logger"),
+    lib_string = require("common/string"),
     -- lib_string = require("__stdlib__/stdlib/utils/string"),
     -- serpent_block_format = { indent = "\t", comment = false, maxlevel = 3 }
     serpent_block_format = { indent = "\t", comment = false },

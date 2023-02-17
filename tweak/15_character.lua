@@ -93,7 +93,7 @@ local data_raw_character_health_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "max_health" }, -- 最大血量
-                max_value = 5000
+                max_value = 2500
             },
             {
                 path = { "healing_per_tick" } -- 血量恢复
