@@ -290,20 +290,18 @@ local data_raw_speed_module_catalog = {
         mul = settings.startup["x-custom-game-module-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
-                path = { "effect", "consumption", "bonus" }, -- 能耗的乘数（非空闲/排水使用）。最小可能的总和为 -80%。
+                path = { "effect", "consumption", "bonus" }, -- 能耗的乘数（非空闲/排水使用）。
                 operation = "Division",
-                -- value = 0
             },
             {
-                path = { "effect", "speed", "bonus" } -- 制作速度、研究速度等。最小可能的总和为 -80%。
+                path = { "effect", "speed", "bonus" } -- 制作速度、研究速度等。
             },
             {
-                path = { "effect", "productivity", "bonus" } -- 产能。最小可能的总和为 0%。
+                path = { "effect", "productivity", "bonus" } -- 产能。
             },
             {
-                path = { "effect", "pollution", "bonus" }, -- 污染因子的乘数。最小可能的总和为 -80%。
+                path = { "effect", "pollution", "bonus" }, -- 污染因子的乘数。
                 operation = "Division",
-                -- value = 0
             }
         }
     }
@@ -328,20 +326,19 @@ local data_raw_productivity_module_catalog = {
         mul = settings.startup["x-custom-game-module-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
-                path = { "effect", "consumption", "bonus" }, -- 能耗的乘数（非空闲/排水使用）。最小可能的总和为 -80%。
+                path = { "effect", "consumption", "bonus" }, -- 能耗的乘数（非空闲/排水使用）。
                 operation = "Division",
             },
             {
-                path = { "effect", "speed", "bonus" }, -- 制作速度、研究速度等。最小可能的总和为 -80%。
+                path = { "effect", "speed", "bonus" }, -- 制作速度、研究速度等。
                 operation = "Division",
             },
             {
-                path = { "effect", "productivity", "bonus" } -- 产能。最小可能的总和为 0%。
+                path = { "effect", "productivity", "bonus" } -- 产能。
             },
             {
-                path = { "effect", "pollution", "bonus" }, -- 污染因子的乘数。最小可能的总和为 -80%。
+                path = { "effect", "pollution", "bonus" }, -- 污染因子的乘数。
                 operation = "Division",
-                -- value = 0
             }
         }
     }
@@ -366,18 +363,16 @@ local data_raw_effectivity_module_catalog = {
         mul = settings.startup["x-custom-game-module-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
-                path = { "effect", "consumption", "bonus" }, -- 能耗的乘数（非空闲/排水使用）。最小可能的总和为 -80%。
+                path = { "effect", "consumption", "bonus" }, -- 能耗的乘数（非空闲/排水使用）。
             },
             {
-                path = { "effect", "speed", "bonus" } -- 制作速度、研究速度等。最小可能的总和为 -80%。
+                path = { "effect", "speed", "bonus" } -- 制作速度、研究速度等。
             },
             {
-                path = { "effect", "productivity", "bonus" } -- 产能。最小可能的总和为 0%。
+                path = { "effect", "productivity", "bonus" } -- 产能。
             },
             {
-                path = { "effect", "pollution", "bonus" }, -- 污染因子的乘数。最小可能的总和为 -80%。
-                operation = "Division",
-                -- value = 0
+                path = { "effect", "pollution", "bonus" }, -- 污染因子的乘数。
             }
         }
     }

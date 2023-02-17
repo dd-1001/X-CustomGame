@@ -82,7 +82,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-solar-panel-performance-multiplier", -- 太阳能板
         setting_type = "startup",
-        default_value = 5,
+        default_value = 10,
         minimum_value = 0.01,
         maximum_value = 100,
         order = "x-custom-game-104004"
@@ -154,7 +154,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-mining-drill-performance-multiplier", -- 采矿-钻探
         setting_type = "startup",
-        default_value = 3,
+        default_value = 5,
         minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-107001"
@@ -163,7 +163,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-furnace-performance-multiplier", -- 熔炉
         setting_type = "startup",
-        default_value = 3,
+        default_value = 5,
         minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-107002"
@@ -172,7 +172,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-assembling-machine-performance-multiplier", -- 装配机
         setting_type = "startup",
-        default_value = 3,
+        default_value = 5,
         minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-107003"
@@ -196,7 +196,7 @@ data:extend({
     {
         type = "bool-setting",
         name = "x-custom-game-start-bouns-items-flag", -- 开局物品
-        setting_type = "startup",
+        setting_type = "runtime-per-user",
         default_value = true,
         order = "x-custom-game-108003"
     },
@@ -247,7 +247,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-lab-performance-multiplier", -- 研究中心
         setting_type = "startup",
-        default_value = 10,
+        default_value = 100,
         minimum_value = 0.01,
         maximum_value = 100,
         order = "x-custom-game-109005"
@@ -265,7 +265,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-beacon-performance-multiplier", -- 插件效果分享塔
         setting_type = "startup",
-        default_value = 5,
+        default_value = 10,
         minimum_value = 0.01,
         maximum_value = 100,
         order = "x-custom-game-109007"
@@ -274,7 +274,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-module-performance-multiplier", -- 插件
         setting_type = "startup",
-        default_value = 10,
+        default_value = 5,
         minimum_value = 0.01,
         maximum_value = 100,
         order = "x-custom-game-109008"
@@ -450,7 +450,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-character-distance-multiplier", -- 角色距离相关
         setting_type = "startup",
-        default_value = 2,
+        default_value = 10,
         minimum_value = 0.5,
         maximum_value = 100,
         order = "x-custom-game-115001"
@@ -468,7 +468,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-character-running-speed-multiplier", -- 角色奔跑速度
         setting_type = "startup",
-        default_value = 2,
+        default_value = 3,
         minimum_value = 0.5,
         maximum_value = 100,
         order = "x-custom-game-115003"
@@ -524,7 +524,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-technology-cost-multiplier", -- 科技花费
         setting_type = "startup",
-        default_value = 0.8,
+        default_value = 0.6,
         minimum_value = 0.001,
         maximum_value = 1000,
         order = "x-custom-game-117003"
