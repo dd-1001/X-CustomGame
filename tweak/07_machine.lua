@@ -42,9 +42,6 @@ local data_raw_machine_catalog = {
                 operation = "Division"
             },
             {
-                path = { "energy_source", "fuel_inventory_size" } -- 燃料库存
-            },
-            {
                 path = { "energy_usage" }, -- 能源消耗量
                 operation = "Division"
             },
@@ -106,9 +103,6 @@ local data_raw_machine_catalog = {
                 operation = "Division"
             },
             {
-                path = { "energy_source", "fuel_inventory_size" } -- 燃料库存
-            },
-            {
                 path = { "energy_usage" }, -- 能源消耗量
                 operation = "Division"
             },
@@ -143,18 +137,18 @@ local data_raw_machine_catalog = {
             "se-lifesupport-facility",
             "se-fuel-refinery",
             "se-space-genetics-laboratory",
+            "se-space-growth-facility",
             "se-space-laser-laboratory",
             "se-space-radiation-laboratory",
             "se-space-thermodynamics-laboratory",
-            "se-space-mechanical-laboratory",
-            "se-space-biochemical-laboratory",
-            "se-space-electromagnetics-laboratory",
-            "se-space-growth-facility",
             "se-recycling-facility",
+            "se-space-mechanical-laboratory",
             "se-pulveriser",
             "se-space-particle-accelerator",
             "se-space-particle-collider",
             "se-space-material-fabricator",
+            "se-space-biochemical-laboratory",
+            "se-space-electromagnetics-laboratory",
             "se-space-hypercooler",
             "se-space-assembling-machine",
             "se-space-manufactory",
@@ -176,7 +170,24 @@ local data_raw_machine_catalog = {
             "se-energy-transmitter-injector",
             "se-nexus",
             "se-space-elevator",
-            "kr-atmospheric-condenser-_-waterless", -- space-exploration
+            "kr-atmospheric-condenser-_-waterless",
+            "se-space-decontamination-facility-grounded",
+            "se-fuel-refinery-spaced",
+            "se-space-laser-laboratory-grounded",
+            "se-space-radiation-laboratory-grounded",
+            "se-space-thermodynamics-laboratory-grounded",
+            "se-space-mechanical-laboratory-grounded",
+            "se-space-particle-accelerator-grounded",
+            "se-space-biochemical-laboratory-grounded",
+            "se-space-hypercooler-grounded",
+            "se-space-assembling-machine-grounded",
+            "se-space-manufactory-grounded",
+            "se-space-radiator-grounded",
+            "se-space-radiator-2-grounded",
+            "se-space-supercomputer-1-grounded",
+            "se-space-supercomputer-2-grounded",
+            "se-space-supercomputer-3-grounded",
+            "se-space-supercomputer-4-grounded", -- space-exploration
             "equipment-gantry", -- equipment-gantry
             "equipment-gantry-remover", -- equipment-gantry
             "kr-advanced-chemical-plant", -- Krastorio2
@@ -184,11 +195,14 @@ local data_raw_machine_catalog = {
             "kr-atmospheric-condenser",
             "kr-bio-lab",
             "kr-electrolysis-plant",
+            "kr-electrolysis-plant-spaced",
             "kr-filtration-plant",
             "kr-fuel-refinery",
+            "kr-fuel-refinery-spaced",
             "kr-fusion-reactor",
             "kr-greenhouse",
             "kr-matter-assembler",
+            "kr-matter-assembler-spaced",
             "kr-matter-plant",
             "kr-quantum-computer",
             "kr-research-server",

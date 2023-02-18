@@ -62,9 +62,6 @@ local data_raw_inserter_catalog = {
                 path = { "energy_source", "effectivity" } -- 能源利用效率
             },
             {
-                path = { "energy_source", "fuel_inventory_size" } -- 燃料库存
-            },
-            {
                 path = { "energy_per_movement" }, -- 每次动消耗能量
                 operation = "Division"
             },

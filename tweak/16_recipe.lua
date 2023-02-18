@@ -52,6 +52,21 @@ local data_raw_recipe_kovarex_enrichment_process_catalog = {
     }
 }
 
+-- 填海料
+local data_raw_recipe_landfill_catalog = {
+    recipe = {
+        orig = {
+            "landfill", -- 填海料
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = { { "stone", 20 } }
+            }
+        }
+    }
+}
+
 -- ["advanced-solar"]
 local data_raw_recipe_advanced_solar_catalog = {
     recipe = {
@@ -200,6 +215,7 @@ if settings.startup["x-custom-game-author-custom-recipe-balance-flags"].value th
 
     common_data_raw:execute_modify(data_raw_recipe_uranium_processing_catalog)
     common_data_raw:execute_modify(data_raw_recipe_kovarex_enrichment_process_catalog)
+    common_data_raw:execute_modify(data_raw_recipe_landfill_catalog)
 end
 
 
