@@ -123,47 +123,47 @@ function x_resource.x_refill(entity)
         local old_value = entity.amount
         entity.amount = entity.amount +
             math.random(tmp_type.min_amount, tmp_type.max_amount)
-        log("x_refill: " .. entity.name .. ".amount: " .. old_value .. " ---> " .. entity.amount)
+        -- log("x_refill: " .. entity.name .. ".amount: " .. old_value .. " ---> " .. entity.amount)
     else
-        log("x_refill: " .. entity.name .. ".amount: " .. entity.amount .. " not need refill")
+        -- log("x_refill: " .. entity.name .. ".amount: " .. entity.amount .. " not need refill")
     end
 end
 
 local game_start_bonus_items = {
-    { name = "modular-armor",                            count = 1 }, -- 模块装甲
-    { name = "solar-panel-equipment",                    count = 8 }, -- 太阳能模块
-    { name = "battery-equipment",                        count = 8 }, -- 电池组模块
-    { name = "fusion-reactor-equipment",                 count = 1 }, -- 聚变堆模块
-    { name = "belt-immunity-equipment",                  count = 1 }, -- 锚定模块
-    { name = "personal-roboport-equipment",              count = 2 }, -- 机器人指令模块
-    { name = "logistic-robot",                           count = 100 }, -- 物流机器人
-    { name = "construction-robot",                       count = 100 }, -- 建设机器人
-    { name = "roboport",                                 count = 10 }, -- 机器人指令平台
-    { name = "steel-chest",                              count = 100 }, -- 钢制箱
-    { name = "logistic-chest-storage",                   count = 100 }, -- 被动存货箱(黄箱)
-    { name = "logistic-chest-requester",                 count = 100 }, -- 优先集货箱(蓝箱)
-    { name = "medium-electric-pole",                     count = 100 }, -- 中型电线杆
-    { name = "transport-belt",                           count = 100 }, -- 基础传送带
-    { name = "underground-belt",                         count = 100 }, -- 基础地下传送带
-    { name = "steel-furnace",                            count = 10 }, -- 钢炉
-    { name = "lab",                                      count = 1 }, -- 电力研究中心
-    { name = "automation-science-pack",                  count = 2000 }, -- 自动化科技包
-    { name = "logistic-science-pack",                    count = 2000 }, -- 物流科技包
-    { name = "chemical-science-pack",                    count = 2000 }, -- 化工科技包
-    { name = "small-portable-generator",                 count = 1 }, -- Krastorio2小型便携式发电机
-    { name = "kr-wind-turbine",                          count = 200 }, -- Krastorio2风力发电机
-    { name = "basic-tech-card",                          count = 2000 }, -- 基础科技卡
-    { name = "se-rtg-equipment",                         count = 1 }, -- space-exploration便携式RTG
-    { name = "se-core-miner",                            count = 1 }, -- space-exploration星核钻机
-    { name = "se-pulveriser",                            count = 1 }, -- space-exploration粉碎机
-    { name = "miniloader",                               count = 100 }, -- miniloader迷你装卸机
-    { name = "filter-miniloader",                        count = 100 }, -- miniloader筛选迷你装卸机
-    { name = "warehouse-basic",                          count = 10 }, -- Warehousing大仓库
-    { name = "warehouse-storage",                        count = 10 }, -- Warehousing黄仓
-    { name = "bob-storage-tank-all-corners",             count = 50 }, -- boblogistics储液罐
-    { name = "bob-overflow-valve",                       count = 10 }, -- boblogistics溢流阀
-    { name = "flare-stack",                              count = 10 }, -- Flare Stack流体燃烧器
-    { name = "electric-incinerator",                     count = 10 }, -- Flare Stack物品焚烧器
+    { name = "modular-armor",                count = 1 }, -- 模块装甲
+    { name = "solar-panel-equipment",        count = 8 }, -- 太阳能模块
+    { name = "battery-equipment",            count = 8 }, -- 电池组模块
+    { name = "fusion-reactor-equipment",     count = 1 }, -- 聚变堆模块
+    { name = "belt-immunity-equipment",      count = 1 }, -- 锚定模块
+    { name = "personal-roboport-equipment",  count = 2 }, -- 机器人指令模块
+    { name = "logistic-robot",               count = 100 }, -- 物流机器人
+    { name = "construction-robot",           count = 100 }, -- 建设机器人
+    { name = "roboport",                     count = 10 }, -- 机器人指令平台
+    { name = "steel-chest",                  count = 100 }, -- 钢制箱
+    { name = "logistic-chest-storage",       count = 100 }, -- 被动存货箱(黄箱)
+    { name = "logistic-chest-requester",     count = 100 }, -- 优先集货箱(蓝箱)
+    { name = "medium-electric-pole",         count = 100 }, -- 中型电线杆
+    { name = "transport-belt",               count = 100 }, -- 基础传送带
+    { name = "underground-belt",             count = 100 }, -- 基础地下传送带
+    { name = "steel-furnace",                count = 10 }, -- 钢炉
+    { name = "lab",                          count = 1 }, -- 电力研究中心
+    { name = "automation-science-pack",      count = 2000 }, -- 自动化科技包
+    { name = "logistic-science-pack",        count = 2000 }, -- 物流科技包
+    { name = "chemical-science-pack",        count = 2000 }, -- 化工科技包
+    { name = "small-portable-generator",     count = 1 }, -- Krastorio2小型便携式发电机
+    { name = "kr-wind-turbine",              count = 200 }, -- Krastorio2风力发电机
+    { name = "basic-tech-card",              count = 2000 }, -- 基础科技卡
+    { name = "se-rtg-equipment",             count = 1 }, -- space-exploration便携式RTG
+    { name = "se-core-miner",                count = 1 }, -- space-exploration星核钻机
+    { name = "se-pulveriser",                count = 1 }, -- space-exploration粉碎机
+    { name = "miniloader",                   count = 100 }, -- miniloader迷你装卸机
+    { name = "filter-miniloader",            count = 100 }, -- miniloader筛选迷你装卸机
+    { name = "warehouse-basic",              count = 10 }, -- Warehousing大仓库
+    { name = "warehouse-storage",            count = 10 }, -- Warehousing黄仓
+    { name = "bob-storage-tank-all-corners", count = 50 }, -- boblogistics储液罐
+    { name = "bob-overflow-valve",           count = 10 }, -- boblogistics溢流阀
+    { name = "flare-stack",                  count = 10 }, -- Flare Stack流体燃烧器
+    { name = "electric-incinerator",         count = 10 }, -- Flare Stack物品焚烧器
 }
 
 local function set_game_start_bonus()

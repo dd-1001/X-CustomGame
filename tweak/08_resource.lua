@@ -10,7 +10,7 @@ local data_raw_fuel_value_catalog = {
             "wood", -- 木板
             "coal", -- 煤矿
             "solid-fuel", -- 固体燃料
-            "rocket-fuel", -- 火箭燃料
+            -- "rocket-fuel", -- 火箭燃料(space-exploration会检测它的热值，这里不做修改。下面加入调试模式做修改)
             "nuclear-fuel", -- 核能燃料
             "uranium-fuel-cell" -- 铀燃料棒
         },
@@ -64,6 +64,11 @@ local data_raw_fuel_value_catalog = {
         }
     }
 }
+
+-- 调试模式加入修改火箭燃料的热值（需修改space-exploration_0.6.101\scripts\essential.lua:Essential.detect_breaking_prototypes()，让它直接return）
+if X_CUSTOM_GAME_IS_DEBUG then
+    table.insert(data_raw_fuel_value_catalog.item.orig, "rocket-fuel")
+end
 
 -- 发射卫星带回的资源
 local data_raw_satellite_catalog = {

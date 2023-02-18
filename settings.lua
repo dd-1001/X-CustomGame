@@ -468,7 +468,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-character-running-speed-multiplier", -- 角色奔跑速度
         setting_type = "startup",
-        default_value = 3,
+        default_value = 2,
         minimum_value = 0.5,
         maximum_value = 100,
         order = "x-custom-game-115003"
