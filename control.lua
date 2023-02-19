@@ -229,7 +229,7 @@ script.on_event(defines.events.on_runtime_mod_setting_changed, on_runtime_mod_se
 
 if settings.startup["x-custom-game-infinite-resources-flag"].value then
     -- 定时任务
-    script.on_nth_tick(15 * x_resource.real_world_minute, x_resource.on_nth_tick)
+    -- script.on_nth_tick(15 * x_resource.real_world_minute, x_resource.on_nth_tick)
     -- 资源块生成时
     script.on_event(defines.events.on_chunk_generated, x_resource.x_on_chunk_generated)
     -- 资源达到0或无限资源的最小产量时

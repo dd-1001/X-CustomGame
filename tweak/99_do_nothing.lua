@@ -1815,8 +1815,6 @@ local data_raw_do_nothing_catalog = {
             "effectivity-module-3",
             "stack-inserter",
             "stack-filter-inserter",
-            "basic-oil-processing",
-            "advanced-oil-processing",
             "coal-liquefaction",
             "heavy-oil-cracking",
             "light-oil-cracking",

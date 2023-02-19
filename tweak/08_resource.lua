@@ -43,6 +43,12 @@ local data_raw_fuel_value_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "fuel_value" } -- 热值
+            },
+            {
+                path = { "fuel_acceleration_multiplier" } -- 载具加速
+            },
+            {
+                path = { "fuel_top_speed_multiplier" } -- 载具速度上限
             }
         }
     },
@@ -66,7 +72,8 @@ local data_raw_fuel_value_catalog = {
 }
 
 -- 调试模式加入修改火箭燃料的热值（需修改space-exploration_0.6.101\scripts\essential.lua:Essential.detect_breaking_prototypes()，让它直接return）
-if X_CUSTOM_GAME_IS_DEBUG then
+if X_CUSTOM_GAME_IS_DEBUG or
+    not mods["space-exploration"] then
     table.insert(data_raw_fuel_value_catalog.item.orig, "rocket-fuel")
 end
 

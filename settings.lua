@@ -55,7 +55,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-electricity-transmission-performance-multiplier", -- 电力输送：电线杆
         setting_type = "startup",
-        default_value = 5,
+        default_value = 10,
         minimum_value = 0.01,
         maximum_value = 100,
         order = "x-custom-game-104001"
