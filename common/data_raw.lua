@@ -102,6 +102,56 @@ function Data_raw:find_item_with_key_word(keyword)
     return item_with_keyword
 end
 
+-- 删除配方中指定的产出项目
+function Data_raw:recipe_delete_results_by_name(keyword)
+    local modify_list = {}
+
+    for recipe_name, recipe_data in pairs(data.raw.recipe) do
+        local moded = false
+        if recipe_data.results and
+            table_size(recipe_data.results) > 1 then
+            for index, result in ipairs(recipe_data.results) do
+                if result[1] == keyword or
+                    result.name == keyword then
+                    table.remove(recipe_data.results, index)
+                    moded = true
+                end
+            end
+        end
+
+        if recipe_data.normal and
+            recipe_data.normal.results and
+            table_size(recipe_data.normal.results) > 1 then
+            for index, result in ipairs(recipe_data.normal.results) do
+                if result[1] == keyword or
+                    result.name == keyword then
+                    table.remove(recipe_data.normal.results, index)
+                    moded = true
+                end
+            end
+        end
+
+        if recipe_data.expensive and
+            recipe_data.expensive.results and
+            table_size(recipe_data.expensive.results) > 1 then
+            for index, result in ipairs(recipe_data.expensive.results) do
+                if result[1] == keyword or
+                    result.name == keyword then
+                    table.remove(recipe_data.expensive.results, index)
+                    moded = true
+                end
+            end
+        end
+
+        if moded then
+            table.insert(modify_list, recipe_name)
+        end
+    end
+
+
+    return modify_list
+end
+
 function Data_raw:insert_data_raw_field_value(field_path, value)
     if not field_path or not value then
         return false

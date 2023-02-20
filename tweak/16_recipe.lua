@@ -510,6 +510,9 @@ log("\n\n\n------------------配方 start------------------\n\n\n")
 if settings.startup["x-custom-game-author-custom-recipe-balance-flags"].value then
     if mods["space-exploration"] then
         common_data_raw:execute_modify(data_raw_recipe_se_cargo_rocket_section_catalog)
+        -- 删除产出中的废料
+        local moddify_list = common_data_raw:recipe_delete_results_by_name("se-scrap")
+        log("recipe_delete_results_by_name [se-scrap]:\n" .. common_core:serpent_block(moddify_list))
     end
 
     if mods["Krastorio2"] then
