@@ -23,6 +23,7 @@ local data_raw_gun_catalog = {
             "se-tesla-gun", -- space-exploration
             "se-cryogun",
             "se-railgun",
+            "grappling-gun",
             "se-biogun", -- space-exploration
             "impulse-rifle", -- Krastorio2
             "heavy-rocket-launcher",

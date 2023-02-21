@@ -1706,7 +1706,6 @@ local data_raw_do_nothing_catalog = {
     gun = {
         mod = {
             "big-artillery-wagon-cannon",
-            "grappling-gun"
         }
     },
     lamp = {
