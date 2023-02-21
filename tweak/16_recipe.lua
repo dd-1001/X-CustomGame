@@ -357,10 +357,6 @@ local data_raw_recipe_advanced_solar_catalog = {
             {
                 path = { "ingredients" }, -- 成分
                 value = { { "steel-plate", 5 }, { "electronic-circuit", 5 }, { "solar-panel", 101 } }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = { { "advanced-solar", 2 } }
             }
         }
     }
@@ -376,10 +372,6 @@ local data_raw_recipe_elite_solar_catalog = {
             {
                 path = { "ingredients" }, -- 成分
                 value = { { "steel-plate", 10 }, { "advanced-circuit", 10 }, { "advanced-solar", 101 } }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = { { "elite-solar", 2 } }
             }
         }
     }
@@ -395,10 +387,6 @@ local data_raw_recipe_ultimate_solar_catalog = {
             {
                 path = { "ingredients" }, -- 成分
                 value = { { "steel-plate", 20 }, { "processing-unit", 20 }, { "elite-solar", 101 } }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = { { "ultimate-solar", 2 } }
             }
         }
     }
@@ -414,10 +402,6 @@ local data_raw_recipe_advanced_accumulator_catalog = {
             {
                 path = { "ingredients" }, -- 成分
                 value = { { "accumulator", 101 }, { "iron-plate", 5 }, { "electronic-circuit", 5 } }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = { { "advanced-accumulator", 2 } }
             }
         }
     }
@@ -433,10 +417,6 @@ local data_raw_recipe_elite_accumulator_catalog = {
             {
                 path = { "ingredients" }, -- 成分
                 value = { { "advanced-accumulator", 101 }, { "iron-plate", 10 }, { "advanced-circuit", 10 } }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = { { "elite-accumulator", 2 } }
             }
         }
     }
@@ -452,10 +432,6 @@ local data_raw_recipe_ultimate_accumulator_catalog = {
             {
                 path = { "ingredients" }, -- 成分
                 value = { { "elite-accumulator", 101 }, { "steel-plate", 20 }, { "battery", 20 }, { "processing-unit", 5 } }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = { { "ultimate-accumulator", 2 } }
             }
         }
     }
