@@ -185,7 +185,7 @@ local data_raw_recipe_advanced_oil_processing_catalog = {
                         type = "fluid"
                     },
                     {
-                        amount = 100,
+                        amount = 200,
                         name = "crude-oil",
                         type = "fluid"
                     }
@@ -200,7 +200,7 @@ local data_raw_recipe_advanced_oil_processing_catalog = {
                         type = "fluid"
                     },
                     {
-                        amount = 100,
+                        amount = 200,
                         name = "crude-oil",
                         type = "fluid"
                     }
@@ -593,7 +593,7 @@ local data_raw_recipe_speed_productivity_effectivity_module_9_catalog = {
                     },
                     {
                         "processing-unit",
-                        4
+                        5
                     }
                 }
             }
@@ -691,50 +691,19 @@ local data_raw_recipe_ultimate_accumulator_catalog = {
     }
 }
 
--- ["imersium-plate"]
-local data_raw_recipe_imersium_plate_catalog = {
-    recipe = {
-        mod = {
-            "imersium-plate", -- Krastorio2
-        },
-        modify_parameter = { -- 修改参数
-            {
-                path = { "ingredients" }, -- 成分
-                value = {
-                    {
-                        amount = 32,
-                        name = "se-kr-fine-imersite-powder",
-                        type = "item"
-                    }
-                }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = {
-                    {
-                        amount = 8,
-                        name = "imersium-plate",
-                        type = "item"
-                    }
-                }
-            }
-        }
-    }
-}
-
--- ["imersite-crystal"]
+-- Krastorio2 紫金晶体
 local data_raw_recipe_imersite_crystal_catalog = {
     recipe = {
         mod = {
-            "imersite-crystal", -- Krastorio2
+            "imersite-crystal",
         },
         modify_parameter = { -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
                     {
-                        amount = 40,
-                        name = "se-kr-imersium-sulfide",
+                        amount = 20,
+                        name = "water",
                         type = "fluid"
                     },
                     {
@@ -758,7 +727,174 @@ local data_raw_recipe_imersite_crystal_catalog = {
     }
 }
 
--- ["se-cargo-rocket-section"]
+-- Krastorio2 紫金板
+local data_raw_recipe_imersium_plate_catalog = {
+    recipe = {
+        mod = {
+            "imersium-plate",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 16,
+                        name = "imersite-crystal",
+                        type = "item"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 8,
+                        name = "imersium-plate",
+                        type = "item"
+                    }
+                }
+            }
+        }
+    }
+}
+
+-- space-exploration 精细紫金粉末
+local data_raw_recipe_se_kr_fine_imersite_powder_catalog = {
+    recipe = {
+        mod = {
+            "se-kr-fine-imersite-powder",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 16,
+                        name = "se-kr-imersium-sulfide",
+                        type = "fluid"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 16,
+                        name = "se-kr-fine-imersite-powder"
+                    }
+                }
+            }
+        }
+    }
+}
+
+-- space-exploration 星核碎片
+local data_raw_recipe_se_core_fragment_omni_catalog = {
+    recipe = {
+        mod = {
+            "se-core-fragment-omni",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 8,
+                        name = "iron-ore" -- 铁矿
+                    },
+                    {
+                        amount = 8,
+                        name = "copper-ore" -- 铜矿
+                    },
+                    {
+                        amount = 8,
+                        name = "coal" -- 煤矿
+                    },
+                    {
+                        amount = 8,
+                        name = "stone" -- 石矿
+                    },
+                    {
+                        amount = 8,
+                        name = "raw-rare-metals" -- 原始稀有金属
+                    },
+                    {
+                        amount = 8,
+                        name = "uranium-ore", -- 铀矿
+                        probability = 0.25
+                    },
+                    {
+                        amount = 8,
+                        name = "se-vulcanite", -- 火成岩
+                        probability = 0.25
+                    },
+                    {
+                        amount = 8,
+                        name = "se-cryonite", -- 冰晶石
+                        probability = 0.25
+                    },
+                    {
+                        amount = 8,
+                        name = "raw-imersite", -- 原始紫金
+                        probability = 0.25
+                    },
+                    {
+                        amount = 8,
+                        name = "se-beryllium-ore", -- 硫酸铍
+                        probability = 0.25
+                    },
+                    {
+                        amount = 8,
+                        name = "se-holmium-ore", -- 钬矿
+                        probability = 0.25
+                    },
+                    {
+                        amount = 8,
+                        name = "se-iridium-ore", -- 铱矿
+                        probability = 0.25
+                    },
+                    {
+                        amount = 8,
+                        name = "se-vitamelange-nugget", -- 维生质
+                        probability = 0.25
+                    },
+                    {
+                        amount = 8,
+                        name = "se-naquium-ore", -- 寂介素矿
+                        probability = 0.125
+                    },
+                    {
+                        amount = 64,
+                        name = "crude-oil", -- 原油(液体)
+                        type = "fluid"
+                    },
+                    {
+                        amount = 64,
+                        name = "mineral-water", -- 矿物质水(液体)
+                        type = "fluid"
+                    },
+                    {
+                        amount = 64,
+                        name = "nitric-acid", -- 硝酸(液体)
+                        type = "fluid"
+                    },
+                    {
+                        amount = 64,
+                        name = "hydrogen-chloride", -- 氯化氢(液体)
+                        type = "fluid"
+                    },
+                    {
+                        amount = 64,
+                        name = "biomethanol", -- 生物甲醇(液体)
+                        type = "fluid"
+                    },
+                }
+            }
+        }
+    }
+}
+
+-- space-exploration 运载火箭区段
 local data_raw_recipe_se_cargo_rocket_section_catalog = {
     recipe = {
         mod = {
@@ -786,11 +922,51 @@ local data_raw_recipe_se_cargo_rocket_section_catalog = {
     }
 }
 
--- ["se-delivery-cannon-capsule"]
+-- space-exploration 打包运载火箭区段
+local data_raw_recipe_se_cargo_rocket_section_pack_catalog = {
+    recipe = {
+        mod = {
+            "se-cargo-rocket-section-pack",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        "se-cargo-rocket-section",
+                        10
+                    }
+                }
+            }
+        }
+    }
+}
+
+-- space-exploration 打包运载火箭区段
+local data_raw_recipe_se_cargo_rocket_section_unpack_catalog = {
+    recipe = {
+        mod = {
+            "se-cargo-rocket-section-unpack",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        "se-cargo-rocket-section",
+                        10
+                    }
+                }
+            }
+        }
+    }
+}
+
+-- space-exploration 货运火炮货仓
 local data_raw_recipe_se_delivery_cannon_capsule_catalog = {
     recipe = {
         mod = {
-            "se-delivery-cannon-capsule", -- space-exploration
+            "se-delivery-cannon-capsule",
         },
         modify_parameter = { -- 修改参数
             {
@@ -814,41 +990,11 @@ local data_raw_recipe_se_delivery_cannon_capsule_catalog = {
     }
 }
 
--- ["se-kr-fine-imersite-powder"]
-local data_raw_recipe_se_kr_fine_imersite_powder_catalog = {
-    recipe = {
-        mod = {
-            "se-kr-fine-imersite-powder", -- space-exploration
-        },
-        modify_parameter = { -- 修改参数
-            {
-                path = { "ingredients" }, -- 成分
-                value = {
-                    {
-                        amount = 16,
-                        name = "se-kr-imersium-sulfide",
-                        type = "fluid"
-                    }
-                }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = {
-                    {
-                        amount = 16,
-                        name = "se-kr-fine-imersite-powder"
-                    }
-                }
-            }
-        }
-    }
-}
-
--- ["se-iron-ingot"]
+-- space-exploration 铁锭
 local data_raw_recipe_se_iron_ingot_catalog = {
     recipe = {
         mod = {
-            "se-iron-ingot", -- space-exploration
+            "se-iron-ingot",
         },
         modify_parameter = { -- 修改参数
             {
@@ -874,11 +1020,11 @@ local data_raw_recipe_se_iron_ingot_catalog = {
     }
 }
 
--- ["se-steel-ingot"]
+-- space-exploration 钢锭
 local data_raw_recipe_se_steel_ingot_catalog = {
     recipe = {
         mod = {
-            "se-steel-ingot", -- space-exploration
+            "se-steel-ingot",
         },
         modify_parameter = { -- 修改参数
             {
@@ -904,11 +1050,11 @@ local data_raw_recipe_se_steel_ingot_catalog = {
     }
 }
 
--- ["se-copper-ingot"]
+-- space-exploration 铜锭
 local data_raw_recipe_se_copper_ingot_catalog = {
     recipe = {
         mod = {
-            "se-copper-ingot", -- space-exploration
+            "se-copper-ingot",
         },
         modify_parameter = { -- 修改参数
             {
@@ -934,11 +1080,11 @@ local data_raw_recipe_se_copper_ingot_catalog = {
     }
 }
 
--- ["se-plasma-stream"]
+-- space-exploration 等离子流
 local data_raw_recipe_se_plasma_stream_catalog = {
     recipe = {
         mod = {
-            "se-plasma-stream", -- space-exploration
+            "se-plasma-stream",
         },
         modify_parameter = { -- 修改参数
             {
@@ -970,11 +1116,11 @@ local data_raw_recipe_se_plasma_stream_catalog = {
     }
 }
 
--- ["space-science-pack"]
+-- space-exploration 优化研究包(科技包)
 local data_raw_recipe_space_science_pack_catalog = {
     recipe = {
         mod = {
-            "space-science-pack", -- space-exploration
+            "space-science-pack",
         },
         modify_parameter = { -- 修改参数
             {
@@ -1047,11 +1193,11 @@ local data_raw_recipe_space_science_pack_catalog = {
     }
 }
 
--- ["production-science-pack"]
+-- space-exploration 生产研究包(科技包)
 local data_raw_recipe_production_science_pack_catalog = {
     recipe = {
         mod = {
-            "production-science-pack", -- space-exploration
+            "production-science-pack",
         },
         modify_parameter = { -- 修改参数
             {
@@ -1089,11 +1235,11 @@ local data_raw_recipe_production_science_pack_catalog = {
     }
 }
 
--- ["utility-science-pack"]
+-- space-exploration 效能研究包(科技包)
 local data_raw_recipe_utility_science_pack_catalog = {
     recipe = {
         mod = {
-            "utility-science-pack", -- space-exploration
+            "utility-science-pack",
         },
         modify_parameter = { -- 修改参数
             {
@@ -1131,11 +1277,11 @@ local data_raw_recipe_utility_science_pack_catalog = {
     }
 }
 
--- ["space-research-data"]
+-- space-exploration 优化研究数据(科技包)
 local data_raw_recipe_space_research_data_catalog = {
     recipe = {
         mod = {
-            "space-research-data", -- space-exploration
+            "space-research-data",
         },
         modify_parameter = { -- 修改参数
             {
@@ -1224,11 +1370,11 @@ local data_raw_recipe_space_research_data_catalog = {
     }
 }
 
--- ["se-vulcanite-crushed"]
+-- space-exploration 粉碎火成岩
 local data_raw_recipe_se_vulcanite_crushed_catalog = {
     recipe = {
         mod = {
-            "se-vulcanite-crushed", -- space-exploration
+            "se-vulcanite-crushed",
         },
         modify_parameter = { -- 修改参数
             {
@@ -1254,42 +1400,11 @@ local data_raw_recipe_se_vulcanite_crushed_catalog = {
     }
 }
 
--- ["se-vulcanite-block"]
-local data_raw_recipe_se_vulcanite_block_catalog = {
-    recipe = {
-        mod = {
-            "se-vulcanite-block", -- space-exploration
-        },
-        modify_parameter = { -- 修改参数
-            {
-                path = { "ingredients" }, -- 成分
-                value = {
-                    {
-                        amount = 10,
-                        name = "se-pyroflux",
-                        type = "fluid"
-                    }
-                }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = {
-                    {
-                        amount = 5,
-                        name = "se-vulcanite-block"
-                    }
-                }
-            }
-
-        }
-    }
-}
-
--- ["se-pyroflux"]
+-- space-exploration 热熔剂
 local data_raw_recipe_se_pyroflux_catalog = {
     recipe = {
         mod = {
-            "se-pyroflux", -- space-exploration
+            "se-pyroflux",
         },
         modify_parameter = { -- 修改参数
             {
@@ -1316,11 +1431,42 @@ local data_raw_recipe_se_pyroflux_catalog = {
     }
 }
 
--- ["se-vulcanite-ion-exchange-beads"]
+-- space-exploration 火成岩块
+local data_raw_recipe_se_vulcanite_block_catalog = {
+    recipe = {
+        mod = {
+            "se-vulcanite-block",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-pyroflux",
+                        type = "fluid"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 5,
+                        name = "se-vulcanite-block"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 阳离子交换珠
 local data_raw_recipe_se_vulcanite_ion_exchange_beads_catalog = {
     recipe = {
         mod = {
-            "se-vulcanite-ion-exchange-beads", -- space-exploration
+            "se-vulcanite-ion-exchange-beads",
         },
         modify_parameter = { -- 修改参数
             {
@@ -1350,11 +1496,105 @@ local data_raw_recipe_se_vulcanite_ion_exchange_beads_catalog = {
     }
 }
 
--- ["se-space-coolant"]
+-- space-exploration 冰晶石浆
+local data_raw_recipe_se_cryonite_slush_catalog = {
+    recipe = {
+        mod = {
+            "se-cryonite-slush",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 2,
+                        name = "se-cryonite-powder"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-cryonite-slush"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 冰晶石棒
+local data_raw_recipe_se_cryonite_rod_catalog = {
+    recipe = {
+        mod = {
+            "se-cryonite-rod",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 2,
+                        name = "se-cryonite-slush"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 1,
+                        name = "se-cryonite-rod"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 阴离子交换珠
+local data_raw_recipe_se_cryonite_ion_exchange_beads_catalog = {
+    recipe = {
+        mod = {
+            "se-cryonite-ion-exchange-beads",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 1,
+                        name = "se-cryonite-rod"
+                    },
+                    {
+                        amount = 1,
+                        name = "plastic-bar"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-cryonite-ion-exchange-beads"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 25℃冷却导热液
 local data_raw_recipe_se_space_coolant_catalog = {
     recipe = {
         mod = {
-            "se-space-coolant", -- space-exploration
+            "se-space-coolant",
         },
         modify_parameter = { -- 修改参数
             {
@@ -1394,37 +1634,6 @@ local data_raw_recipe_se_space_coolant_catalog = {
     }
 }
 
--- ["se-cryonite-rod"]
-local data_raw_recipe_se_cryonite_rod_catalog = {
-    recipe = {
-        mod = {
-            "se-cryonite-rod", -- space-exploration
-        },
-        modify_parameter = { -- 修改参数
-            {
-                path = { "ingredients" }, -- 成分
-                value = {
-                    {
-                        amount = 2,
-                        name = "se-cryonite-powder"
-                    }
-                }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = {
-                    {
-                        amount = 1,
-                        name = "se-cryonite-rod"
-                    }
-                }
-            }
-
-        }
-    }
-}
-
-
 -- 开始修改
 log("\n\n\n------------------配方 start------------------\n\n\n")
 
@@ -1444,16 +1653,30 @@ if settings.startup["x-custom-game-author-custom-recipe-balance-flags"].value th
         -- 删除产出中的废料
         local moddify_list = common_data_raw:recipe_delete_by_name("results", "se-scrap")
         log("recipe_delete_by_name.results [se-scrap]:\n" .. common_core:serpent_block(moddify_list))
+        -- 删除产出中的污料
+        local moddify_list = common_data_raw:recipe_delete_by_name("results", "se-contaminated-scrap")
+        log("recipe_delete_by_name.results [se-contaminated-scrap]:\n" .. common_core:serpent_block(moddify_list))
+        -- 删除产出中的宇宙污水
+        local moddify_list = common_data_raw:recipe_delete_by_name("results", "se-contaminated-space-water")
+        log("recipe_delete_by_name.results [se-contaminated-space-water]:\n" .. common_core:serpent_block(moddify_list))
         -- 删除产出中的垃圾数据卡
         moddify_list = common_data_raw:recipe_delete_by_name("results", "se-junk-data")
         log("recipe_delete_by_name.results [se-junk-data]:\n" .. common_core:serpent_block(moddify_list))
+        -- 删除产出中的损坏数据卡
+        moddify_list = common_data_raw:recipe_delete_by_name("results", "se-broken-data")
+        log("recipe_delete_by_name.results [se-broken-data]:\n" .. common_core:serpent_block(moddify_list))
         -- 删除产出中的25°的冷却导热液
         moddify_list = common_data_raw:recipe_delete_by_name("results", "se-space-coolant-hot")
         log("recipe_delete_by_name.results [se-space-coolant-hot]:\n" .. common_core:serpent_block(moddify_list))
         -- 删除产出中的沙子
         moddify_list = common_data_raw:recipe_delete_by_name("results", "sand")
         log("recipe_delete_by_name.results [sand]:\n" .. common_core:serpent_block(moddify_list))
+
+        -- 修改配方
+        common_data_raw:execute_modify(data_raw_recipe_se_core_fragment_omni_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_cargo_rocket_section_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_cargo_rocket_section_pack_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_cargo_rocket_section_unpack_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_delivery_cannon_capsule_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_kr_fine_imersite_powder_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_iron_ingot_catalog)
@@ -1466,10 +1689,12 @@ if settings.startup["x-custom-game-author-custom-recipe-balance-flags"].value th
         common_data_raw:execute_modify(data_raw_recipe_space_research_data_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_vulcanite_crushed_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_vulcanite_block_catalog)
-        common_data_raw:execute_modify(data_raw_recipe_se_pyroflux_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_vulcanite_ion_exchange_beads_catalog)
-        common_data_raw:execute_modify(data_raw_recipe_se_space_coolant_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_pyroflux_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_cryonite_slush_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_cryonite_rod_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_cryonite_ion_exchange_beads_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_space_coolant_catalog)
         common_data_raw:execute_modify(data_raw_recipe_speed_productivity_effectivity_module_4_catalog)
         common_data_raw:execute_modify(data_raw_recipe_speed_productivity_effectivity_module_5_catalog)
         common_data_raw:execute_modify(data_raw_recipe_speed_productivity_effectivity_module_6_catalog)
