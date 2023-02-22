@@ -855,13 +855,23 @@ local data_raw_recipe_se_core_fragment_omni_catalog = {
                     },
                     {
                         amount = 8,
-                        name = "se-vitamelange-nugget", -- 维生质
+                        name = "se-water-ice", -- 水冰
                         probability = 0.25
                     },
                     {
                         amount = 8,
-                        name = "se-naquium-ore", -- 寂介素矿
+                        name = "se-methane-ice", -- 甲烷冰
+                        probability = 0.25
+                    },
+                    {
+                        amount = 8,
+                        name = "se-vitamelange-nugget", -- 维生质
                         probability = 0.125
+                    },
+                    {
+                        amount = 8,
+                        name = "se-naquium-ore", -- 寂介素矿
+                        probability = 0.0125
                     },
                     {
                         amount = 64,
@@ -886,6 +896,11 @@ local data_raw_recipe_se_core_fragment_omni_catalog = {
                     {
                         amount = 64,
                         name = "biomethanol", -- 生物甲醇(液体)
+                        type = "fluid"
+                    },
+                    {
+                        amount = 64,
+                        name = "se-space-water", -- 宇宙水(液体)
                         type = "fluid"
                     },
                 }
@@ -1112,6 +1127,927 @@ local data_raw_recipe_se_plasma_stream_catalog = {
                     }
                 }
             }
+        }
+    }
+}
+
+-- space-exploration 粉碎火成岩
+local data_raw_recipe_se_vulcanite_crushed_catalog = {
+    recipe = {
+        mod = {
+            "se-vulcanite-crushed",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 3,
+                        name = "se-vulcanite"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 6,
+                        name = "se-vulcanite-crushed"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 热熔剂
+local data_raw_recipe_se_pyroflux_catalog = {
+    recipe = {
+        mod = {
+            "se-pyroflux",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-vulcanite-crushed"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 20,
+                        name = "se-pyroflux",
+                        type = "fluid"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 火成岩块
+local data_raw_recipe_se_vulcanite_block_catalog = {
+    recipe = {
+        mod = {
+            "se-vulcanite-block",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-pyroflux",
+                        type = "fluid"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 5,
+                        name = "se-vulcanite-block"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 阳离子交换珠
+local data_raw_recipe_se_vulcanite_ion_exchange_beads_catalog = {
+    recipe = {
+        mod = {
+            "se-vulcanite-ion-exchange-beads",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 1,
+                        name = "se-vulcanite-block"
+                    },
+                    {
+                        amount = 1,
+                        name = "plastic-bar"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-vulcanite-ion-exchange-beads"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 冰晶石浆
+local data_raw_recipe_se_cryonite_slush_catalog = {
+    recipe = {
+        mod = {
+            "se-cryonite-slush",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 2,
+                        name = "se-cryonite-powder"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-cryonite-slush",
+                        type = "fluid"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 冰晶石棒
+local data_raw_recipe_se_cryonite_rod_catalog = {
+    recipe = {
+        mod = {
+            "se-cryonite-rod",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 2,
+                        name = "se-cryonite-slush",
+                        type = "fluid"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 1,
+                        name = "se-cryonite-rod"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 阴离子交换珠
+local data_raw_recipe_se_cryonite_ion_exchange_beads_catalog = {
+    recipe = {
+        mod = {
+            "se-cryonite-ion-exchange-beads",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 1,
+                        name = "se-cryonite-rod"
+                    },
+                    {
+                        amount = 1,
+                        name = "plastic-bar"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-cryonite-ion-exchange-beads"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 硫酸铍
+local data_raw_recipe_se_beryllium_sulfate_catalog = {
+    recipe = {
+        mod = {
+            "se-beryllium-sulfate",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 1,
+                        name = "sulfuric-acid",
+                        type = "fluid"
+                    },
+                    {
+                        amount = 4,
+                        name = "se-beryllium-ore"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 1,
+                        name = "se-beryllium-sulfate"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 氢氧化铍
+local data_raw_recipe_se_beryllium_hydroxide_catalog = {
+    recipe = {
+        mod = {
+            "se-beryllium-hydroxide",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 25,
+                        name = "se-beryllium-sulfate"
+                    },
+                    {
+                        amount = 25,
+                        name = "water",
+                        type = "fluid"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 50,
+                        name = "se-beryllium-hydroxide",
+                        type = "fluid"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 铍粉
+local data_raw_recipe_se_beryllium_powder_catalog = {
+    recipe = {
+        mod = {
+            "se-beryllium-powder",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 8,
+                        name = "se-beryllium-hydroxide",
+                        type = "fluid"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 8,
+                        name = "se-beryllium-powder"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 铍锭
+local data_raw_recipe_se_beryllium_ingot_catalog = {
+    recipe = {
+        mod = {
+            "se-beryllium-ingot",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-beryllium-hydroxide",
+                        type = "fluid"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 2,
+                        name = "se-beryllium-ingot"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 铍板
+local data_raw_recipe_se_beryllium_ingot_to_plate_catalog = {
+    recipe = {
+        mod = {
+            "se-beryllium-ingot-to-plate",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-beryllium-powder"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 2,
+                        name = "se-beryllium-plate"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 粉碎钬矿石
+local data_raw_recipe_se_holmium_ore_crushed_catalog = {
+    recipe = {
+        mod = {
+            "se-holmium-ore-crushed",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 2,
+                        name = "se-holmium-ore"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 1,
+                        name = "se-holmium-ore-crushed"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 钬粉
+local data_raw_recipe_se_holmium_powder_catalog = {
+    recipe = {
+        mod = {
+            "se-holmium-powder",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 5,
+                        name = "se-holmium-ore-crushed"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-holmium-powder"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 钬锭
+local data_raw_recipe_se_holmium_ingot_catalog = {
+    recipe = {
+        mod = {
+            "se-holmium-ingot",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-holmium-powder"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 2,
+                        name = "se-holmium-ingot"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 钬板
+local data_raw_recipe_se_holmium_ingot_to_plate_catalog = {
+    recipe = {
+        mod = {
+            "se-holmium-ingot-to-plate",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 1,
+                        name = "se-holmium-ingot"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-holmium-plate"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 粉碎铱矿石
+local data_raw_recipe_se_iridium_ore_crushed_catalog = {
+    recipe = {
+        mod = {
+            "se-iridium-ore-crushed",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 2,
+                        name = "se-iridium-ore"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 2,
+                        name = "se-iridium-ore-crushed"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 钬粉
+local data_raw_recipe_se_iridium_powder_catalog = {
+    recipe = {
+        mod = {
+            "se-iridium-powder",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 2,
+                        name = "se-iridium-ore-crushed"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 2,
+                        name = "se-iridium-powder"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 钬锭
+local data_raw_recipe_se_iridium_ingot_catalog = {
+    recipe = {
+        mod = {
+            "se-iridium-ingot",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 2,
+                        name = "se-iridium-powder"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 1,
+                        name = "se-iridium-ingot"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 钬板
+local data_raw_recipe_se_iridium_ingot_to_plate_catalog = {
+    recipe = {
+        mod = {
+            "se-iridium-ingot-to-plate",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 1,
+                        name = "se-iridium-ingot"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-iridium-plate"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 粉碎寂介素矿
+local data_raw_recipe_se_naquium_ore_crushed_catalog = {
+    recipe = {
+        mod = {
+            "se-naquium-ore-crushed",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 8,
+                        name = "se-naquium-ore"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 2,
+                        name = "se-naquium-ore-crushed"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 精制寂介素矿
+local data_raw_recipe_se_naquium_refined_catalog = {
+    recipe = {
+        mod = {
+            "se-naquium-refined",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-naquium-ore-crushed"
+                    },
+                    {
+                        amount = 1,
+                        name = "se-cryonite-ion-exchange-beads"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 5,
+                        name = "se-naquium-refined"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 寂介素粉
+local data_raw_recipe_se_naquium_powder_catalog = {
+    recipe = {
+        mod = {
+            "se-naquium-powder",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 2,
+                        name = "se-vulcanite-ion-exchange-beads"
+                    },
+                    {
+                        amount = 20,
+                        name = "se-naquium-ore-crushed"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-naquium-powder"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 寂介素晶体
+local data_raw_recipe_se_naquium_crystal_catalog = {
+    recipe = {
+        mod = {
+            "se-naquium-crystal",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 1,
+                        name = "se-vitalic-reagent"
+                    },
+                    {
+                        amount = 10,
+                        name = "se-naquium-powder"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 2,
+                        name = "se-naquium-crystal",
+                        probability = 0.66
+                    },
+                }
+            }
+        }
+    }
+}
+
+-- space-exploration 寂介素锭
+local data_raw_recipe_se_naquium_ingot_catalog = {
+    recipe = {
+        mod = {
+            "se-naquium-ingot",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 8,
+                        name = "se-naquium-crystal"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 1,
+                        name = "se-naquium-ingot"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 寂介素板
+local data_raw_recipe_se_naquium_ingot_to_plate_catalog = {
+    recipe = {
+        mod = {
+            "se-naquium-ingot-to-plate",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 1,
+                        name = "se-naquium-ingot"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-naquium-plate"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 维生质块
+local data_raw_recipe_se_vitamelange_nugget_catalog = {
+    recipe = {
+        mod = {
+            "se-vitamelange-nugget",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 20,
+                        name = "se-vitamelange"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 40,
+                        name = "se-vitamelange-nugget"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 维生质提取
+local data_raw_recipe_se_vitamelange_extract_catalog = {
+    recipe = {
+        mod = {
+            "se-vitamelange-extract",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 20,
+                        name = "se-vitamelange-nugget"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 5,
+                        name = "se-vitamelange-extract"
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+-- space-exploration 25℃冷却导热液
+local data_raw_recipe_se_space_coolant_catalog = {
+    recipe = {
+        mod = {
+            "se-space-coolant",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 10,
+                        name = "heavy-oil",
+                        type = "fluid"
+                    },
+                    {
+                        amount = 1,
+                        name = "copper-plate"
+                    },
+                    {
+                        amount = 1,
+                        name = "iron-plate"
+                    },
+                    {
+                        amount = 1,
+                        name = "sulfur"
+                    }
+                }
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 10,
+                        name = "se-space-coolant-hot",
+                        type = "fluid"
+                    }
+                }
+            }
+
         }
     }
 }
@@ -1370,270 +2306,6 @@ local data_raw_recipe_space_research_data_catalog = {
     }
 }
 
--- space-exploration 粉碎火成岩
-local data_raw_recipe_se_vulcanite_crushed_catalog = {
-    recipe = {
-        mod = {
-            "se-vulcanite-crushed",
-        },
-        modify_parameter = { -- 修改参数
-            {
-                path = { "ingredients" }, -- 成分
-                value = {
-                    {
-                        amount = 3,
-                        name = "se-vulcanite"
-                    }
-                }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = {
-                    {
-                        amount = 6,
-                        name = "se-vulcanite-crushed"
-                    }
-                }
-            }
-
-        }
-    }
-}
-
--- space-exploration 热熔剂
-local data_raw_recipe_se_pyroflux_catalog = {
-    recipe = {
-        mod = {
-            "se-pyroflux",
-        },
-        modify_parameter = { -- 修改参数
-            {
-                path = { "ingredients" }, -- 成分
-                value = {
-                    {
-                        amount = 10,
-                        name = "se-vulcanite-crushed"
-                    }
-                }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = {
-                    {
-                        amount = 20,
-                        name = "se-pyroflux",
-                        type = "fluid"
-                    }
-                }
-            }
-
-        }
-    }
-}
-
--- space-exploration 火成岩块
-local data_raw_recipe_se_vulcanite_block_catalog = {
-    recipe = {
-        mod = {
-            "se-vulcanite-block",
-        },
-        modify_parameter = { -- 修改参数
-            {
-                path = { "ingredients" }, -- 成分
-                value = {
-                    {
-                        amount = 10,
-                        name = "se-pyroflux",
-                        type = "fluid"
-                    }
-                }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = {
-                    {
-                        amount = 5,
-                        name = "se-vulcanite-block"
-                    }
-                }
-            }
-
-        }
-    }
-}
-
--- space-exploration 阳离子交换珠
-local data_raw_recipe_se_vulcanite_ion_exchange_beads_catalog = {
-    recipe = {
-        mod = {
-            "se-vulcanite-ion-exchange-beads",
-        },
-        modify_parameter = { -- 修改参数
-            {
-                path = { "ingredients" }, -- 成分
-                value = {
-                    {
-                        amount = 1,
-                        name = "se-vulcanite-block"
-                    },
-                    {
-                        amount = 1,
-                        name = "plastic-bar"
-                    }
-                }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = {
-                    {
-                        amount = 10,
-                        name = "se-vulcanite-ion-exchange-beads"
-                    }
-                }
-            }
-
-        }
-    }
-}
-
--- space-exploration 冰晶石浆
-local data_raw_recipe_se_cryonite_slush_catalog = {
-    recipe = {
-        mod = {
-            "se-cryonite-slush",
-        },
-        modify_parameter = { -- 修改参数
-            {
-                path = { "ingredients" }, -- 成分
-                value = {
-                    {
-                        amount = 2,
-                        name = "se-cryonite-powder"
-                    }
-                }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = {
-                    {
-                        amount = 10,
-                        name = "se-cryonite-slush"
-                    }
-                }
-            }
-
-        }
-    }
-}
-
--- space-exploration 冰晶石棒
-local data_raw_recipe_se_cryonite_rod_catalog = {
-    recipe = {
-        mod = {
-            "se-cryonite-rod",
-        },
-        modify_parameter = { -- 修改参数
-            {
-                path = { "ingredients" }, -- 成分
-                value = {
-                    {
-                        amount = 2,
-                        name = "se-cryonite-slush"
-                    }
-                }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = {
-                    {
-                        amount = 1,
-                        name = "se-cryonite-rod"
-                    }
-                }
-            }
-
-        }
-    }
-}
-
--- space-exploration 阴离子交换珠
-local data_raw_recipe_se_cryonite_ion_exchange_beads_catalog = {
-    recipe = {
-        mod = {
-            "se-cryonite-ion-exchange-beads",
-        },
-        modify_parameter = { -- 修改参数
-            {
-                path = { "ingredients" }, -- 成分
-                value = {
-                    {
-                        amount = 1,
-                        name = "se-cryonite-rod"
-                    },
-                    {
-                        amount = 1,
-                        name = "plastic-bar"
-                    }
-                }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = {
-                    {
-                        amount = 10,
-                        name = "se-cryonite-ion-exchange-beads"
-                    }
-                }
-            }
-
-        }
-    }
-}
-
--- space-exploration 25℃冷却导热液
-local data_raw_recipe_se_space_coolant_catalog = {
-    recipe = {
-        mod = {
-            "se-space-coolant",
-        },
-        modify_parameter = { -- 修改参数
-            {
-                path = { "ingredients" }, -- 成分
-                value = {
-                    {
-                        amount = 10,
-                        name = "heavy-oil",
-                        type = "fluid"
-                    },
-                    {
-                        amount = 1,
-                        name = "copper-plate"
-                    },
-                    {
-                        amount = 1,
-                        name = "iron-plate"
-                    },
-                    {
-                        amount = 1,
-                        name = "sulfur"
-                    }
-                }
-            },
-            {
-                path = { "results" }, -- 产出
-                value = {
-                    {
-                        amount = 10,
-                        name = "se-space-coolant-hot",
-                        type = "fluid"
-                    }
-                }
-            }
-
-        }
-    }
-}
-
 -- 开始修改
 log("\n\n\n------------------配方 start------------------\n\n\n")
 
@@ -1683,10 +2355,6 @@ if settings.startup["x-custom-game-author-custom-recipe-balance-flags"].value th
         common_data_raw:execute_modify(data_raw_recipe_se_steel_ingot_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_copper_ingot_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_plasma_stream_catalog)
-        common_data_raw:execute_modify(data_raw_recipe_space_science_pack_catalog)
-        common_data_raw:execute_modify(data_raw_recipe_production_science_pack_catalog)
-        common_data_raw:execute_modify(data_raw_recipe_utility_science_pack_catalog)
-        common_data_raw:execute_modify(data_raw_recipe_space_research_data_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_vulcanite_crushed_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_vulcanite_block_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_vulcanite_ion_exchange_beads_catalog)
@@ -1694,7 +2362,35 @@ if settings.startup["x-custom-game-author-custom-recipe-balance-flags"].value th
         common_data_raw:execute_modify(data_raw_recipe_se_cryonite_slush_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_cryonite_rod_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_cryonite_ion_exchange_beads_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_beryllium_sulfate_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_beryllium_hydroxide_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_beryllium_powder_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_beryllium_ingot_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_beryllium_ingot_to_plate_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_holmium_ore_crushed_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_holmium_powder_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_holmium_ingot_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_holmium_ingot_to_plate_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_iridium_ore_crushed_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_iridium_powder_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_iridium_ingot_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_iridium_ingot_to_plate_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_naquium_ore_crushed_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_naquium_refined_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_naquium_powder_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_naquium_crystal_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_naquium_ingot_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_naquium_ingot_to_plate_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_vitamelange_nugget_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_vitamelange_extract_catalog)
+
         common_data_raw:execute_modify(data_raw_recipe_se_space_coolant_catalog)
+
+        common_data_raw:execute_modify(data_raw_recipe_space_science_pack_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_production_science_pack_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_utility_science_pack_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_space_research_data_catalog)
+
         common_data_raw:execute_modify(data_raw_recipe_speed_productivity_effectivity_module_4_catalog)
         common_data_raw:execute_modify(data_raw_recipe_speed_productivity_effectivity_module_5_catalog)
         common_data_raw:execute_modify(data_raw_recipe_speed_productivity_effectivity_module_6_catalog)
