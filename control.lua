@@ -138,32 +138,35 @@ local game_start_bonus_items = {
     { name = "personal-roboport-equipment",  count = 2 }, -- 机器人指令模块
     { name = "logistic-robot",               count = 100 }, -- 物流机器人
     { name = "construction-robot",           count = 100 }, -- 建设机器人
-    { name = "roboport",                     count = 10 }, -- 机器人指令平台
-    { name = "steel-chest",                  count = 100 }, -- 钢制箱
-    { name = "logistic-chest-storage",       count = 100 }, -- 被动存货箱(黄箱)
-    { name = "logistic-chest-requester",     count = 100 }, -- 优先集货箱(蓝箱)
-    { name = "medium-electric-pole",         count = 100 }, -- 中型电线杆
-    { name = "transport-belt",               count = 100 }, -- 基础传送带
-    { name = "underground-belt",             count = 100 }, -- 基础地下传送带
-    { name = "steel-furnace",                count = 10 }, -- 钢炉
+    { name = "roboport",                     count = 100 }, -- 机器人指令平台
+    { name = "steel-chest",                  count = 1000 }, -- 钢制箱
+    { name = "logistic-chest-storage",       count = 1000 }, -- 被动存货箱(黄箱)
+    { name = "logistic-chest-requester",     count = 1000 }, -- 优先集货箱(蓝箱)
+    { name = "transport-belt",               count = 1000 }, -- 基础传送带
+    { name = "underground-belt",             count = 1000 }, -- 基础地下传送带
+    { name = "electric-furnace",             count = 1000 }, -- 电炉
+    { name = "assembling-machine-1",         count = 1000 }, -- 组装机1型
+    { name = "oil-refinery",                 count = 1000 }, -- 炼油厂
+    { name = "chemical-plant",               count = 1000 }, -- 化工厂
     { name = "lab",                          count = 1 }, -- 电力研究中心
     { name = "automation-science-pack",      count = 2000 }, -- 自动化科技包
     { name = "logistic-science-pack",        count = 2000 }, -- 物流科技包
     { name = "chemical-science-pack",        count = 2000 }, -- 化工科技包
+    { name = "lighted-medium-electric-pole", count = 1000 }, -- LightedPolesPlus发光中型电线杆
+    { name = "check-valve",                  count = 1000 }, -- Flow Control单向阀
+    { name = "overflow-valve",               count = 1000 }, -- Flow Control溢流阀
     { name = "small-portable-generator",     count = 1 }, -- Krastorio2小型便携式发电机
     { name = "kr-wind-turbine",              count = 200 }, -- Krastorio2风力发电机
     { name = "basic-tech-card",              count = 2000 }, -- 基础科技卡
     { name = "se-rtg-equipment",             count = 1 }, -- space-exploration便携式RTG
     { name = "se-core-miner",                count = 1 }, -- space-exploration星核钻机
     { name = "se-pulveriser",                count = 1 }, -- space-exploration粉碎机
-    { name = "miniloader",                   count = 100 }, -- miniloader迷你装卸机
-    { name = "filter-miniloader",            count = 100 }, -- miniloader筛选迷你装卸机
-    { name = "warehouse-basic",              count = 10 }, -- Warehousing大仓库
-    { name = "warehouse-storage",            count = 10 }, -- Warehousing黄仓
-    { name = "bob-storage-tank-all-corners", count = 50 }, -- boblogistics储液罐
-    { name = "bob-overflow-valve",           count = 10 }, -- boblogistics溢流阀
-    { name = "flare-stack",                  count = 10 }, -- Flare Stack流体燃烧器
-    { name = "electric-incinerator",         count = 10 }, -- Flare Stack物品焚烧器
+    { name = "miniloader",                   count = 1000 }, -- miniloader迷你装卸机
+    { name = "filter-miniloader",            count = 1000 }, -- miniloader筛选迷你装卸机
+    { name = "warehouse-basic",              count = 1000 }, -- Warehousing大仓库
+    { name = "warehouse-storage",            count = 1000 }, -- Warehousing黄仓
+    { name = "flare-stack",                  count = 1000 }, -- Flare Stack流体燃烧器
+    { name = "electric-incinerator",         count = 1000 }, -- Flare Stack物品焚烧器
 }
 
 local function set_game_start_bonus()

@@ -298,6 +298,17 @@ local data_raw_transmission_catalog = {
             "substation" -- 广域配电站
         },
         mod = {
+            "lighted-small-electric-pole", -- LightedPolesPlus
+            "lighted-big-electric-pole",
+            "lighted-medium-electric-pole",
+            "lighted-substation",
+            "lighted-small-iron-electric-pole",
+            "lighted-kr-substation-mk2",
+            "lighted-se-addon-power-pole",
+            "lighted-se-pylon",
+            "lighted-se-pylon-substation",
+            "lighted-se-pylon-construction",
+            "lighted-se-pylon-construction-radar", -- LightedPolesPlus
             "se-addon-power-pole", -- space-exploration
             "se-pylon",
             "se-pylon-substation",

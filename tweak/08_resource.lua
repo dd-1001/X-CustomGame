@@ -15,6 +15,7 @@ local data_raw_fuel_value_catalog = {
             "uranium-fuel-cell" -- 铀燃料棒
         },
         mod = {
+            "lighted-small-electric-pole", -- LightedPolesPlus
             "processed-fuel", -- aai-industry
             "giga-fuel", -- fast_trans
             "giga-fuel-mk2",
@@ -164,7 +165,9 @@ if X_CUSTOM_GAME_IS_DEBUG then
     -- log("resource with fuel_value list: \n" .. common_core:serpent_block(item_with_fuel_value))
 
     local tab_record = common_data_raw:check_not_in_record("source", item_with_fuel_value)
-    log("Unmod resource with fuel_value list: \n" .. common_core:serpent_block(tab_record))
+    if table_size(tab_record) > 0 then
+        log("Unmod resource with fuel_value list: \n" .. common_core:serpent_block(tab_record))
+    end
 end
 
 
