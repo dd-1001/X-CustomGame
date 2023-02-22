@@ -94,6 +94,9 @@ local data_raw_production_catalog = {
         }
     },
     ["burner-generator"] = { -- 燃料发电机
+        orig = {
+            "burner-generator"
+        },
         mod = {
             "kr-antimatter-reactor", -- Krastorio2
             "bob-burner-generator", -- bobpower

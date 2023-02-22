@@ -10,8 +10,8 @@ end
 
 log("\n\n\n------------------test start------------------\n\n\n")
 
--- log(common_core:serpent_block(data.raw))
--- log(common_core:serpent_block(settings))
+-- log("data.raw:\n" .. common_core:serpent_block(data.raw))
+-- log("settings:\n" .. common_core:serpent_block(settings))
 
 -- log("Moded List: \n" .. common_core:serpent_block(X_CUSTOM_GAME_TAB_RECORD))
 

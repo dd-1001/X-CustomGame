@@ -19,7 +19,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-storage-tank-performance-multiplier", -- 储液罐
         setting_type = "startup",
-        default_value = 10,
+        default_value = 40,
         minimum_value = 0.01,
         maximum_value = 1000,
         order = "x-custom-game-101002"
@@ -37,18 +37,18 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-belt-performance-multiplier", -- 传送带
         setting_type = "startup",
-        default_value = 4,
+        default_value = 10,
         minimum_value = 0.1,
-        maximum_value = 10,
+        maximum_value = 20,
         order = "x-custom-game-102001"
     },
     {
         type = "double-setting",
         name = "x-custom-game-inserter-performance-multiplier", -- 机械臂
         setting_type = "startup",
-        default_value = 2,
+        default_value = 5,
         minimum_value = 0.1,
-        maximum_value = 10,
+        maximum_value = 20,
         order = "x-custom-game-103001"
     },
     {
@@ -136,16 +136,16 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-robot-performance-multiplier", -- 机器人
         setting_type = "startup",
-        default_value = 2,
+        default_value = 10,
         minimum_value = 0.1,
-        maximum_value = 10,
+        maximum_value = 20,
         order = "x-custom-game-106001"
     },
     {
         type = "double-setting",
         name = "x-custom-game-roboport-performance-multiplier", -- 机器人指令平台
         setting_type = "startup",
-        default_value = 10,
+        default_value = 20,
         minimum_value = 0.1,
         maximum_value = 100,
         order = "x-custom-game-106002"
@@ -154,34 +154,34 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-mining-drill-performance-multiplier", -- 采矿-钻探
         setting_type = "startup",
-        default_value = 5,
+        default_value = 10,
         minimum_value = 0.1,
-        maximum_value = 10,
+        maximum_value = 20,
         order = "x-custom-game-107001"
     },
     {
         type = "double-setting",
         name = "x-custom-game-furnace-performance-multiplier", -- 熔炉
         setting_type = "startup",
-        default_value = 5,
+        default_value = 10,
         minimum_value = 0.1,
-        maximum_value = 10,
+        maximum_value = 20,
         order = "x-custom-game-107002"
     },
     {
         type = "double-setting",
         name = "x-custom-game-assembling-machine-performance-multiplier", -- 装配机
         setting_type = "startup",
-        default_value = 5,
+        default_value = 10,
         minimum_value = 0.1,
-        maximum_value = 10,
+        maximum_value = 20,
         order = "x-custom-game-107003"
     },
     {
         type = "double-setting",
         name = "x-custom-game-fuel-performance-multiplier", -- 燃料：木板、煤矿、核能燃料等
         setting_type = "startup",
-        default_value = 2,
+        default_value = 10,
         minimum_value = 0.01,
         maximum_value = 100,
         order = "x-custom-game-108001"
@@ -247,7 +247,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-lab-performance-multiplier", -- 研究中心
         setting_type = "startup",
-        default_value = 10,
+        default_value = 20,
         minimum_value = 0.01,
         maximum_value = 100,
         order = "x-custom-game-109005"
@@ -317,7 +317,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-lamp-performance-multiplier", -- 灯
         setting_type = "startup",
-        default_value = 2,
+        default_value = 4,
         minimum_value = 0.5,
         maximum_value = 10,
         order = "x-custom-game-109013"
@@ -486,7 +486,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-character-inventory-size-multiplier", -- 角色库存
         setting_type = "startup",
-        default_value = 2,
+        default_value = 4,
         minimum_value = 0.5,
         maximum_value = 10,
         order = "x-custom-game-115005"
@@ -524,7 +524,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-technology-cost-multiplier", -- 科技花费
         setting_type = "startup",
-        default_value = 0.6,
+        default_value = 0.5,
         minimum_value = 0.001,
         maximum_value = 1000,
         order = "x-custom-game-117003"

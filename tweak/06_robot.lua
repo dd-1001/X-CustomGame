@@ -120,6 +120,23 @@ local data_raw_robot_catalog = {
                 max_value = 125
             },
             {
+                path = { "robot_slots_count" }, -- 机器人插槽数
+                max_value = 30
+            },
+            {
+                path = { "material_slots_count" }, -- 修复包插槽数
+                max_value = 30
+            },
+            {
+                path = { "charging_station_count" }, -- 充电点个数
+                operation = "Extend",
+                value = 8
+            },
+            {
+                path = { "charging_station_count" }, -- 充电点个数
+                min_value = 4
+            },
+            {
                 path = { "energy_source", "buffer_capacity" } -- 缓冲区容量
             },
             {

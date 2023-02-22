@@ -89,6 +89,7 @@ local data_raw_satellite_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "rocket_launch_product", 2 }, -- 火箭_发射_产品
+                max_value = 60000
             }
         }
     }

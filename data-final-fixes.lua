@@ -1,5 +1,3 @@
--- require("tweak.test") -- 测试
-
 require("tweak.01_container") -- 容器-------箱子、储液罐、物流箱子、货运车厢、液罐车厢
 require("tweak.02_belt") -- 传送带-------传送带、地下传送带、分流器
 require("tweak.03_inserter") -- 机械臂-------所有机械臂

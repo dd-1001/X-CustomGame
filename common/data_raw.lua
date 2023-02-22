@@ -102,42 +102,42 @@ function Data_raw:find_item_with_key_word(keyword)
     return item_with_keyword
 end
 
--- 删除配方中指定的产出项目
-function Data_raw:recipe_delete_results_by_name(keyword)
+-- 删除配方中指定的项目
+function Data_raw:recipe_delete_by_name(mod_type, keyword)
     local modify_list = {}
 
     for recipe_name, recipe_data in pairs(data.raw.recipe) do
         local moded = false
-        if recipe_data.results and
-            table_size(recipe_data.results) > 1 then
-            for index, result in ipairs(recipe_data.results) do
+        if recipe_data[mod_type] and
+            table_size(recipe_data[mod_type]) > 1 then
+            for index, result in ipairs(recipe_data[mod_type]) do
                 if result[1] == keyword or
                     result.name == keyword then
-                    table.remove(recipe_data.results, index)
+                    table.remove(recipe_data[mod_type], index)
                     moded = true
                 end
             end
         end
 
         if recipe_data.normal and
-            recipe_data.normal.results and
-            table_size(recipe_data.normal.results) > 1 then
-            for index, result in ipairs(recipe_data.normal.results) do
+            recipe_data.normal[mod_type] and
+            table_size(recipe_data.normal[mod_type]) > 1 then
+            for index, result in ipairs(recipe_data.normal[mod_type]) do
                 if result[1] == keyword or
                     result.name == keyword then
-                    table.remove(recipe_data.normal.results, index)
+                    table.remove(recipe_data.normal[mod_type], index)
                     moded = true
                 end
             end
         end
 
         if recipe_data.expensive and
-            recipe_data.expensive.results and
-            table_size(recipe_data.expensive.results) > 1 then
-            for index, result in ipairs(recipe_data.expensive.results) do
+            recipe_data.expensive[mod_type] and
+            table_size(recipe_data.expensive[mod_type]) > 1 then
+            for index, result in ipairs(recipe_data.expensive[mod_type]) do
                 if result[1] == keyword or
                     result.name == keyword then
-                    table.remove(recipe_data.expensive.results, index)
+                    table.remove(recipe_data.expensive[mod_type], index)
                     moded = true
                 end
             end
