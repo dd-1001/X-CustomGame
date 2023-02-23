@@ -144,6 +144,7 @@ local game_start_bonus_items = {
     { name = "logistic-chest-requester",     count = 1000 }, -- 优先集货箱(蓝箱)
     { name = "transport-belt",               count = 1000 }, -- 基础传送带
     { name = "underground-belt",             count = 1000 }, -- 基础地下传送带
+    { name = "splitter",                     count = 1000 }, -- 分流器
     { name = "electric-furnace",             count = 1000 }, -- 电炉
     { name = "assembling-machine-1",         count = 1000 }, -- 组装机1型
     { name = "oil-refinery",                 count = 1000 }, -- 炼油厂
@@ -156,7 +157,9 @@ local game_start_bonus_items = {
     { name = "check-valve",                  count = 1000 }, -- Flow Control单向阀
     { name = "overflow-valve",               count = 1000 }, -- Flow Control溢流阀
     { name = "small-portable-generator",     count = 1 }, -- Krastorio2小型便携式发电机
-    { name = "kr-wind-turbine",              count = 200 }, -- Krastorio2风力发电机
+    { name = "kr-wind-turbine",              count = 1000 }, -- Krastorio2风力发电机
+    { name = "kr-steel-pipe",                count = 2000 }, -- Krastorio2钢管道
+    { name = "kr-steel-pipe-to-ground",      count = 2000 }, -- Krastorio2钢地下管道
     { name = "basic-tech-card",              count = 2000 }, -- 基础科技卡
     { name = "se-rtg-equipment",             count = 1 }, -- space-exploration便携式RTG
     { name = "se-core-miner",                count = 1 }, -- space-exploration星核钻机
@@ -165,6 +168,9 @@ local game_start_bonus_items = {
     { name = "filter-miniloader",            count = 1000 }, -- miniloader筛选迷你装卸机
     { name = "warehouse-basic",              count = 1000 }, -- Warehousing大仓库
     { name = "warehouse-storage",            count = 1000 }, -- Warehousing黄仓
+    { name = "aai-strongbox-requester",      count = 1000 }, -- aai-containers优先集货柜
+    { name = "aai-storehouse-requester",     count = 1000 }, -- aai-containers优先集货库
+    { name = "aai-warehouse-requester",      count = 1000 }, -- aai-containers优先集货仓
     { name = "flare-stack",                  count = 1000 }, -- Flare Stack流体燃烧器
     { name = "electric-incinerator",         count = 1000 }, -- Flare Stack物品焚烧器
 }

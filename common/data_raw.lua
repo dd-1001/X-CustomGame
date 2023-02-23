@@ -103,12 +103,17 @@ function Data_raw:find_item_with_key_word(keyword)
 end
 
 -- 删除配方中指定的项目
-function Data_raw:recipe_delete_by_name(mod_type, keyword)
+function Data_raw:recipe_delete_by_name(mod_type, keyword, exclude_list)
+    if not exclude_list then
+        exclude_list = {}
+    end
+
     local modify_list = {}
 
     for recipe_name, recipe_data in pairs(data.raw.recipe) do
         local moded = false
-        if recipe_data[mod_type] and
+        if not exclude_list[recipe_name] and
+            recipe_data[mod_type] and
             table_size(recipe_data[mod_type]) > 1 then
             for index, result in ipairs(recipe_data[mod_type]) do
                 if result[1] == keyword or
@@ -119,7 +124,8 @@ function Data_raw:recipe_delete_by_name(mod_type, keyword)
             end
         end
 
-        if recipe_data.normal and
+        if not exclude_list[recipe_name] and
+            recipe_data.normal and
             recipe_data.normal[mod_type] and
             table_size(recipe_data.normal[mod_type]) > 1 then
             for index, result in ipairs(recipe_data.normal[mod_type]) do
@@ -131,7 +137,8 @@ function Data_raw:recipe_delete_by_name(mod_type, keyword)
             end
         end
 
-        if recipe_data.expensive and
+        if not exclude_list[recipe_name] and
+            recipe_data.expensive and
             recipe_data.expensive[mod_type] and
             table_size(recipe_data.expensive[mod_type]) > 1 then
             for index, result in ipairs(recipe_data.expensive[mod_type]) do

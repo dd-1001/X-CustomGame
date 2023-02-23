@@ -233,6 +233,17 @@ local data_raw_other_catalog = {
             "small-lamp", -- 灯
         },
         mod = {
+            "lighted-small-electric-pole-lamp", -- LightedPolesPlus
+            "lighted-big-electric-pole-lamp",
+            "lighted-medium-electric-pole-lamp",
+            "lighted-substation-lamp",
+            "lighted-small-iron-electric-pole-lamp",
+            "lighted-kr-substation-mk2-lamp",
+            "lighted-se-addon-power-pole-lamp",
+            "lighted-se-pylon-lamp",
+            "lighted-se-pylon-substation-lamp",
+            "lighted-se-pylon-construction-lamp",
+            "lighted-se-pylon-construction-radar-lamp", -- LightedPolesPlus
             "balloon-light", -- AfraidOfTheDark
             "short-balloon-light", -- AfraidOfTheDark
         },

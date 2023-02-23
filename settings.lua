@@ -19,7 +19,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-storage-tank-performance-multiplier", -- 储液罐
         setting_type = "startup",
-        default_value = 40,
+        default_value = 20,
         minimum_value = 0.01,
         maximum_value = 1000,
         order = "x-custom-game-101002"
@@ -317,7 +317,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-lamp-performance-multiplier", -- 灯
         setting_type = "startup",
-        default_value = 4,
+        default_value = 3,
         minimum_value = 0.5,
         maximum_value = 10,
         order = "x-custom-game-109013"

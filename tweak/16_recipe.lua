@@ -865,7 +865,7 @@ local data_raw_recipe_se_core_fragment_omni_catalog = {
                     },
                     {
                         amount = 8,
-                        name = "se-vitamelange-nugget", -- 维生质
+                        name = "se-vitamelange", -- 维生质
                         probability = 0.125
                     },
                     {
@@ -2338,11 +2338,18 @@ if settings.startup["x-custom-game-author-custom-recipe-balance-flags"].value th
         moddify_list = common_data_raw:recipe_delete_by_name("results", "se-broken-data")
         log("recipe_delete_by_name.results [se-broken-data]:\n" .. common_core:serpent_block(moddify_list))
         -- 删除产出中的25°的冷却导热液
-        moddify_list = common_data_raw:recipe_delete_by_name("results", "se-space-coolant-hot")
+        local exclude_list = {
+            ["empty-se-space-coolant-hot-barrel"] = true
+        }
+        moddify_list = common_data_raw:recipe_delete_by_name("results", "se-space-coolant-hot", exclude_list)
         log("recipe_delete_by_name.results [se-space-coolant-hot]:\n" .. common_core:serpent_block(moddify_list))
         -- 删除产出中的沙子
         moddify_list = common_data_raw:recipe_delete_by_name("results", "sand")
         log("recipe_delete_by_name.results [sand]:\n" .. common_core:serpent_block(moddify_list))
+
+        -- 删除成分中的宇宙水
+        moddify_list = common_data_raw:recipe_delete_by_name("ingredients", "se-space-water")
+        log("recipe_delete_by_name.ingredients [se-space-water]:\n" .. common_core:serpent_block(moddify_list))
 
         -- 修改配方
         common_data_raw:execute_modify(data_raw_recipe_se_core_fragment_omni_catalog)
