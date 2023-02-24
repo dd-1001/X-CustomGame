@@ -103,6 +103,8 @@ function Data_raw:find_item_with_key_word(keyword)
 end
 
 -- 删除配方中指定的项目
+-- mod_type: results or ingredients
+-- exclude_list: 排除列表
 function Data_raw:recipe_delete_by_name(mod_type, keyword, exclude_list)
     if not exclude_list then
         exclude_list = {}

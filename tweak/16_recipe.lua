@@ -2331,18 +2331,27 @@ if settings.startup["x-custom-game-author-custom-recipe-balance-flags"].value th
         -- 删除产出中的宇宙污水
         local moddify_list = common_data_raw:recipe_delete_by_name("results", "se-contaminated-space-water")
         log("recipe_delete_by_name.results [se-contaminated-space-water]:\n" .. common_core:serpent_block(moddify_list))
+        -- 删除产出中的生化污泥
+        local moddify_list = common_data_raw:recipe_delete_by_name("results", "se-contaminated-bio-sludge")
+        log("recipe_delete_by_name.results [se-contaminated-bio-sludge]:\n" .. common_core:serpent_block(moddify_list))
         -- 删除产出中的垃圾数据卡
         moddify_list = common_data_raw:recipe_delete_by_name("results", "se-junk-data")
         log("recipe_delete_by_name.results [se-junk-data]:\n" .. common_core:serpent_block(moddify_list))
         -- 删除产出中的损坏数据卡
         moddify_list = common_data_raw:recipe_delete_by_name("results", "se-broken-data")
         log("recipe_delete_by_name.results [se-broken-data]:\n" .. common_core:serpent_block(moddify_list))
+        -- 删除产出中的空白数据卡
+        moddify_list = common_data_raw:recipe_delete_by_name("results", "se-empty-data")
+        log("recipe_delete_by_name.results [se-empty-data]:\n" .. common_core:serpent_block(moddify_list))
         -- 删除产出中的25°的冷却导热液
         local exclude_list = {
             ["empty-se-space-coolant-hot-barrel"] = true
         }
         moddify_list = common_data_raw:recipe_delete_by_name("results", "se-space-coolant-hot", exclude_list)
         log("recipe_delete_by_name.results [se-space-coolant-hot]:\n" .. common_core:serpent_block(moddify_list))
+        -- 删除产出中的-10°的冷却导热液
+        moddify_list = common_data_raw:recipe_delete_by_name("results", "se-space-coolant-warm", exclude_list)
+        log("recipe_delete_by_name.results [se-space-coolant-warm]:\n" .. common_core:serpent_block(moddify_list))
         -- 删除产出中的沙子
         moddify_list = common_data_raw:recipe_delete_by_name("results", "sand")
         log("recipe_delete_by_name.results [sand]:\n" .. common_core:serpent_block(moddify_list))
@@ -2350,6 +2359,24 @@ if settings.startup["x-custom-game-author-custom-recipe-balance-flags"].value th
         -- 删除成分中的宇宙水
         moddify_list = common_data_raw:recipe_delete_by_name("ingredients", "se-space-water")
         log("recipe_delete_by_name.ingredients [se-space-water]:\n" .. common_core:serpent_block(moddify_list))
+        -- 删除成分中的化学凝胶
+        moddify_list = common_data_raw:recipe_delete_by_name("ingredients", "se-chemical-gel")
+        log("recipe_delete_by_name.ingredients [se-chemical-gel]:\n" .. common_core:serpent_block(moddify_list))
+        -- 删除成分中的营养凝胶
+        moddify_list = common_data_raw:recipe_delete_by_name("ingredients", "se-nutrient-gel")
+        log("recipe_delete_by_name.ingredients [se-nutrient-gel]:\n" .. common_core:serpent_block(moddify_list))
+        -- 删除成分中的空白数据卡
+        moddify_list = common_data_raw:recipe_delete_by_name("ingredients", "se-empty-data")
+        log("recipe_delete_by_name.ingredients [se-empty-data]:\n" .. common_core:serpent_block(moddify_list))
+        -- 删除成分中的维生质香料
+        moddify_list = common_data_raw:recipe_delete_by_name("ingredients", "se-vitamelange-spice")
+        log("recipe_delete_by_name.ingredients [se-vitamelange-spice]:\n" .. common_core:serpent_block(moddify_list))
+        -- 删除成分中的生化软泥
+        moddify_list = common_data_raw:recipe_delete_by_name("ingredients", "se-bio-sludge")
+        log("recipe_delete_by_name.ingredients [se-bio-sludge]:\n" .. common_core:serpent_block(moddify_list))
+        -- 删除成分中的多光谱镜
+        moddify_list = common_data_raw:recipe_delete_by_name("ingredients", "se-space-mirror")
+        log("recipe_delete_by_name.ingredients [se-space-mirror]:\n" .. common_core:serpent_block(moddify_list))
 
         -- 修改配方
         common_data_raw:execute_modify(data_raw_recipe_se_core_fragment_omni_catalog)
