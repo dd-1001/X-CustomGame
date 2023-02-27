@@ -11,6 +11,11 @@ local data_raw_recipe_uranium_processing_catalog = {
         },
         modify_parameter = { -- 修改参数
             {
+                path = { "energy_required" }, -- 制作时间
+                value = 12,
+                operation = "Extend"
+            },
+            {
                 path = { "ingredients" }, -- 成分
                 value = { { "uranium-ore", 10 } },
                 operation = "Extend"
@@ -51,6 +56,11 @@ local data_raw_recipe_kovarex_enrichment_process_catalog = {
         },
         modify_parameter = { -- 修改参数
             {
+                path = { "energy_required" }, -- 制作时间
+                value = 60,
+                operation = "Extend"
+            },
+            {
                 path = { "ingredients" }, -- 成分
                 value = { { "uranium-235", 40 }, { "uranium-238", 5 } },
                 operation = "Extend"
@@ -80,6 +90,11 @@ local data_raw_recipe_landfill_catalog = {
         },
         modify_parameter = { -- 修改参数
             {
+                path = { "energy_required" }, -- 制作时间
+                value = 0.5,
+                operation = "Extend"
+            },
+            {
                 path = { "ingredients" }, -- 成分
                 value = { { "stone", 20 } },
                 operation = "Extend"
@@ -103,6 +118,11 @@ local data_raw_recipe_basic_oil_processing_catalog = {
             "basic-oil-processing", -- 石油气
         },
         modify_parameter = { -- 修改参数
+            {
+                path = { "energy_required" }, -- 制作时间
+                value = 5,
+                operation = "Extend"
+            },
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -149,6 +169,11 @@ local data_raw_recipe_advanced_oil_processing_catalog = {
             "advanced-oil-processing", -- 高等原油处理
         },
         modify_parameter = { -- 修改参数
+            {
+                path = { "energy_required" }, -- 制作时间
+                value = 5,
+                operation = "Extend"
+            },
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -201,6 +226,11 @@ local data_raw_recipe_splitter_catalog = {
         },
         modify_parameter = { -- 修改参数
             {
+                path = { "energy_required" }, -- 制作时间
+                value = 1,
+                operation = "Extend"
+            },
+            {
                 path = { "ingredients" }, -- 成分
                 value = {
                     {
@@ -215,41 +245,8 @@ local data_raw_recipe_splitter_catalog = {
                         "transport-belt",
                         2
                     }
-                }
-            },
-            {
-                path = { "normal", "ingredients" }, -- 成分
-                value = {
-                    {
-                        "electronic-circuit",
-                        1
-                    },
-                    {
-                        "iron-plate",
-                        2
-                    },
-                    {
-                        "transport-belt",
-                        2
-                    }
-                }
-            },
-            {
-                path = { "expensive", "ingredients" }, -- 成分
-                value = {
-                    {
-                        "electronic-circuit",
-                        1
-                    },
-                    {
-                        "iron-plate",
-                        2
-                    },
-                    {
-                        "transport-belt",
-                        2
-                    }
-                }
+                },
+                operation = "Extend"
             },
             {
                 path = { "results" }, -- 产出
@@ -259,27 +256,16 @@ local data_raw_recipe_splitter_catalog = {
                         name = "splitter",
                         type = "item"
                     }
-                }
+                },
+                operation = "Extend"
             },
             {
-                path = { "normal", "results" }, -- 产出
-                value = {
-                    {
-                        amount = 1,
-                        name = "splitter",
-                        type = "item"
-                    }
-                }
+                path = { "normal" }, -- normal
+                value = "nil"
             },
             {
-                path = { "expensive", "results" }, -- 产出
-                value = {
-                    {
-                        amount = 1,
-                        name = "splitter",
-                        type = "item"
-                    }
-                }
+                path = { "expensive" }, -- expensive
+                value = "nil"
             }
         }
     }
@@ -305,7 +291,16 @@ local data_raw_recipe_speed_productivity_effectivity_module_1_catalog = {
                         "electronic-circuit",
                         1
                     }
-                }
+                },
+                operation = "Extend"
+            },
+            {
+                path = { "normal" }, -- normal
+                value = "nil"
+            },
+            {
+                path = { "expensive" }, -- expensive
+                value = "nil"
             }
         }
     }
@@ -331,7 +326,16 @@ local data_raw_recipe_speed_productivity_effectivity_module_2_catalog = {
                         "electronic-circuit",
                         2
                     }
-                }
+                },
+                operation = "Extend"
+            },
+            {
+                path = { "normal" }, -- normal
+                value = "nil"
+            },
+            {
+                path = { "expensive" }, -- expensive
+                value = "nil"
             }
         }
     }
@@ -357,7 +361,16 @@ local data_raw_recipe_speed_productivity_effectivity_module_3_catalog = {
                         "electronic-circuit",
                         3
                     }
-                }
+                },
+                operation = "Extend"
+            },
+            {
+                path = { "normal" }, -- normal
+                value = "nil"
+            },
+            {
+                path = { "expensive" }, -- expensive
+                value = "nil"
             }
         }
     }
@@ -383,7 +396,16 @@ local data_raw_recipe_speed_productivity_effectivity_module_4_catalog = {
                         "electronic-circuit",
                         4
                     }
-                }
+                },
+                operation = "Extend"
+            },
+            {
+                path = { "normal" }, -- normal
+                value = "nil"
+            },
+            {
+                path = { "expensive" }, -- expensive
+                value = "nil"
             }
         }
     }
@@ -413,7 +435,16 @@ local data_raw_recipe_speed_productivity_effectivity_module_5_catalog = {
                         "processing-unit",
                         1
                     }
-                }
+                },
+                operation = "Extend"
+            },
+            {
+                path = { "normal" }, -- normal
+                value = "nil"
+            },
+            {
+                path = { "expensive" }, -- expensive
+                value = "nil"
             }
         }
     }
@@ -443,7 +474,16 @@ local data_raw_recipe_speed_productivity_effectivity_module_6_catalog = {
                         "processing-unit",
                         2
                     }
-                }
+                },
+                operation = "Extend"
+            },
+            {
+                path = { "normal" }, -- normal
+                value = "nil"
+            },
+            {
+                path = { "expensive" }, -- expensive
+                value = "nil"
             }
         }
     }
@@ -473,7 +513,16 @@ local data_raw_recipe_speed_productivity_effectivity_module_7_catalog = {
                         "processing-unit",
                         3
                     }
-                }
+                },
+                operation = "Extend"
+            },
+            {
+                path = { "normal" }, -- normal
+                value = "nil"
+            },
+            {
+                path = { "expensive" }, -- expensive
+                value = "nil"
             }
         }
     }
@@ -503,7 +552,16 @@ local data_raw_recipe_speed_productivity_effectivity_module_8_catalog = {
                         "processing-unit",
                         4
                     }
-                }
+                },
+                operation = "Extend"
+            },
+            {
+                path = { "normal" }, -- normal
+                value = "nil"
+            },
+            {
+                path = { "expensive" }, -- expensive
+                value = "nil"
             }
         }
     }
@@ -533,7 +591,16 @@ local data_raw_recipe_speed_productivity_effectivity_module_9_catalog = {
                         "processing-unit",
                         5
                     }
-                }
+                },
+                operation = "Extend"
+            },
+            {
+                path = { "normal" }, -- normal
+                value = "nil"
+            },
+            {
+                path = { "expensive" }, -- expensive
+                value = "nil"
             }
         }
     }
