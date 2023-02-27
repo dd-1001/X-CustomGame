@@ -1,6 +1,7 @@
 local common_core = require("common/core")
 
 local log = common_core.Log
+local deepcopy = common_core.lib_core_util.table.deepcopy
 
 local Data_raw = {
     is_log = true,
@@ -162,11 +163,11 @@ function Data_raw:recipe_delete_by_name(mod_type, keyword, exclude_list)
 end
 
 function Data_raw:insert_data_raw_field_value(field_path, value)
-    if not field_path or not value then
+    if not field_path then
         return false
     end
 
-    local path_count = #field_path
+    local path_count = table_size(field_path)
     local tmp_pos = data.raw
 
     -- field_path = {"mining-drill", "burner-mining-drill", "module_specification", "module_slots"}
@@ -179,8 +180,9 @@ function Data_raw:insert_data_raw_field_value(field_path, value)
                 tmp_pos[field_path[i]] = {}
                 tmp_pos = tmp_pos[field_path[i]]
             else
-                tmp_pos[#tmp_pos + 1] = {}
-                tmp_pos = tmp_pos[#tmp_pos]
+                local tmp_count = table_size(tmp_pos)
+                tmp_pos[tmp_count + 1] = {}
+                tmp_pos = tmp_pos[tmp_count]
             end
         end
     end
@@ -191,29 +193,28 @@ function Data_raw:insert_data_raw_field_value(field_path, value)
 end
 
 function Data_raw:set_data_raw_field_value(field_path, new_value)
-    if not field_path or not new_value then
+    if not field_path then
         return nil
     end
 
-    local path_count = #field_path
+    local path_count = table_size(field_path)
     local tmp_pos = data.raw
 
-    -- field_path = {"boiler", "boiler", "energy_source", "emissions_per_minute"}
+    -- field_path = {"module", "speed-module", "limitation"}
     for i = 1, path_count - 1, 1 do
         if type(tmp_pos) ~= "table" then
             return nil
         end
 
         tmp_pos = tmp_pos[field_path[i]]
-        -- i = 1; tmp_pos = data.raw["boiler"]
-        -- i = 2; tmp_pos = data.raw["boiler"]["boiler"]
-        -- i = 3; tmp_pos = data.raw["boiler"]["boiler"]["energy_source"]
+        -- i = 1; tmp_pos = data.raw["module"]
+        -- i = 2; tmp_pos = data.raw["module"]["speed-module"]
     end
 
-    local old_value = tmp_pos[field_path[path_count]]
+    local old_value = deepcopy(tmp_pos[field_path[path_count]])
 
     if old_value then
-        -- data.raw["boiler"]["boiler"]["energy_source"]["emissions_per_minute"] = new_value
+        -- data.raw["module"]["speed-module"]["limitation"] = new_value
         tmp_pos[field_path[path_count]] = new_value
     end
 
@@ -223,20 +224,19 @@ end
 function Data_raw:get_data_raw_field_value(field_path)
     local tmp_pos = data.raw
 
-    -- field_path = {"boiler", "boiler", "energy_source", "emissions_per_minute"}
-    for i = 1, #field_path, 1 do
+    -- field_path = {"module", "speed-module", "limitation"}
+    for i = 1, table_size(field_path), 1 do
         if type(tmp_pos) ~= "table" then
             return nil
         end
 
         tmp_pos = tmp_pos[field_path[i]]
-        -- i = 1; tmp_pos = data.raw["boiler"]
-        -- i = 2; tmp_pos = data.raw["boiler"]["boiler"]
-        -- i = 3; tmp_pos = data.raw["boiler"]["boiler"]["energy_source"]
-        -- i = 4; tmp_pos = data.raw["boiler"]["boiler"]["energy_source"]["emissions_per_minute"]
+        -- i = 1; tmp_pos = data.raw["module"]
+        -- i = 2; tmp_pos = data.raw["module"]["speed-module"]
+        -- i = 3; tmp_pos = data.raw["module"]["speed-module"]["limitation"]
     end
 
-    return tmp_pos
+    return deepcopy(tmp_pos)
 end
 
 function Data_raw:execute_modify(data_raw_modifi_catalog)
@@ -295,7 +295,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                 local new_value = nil
 
                 if old_value then -- 存在相应字段
-                    if single_modify_param.value == nil then -- 不存在指定设置的值
+                    if not single_modify_param.value then -- 不存在指定设置的值
                         -- 获取原字段单位
                         local field_units
                         if type(old_value) == "string" then
@@ -334,6 +334,8 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                         if field_units then
                             new_value = new_value .. field_units
                         end
+                    elseif single_modify_param.value == "nil" then -- 存在指定设置的值 nil
+                        new_value = nil
                     else -- 存在指定设置的值
                         new_value = single_modify_param.value
                     end
@@ -344,16 +346,13 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                     if self.is_log then
                         if type(new_value) == "table" then
                             new_value = common_core:serpent_line(new_value)
-                        elseif type(new_value) == "boolean" then
-                            new_value = tostring(new_value)
                         end
 
                         if type(old_value) == "table" then
                             old_value = common_core:serpent_line(old_value)
-                        elseif type(old_value) == "boolean" then
-                            old_value = tostring(old_value)
                         end
-                        log(table.concat(modify_field_path, ".") .. " : " .. old_value .. " ---> " .. new_value)
+                        log(table.concat(modify_field_path, ".") ..
+                        " : " .. tostring(old_value) .. " ---> " .. tostring(new_value))
                     end
                 elseif single_modify_param.operation == "Extend" then -- 不存在相应字段，进行扩展字段
                     -- 校验是否存在相应的实体
@@ -368,10 +367,8 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                     if self.is_log then
                         if type(new_value) == "table" then
                             new_value = common_core:serpent_line(new_value)
-                        elseif type(new_value) == "boolean" then
-                            new_value = tostring(new_value)
                         end
-                        log(table.concat(modify_field_path, ".") .. " : insert value ---> " .. new_value)
+                        log(table.concat(modify_field_path, ".") .. " : insert value ---> " .. tostring(new_value))
                     end
                 else -- 不存在相应字段
                     if self.is_log then

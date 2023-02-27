@@ -1,4 +1,5 @@
 local Core = {
+    lib_core_util = require("__core__/lualib/util"),
     lib_serpent = require("common/serpent"),
     -- lib_serpent = require("__stdlib__/stdlib/vendor/serpent"),
     -- lib_logger = require("__stdlib__/stdlib/misc/logger"),

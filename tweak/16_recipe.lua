@@ -12,7 +12,8 @@ local data_raw_recipe_uranium_processing_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
-                value = { { "uranium-ore", 10 } }
+                value = { { "uranium-ore", 10 } },
+                operation = "Extend"
             },
             {
                 path = { "results" }, -- 产出
@@ -27,7 +28,16 @@ local data_raw_recipe_uranium_processing_catalog = {
                         name = "uranium-238",
                         probability = 0.99
                     }
-                }
+                },
+                operation = "Extend"
+            },
+            {
+                path = { "normal" }, -- normal
+                value = "nil"
+            },
+            {
+                path = { "expensive" }, -- expensive
+                value = "nil"
             }
         }
     }
@@ -42,11 +52,21 @@ local data_raw_recipe_kovarex_enrichment_process_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
-                value = { { "uranium-235", 40 }, { "uranium-238", 5 } }
+                value = { { "uranium-235", 40 }, { "uranium-238", 5 } },
+                operation = "Extend"
             },
             {
                 path = { "results" }, -- 产出
-                value = { { "uranium-235", 42 } }
+                value = { { "uranium-235", 42 } },
+                operation = "Extend"
+            },
+            {
+                path = { "normal" }, -- normal
+                value = "nil"
+            },
+            {
+                path = { "expensive" }, -- expensive
+                value = "nil"
             }
         }
     }
@@ -61,7 +81,16 @@ local data_raw_recipe_landfill_catalog = {
         modify_parameter = { -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
-                value = { { "stone", 20 } }
+                value = { { "stone", 20 } },
+                operation = "Extend"
+            },
+            {
+                path = { "normal" }, -- normal
+                value = "nil"
+            },
+            {
+                path = { "expensive" }, -- expensive
+                value = "nil"
             }
         }
     }
@@ -87,37 +116,8 @@ local data_raw_recipe_basic_oil_processing_catalog = {
                         name = "crude-oil",
                         type = "fluid"
                     }
-                }
-            },
-            {
-                path = { "normal", "ingredients" }, -- 成分
-                value = {
-                    {
-                        amount = 50,
-                        name = "water",
-                        type = "fluid"
-                    },
-                    {
-                        amount = 100,
-                        name = "crude-oil",
-                        type = "fluid"
-                    }
-                }
-            },
-            {
-                path = { "expensive", "ingredients" }, -- 成分
-                value = {
-                    {
-                        amount = 50,
-                        name = "water",
-                        type = "fluid"
-                    },
-                    {
-                        amount = 100,
-                        name = "crude-oil",
-                        type = "fluid"
-                    }
-                }
+                },
+                operation = "Extend"
             },
             {
                 path = { "results" }, -- 产出
@@ -127,29 +127,17 @@ local data_raw_recipe_basic_oil_processing_catalog = {
                         name = "petroleum-gas",
                         type = "fluid"
                     }
-                }
+                },
+                operation = "Extend"
             },
             {
-                path = { "normal", "results" }, -- 产出
-                value = {
-                    {
-                        amount = 90,
-                        name = "petroleum-gas",
-                        type = "fluid"
-                    }
-                }
+                path = { "normal" }, -- normal
+                value = "nil"
             },
             {
-                path = { "expensive", "results" }, -- 产出
-                value = {
-                    {
-                        amount = 90,
-                        name = "petroleum-gas",
-                        type = "fluid"
-                    }
-                }
+                path = { "expensive" }, -- expensive
+                value = "nil"
             }
-
         }
     }
 }
@@ -174,37 +162,8 @@ local data_raw_recipe_advanced_oil_processing_catalog = {
                         name = "crude-oil",
                         type = "fluid"
                     }
-                }
-            },
-            {
-                path = { "normal", "ingredients" }, -- 成分
-                value = {
-                    {
-                        amount = 50,
-                        name = "water",
-                        type = "fluid"
-                    },
-                    {
-                        amount = 200,
-                        name = "crude-oil",
-                        type = "fluid"
-                    }
-                }
-            },
-            {
-                path = { "expensive", "ingredients" }, -- 成分
-                value = {
-                    {
-                        amount = 50,
-                        name = "water",
-                        type = "fluid"
-                    },
-                    {
-                        amount = 200,
-                        name = "crude-oil",
-                        type = "fluid"
-                    }
-                }
+                },
+                operation = "Extend"
             },
             {
                 path = { "results" }, -- 产出
@@ -219,37 +178,16 @@ local data_raw_recipe_advanced_oil_processing_catalog = {
                         name = "heavy-oil",
                         type = "fluid"
                     }
-                }
+                },
+                operation = "Extend"
             },
             {
-                path = { "normal", "results" }, -- 产出
-                value = {
-                    {
-                        amount = 90,
-                        name = "light-oil",
-                        type = "fluid"
-                    },
-                    {
-                        amount = 90,
-                        name = "heavy-oil",
-                        type = "fluid"
-                    }
-                }
+                path = { "normal" }, -- normal
+                value = "nil"
             },
             {
-                path = { "expensive", "results" }, -- 产出
-                value = {
-                    {
-                        amount = 90,
-                        name = "light-oil",
-                        type = "fluid"
-                    },
-                    {
-                        amount = 90,
-                        name = "heavy-oil",
-                        type = "fluid"
-                    }
-                }
+                path = { "expensive" }, -- expensive
+                value = "nil"
             }
         }
     }

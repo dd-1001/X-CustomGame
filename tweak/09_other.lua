@@ -636,14 +636,26 @@ local data_raw_module_slot_all_type_allowed_catalog = {
 -- 开始修改
 log("\n\n\n------------------其他 start------------------\n\n\n")
 
+if settings.startup["x-custom-game-module-slot-all-type-allowed-flags"].value then
+    common_data_raw:execute_modify(data_raw_module_slot_all_type_allowed_catalog)
+    table.insert(data_raw_speed_module_catalog.module.modify_parameter, {
+        path = { "limitation" }, -- 限制配方
+        value = "nil"
+    })
+    table.insert(data_raw_productivity_module_catalog.module.modify_parameter, {
+        path = { "limitation" }, -- 限制配方
+        value = "nil"
+    })
+    table.insert(data_raw_effectivity_module_catalog.module.modify_parameter, {
+        path = { "limitation" }, -- 限制配方
+        value = "nil"
+    })
+end
+
 common_data_raw:execute_modify(data_raw_other_catalog)
 common_data_raw:execute_modify(data_raw_spidertron_equipment_grid_catalog)
 common_data_raw:execute_modify(data_raw_speed_module_catalog)
 common_data_raw:execute_modify(data_raw_productivity_module_catalog)
 common_data_raw:execute_modify(data_raw_effectivity_module_catalog)
-
-if settings.startup["x-custom-game-module-slot-all-type-allowed-flags"].value then
-    common_data_raw:execute_modify(data_raw_module_slot_all_type_allowed_catalog)
-end
 
 log("\n\n\n------------------其他 end------------------\n\n\n")
