@@ -1106,14 +1106,8 @@ local data_raw_recipe_se_plasma_stream_catalog = {
                 path = { "ingredients" }, -- 成分
                 value = {
                     {
-                        amount = 100,
-                        name = "water",
-                        type = "fluid"
-                    },
-                    {
-                        amount = 2,
-                        name = "lithium",
-                        type = "item"
+                        amount = 1,
+                        name = "stone"
                     }
                 }
             },
@@ -2379,7 +2373,7 @@ if settings.startup["x-custom-game-author-custom-recipe-balance-flags"].value th
         log("recipe_delete_by_name.ingredients [se-space-mirror]:\n" .. common_core:serpent_block(moddify_list))
 
         -- 修改配方
-        common_data_raw:execute_modify(data_raw_recipe_se_core_fragment_omni_catalog)
+        -- common_data_raw:execute_modify(data_raw_recipe_se_core_fragment_omni_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_cargo_rocket_section_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_cargo_rocket_section_pack_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_cargo_rocket_section_unpack_catalog)

@@ -30,6 +30,16 @@ local function modify_technology_cost()
             tech.unit.count_formula = "(" .. tech.unit.count_formula .. ")*" .. tostring(mul)
             log(tech.name .. ".count_formula: " .. old_value .. " ---> " .. tech.unit.count_formula)
         end
+
+        if tech.unit.time then
+            local tmp_time = tech.unit.time * mul
+            if tmp_time < 1 then
+                tmp_time = 1
+            end
+            local old_value = tech.unit.time
+            tech.unit.time = tmp_time
+            log(tech.name .. ".time: " .. old_value .. " ---> " .. tech.unit.time)
+        end
     end
 end
 

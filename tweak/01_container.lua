@@ -95,7 +95,6 @@ local data_raw_container_catalog = {
             "se-space-pipe-long-j-7",
             "se-space-pipe-long-s-9",
             "se-space-pipe-long-s-15", -- space-exploration
-            
             "kr-fluid-storage-1", -- Krastorio2
             "kr-fluid-storage-2", -- Krastorio2
             "storage-tank-2", -- boblogistics

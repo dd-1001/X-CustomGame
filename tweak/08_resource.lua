@@ -72,7 +72,7 @@ local data_raw_fuel_value_catalog = {
     }
 }
 
--- 调试模式加入修改火箭燃料的热值（需修改space-exploration_0.6.101\scripts\essential.lua:Essential.detect_breaking_prototypes()，让它直接return）
+-- 调试模式加入修改火箭燃料的性能(需修改__space-exploration__/scripts/essential.detect_breaking_prototypes = function() global.items_banned_from_transport = {} end)
 if X_CUSTOM_GAME_IS_DEBUG or
     not mods["space-exploration"] then
     table.insert(data_raw_fuel_value_catalog.item.orig, "rocket-fuel")
