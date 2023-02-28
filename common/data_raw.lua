@@ -336,6 +336,8 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                         end
                     elseif single_modify_param.value == "nil" then -- 存在指定设置的值 nil
                         new_value = nil
+                    elseif single_modify_param.value == "false" then -- 存在指定设置的值 false
+                        new_value = false
                     else -- 存在指定设置的值
                         new_value = single_modify_param.value
                     end

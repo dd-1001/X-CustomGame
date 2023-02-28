@@ -2035,6 +2035,7 @@ local data_raw_do_nothing_catalog = {
             "empty-lubricant-barrel"
         },
         mod = {
+            "se-rocket-fuel-from-water-copper",
             "lighted-small-electric-pole",
             "lighted-big-electric-pole",
             "lighted-medium-electric-pole",

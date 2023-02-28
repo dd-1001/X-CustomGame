@@ -85,6 +85,10 @@ local data_raw_satellite_catalog = {
             "satellite" -- 卫星
         },
         mod = {
+            "se-star-probe",
+            "se-belt-probe",
+            "se-void-probe",
+            "se-arcosphere-collector"
         },
         mul = settings.startup["x-custom-game-satellite-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
@@ -161,13 +165,20 @@ end
 
 if X_CUSTOM_GAME_IS_DEBUG then
     -- 找出含有热值，但没被修改的项目
-    local item_with_fuel_value = common_data_raw:find_item_with_key_word("fuel_value")
-    -- log("resource with fuel_value list: \n" .. common_core:serpent_block(item_with_fuel_value))
-
-    local tab_record = common_data_raw:check_not_in_record("source", item_with_fuel_value)
+    local item_unmod = common_data_raw:find_item_with_key_word("fuel_value")
+    -- log("fuel_value list: \n" .. common_core:serpent_block(item_unmod))
+    local tab_record = common_data_raw:check_not_in_record("source", item_unmod)
     if table_size(tab_record) > 0 then
-        log("Unmod resource with fuel_value list: \n" .. common_core:serpent_block(tab_record))
+        log("Unmod fuel_value list: \n" .. common_core:serpent_block(tab_record))
     end
+
+    -- 找出含卫星带回资源，但没被修改的项目
+    item_unmod = common_data_raw:find_item_with_key_word("rocket_launch_product")
+    -- log("rocket_launch_product list: \n" .. common_core:serpent_block(item_unmod))
+    tab_record = common_data_raw:check_not_in_record("source", item_unmod)
+    -- if table_size(tab_record) > 0 then
+    --     log("Unmod rocket_launch_product list: \n" .. common_core:serpent_block(tab_record))
+    -- end
 end
 
 
