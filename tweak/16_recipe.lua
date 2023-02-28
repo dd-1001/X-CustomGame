@@ -2295,15 +2295,46 @@ local data_raw_recipe_space_hide_catalog = {
             "se-space-mirror", -- 多光谱镜
             "se-space-mirror-alternate", -- 多光谱镜
             "se-gammaray-detector", -- 伽马射线探测器
-            "se-empty-data", -- 空白数据卡
+            -- "se-empty-data", -- 空白数据卡
             "se-machine-learning-data", -- 机器学习数据
             "se-formatting-1", -- 格式化
             "se-formatting-2", -- 格式化
             "se-formatting-3", -- 格式化
             "se-formatting-4", -- 格式化
-            "se-data-storage-substrate", -- 粗糙存储基板
-            "se-data-storage-substrate-cleaned", -- 抛光粗糙存储基板
+            -- "se-data-storage-substrate", -- 粗糙存储基板
+            -- "se-data-storage-substrate-cleaned", -- 抛光粗糙存储基板
             "se-data-storage-substrate-cleaned-chemical", -- 抛光粗糙存储基板
+            "se-simulation-a", -- 显著数据
+            "se-simulation-s",
+            "se-simulation-b",
+            "se-simulation-m",
+            "se-simulation-as",
+            "se-simulation-ab",
+            "se-simulation-am",
+            "se-simulation-sb",
+            "se-simulation-sm",
+            "se-simulation-bm",
+            "se-simulation-asb",
+            "se-simulation-asm",
+            "se-simulation-abm",
+            "se-simulation-sbm",
+            "se-simulation-asbm", -- 显著数据
+            "se-astronomic-insight-1", -- 天文学见解
+            "se-astronomic-insight-2",
+            "se-astronomic-insight-3",
+            "se-astronomic-insight-4", -- 天文学见解
+            "se-biological-insight-1", -- 生物学见解
+            "se-biological-insight-2",
+            "se-biological-insight-3",
+            "se-biological-insight-4", -- 生物学见解
+            "se-energy-insight-1", -- 能量学见解
+            "se-energy-insight-2",
+            "se-energy-insight-3",
+            "se-energy-insight-4", -- 能量学见解
+            "se-material-insight-1", -- 材料学见解
+            "se-material-insight-2",
+            "se-material-insight-3",
+            "se-material-insight-4", -- 材料学见解
         },
         modify_parameter = {
             {
@@ -2335,10 +2366,14 @@ local data_raw_recipe_space_delete_ingredients_catalog = {
     ["se-vitamelange-spice"] = {}, -- 维生质香料
     ["se-cargo-rocket-cargo-pod"] = {}, -- 货舱
     ["se-cargo-rocket-fuel-tank"] = {}, -- 火箭燃料罐
-    ["se-empty-data"] = {}, -- 空白数据卡
     ["se-machine-learning-data"] = {}, -- 机器学习数据
     ["se-space-mirror"] = {}, -- 多光谱镜
     ["se-gammaray-detector"] = {}, -- 伽马射线探测器
+    ["se-significant-data"] = {}, -- 显著数据
+    ["se-astronomic-insight"] = {}, -- 天文学见解
+    ["se-biological-insight"] = {}, -- 生物学见解
+    ["se-energy-insight"] = {}, -- 能量学见解
+    ["se-material-insight"] = {}, -- 材料学见解
 }
 
 -- space-exploration 删除产出
@@ -2355,6 +2390,7 @@ local data_raw_recipe_space_delete_results_catalog = {
     }, -- 25°的冷却导热液
     ["se-space-coolant-warm"] = {}, -- -10°的冷却导热液
     ["sand"] = {}, -- 沙子
+    ["se-bio-sludge"] = {}, -- 生化软泥
 }
 
 
@@ -2427,9 +2463,7 @@ if settings.startup["x-custom-game-author-custom-recipe-balance-flags"].value th
         common_data_raw:execute_modify(data_raw_recipe_se_naquium_ingot_to_plate_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_vitamelange_nugget_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_vitamelange_extract_catalog)
-
         common_data_raw:execute_modify(data_raw_recipe_se_space_coolant_catalog)
-
         common_data_raw:execute_modify(data_raw_recipe_space_science_pack_catalog)
         common_data_raw:execute_modify(data_raw_recipe_production_science_pack_catalog)
         common_data_raw:execute_modify(data_raw_recipe_utility_science_pack_catalog)

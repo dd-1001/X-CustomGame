@@ -20,7 +20,12 @@ local tab_record = common_data_raw:check_not_in_record("record")
 
 log("Unmod List: \n" .. common_core:serpent_block(tab_record))
 
-
-
+-- tab_record = {}
+-- for recipe_name, _ in pairs(data.raw.recipe) do
+--     if string.find(recipe_name, "se-simulation-", 1, true) then
+--         table.insert(tab_record, recipe_name)
+--     end
+-- end
+-- log("se-simulation- List: \n" .. common_core:serpent_block(tab_record))
 
 log("\n\n\n------------------test end------------------\n\n\n")
