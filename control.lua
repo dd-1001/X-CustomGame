@@ -142,11 +142,16 @@ local game_start_bonus_items = {
     { name = "splitter",                         count = 1000 }, -- 分流器
     { name = "miniloader",                       count = 1000 }, -- miniloader 迷你装卸机
     { name = "filter-miniloader",                count = 1000 }, -- miniloader 筛选迷你装卸机
+    { name = "se-space-transport-belt",          count = 1000 }, -- space-exploration 基础传送带
+    { name = "space-miniloader",                 count = 1000 }, -- miniloader 迷你装卸机
     { name = "kr-steel-pipe",                    count = 1000 }, -- Krastorio2 钢管
     { name = "kr-steel-pipe-to-ground",          count = 1000 }, -- Krastorio2 地下钢管
+    { name = "se-space-pipe",                    count = 1000 }, -- space-exploration 太空管
+    { name = "se-space-pipe-to-ground",          count = 1000 }, -- space-exploration 地下太空管
     { name = "storage-tank",                     count = 1000 }, -- 储液罐
     { name = "pump",                             count = 1000 }, -- 管道泵
     { name = "medium-electric-pole",             count = 1000 }, -- 中型电线杆
+    { name = "substation",                       count = 1000 }, -- 广域配电站
     { name = "lighted-medium-electric-pole",     count = 1000 }, -- LightedPolesPlus 发光中型电线杆
     { name = "check-valve",                      count = 1000 }, -- Flow Control 单向阀
     { name = "overflow-valve",                   count = 1000 }, -- Flow Control 溢流阀
@@ -167,9 +172,12 @@ local game_start_bonus_items = {
     { name = "se-spaceship-rocket-booster-tank", count = 10 }, -- space-exploration 飞船火箭燃料罐
     -- 生产
     { name = "kr-wind-turbine",                  count = 1000 }, -- Krastorio2 风力发电机
+    { name = "solar-panel",                      count = 1000 }, -- 太阳能板
+    { name = "accumulator",                      count = 1000 }, -- 蓄电池
     { name = "stone-waterwell",                  count = 1000 }, -- StoneWaterWell 石水井
     { name = "se-core-miner",                    count = 1 }, -- space-exploration 星核钻机
     { name = "electric-furnace",                 count = 1000 }, -- 电炉
+    { name = "kr-fuel-refinery",                 count = 1000 }, -- Krastorio2 燃料精炼厂
     { name = "se-pulveriser",                    count = 1000 }, -- space-exploration 粉碎机
     { name = "flare-stack",                      count = 1000 }, -- Flare Stack 流体燃烧器
     { name = "electric-incinerator",             count = 1000 }, -- Flare Stack 物品焚烧器
@@ -187,10 +195,13 @@ local game_start_bonus_items = {
     -- 装备
     { name = "repair-pack",                      count = 1000 }, -- 修理包
     { name = "modular-armor",                    count = 1 }, -- 模块装甲
-    { name = "solar-panel-equipment",            count = 8 }, -- 太阳能模块
-    { name = "battery-equipment",                count = 8 }, -- 电池组模块
+    { name = "solar-panel-equipment",            count = 16 }, -- 太阳能模块
+    { name = "battery-equipment",                count = 16 }, -- 电池组模块
     { name = "belt-immunity-equipment",          count = 1 }, -- 锚定模块
     { name = "personal-roboport-equipment",      count = 2 }, -- 机器人指令模块
+    { name = "shield-projector",                 count = 1000 }, -- shield-projector 护盾投射器
+    { name = "gun-turret",                       count = 1000 }, -- 机枪炮塔
+    { name = "laser-turret",                     count = 1000 }, -- 激光炮塔
 
 }
 

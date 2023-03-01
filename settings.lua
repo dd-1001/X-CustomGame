@@ -154,27 +154,27 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-mining-drill-performance-multiplier", -- 采矿-钻探
         setting_type = "startup",
-        default_value = 10,
+        default_value = 20,
         minimum_value = 0.1,
-        maximum_value = 20,
+        maximum_value = 30,
         order = "x-custom-game-107001"
     },
     {
         type = "double-setting",
         name = "x-custom-game-furnace-performance-multiplier", -- 熔炉
         setting_type = "startup",
-        default_value = 10,
+        default_value = 20,
         minimum_value = 0.1,
-        maximum_value = 20,
+        maximum_value = 30,
         order = "x-custom-game-107002"
     },
     {
         type = "double-setting",
         name = "x-custom-game-assembling-machine-performance-multiplier", -- 装配机
         setting_type = "startup",
-        default_value = 10,
+        default_value = 20,
         minimum_value = 0.1,
-        maximum_value = 20,
+        maximum_value = 30,
         order = "x-custom-game-107003"
     },
     {
@@ -501,7 +501,7 @@ data:extend({
     },
     {
         type = "bool-setting",
-        name = "x-custom-game-author-custom-recipe-balance-flags", -- 自定义配方
+        name = "x-custom-game-author-custom-balance-flags", -- 自定义平衡
         setting_type = "startup",
         default_value = false,
         order = "x-custom-game-116001"

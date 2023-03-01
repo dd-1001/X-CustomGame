@@ -43,11 +43,15 @@ local function modify_technology_cost()
     end
 end
 
--- space-exploration 飞船
+-- space-exploration
 local data_raw_technology_se_spaceship_catalog = {
     technology = {
         mod = {
-            "se-spaceship",
+            "se-spaceship", -- 飞船
+            "se-spaceship-integrity-1", -- 结构强度1
+            "se-spaceship-integrity-2", -- 结构强度2
+            "se-spaceship-integrity-3", -- 结构强度3
+            -- "se-factory-spaceship-1", -- 工厂飞船1
         },
         modify_parameter = { -- 修改参数
             {
@@ -87,8 +91,11 @@ if settings.startup["x-custom-game-technology-cost-multiplier"].value ~= 1 and
     modify_technology_cost()
 end
 
-if mods["space-exploration"] then
-    common_data_raw:execute_modify(data_raw_technology_se_spaceship_catalog)
+if settings.startup["x-custom-game-author-custom-balance-flags"].value then
+    -- space-exploration
+    if mods["space-exploration"] then
+        common_data_raw:execute_modify(data_raw_technology_se_spaceship_catalog)
+    end
 end
 
 log("\n\n\n------------------Technology end------------------\n\n\n")

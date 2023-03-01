@@ -2402,7 +2402,7 @@ local data_raw_recipe_delete_results_catalog = {
 -- 开始修改
 log("\n\n\n------------------配方 start------------------\n\n\n")
 
-if settings.startup["x-custom-game-author-custom-recipe-balance-flags"].value then
+if settings.startup["x-custom-game-author-custom-balance-flags"].value then
     -- 原始游戏配方修改
     common_data_raw:execute_modify(data_raw_recipe_uranium_processing_catalog)
     common_data_raw:execute_modify(data_raw_recipe_kovarex_enrichment_process_catalog)
