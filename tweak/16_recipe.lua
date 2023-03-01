@@ -784,7 +784,7 @@ local data_raw_recipe_se_kr_fine_imersite_powder_catalog = {
                 path = { "results" }, -- 产出
                 value = {
                     {
-                        amount = 16,
+                        amount = 8,
                         name = "se-kr-fine-imersite-powder"
                     }
                 }
@@ -2258,8 +2258,8 @@ local data_raw_recipe_space_research_data_catalog = {
     }
 }
 
--- space-exploration 隐藏配方
-local data_raw_recipe_space_hide_catalog = {
+-- 隐藏配方
+local data_raw_recipe_hide_catalog = {
     recipe = {
         mod = {
             "se-chemical-gel", -- 化学凝胶
@@ -2335,6 +2335,7 @@ local data_raw_recipe_space_hide_catalog = {
             "se-material-insight-2",
             "se-material-insight-3",
             "se-material-insight-4", -- 材料学见解
+            "blank-tech-card", -- 空白科技卡
         },
         modify_parameter = {
             {
@@ -2350,8 +2351,8 @@ local data_raw_recipe_space_hide_catalog = {
     }
 }
 
--- space-exploration 删除成分
-local data_raw_recipe_space_delete_ingredients_catalog = {
+-- 删除成分
+local data_raw_recipe_delete_ingredients_catalog = {
     -- ["se-space-water"] = {}, -- 宇宙水
     ["se-chemical-gel"] = {}, -- 化学凝胶
     ["se-nutrient-gel"] = {}, -- 营养凝胶
@@ -2374,10 +2375,13 @@ local data_raw_recipe_space_delete_ingredients_catalog = {
     ["se-biological-insight"] = {}, -- 生物学见解
     ["se-energy-insight"] = {}, -- 能量学见解
     ["se-material-insight"] = {}, -- 材料学见解
+    ["se-scrap"] = {}, -- 废料
+    ["blank-tech-card"] = {}, -- 空白科技卡
+
 }
 
--- space-exploration 删除产出
-local data_raw_recipe_space_delete_results_catalog = {
+-- 删除产出
+local data_raw_recipe_delete_results_catalog = {
     ["se-junk-data"] = {}, -- 垃圾数据卡
     ["se-empty-data"] = {}, -- 空白数据卡
     ["se-broken-data"] = {}, -- 损坏数据卡
@@ -2412,19 +2416,19 @@ if settings.startup["x-custom-game-author-custom-recipe-balance-flags"].value th
 
     if mods["space-exploration"] then
         -- 删除成分
-        for target_name, exclude_list in pairs(data_raw_recipe_space_delete_ingredients_catalog) do
+        for target_name, exclude_list in pairs(data_raw_recipe_delete_ingredients_catalog) do
             local moddify_list = common_data_raw:recipe_delete_by_name("ingredients", target_name, exclude_list)
             log("delete ingredients [\"" .. target_name .. "\"]:\n" .. common_core:serpent_block(moddify_list))
         end
 
         -- 删除产出
-        for target_name, exclude_list in pairs(data_raw_recipe_space_delete_results_catalog) do
+        for target_name, exclude_list in pairs(data_raw_recipe_delete_results_catalog) do
             local moddify_list = common_data_raw:recipe_delete_by_name("results", target_name, exclude_list)
             log("delete results [\"" .. target_name .. "\"]:\n" .. common_core:serpent_block(moddify_list))
         end
 
         -- 修改配方
-        common_data_raw:execute_modify(data_raw_recipe_space_hide_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_hide_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_core_fragment_omni_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_cargo_rocket_section_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_cargo_rocket_section_pack_catalog)

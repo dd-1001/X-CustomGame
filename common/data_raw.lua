@@ -236,7 +236,8 @@ function Data_raw:get_data_raw_field_value(field_path)
         -- i = 3; tmp_pos = data.raw["module"]["speed-module"]["limitation"]
     end
 
-    return deepcopy(tmp_pos)
+    -- return deepcopy(tmp_pos)
+    return tmp_pos
 end
 
 function Data_raw:execute_modify(data_raw_modifi_catalog)
