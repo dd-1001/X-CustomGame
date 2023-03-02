@@ -804,68 +804,68 @@ local data_raw_recipe_se_core_fragment_omni_catalog = {
                 path = { "results" }, -- 产出
                 value = {
                     {
-                        amount = 8,
+                        amount = 4,
                         name = "iron-ore" -- 铁矿
                     },
                     {
-                        amount = 8,
+                        amount = 4,
                         name = "copper-ore" -- 铜矿
                     },
                     {
-                        amount = 8,
+                        amount = 4,
                         name = "coal" -- 煤矿
                     },
                     {
-                        amount = 8,
+                        amount = 4,
                         name = "stone" -- 石矿
                     },
                     {
-                        amount = 8,
+                        amount = 4,
                         name = "uranium-ore", -- 铀矿
                         probability = 0.25
                     },
                     {
-                        amount = 8,
+                        amount = 4,
                         name = "se-vulcanite", -- 火成岩
                         probability = 0.25
                     },
                     {
-                        amount = 8,
+                        amount = 4,
                         name = "se-cryonite", -- 冰晶石
                         probability = 0.25
                     },
                     {
-                        amount = 8,
+                        amount = 4,
                         name = "se-beryllium-ore", -- 硫酸铍
                         probability = 0.25
                     },
                     {
-                        amount = 8,
+                        amount = 4,
                         name = "se-holmium-ore", -- 钬矿
                         probability = 0.25
                     },
                     {
-                        amount = 8,
+                        amount = 4,
                         name = "se-iridium-ore", -- 铱矿
                         probability = 0.25
                     },
                     {
-                        amount = 8,
+                        amount = 4,
                         name = "se-water-ice", -- 水冰
                         probability = 0.25
                     },
                     {
-                        amount = 8,
+                        amount = 4,
                         name = "se-methane-ice", -- 甲烷冰
                         probability = 0.25
                     },
                     {
-                        amount = 8,
+                        amount = 4,
                         name = "se-vitamelange", -- 维生质
                         probability = 0.125
                     },
                     {
-                        amount = 8,
+                        amount = 4,
                         name = "se-naquium-ore", -- 寂介素矿
                         probability = 0.0125
                     },
@@ -888,12 +888,12 @@ local data_raw_recipe_se_core_fragment_omni_catalog = {
 if mods["space-exploration"] and mods["Krastorio2"] then
     table.insert(data_raw_recipe_se_core_fragment_omni_catalog.recipe.modify_parameter[1].value,
         {
-            amount = 8,
+            amount = 4,
             name = "raw-rare-metals" -- 原始稀有金属
         })
     table.insert(data_raw_recipe_se_core_fragment_omni_catalog.recipe.modify_parameter[1].value,
         {
-            amount = 8,
+            amount = 4,
             name = "raw-imersite", -- 原始紫金
             probability = 0.25
         })
@@ -2258,6 +2258,49 @@ local data_raw_recipe_space_research_data_catalog = {
     }
 }
 
+-- space-exploration 火箭科技卡
+local data_raw_recipe_se_rocket_science_pack_catalog = {
+    recipe = {
+        mod = {
+            "se-rocket-science-pack",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        "speed-module",
+                        1
+                    },
+                    {
+                        "se-satellite-telemetry",
+                        1
+                    }
+                },
+                operation = "Extend"
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        "se-rocket-science-pack",
+                        8
+                    }
+                },
+                operation = "Extend"
+            },
+            {
+                path = { "normal" }, -- normal
+                value = "nil"
+            },
+            {
+                path = { "expensive" }, -- expensive
+                value = "nil"
+            }
+        }
+    }
+}
+
 -- 隐藏配方
 local data_raw_recipe_hide_catalog = {
     recipe = {
@@ -2336,6 +2379,23 @@ local data_raw_recipe_hide_catalog = {
             "se-material-insight-3",
             "se-material-insight-4", -- 材料学见解
             "blank-tech-card", -- 空白科技卡
+            "fill-dirty-water-barrel", -- 灌装污水桶
+            "empty-dirty-water-barrel", -- 倾倒污水桶
+            "fill-se-chemical-gel-barrel", -- 灌装化学凝胶桶
+            "empty-se-chemical-gel-barrel", -- 倾倒化学凝胶桶
+            "fill-se-neural-gel-barrel", -- 灌装神经凝胶桶
+            "empty-se-neural-gel-barrel", -- 倾倒神经凝胶桶
+            "fill-se-neural-gel-2-barrel", -- 灌装神经凝胶桶2
+            "empty-se-neural-gel-2-barrel", -- 倾倒神经凝胶桶2
+            "fill-se-nutrient-gel-barrel", -- 灌装营养凝胶桶
+            "empty-se-nutrient-gel-barrel", -- 倾倒营养凝胶桶
+            "fill-se-bio-sludge-barrel", -- 灌装生化软泥桶
+            "empty-se-bio-sludge-barrel", -- 倾倒生化软泥桶
+            "fill-se-contaminated-bio-sludge-barrel", -- 灌装生化污泥桶
+            "empty-se-contaminated-bio-sludge-barrel", -- 倾倒生化污泥桶
+            "fill-se-contaminated-space-water-barrel", -- 灌装宇宙污水桶
+            "empty-se-contaminated-space-water-barrel", -- 倾倒宇宙污水桶
+
         },
         modify_parameter = {
             {
@@ -2472,6 +2532,7 @@ if settings.startup["x-custom-game-author-custom-balance-flags"].value then
         common_data_raw:execute_modify(data_raw_recipe_production_science_pack_catalog)
         common_data_raw:execute_modify(data_raw_recipe_utility_science_pack_catalog)
         common_data_raw:execute_modify(data_raw_recipe_space_research_data_catalog)
+        common_data_raw:execute_modify(data_raw_recipe_se_rocket_science_pack_catalog)
 
         common_data_raw:execute_modify(data_raw_recipe_speed_productivity_effectivity_module_4_catalog)
         common_data_raw:execute_modify(data_raw_recipe_speed_productivity_effectivity_module_5_catalog)

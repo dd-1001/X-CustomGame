@@ -133,6 +133,7 @@ local game_start_bonus_items = {
     -- 物流
     { name = "steel-chest",                      count = 1000 }, -- 钢制箱
     { name = "logistic-chest-requester",         count = 1000 }, -- 优先集货箱(蓝箱)
+    { name = "logistic-chest-active-provider",   count = 1000 }, -- 优先供货箱(紫箱)
     { name = "aai-strongbox-requester",          count = 1000 }, -- aai-containers 优先集货柜
     { name = "aai-storehouse-requester",         count = 1000 }, -- aai-containers 优先集货库
     { name = "aai-warehouse-requester",          count = 1000 }, -- aai-containers 优先集货仓

@@ -164,6 +164,42 @@ local data_raw_character_collision_box_catalog = {
     }
 }
 
+-- character crafting_categories
+local function get_new_crafting_categories()
+    -- 待添加的新条目
+    local add_crafting_categories = {
+        "lifesupport", -- 维生设备
+    }
+
+    -- 添加新条目
+    local new_crafting_categories = data.raw.character.character.crafting_categories
+    for _, name in ipairs(add_crafting_categories) do
+        if data.raw["recipe-category"][name] then
+            table.insert(new_crafting_categories, name)
+        end
+    end
+
+    return new_crafting_categories
+end
+
+local new_crafting_categories = get_new_crafting_categories()
+local data_raw_character_crafting_categories_catalog = {
+    character = { -- 角色
+        orig = {
+            "character", -- 角色
+        },
+        mod = {
+            "character-jetpack", -- jetpack
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "crafting_categories" }, -- 可制作的配方目录
+                value = new_crafting_categories
+            }
+        }
+    }
+}
+
 -- 开始修改
 log("\n\n\n------------------Character start------------------\n\n\n")
 
@@ -173,5 +209,9 @@ common_data_raw:execute_modify(data_raw_character_running_speed_catalog)
 common_data_raw:execute_modify(data_raw_character_health_catalog)
 common_data_raw:execute_modify(data_raw_character_inventory_size_catalog)
 common_data_raw:execute_modify(data_raw_character_collision_box_catalog)
+
+if settings.startup["x-custom-game-author-custom-balance-flags"].value then
+    common_data_raw:execute_modify(data_raw_character_crafting_categories_catalog)
+end
 
 log("\n\n\n------------------Character end------------------\n\n\n")

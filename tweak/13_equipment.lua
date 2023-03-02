@@ -282,12 +282,12 @@ local data_raw_equipment_shape_size_catalog = {
         },
         modify_parameter = { -- 修改参数
             {
-                path = { "shape", "height" }, -- 高度
-                value = 1
-            },
-            {
-                path = { "shape", "width" }, -- 宽度
-                value = 1
+                path = { "shape" }, -- 尺寸
+                value = {
+                    type = "full",
+                    height = 1,
+                    width = 1
+                }
             }
         }
     },
@@ -306,12 +306,12 @@ local data_raw_equipment_shape_size_catalog = {
         },
         modify_parameter = { -- 修改参数
             {
-                path = { "shape", "height" }, -- 高度
-                value = 1
-            },
-            {
-                path = { "shape", "width" }, -- 宽度
-                value = 1
+                path = { "shape" }, -- 尺寸
+                value = {
+                    type = "full",
+                    height = 1,
+                    width = 1
+                }
             }
         }
     },
@@ -333,12 +333,12 @@ local data_raw_equipment_shape_size_catalog = {
         },
         modify_parameter = { -- 修改参数
             {
-                path = { "shape", "height" }, -- 高度
-                value = 1
-            },
-            {
-                path = { "shape", "width" }, -- 宽度
-                value = 1
+                path = { "shape" }, -- 尺寸
+                value = {
+                    type = "full",
+                    height = 1,
+                    width = 1
+                }
             }
         }
     },
@@ -348,15 +348,14 @@ local data_raw_equipment_shape_size_catalog = {
         },
         mod = {
         },
-        mul = settings.startup["x-custom-game-equipment-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
-                path = { "shape", "height" }, -- 高度
-                value = 1
-            },
-            {
-                path = { "shape", "width" }, -- 宽度
-                value = 1
+                path = { "shape" }, -- 尺寸
+                value = {
+                    type = "full",
+                    height = 1,
+                    width = 1
+                }
             }
         }
     },
@@ -376,12 +375,12 @@ local data_raw_equipment_shape_size_catalog = {
         },
         modify_parameter = { -- 修改参数
             {
-                path = { "shape", "height" }, -- 高度
-                value = 1
-            },
-            {
-                path = { "shape", "width" }, -- 宽度
-                value = 1
+                path = { "shape" }, -- 尺寸
+                value = {
+                    type = "full",
+                    height = 1,
+                    width = 1
+                }
             }
         }
     },
@@ -392,15 +391,14 @@ local data_raw_equipment_shape_size_catalog = {
         },
         mod = {
         },
-        mul = settings.startup["x-custom-game-equipment-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
-                path = { "shape", "height" }, -- 高度
-                value = 1
-            },
-            {
-                path = { "shape", "width" }, -- 宽度
-                value = 1
+                path = { "shape" }, -- 尺寸
+                value = {
+                    type = "full",
+                    height = 1,
+                    width = 1
+                }
             }
         }
     },
@@ -414,12 +412,12 @@ local data_raw_equipment_shape_size_catalog = {
         },
         modify_parameter = { -- 修改参数
             {
-                path = { "shape", "height" }, -- 高度
-                value = 1
-            },
-            {
-                path = { "shape", "width" }, -- 宽度
-                value = 1
+                path = { "shape" }, -- 尺寸
+                value = {
+                    type = "full",
+                    height = 1,
+                    width = 1
+                }
             }
         }
     },
@@ -439,15 +437,14 @@ local data_raw_equipment_shape_size_catalog = {
             "energy-shield-mk3-equipment", -- Krastorio2
             "energy-shield-mk4-equipment", -- Krastorio2
         },
-        mul = settings.startup["x-custom-game-equipment-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
-                path = { "shape", "height" }, -- 高度
-                value = 1
-            },
-            {
-                path = { "shape", "width" }, -- 宽度
-                value = 1
+                path = { "shape" }, -- 尺寸
+                value = {
+                    type = "full",
+                    height = 1,
+                    width = 1
+                }
             }
         }
     },
@@ -465,15 +462,14 @@ local data_raw_equipment_shape_size_catalog = {
             "personal-submachine-laser-defense-mk3-equipment",
             "personal-submachine-laser-defense-mk4-equipment" -- Krastorio2
         },
-        mul = settings.startup["x-custom-game-equipment-performance-multiplier"].value,
         modify_parameter = { -- 修改参数
             {
-                path = { "shape", "height" }, -- 高度
-                value = 1
-            },
-            {
-                path = { "shape", "width" }, -- 宽度
-                value = 1
+                path = { "shape" }, -- 尺寸
+                value = {
+                    type = "full",
+                    height = 1,
+                    width = 1
+                }
             }
         }
     }

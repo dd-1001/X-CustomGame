@@ -154,27 +154,27 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-mining-drill-performance-multiplier", -- 采矿-钻探
         setting_type = "startup",
-        default_value = 20,
+        default_value = 15,
         minimum_value = 0.1,
-        maximum_value = 30,
+        maximum_value = 20,
         order = "x-custom-game-107001"
     },
     {
         type = "double-setting",
         name = "x-custom-game-furnace-performance-multiplier", -- 熔炉
         setting_type = "startup",
-        default_value = 20,
+        default_value = 15,
         minimum_value = 0.1,
-        maximum_value = 30,
+        maximum_value = 20,
         order = "x-custom-game-107002"
     },
     {
         type = "double-setting",
         name = "x-custom-game-assembling-machine-performance-multiplier", -- 装配机
         setting_type = "startup",
-        default_value = 20,
+        default_value = 15,
         minimum_value = 0.1,
-        maximum_value = 30,
+        maximum_value = 20,
         order = "x-custom-game-107003"
     },
     {

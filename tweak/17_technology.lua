@@ -79,6 +79,21 @@ local data_raw_technology_se_spaceship_catalog = {
     }
 }
 
+-- Krastorio2
+local data_raw_technology_kr_enriched_ores_catalog = {
+    technology = {
+        mod = {
+            "kr-enriched-ores", -- 富化矿石
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "effects" },
+                value = "nil"
+            }
+        }
+    }
+}
+
 -- 开始修改
 log("\n\n\n------------------Technology start------------------\n\n\n")
 
@@ -95,6 +110,11 @@ if settings.startup["x-custom-game-author-custom-balance-flags"].value then
     -- space-exploration
     if mods["space-exploration"] then
         common_data_raw:execute_modify(data_raw_technology_se_spaceship_catalog)
+    end
+
+    -- Krastorio2
+    if mods["Krastorio2"] then
+        common_data_raw:execute_modify(data_raw_technology_kr_enriched_ores_catalog)
     end
 end
 
