@@ -168,7 +168,9 @@ local data_raw_character_collision_box_catalog = {
 local function get_new_crafting_categories()
     -- 待添加的新条目
     local add_crafting_categories = {
-        "lifesupport", -- 维生设备
+        "lifesupport",
+        "space-crafting",
+        "space-manufacturing",
     }
 
     -- 添加新条目

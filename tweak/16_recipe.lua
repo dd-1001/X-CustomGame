@@ -271,6 +271,52 @@ local data_raw_recipe_splitter_catalog = {
     }
 }
 
+-- 极速传送带
+local data_raw_recipe_express_transport_belt_catalog = {
+    recipe = {
+        orig = {
+            "express-transport-belt",
+        },
+        modify_parameter = { -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+						amount = 1,
+						name = "fast-transport-belt",
+						type = "item"
+					},
+					{
+						amount = 4,
+						name = "steel-gear-wheel",
+						type = "item"
+					}
+                },
+                operation = "Extend"
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 1,
+                        name = "express-transport-belt",
+                        type = "item"
+                    }
+                },
+                operation = "Extend"
+            },
+            {
+                path = { "normal" }, -- normal
+                value = "nil"
+            },
+            {
+                path = { "expensive" }, -- expensive
+                value = "nil"
+            }
+        }
+    }
+}
+
 -- 插件1
 local data_raw_recipe_speed_productivity_effectivity_module_1_catalog = {
     recipe = {
@@ -1478,8 +1524,7 @@ local data_raw_recipe_se_beryllium_ingot_catalog = {
                 value = {
                     {
                         amount = 10,
-                        name = "se-beryllium-hydroxide",
-                        type = "fluid"
+                        name = "se-beryllium-powder"
                     }
                 }
             },
@@ -2314,6 +2359,7 @@ local data_raw_recipe_hide_catalog = {
             "se-bio-sludge-crude-oil", -- 生化软泥
             "se-bio-sludge-from-wood", -- 生化软泥
             "se-bio-sludge-from-fish", -- 生化软泥
+            "se-bio-sludge-from-biomass", -- 生化软泥
             "se-bio-sludge-from-vitamelange", -- 生化软泥
             "se-bio-sludge-decontamination", -- 生化软泥
             "se-molten-iron", -- 铁水
@@ -2470,6 +2516,7 @@ if settings.startup["x-custom-game-author-custom-balance-flags"].value then
     common_data_raw:execute_modify(data_raw_recipe_basic_oil_processing_catalog)
     common_data_raw:execute_modify(data_raw_recipe_advanced_oil_processing_catalog)
     common_data_raw:execute_modify(data_raw_recipe_splitter_catalog)
+    common_data_raw:execute_modify(data_raw_recipe_express_transport_belt_catalog)
     common_data_raw:execute_modify(data_raw_recipe_speed_productivity_effectivity_module_1_catalog)
     common_data_raw:execute_modify(data_raw_recipe_speed_productivity_effectivity_module_2_catalog)
     common_data_raw:execute_modify(data_raw_recipe_speed_productivity_effectivity_module_3_catalog)
