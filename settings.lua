@@ -127,8 +127,8 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-pipe-system-performance-multiplier", -- 管道系统
         setting_type = "startup",
-        default_value = 2,
-        minimum_value = 0.2,
+        default_value = 3,
+        minimum_value = 0.5,
         maximum_value = 5,
         order = "x-custom-game-105001"
     },

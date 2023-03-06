@@ -143,7 +143,12 @@ local data_raw_belt_transport_catalog = {
             "ultimate-miniloader-loader",
             "ultimate-filter-miniloader-loader",
             "chute-miniloader-loader", -- miniloader
-            "kr-advanced-miniloader-loader", -- Krastorio2
+            "kr-loader", -- Krastorio2
+            "kr-fast-loader",
+            "kr-express-loader",
+            "kr-advanced-loader",
+            "kr-superior-loader",
+            "kr-advanced-miniloader-loader",
             "kr-advanced-filter-miniloader-loader",
             "kr-superior-miniloader-loader",
             "kr-superior-filter-miniloader-loader", -- Krastorio2

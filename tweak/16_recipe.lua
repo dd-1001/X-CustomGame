@@ -7,9 +7,9 @@ local log = common_core.Log
 local data_raw_recipe_uranium_processing_catalog = {
     recipe = {
         orig = {
-            "uranium-processing", -- 铀浓缩处理
+            "uranium-processing",             -- 铀浓缩处理
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {                  -- 修改参数
             {
                 path = { "energy_required" }, -- 制作时间
                 value = 12,
@@ -52,9 +52,9 @@ local data_raw_recipe_uranium_processing_catalog = {
 local data_raw_recipe_kovarex_enrichment_process_catalog = {
     recipe = {
         orig = {
-            "kovarex-enrichment-process", -- 铀增值处理
+            "kovarex-enrichment-process",     -- 铀增值处理
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {                  -- 修改参数
             {
                 path = { "energy_required" }, -- 制作时间
                 value = 60,
@@ -86,9 +86,9 @@ local data_raw_recipe_kovarex_enrichment_process_catalog = {
 local data_raw_recipe_landfill_catalog = {
     recipe = {
         orig = {
-            "landfill", -- 填海料
+            "landfill",                       -- 填海料
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {                  -- 修改参数
             {
                 path = { "energy_required" }, -- 制作时间
                 value = 0.5,
@@ -115,9 +115,9 @@ local data_raw_recipe_landfill_catalog = {
 local data_raw_recipe_basic_oil_processing_catalog = {
     recipe = {
         orig = {
-            "basic-oil-processing", -- 石油气
+            "basic-oil-processing",           -- 石油气
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {                  -- 修改参数
             {
                 path = { "energy_required" }, -- 制作时间
                 value = 5,
@@ -166,9 +166,9 @@ local data_raw_recipe_basic_oil_processing_catalog = {
 local data_raw_recipe_advanced_oil_processing_catalog = {
     recipe = {
         orig = {
-            "advanced-oil-processing", -- 高等原油处理
+            "advanced-oil-processing",        -- 高等原油处理
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {                  -- 修改参数
             {
                 path = { "energy_required" }, -- 制作时间
                 value = 5,
@@ -224,7 +224,7 @@ local data_raw_recipe_splitter_catalog = {
         orig = {
             "splitter",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {                  -- 修改参数
             {
                 path = { "energy_required" }, -- 制作时间
                 value = 1,
@@ -277,20 +277,20 @@ local data_raw_recipe_express_transport_belt_catalog = {
         orig = {
             "express-transport-belt",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
                     {
-						amount = 1,
-						name = "fast-transport-belt",
-						type = "item"
-					},
-					{
-						amount = 4,
-						name = "steel-gear-wheel",
-						type = "item"
-					}
+                        amount = 1,
+                        name = "fast-transport-belt",
+                        type = "item"
+                    },
+                    {
+                        amount = 4,
+                        name = "iron-gear-wheel",
+                        type = "item"
+                    }
                 },
                 operation = "Extend"
             },
@@ -325,7 +325,7 @@ local data_raw_recipe_speed_productivity_effectivity_module_1_catalog = {
             "productivity-module",
             "effectivity-module"
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -360,7 +360,7 @@ local data_raw_recipe_speed_productivity_effectivity_module_2_catalog = {
             "productivity-module-2",
             "effectivity-module-2"
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -395,7 +395,7 @@ local data_raw_recipe_speed_productivity_effectivity_module_3_catalog = {
             "productivity-module-3",
             "effectivity-module-3"
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -430,7 +430,7 @@ local data_raw_recipe_speed_productivity_effectivity_module_4_catalog = {
             "productivity-module-4",
             "effectivity-module-4"
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -465,7 +465,7 @@ local data_raw_recipe_speed_productivity_effectivity_module_5_catalog = {
             "productivity-module-5",
             "effectivity-module-5"
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -504,7 +504,7 @@ local data_raw_recipe_speed_productivity_effectivity_module_6_catalog = {
             "productivity-module-6",
             "effectivity-module-6"
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -543,7 +543,7 @@ local data_raw_recipe_speed_productivity_effectivity_module_7_catalog = {
             "productivity-module-7",
             "effectivity-module-7"
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -582,7 +582,7 @@ local data_raw_recipe_speed_productivity_effectivity_module_8_catalog = {
             "productivity-module-8",
             "effectivity-module-8"
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -621,7 +621,7 @@ local data_raw_recipe_speed_productivity_effectivity_module_9_catalog = {
             "productivity-module-9",
             "effectivity-module-9"
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -656,9 +656,9 @@ local data_raw_recipe_speed_productivity_effectivity_module_9_catalog = {
 local data_raw_recipe_advanced_solar_catalog = {
     recipe = {
         mod = {
-            "advanced-solar", -- Advanced-Electric-Revamped-v16
+            "advanced-solar",             -- Advanced-Electric-Revamped-v16
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = { { "steel-plate", 5 }, { "electronic-circuit", 5 }, { "solar-panel", 101 } }
@@ -671,9 +671,9 @@ local data_raw_recipe_advanced_solar_catalog = {
 local data_raw_recipe_elite_solar_catalog = {
     recipe = {
         mod = {
-            "elite-solar", -- Advanced-Electric-Revamped-v16
+            "elite-solar",                -- Advanced-Electric-Revamped-v16
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = { { "steel-plate", 10 }, { "advanced-circuit", 10 }, { "advanced-solar", 101 } }
@@ -686,9 +686,9 @@ local data_raw_recipe_elite_solar_catalog = {
 local data_raw_recipe_ultimate_solar_catalog = {
     recipe = {
         mod = {
-            "ultimate-solar", -- Advanced-Electric-Revamped-v16
+            "ultimate-solar",             -- Advanced-Electric-Revamped-v16
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = { { "steel-plate", 20 }, { "processing-unit", 20 }, { "elite-solar", 101 } }
@@ -701,9 +701,9 @@ local data_raw_recipe_ultimate_solar_catalog = {
 local data_raw_recipe_advanced_accumulator_catalog = {
     recipe = {
         mod = {
-            "advanced-accumulator", -- Advanced-Electric-Revamped-v16
+            "advanced-accumulator",       -- Advanced-Electric-Revamped-v16
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = { { "accumulator", 101 }, { "iron-plate", 5 }, { "electronic-circuit", 5 } }
@@ -716,9 +716,9 @@ local data_raw_recipe_advanced_accumulator_catalog = {
 local data_raw_recipe_elite_accumulator_catalog = {
     recipe = {
         mod = {
-            "elite-accumulator", -- Advanced-Electric-Revamped-v16
+            "elite-accumulator",          -- Advanced-Electric-Revamped-v16
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = { { "advanced-accumulator", 101 }, { "iron-plate", 10 }, { "advanced-circuit", 10 } }
@@ -731,12 +731,13 @@ local data_raw_recipe_elite_accumulator_catalog = {
 local data_raw_recipe_ultimate_accumulator_catalog = {
     recipe = {
         mod = {
-            "ultimate-accumulator", -- Advanced-Electric-Revamped-v16
+            "ultimate-accumulator",       -- Advanced-Electric-Revamped-v16
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
-                value = { { "elite-accumulator", 101 }, { "steel-plate", 20 }, { "battery", 20 }, { "processing-unit", 5 } }
+                value = { { "elite-accumulator", 101 }, { "steel-plate", 20 }, { "battery", 20 },
+                    { "processing-unit",   5 } }
             }
         }
     }
@@ -748,7 +749,7 @@ local data_raw_recipe_imersite_crystal_catalog = {
         mod = {
             "imersite-crystal",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -784,7 +785,7 @@ local data_raw_recipe_imersium_plate_catalog = {
         mod = {
             "imersium-plate",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -815,7 +816,7 @@ local data_raw_recipe_se_kr_fine_imersite_powder_catalog = {
         mod = {
             "se-kr-fine-imersite-powder",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -845,83 +846,83 @@ local data_raw_recipe_se_core_fragment_omni_catalog = {
         mod = {
             "se-core-fragment-omni",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {          -- 修改参数
             {
                 path = { "results" }, -- 产出
                 value = {
                     {
-                        amount = 4,
+                        amount = 8,
                         name = "iron-ore" -- 铁矿
                     },
                     {
-                        amount = 4,
+                        amount = 8,
                         name = "copper-ore" -- 铜矿
                     },
                     {
-                        amount = 4,
+                        amount = 8,
                         name = "coal" -- 煤矿
                     },
                     {
-                        amount = 4,
+                        amount = 8,
                         name = "stone" -- 石矿
                     },
                     {
-                        amount = 4,
+                        amount = 8,
                         name = "uranium-ore", -- 铀矿
                         probability = 0.25
                     },
                     {
-                        amount = 4,
+                        amount = 8,
                         name = "se-vulcanite", -- 火成岩
                         probability = 0.25
                     },
                     {
-                        amount = 4,
+                        amount = 8,
                         name = "se-cryonite", -- 冰晶石
                         probability = 0.25
                     },
                     {
-                        amount = 4,
+                        amount = 8,
                         name = "se-beryllium-ore", -- 硫酸铍
                         probability = 0.25
                     },
                     {
-                        amount = 4,
+                        amount = 8,
                         name = "se-holmium-ore", -- 钬矿
                         probability = 0.25
                     },
                     {
-                        amount = 4,
+                        amount = 8,
                         name = "se-iridium-ore", -- 铱矿
                         probability = 0.25
                     },
                     {
-                        amount = 4,
+                        amount = 8,
                         name = "se-water-ice", -- 水冰
                         probability = 0.25
                     },
                     {
-                        amount = 4,
+                        amount = 8,
                         name = "se-methane-ice", -- 甲烷冰
                         probability = 0.25
                     },
                     {
-                        amount = 4,
+                        amount = 8,
                         name = "se-vitamelange", -- 维生质
                         probability = 0.125
                     },
                     {
-                        amount = 4,
+                        amount = 8,
                         name = "se-naquium-ore", -- 寂介素矿
                         probability = 0.0125
                     },
                     {
-                        amount = 64,
+                        amount = 32,
                         name = "crude-oil", -- 原油(液体)
                         type = "fluid"
                     },
                     {
-                        amount = 64,
+                        amount = 32,
                         name = "se-space-water", -- 宇宙水(液体)
                         type = "fluid"
                     }
@@ -934,36 +935,36 @@ local data_raw_recipe_se_core_fragment_omni_catalog = {
 if mods["space-exploration"] and mods["Krastorio2"] then
     table.insert(data_raw_recipe_se_core_fragment_omni_catalog.recipe.modify_parameter[1].value,
         {
-            amount = 4,
+            amount = 8,
             name = "raw-rare-metals" -- 原始稀有金属
         })
     table.insert(data_raw_recipe_se_core_fragment_omni_catalog.recipe.modify_parameter[1].value,
         {
-            amount = 4,
+            amount = 8,
             name = "raw-imersite", -- 原始紫金
             probability = 0.25
         })
     table.insert(data_raw_recipe_se_core_fragment_omni_catalog.recipe.modify_parameter[1].value,
         {
-            amount = 64,
+            amount = 32,
             name = "mineral-water", -- 矿物质水(液体)
             type = "fluid"
         })
     table.insert(data_raw_recipe_se_core_fragment_omni_catalog.recipe.modify_parameter[1].value,
         {
-            amount = 64,
+            amount = 32,
             name = "nitric-acid", -- 硝酸(液体)
             type = "fluid"
         })
     table.insert(data_raw_recipe_se_core_fragment_omni_catalog.recipe.modify_parameter[1].value,
         {
-            amount = 64,
+            amount = 32,
             name = "hydrogen-chloride", -- 氯化氢(液体)
             type = "fluid"
         })
     table.insert(data_raw_recipe_se_core_fragment_omni_catalog.recipe.modify_parameter[1].value,
         {
-            amount = 64,
+            amount = 32,
             name = "biomethanol", -- 生物甲醇(液体)
             type = "fluid"
         })
@@ -973,9 +974,9 @@ end
 local data_raw_recipe_se_cargo_rocket_section_catalog = {
     recipe = {
         mod = {
-            "se-cargo-rocket-section", -- space-exploration
+            "se-cargo-rocket-section",    -- space-exploration
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1003,7 +1004,7 @@ local data_raw_recipe_se_cargo_rocket_section_pack_catalog = {
         mod = {
             "se-cargo-rocket-section-pack",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1023,7 +1024,7 @@ local data_raw_recipe_se_cargo_rocket_section_unpack_catalog = {
         mod = {
             "se-cargo-rocket-section-unpack",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {          -- 修改参数
             {
                 path = { "results" }, -- 产出
                 value = {
@@ -1043,7 +1044,7 @@ local data_raw_recipe_se_delivery_cannon_capsule_catalog = {
         mod = {
             "se-delivery-cannon-capsule",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1071,7 +1072,7 @@ local data_raw_recipe_se_iron_ingot_catalog = {
         mod = {
             "se-iron-ingot",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1100,7 +1101,7 @@ local data_raw_recipe_se_steel_ingot_catalog = {
         mod = {
             "se-steel-ingot",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1129,7 +1130,7 @@ local data_raw_recipe_se_copper_ingot_catalog = {
         mod = {
             "se-copper-ingot",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1159,7 +1160,7 @@ local data_raw_recipe_se_plasma_stream_catalog = {
         mod = {
             "se-plasma-stream",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1194,7 +1195,7 @@ local data_raw_recipe_se_vulcanite_crushed_catalog = {
         mod = {
             "se-vulcanite-crushed",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1224,7 +1225,7 @@ local data_raw_recipe_se_pyroflux_catalog = {
         mod = {
             "se-pyroflux",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1255,7 +1256,7 @@ local data_raw_recipe_se_vulcanite_block_catalog = {
         mod = {
             "se-vulcanite-block",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1286,7 +1287,7 @@ local data_raw_recipe_se_vulcanite_ion_exchange_beads_catalog = {
         mod = {
             "se-vulcanite-ion-exchange-beads",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1320,7 +1321,7 @@ local data_raw_recipe_se_cryonite_slush_catalog = {
         mod = {
             "se-cryonite-slush",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1351,7 +1352,7 @@ local data_raw_recipe_se_cryonite_rod_catalog = {
         mod = {
             "se-cryonite-rod",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1382,7 +1383,7 @@ local data_raw_recipe_se_cryonite_ion_exchange_beads_catalog = {
         mod = {
             "se-cryonite-ion-exchange-beads",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1416,7 +1417,7 @@ local data_raw_recipe_se_beryllium_sulfate_catalog = {
         mod = {
             "se-beryllium-sulfate",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1451,7 +1452,7 @@ local data_raw_recipe_se_beryllium_hydroxide_catalog = {
         mod = {
             "se-beryllium-hydroxide",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1487,7 +1488,7 @@ local data_raw_recipe_se_beryllium_powder_catalog = {
         mod = {
             "se-beryllium-powder",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1518,7 +1519,7 @@ local data_raw_recipe_se_beryllium_ingot_catalog = {
         mod = {
             "se-beryllium-ingot",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1548,7 +1549,7 @@ local data_raw_recipe_se_beryllium_ingot_to_plate_catalog = {
         mod = {
             "se-beryllium-ingot-to-plate",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1578,7 +1579,7 @@ local data_raw_recipe_se_holmium_ore_crushed_catalog = {
         mod = {
             "se-holmium-ore-crushed",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1608,7 +1609,7 @@ local data_raw_recipe_se_holmium_powder_catalog = {
         mod = {
             "se-holmium-powder",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1638,7 +1639,7 @@ local data_raw_recipe_se_holmium_ingot_catalog = {
         mod = {
             "se-holmium-ingot",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1668,7 +1669,7 @@ local data_raw_recipe_se_holmium_ingot_to_plate_catalog = {
         mod = {
             "se-holmium-ingot-to-plate",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1698,7 +1699,7 @@ local data_raw_recipe_se_iridium_ore_crushed_catalog = {
         mod = {
             "se-iridium-ore-crushed",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1728,7 +1729,7 @@ local data_raw_recipe_se_iridium_powder_catalog = {
         mod = {
             "se-iridium-powder",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1758,7 +1759,7 @@ local data_raw_recipe_se_iridium_ingot_catalog = {
         mod = {
             "se-iridium-ingot",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1788,7 +1789,7 @@ local data_raw_recipe_se_iridium_ingot_to_plate_catalog = {
         mod = {
             "se-iridium-ingot-to-plate",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1818,7 +1819,7 @@ local data_raw_recipe_se_naquium_ore_crushed_catalog = {
         mod = {
             "se-naquium-ore-crushed",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1848,7 +1849,7 @@ local data_raw_recipe_se_naquium_refined_catalog = {
         mod = {
             "se-naquium-refined",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1882,7 +1883,7 @@ local data_raw_recipe_se_naquium_powder_catalog = {
         mod = {
             "se-naquium-powder",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1916,7 +1917,7 @@ local data_raw_recipe_se_naquium_crystal_catalog = {
         mod = {
             "se-naquium-crystal",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1950,7 +1951,7 @@ local data_raw_recipe_se_naquium_ingot_catalog = {
         mod = {
             "se-naquium-ingot",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -1980,7 +1981,7 @@ local data_raw_recipe_se_naquium_ingot_to_plate_catalog = {
         mod = {
             "se-naquium-ingot-to-plate",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -2010,7 +2011,7 @@ local data_raw_recipe_se_vitamelange_nugget_catalog = {
         mod = {
             "se-vitamelange-nugget",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -2040,7 +2041,7 @@ local data_raw_recipe_se_vitamelange_extract_catalog = {
         mod = {
             "se-vitamelange-extract",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -2070,7 +2071,7 @@ local data_raw_recipe_se_space_coolant_catalog = {
         mod = {
             "se-space-coolant",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -2114,7 +2115,7 @@ local data_raw_recipe_space_science_pack_catalog = {
         mod = {
             "space-science-pack",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -2157,7 +2158,7 @@ local data_raw_recipe_production_science_pack_catalog = {
         mod = {
             "production-science-pack",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -2209,7 +2210,7 @@ local data_raw_recipe_utility_science_pack_catalog = {
         mod = {
             "utility-science-pack",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -2261,7 +2262,7 @@ local data_raw_recipe_space_research_data_catalog = {
         mod = {
             "space-research-data",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -2309,7 +2310,7 @@ local data_raw_recipe_se_rocket_science_pack_catalog = {
         mod = {
             "se-rocket-science-pack",
         },
-        modify_parameter = { -- 修改参数
+        modify_parameter = {              -- 修改参数
             {
                 path = { "ingredients" }, -- 成分
                 value = {
@@ -2350,50 +2351,50 @@ local data_raw_recipe_se_rocket_science_pack_catalog = {
 local data_raw_recipe_hide_catalog = {
     recipe = {
         mod = {
-            "se-chemical-gel", -- 化学凝胶
-            "se-nutrient-gel", -- 营养凝胶
-            "se-nutrient-gel-methane", -- 营养凝胶
-            "se-neural-gel", -- 神经凝胶
-            "se-neural-gel-2", -- 神经凝胶2
-            "se-bio-sludge", -- 生化软泥
-            "se-bio-sludge-crude-oil", -- 生化软泥
-            "se-bio-sludge-from-wood", -- 生化软泥
-            "se-bio-sludge-from-fish", -- 生化软泥
-            "se-bio-sludge-from-biomass", -- 生化软泥
-            "se-bio-sludge-from-vitamelange", -- 生化软泥
-            "se-bio-sludge-decontamination", -- 生化软泥
-            "se-molten-iron", -- 铁水
-            "se-iron-ingot-to-plate", -- 铁板
-            "se-steel-ingot-to-plate", -- 钢材
-            "se-molten-copper", -- 铜水
-            "se-copper-ingot-to-plate", -- 铜板
-            "se-vulcanite-enriched", -- 富化火成岩
-            "se-pyroflux-steam", -- 热熔济浇筑
-            "se-cryonite-crystal", -- 冰晶石晶体
-            "se-molten-beryllium", -- 铍水
-            "se-beryllium-ingot-no-vulcanite", -- 铍锭
-            "se-holmium-chloride", -- 氯化钬
-            "se-molten-holmium", -- 钬水
-            "se-holmium-ingot-no-vulcanite", -- 钬锭
-            "se-iridium-blastcake", -- 铱炸饼
-            "se-vitamelange-bloom", -- 维生质花
-            "se-vitamelange-spice", -- 维生质香料
-            "se-cargo-rocket-cargo-pod", -- 货舱
-            "se-cargo-rocket-fuel-tank", -- 火箭燃料罐
+            "se-chemical-gel",                   -- 化学凝胶
+            "se-nutrient-gel",                   -- 营养凝胶
+            "se-nutrient-gel-methane",           -- 营养凝胶
+            "se-neural-gel",                     -- 神经凝胶
+            "se-neural-gel-2",                   -- 神经凝胶2
+            "se-bio-sludge",                     -- 生化软泥
+            "se-bio-sludge-crude-oil",           -- 生化软泥
+            "se-bio-sludge-from-wood",           -- 生化软泥
+            "se-bio-sludge-from-fish",           -- 生化软泥
+            "se-bio-sludge-from-biomass",        -- 生化软泥
+            "se-bio-sludge-from-vitamelange",    -- 生化软泥
+            "se-bio-sludge-decontamination",     -- 生化软泥
+            "se-molten-iron",                    -- 铁水
+            "se-iron-ingot-to-plate",            -- 铁板
+            "se-steel-ingot-to-plate",           -- 钢材
+            "se-molten-copper",                  -- 铜水
+            "se-copper-ingot-to-plate",          -- 铜板
+            "se-vulcanite-enriched",             -- 富化火成岩
+            "se-pyroflux-steam",                 -- 热熔济浇筑
+            "se-cryonite-crystal",               -- 冰晶石晶体
+            "se-molten-beryllium",               -- 铍水
+            "se-beryllium-ingot-no-vulcanite",   -- 铍锭
+            "se-holmium-chloride",               -- 氯化钬
+            "se-molten-holmium",                 -- 钬水
+            "se-holmium-ingot-no-vulcanite",     -- 钬锭
+            "se-iridium-blastcake",              -- 铱炸饼
+            "se-vitamelange-bloom",              -- 维生质花
+            "se-vitamelange-spice",              -- 维生质香料
+            "se-cargo-rocket-cargo-pod",         -- 货舱
+            "se-cargo-rocket-fuel-tank",         -- 火箭燃料罐
             "se-cargo-rocket-section-beryllium", -- 火箭运载区段
-            "se-space-mirror", -- 多光谱镜
-            "se-space-mirror-alternate", -- 多光谱镜
-            "se-gammaray-detector", -- 伽马射线探测器
+            "se-space-mirror",                   -- 多光谱镜
+            "se-space-mirror-alternate",         -- 多光谱镜
+            "se-gammaray-detector",              -- 伽马射线探测器
             -- "se-empty-data", -- 空白数据卡
-            "se-machine-learning-data", -- 机器学习数据
-            "se-formatting-1", -- 格式化
-            "se-formatting-2", -- 格式化
-            "se-formatting-3", -- 格式化
-            "se-formatting-4", -- 格式化
+            "se-machine-learning-data",          -- 机器学习数据
+            "se-formatting-1",                   -- 格式化
+            "se-formatting-2",                   -- 格式化
+            "se-formatting-3",                   -- 格式化
+            "se-formatting-4",                   -- 格式化
             -- "se-data-storage-substrate", -- 粗糙存储基板
             -- "se-data-storage-substrate-cleaned", -- 抛光粗糙存储基板
             "se-data-storage-substrate-cleaned-chemical", -- 抛光粗糙存储基板
-            "se-simulation-a", -- 显著数据
+            "se-simulation-a",                            -- 显著数据
             "se-simulation-s",
             "se-simulation-b",
             "se-simulation-m",
@@ -2407,7 +2408,7 @@ local data_raw_recipe_hide_catalog = {
             "se-simulation-asm",
             "se-simulation-abm",
             "se-simulation-sbm",
-            "se-simulation-asbm", -- 显著数据
+            "se-simulation-asbm",      -- 显著数据
             "se-astronomic-insight-1", -- 天文学见解
             "se-astronomic-insight-2",
             "se-astronomic-insight-3",
@@ -2416,30 +2417,30 @@ local data_raw_recipe_hide_catalog = {
             "se-biological-insight-2",
             "se-biological-insight-3",
             "se-biological-insight-4", -- 生物学见解
-            "se-energy-insight-1", -- 能量学见解
+            "se-energy-insight-1",     -- 能量学见解
             "se-energy-insight-2",
             "se-energy-insight-3",
-            "se-energy-insight-4", -- 能量学见解
+            "se-energy-insight-4",   -- 能量学见解
             "se-material-insight-1", -- 材料学见解
             "se-material-insight-2",
             "se-material-insight-3",
-            "se-material-insight-4", -- 材料学见解
-            "blank-tech-card", -- 空白科技卡
-            "fill-dirty-water-barrel", -- 灌装污水桶
-            "empty-dirty-water-barrel", -- 倾倒污水桶
-            "fill-se-chemical-gel-barrel", -- 灌装化学凝胶桶
-            "empty-se-chemical-gel-barrel", -- 倾倒化学凝胶桶
-            "fill-se-neural-gel-barrel", -- 灌装神经凝胶桶
-            "empty-se-neural-gel-barrel", -- 倾倒神经凝胶桶
-            "fill-se-neural-gel-2-barrel", -- 灌装神经凝胶桶2
-            "empty-se-neural-gel-2-barrel", -- 倾倒神经凝胶桶2
-            "fill-se-nutrient-gel-barrel", -- 灌装营养凝胶桶
-            "empty-se-nutrient-gel-barrel", -- 倾倒营养凝胶桶
-            "fill-se-bio-sludge-barrel", -- 灌装生化软泥桶
-            "empty-se-bio-sludge-barrel", -- 倾倒生化软泥桶
-            "fill-se-contaminated-bio-sludge-barrel", -- 灌装生化污泥桶
-            "empty-se-contaminated-bio-sludge-barrel", -- 倾倒生化污泥桶
-            "fill-se-contaminated-space-water-barrel", -- 灌装宇宙污水桶
+            "se-material-insight-4",                    -- 材料学见解
+            "blank-tech-card",                          -- 空白科技卡
+            "fill-dirty-water-barrel",                  -- 灌装污水桶
+            "empty-dirty-water-barrel",                 -- 倾倒污水桶
+            "fill-se-chemical-gel-barrel",              -- 灌装化学凝胶桶
+            "empty-se-chemical-gel-barrel",             -- 倾倒化学凝胶桶
+            "fill-se-neural-gel-barrel",                -- 灌装神经凝胶桶
+            "empty-se-neural-gel-barrel",               -- 倾倒神经凝胶桶
+            "fill-se-neural-gel-2-barrel",              -- 灌装神经凝胶桶2
+            "empty-se-neural-gel-2-barrel",             -- 倾倒神经凝胶桶2
+            "fill-se-nutrient-gel-barrel",              -- 灌装营养凝胶桶
+            "empty-se-nutrient-gel-barrel",             -- 倾倒营养凝胶桶
+            "fill-se-bio-sludge-barrel",                -- 灌装生化软泥桶
+            "empty-se-bio-sludge-barrel",               -- 倾倒生化软泥桶
+            "fill-se-contaminated-bio-sludge-barrel",   -- 灌装生化污泥桶
+            "empty-se-contaminated-bio-sludge-barrel",  -- 倾倒生化污泥桶
+            "fill-se-contaminated-space-water-barrel",  -- 灌装宇宙污水桶
             "empty-se-contaminated-space-water-barrel", -- 倾倒宇宙污水桶
 
         },
@@ -2460,47 +2461,79 @@ local data_raw_recipe_hide_catalog = {
 -- 删除成分
 local data_raw_recipe_delete_ingredients_catalog = {
     -- ["se-space-water"] = {}, -- 宇宙水
-    ["se-chemical-gel"] = {}, -- 化学凝胶
-    ["se-nutrient-gel"] = {}, -- 营养凝胶
-    ["se-neural-gel"] = {}, -- 神经凝胶
-    ["se-neural-gel-2"] = {}, -- 神经凝胶2
-    ["se-bio-sludge"] = {}, -- 生化软泥
-    ["se-vulcanite-enriched"] = {}, -- 富化火成岩
-    ["se-cryonite-crystal"] = {}, -- 冰晶石晶体
-    ["se-holmium-chloride"] = {}, -- 氯化钬
-    ["se-iridium-blastcake"] = {}, -- 铱炸饼
-    ["se-vitamelange-bloom"] = {}, -- 维生质花
-    ["se-vitamelange-spice"] = {}, -- 维生质香料
+    ["se-chemical-gel"] = {},           -- 化学凝胶
+    ["se-nutrient-gel"] = {},           -- 营养凝胶
+    ["se-neural-gel"] = {},             -- 神经凝胶
+    ["se-neural-gel-2"] = {},           -- 神经凝胶2
+    ["se-bio-sludge"] = {},             -- 生化软泥
+    ["se-vulcanite-enriched"] = {},     -- 富化火成岩
+    ["se-cryonite-crystal"] = {},       -- 冰晶石晶体
+    ["se-holmium-chloride"] = {},       -- 氯化钬
+    ["se-iridium-blastcake"] = {},      -- 铱炸饼
+    ["se-vitamelange-bloom"] = {},      -- 维生质花
+    ["se-vitamelange-spice"] = {},      -- 维生质香料
     ["se-cargo-rocket-cargo-pod"] = {}, -- 货舱
     ["se-cargo-rocket-fuel-tank"] = {}, -- 火箭燃料罐
-    ["se-machine-learning-data"] = {}, -- 机器学习数据
-    ["se-space-mirror"] = {}, -- 多光谱镜
-    ["se-gammaray-detector"] = {}, -- 伽马射线探测器
-    ["se-significant-data"] = {}, -- 显著数据
-    ["se-astronomic-insight"] = {}, -- 天文学见解
-    ["se-biological-insight"] = {}, -- 生物学见解
-    ["se-energy-insight"] = {}, -- 能量学见解
-    ["se-material-insight"] = {}, -- 材料学见解
-    ["se-scrap"] = {}, -- 废料
-    ["blank-tech-card"] = {}, -- 空白科技卡
-
+    ["se-machine-learning-data"] = {},  -- 机器学习数据
+    ["se-space-mirror"] = {},           -- 多光谱镜
+    ["se-gammaray-detector"] = {},      -- 伽马射线探测器
+    ["se-significant-data"] = {},       -- 显著数据
+    ["se-astronomic-insight"] = {},     -- 天文学见解
+    ["se-biological-insight"] = {},     -- 生物学见解
+    ["se-energy-insight"] = {},         -- 能量学见解
+    ["se-material-insight"] = {},       -- 材料学见解
+    ["se-scrap"] = {},                  -- 废料
+    ["blank-tech-card"] = {},           -- 空白科技卡
 }
+
+if X_CUSTOM_GAME_IS_DEBUG then
+    local add_list = {
+        ["se-astronomic-catalogue-1"] = {}, -- 各种目录
+        ["se-astronomic-catalogue-2"] = {},
+        ["se-astronomic-catalogue-3"] = {},
+        ["se-astronomic-catalogue-4"] = {},
+        ["se-biological-catalogue-1"] = {},
+        ["se-biological-catalogue-2"] = {},
+        ["se-biological-catalogue-3"] = {},
+        ["se-biological-catalogue-4"] = {},
+        ["se-deep-catalogue-1"] = {},
+        ["se-deep-catalogue-2"] = {},
+        ["se-deep-catalogue-3"] = {},
+        ["se-deep-catalogue-4"] = {},
+        ["se-energy-catalogue-1"] = {},
+        ["se-energy-catalogue-2"] = {},
+        ["se-energy-catalogue-3"] = {},
+        ["se-energy-catalogue-4"] = {},
+        ["se-kr-matter-catalogue-1"] = {},
+        ["se-kr-matter-catalogue-2"] = {},
+        ["se-material-catalogue-1"] = {},
+        ["se-material-catalogue-2"] = {},
+        ["se-material-catalogue-3"] = {},
+        ["se-material-catalogue-4"] = {},         -- 各种目录
+        ["se-core-fragment-se-vitamelange"] = {}, -- 星核碎片(维生质)
+    }
+
+    for key, value in pairs(add_list) do
+        data_raw_recipe_hide_catalog[key] = value
+        data_raw_recipe_delete_ingredients_catalog[key] = value
+    end
+end
 
 -- 删除产出
 local data_raw_recipe_delete_results_catalog = {
-    ["se-junk-data"] = {}, -- 垃圾数据卡
-    ["se-empty-data"] = {}, -- 空白数据卡
-    ["se-broken-data"] = {}, -- 损坏数据卡
-    ["se-scrap"] = {}, -- 废料
-    ["se-contaminated-scrap"] = {}, -- 污料
+    ["se-junk-data"] = {},                -- 垃圾数据卡
+    ["se-empty-data"] = {},               -- 空白数据卡
+    ["se-broken-data"] = {},              -- 损坏数据卡
+    ["se-scrap"] = {},                    -- 废料
+    ["se-contaminated-scrap"] = {},       -- 污料
     ["se-contaminated-space-water"] = {}, -- 宇宙污水
-    ["se-contaminated-bio-sludge"] = {}, -- 生化污泥
+    ["se-contaminated-bio-sludge"] = {},  -- 生化污泥
     ["se-space-coolant-hot"] = {
         ["empty-se-space-coolant-hot-barrel"] = true
-    }, -- 25°的冷却导热液
+    },                              -- 25°的冷却导热液
     ["se-space-coolant-warm"] = {}, -- -10°的冷却导热液
-    ["sand"] = {}, -- 沙子
-    ["se-bio-sludge"] = {}, -- 生化软泥
+    ["sand"] = {},                  -- 沙子
+    ["se-bio-sludge"] = {},         -- 生化软泥
 }
 
 
@@ -2587,11 +2620,11 @@ if settings.startup["x-custom-game-author-custom-balance-flags"].value then
         common_data_raw:execute_modify(data_raw_recipe_speed_productivity_effectivity_module_7_catalog)
         common_data_raw:execute_modify(data_raw_recipe_speed_productivity_effectivity_module_8_catalog)
         common_data_raw:execute_modify(data_raw_recipe_speed_productivity_effectivity_module_9_catalog)
-    end
 
-    if mods["Krastorio2"] then
-        common_data_raw:execute_modify(data_raw_recipe_imersium_plate_catalog)
-        common_data_raw:execute_modify(data_raw_recipe_imersite_crystal_catalog)
+        if mods["Krastorio2"] then
+            common_data_raw:execute_modify(data_raw_recipe_imersite_crystal_catalog)
+            common_data_raw:execute_modify(data_raw_recipe_imersium_plate_catalog)
+        end
     end
 
     if mods["Advanced-Electric-Revamped-v16"] then

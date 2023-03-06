@@ -45,6 +45,16 @@ local data_raw_container_catalog = {
             "logistic-chest-storage", -- 被动存货箱(黄箱)
         },
         mod = {
+            "kr-medium-active-provider-container", -- Krastorio2
+            "kr-medium-buffer-container",
+            "kr-medium-passive-provider-container",
+            "kr-medium-requester-container",
+            "kr-medium-storage-container",
+            "kr-big-active-provider-container",
+            "kr-big-buffer-container",
+            "kr-big-passive-provider-container",
+            "kr-big-requester-container",
+            "kr-big-storage-container", -- Krastorio2
             "logistic-chest-passive-provider-2", -- boblogistics
             "logistic-chest-active-provider-2",
             "logistic-chest-storage-2",
