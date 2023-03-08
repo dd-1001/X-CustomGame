@@ -145,6 +145,7 @@ local game_start_bonus_items = {
     { name = "filter-miniloader",                  count = 2000 },  -- miniloader 筛选迷你装卸机
     { name = "se-space-transport-belt",            count = 2000 },  -- space-exploration 太空传送带
     { name = "space-miniloader",                   count = 2000 },  -- miniloader 太空迷你装卸机
+    { name = "space-filter-miniloader",            count = 2000 },  -- miniloader 太空筛选迷你装卸机
     { name = "kr-steel-pipe",                      count = 2000 },  -- Krastorio2 钢管
     { name = "kr-steel-pipe-to-ground",            count = 2000 },  -- Krastorio2 地下钢管
     { name = "se-space-pipe",                      count = 2000 },  -- space-exploration 太空管

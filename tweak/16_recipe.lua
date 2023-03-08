@@ -1893,7 +1893,7 @@ local data_raw_recipe_se_naquium_powder_catalog = {
                     },
                     {
                         amount = 20,
-                        name = "se-naquium-ore-crushed"
+                        name = "se-naquium-refined"
                     }
                 }
             },
@@ -2347,6 +2347,47 @@ local data_raw_recipe_se_rocket_science_pack_catalog = {
     }
 }
 
+-- space-exploration 提取反物质罐
+local data_raw_recipe_se_empty_antimatter_canister_catalog = {
+    recipe = {
+        mod = {
+            "se-empty-antimatter-canister",
+        },
+        modify_parameter = {              -- 修改参数
+            {
+                path = { "ingredients" }, -- 成分
+                value = {
+                    {
+                        amount = 1,
+                        name = "se-antimatter-canister",
+                        type = "item"
+                    }
+                },
+                operation = "Extend"
+            },
+            {
+                path = { "results" }, -- 产出
+                value = {
+                    {
+                        amount = 1000,
+                        name = "se-antimatter-stream",
+                        type = "fluid"
+                    }
+                },
+                operation = "Extend"
+            },
+            {
+                path = { "normal" }, -- normal
+                value = "nil"
+            },
+            {
+                path = { "expensive" }, -- expensive
+                value = "nil"
+            }
+        }
+    }
+}
+
 -- 隐藏配方
 local data_raw_recipe_hide_catalog = {
     recipe = {
@@ -2461,32 +2502,36 @@ local data_raw_recipe_hide_catalog = {
 -- 删除成分
 local data_raw_recipe_delete_ingredients_catalog = {
     -- ["se-space-water"] = {}, -- 宇宙水
-    ["se-chemical-gel"] = {},           -- 化学凝胶
-    ["se-nutrient-gel"] = {},           -- 营养凝胶
-    ["se-neural-gel"] = {},             -- 神经凝胶
-    ["se-neural-gel-2"] = {},           -- 神经凝胶2
-    ["se-bio-sludge"] = {},             -- 生化软泥
-    ["se-vulcanite-enriched"] = {},     -- 富化火成岩
-    ["se-cryonite-crystal"] = {},       -- 冰晶石晶体
-    ["se-holmium-chloride"] = {},       -- 氯化钬
-    ["se-iridium-blastcake"] = {},      -- 铱炸饼
-    ["se-vitamelange-bloom"] = {},      -- 维生质花
-    ["se-vitamelange-spice"] = {},      -- 维生质香料
-    ["se-cargo-rocket-cargo-pod"] = {}, -- 货舱
-    ["se-cargo-rocket-fuel-tank"] = {}, -- 火箭燃料罐
-    ["se-machine-learning-data"] = {},  -- 机器学习数据
-    ["se-space-mirror"] = {},           -- 多光谱镜
-    ["se-gammaray-detector"] = {},      -- 伽马射线探测器
-    ["se-significant-data"] = {},       -- 显著数据
-    ["se-astronomic-insight"] = {},     -- 天文学见解
-    ["se-biological-insight"] = {},     -- 生物学见解
-    ["se-energy-insight"] = {},         -- 能量学见解
-    ["se-material-insight"] = {},       -- 材料学见解
-    ["se-scrap"] = {},                  -- 废料
-    ["blank-tech-card"] = {},           -- 空白科技卡
+    ["se-chemical-gel"] = {},            -- 化学凝胶
+    ["se-nutrient-gel"] = {},            -- 营养凝胶
+    ["se-neural-gel"] = {},              -- 神经凝胶
+    ["se-neural-gel-2"] = {},            -- 神经凝胶2
+    ["se-bio-sludge"] = {},              -- 生化软泥
+    ["se-vulcanite-enriched"] = {},      -- 富化火成岩
+    ["se-cryonite-crystal"] = {},        -- 冰晶石晶体
+    ["se-holmium-chloride"] = {},        -- 氯化钬
+    ["se-iridium-blastcake"] = {},       -- 铱炸饼
+    ["se-vitamelange-bloom"] = {},       -- 维生质花
+    ["se-vitamelange-spice"] = {},       -- 维生质香料
+    ["se-cargo-rocket-cargo-pod"] = {},  -- 货舱
+    ["se-cargo-rocket-fuel-tank"] = {},  -- 火箭燃料罐
+    ["se-machine-learning-data"] = {},   -- 机器学习数据
+    ["se-space-mirror"] = {},            -- 多光谱镜
+    ["se-gammaray-detector"] = {},       -- 伽马射线探测器
+    ["se-significant-data"] = {},        -- 显著数据
+    ["se-astronomic-insight"] = {},      -- 天文学见解
+    ["se-biological-insight"] = {},      -- 生物学见解
+    ["se-energy-insight"] = {},          -- 能量学见解
+    ["se-material-insight"] = {},        -- 材料学见解
+    ["se-scrap"] = {},                   -- 废料
+    ["blank-tech-card"] = {},            -- 空白科技卡
+    ["se-pylon"] = {},                   -- 输电塔
+    ["se-quantum-phenomenon-data"] = {}, -- 量子现象数据
+    ["se-material-testing-pack"] = {},   -- 材料测试包
+    ["laser-turret"] = {},               -- 激光炮塔
 }
 
-if X_CUSTOM_GAME_IS_DEBUG then
+if X_CUSTOM_GAME_IS_DEBUG or mods["space-exploration"] then
     local add_list = {
         ["se-astronomic-catalogue-1"] = {}, -- 各种目录
         ["se-astronomic-catalogue-2"] = {},
@@ -2567,6 +2612,20 @@ if settings.startup["x-custom-game-author-custom-balance-flags"].value then
             log("delete results [\"" .. target_name .. "\"]:\n" .. common_core:serpent_block(moddify_list))
         end
 
+        -- 删除catalyst_amount
+        local moddify_list = {}
+        for recipe_name, recipe_data in pairs(data.raw.recipe) do
+            if recipe_data.ingredients then
+                for _, ingredient in ipairs(recipe_data.ingredients) do
+                    if ingredient.catalyst_amount then
+                        ingredient.catalyst_amount = nil
+                        moddify_list[recipe_name] = true
+                    end
+                end
+            end
+        end
+        log("delete catalyst_amount:\n" .. common_core:serpent_block(moddify_list))
+
         -- 修改配方
         common_data_raw:execute_modify(data_raw_recipe_hide_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_core_fragment_omni_catalog)
@@ -2613,6 +2672,8 @@ if settings.startup["x-custom-game-author-custom-balance-flags"].value then
         common_data_raw:execute_modify(data_raw_recipe_utility_science_pack_catalog)
         common_data_raw:execute_modify(data_raw_recipe_space_research_data_catalog)
         common_data_raw:execute_modify(data_raw_recipe_se_rocket_science_pack_catalog)
+
+        common_data_raw:execute_modify(data_raw_recipe_se_empty_antimatter_canister_catalog)
 
         common_data_raw:execute_modify(data_raw_recipe_speed_productivity_effectivity_module_4_catalog)
         common_data_raw:execute_modify(data_raw_recipe_speed_productivity_effectivity_module_5_catalog)
