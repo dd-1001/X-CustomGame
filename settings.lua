@@ -1,10 +1,17 @@
 data:extend({
     {
         type = "bool-setting",
-        name = "x-custom-game-effect-mod-flags",
+        name = "x-custom-game-affect-mod-flags",
         setting_type = "startup",
         default_value = true,
         order = "1001"
+    },
+    {
+        type = "bool-setting",
+        name = "x-custom-game-affects-other-untested-mod-flags",
+        setting_type = "startup",
+        default_value = false,
+        order = "1002"
     },
     {
         type = "double-setting",

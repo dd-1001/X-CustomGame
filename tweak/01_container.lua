@@ -5,11 +5,11 @@ local log = common_core.Log
 
 -- 容器
 local data_raw_container_catalog = {
-    container = { -- 箱子
+    container = {
         orig = {
             "wooden-chest", -- 木制箱
-            "iron-chest", -- 铁制箱
-            "steel-chest", -- 钢制箱
+            "iron-chest",   -- 铁制箱
+            "steel-chest",  -- 钢制箱
         },
         mod = {
             "se-cargo-rocket-cargo-pod", -- space-exploration
@@ -19,14 +19,14 @@ local data_raw_container_catalog = {
             "se-space-capsule-scorched",
             "se-cartouche-chest",
             "se-delivery-cannon-chest", -- space-exploration
-            "kr-medium-container", -- Krastorio2
-            "kr-big-container", -- Krastorio2
-            "aai-strongbox", -- aai-containers start
+            "kr-medium-container",      -- Krastorio2
+            "kr-big-container",         -- Krastorio2
+            "aai-strongbox",            -- aai-containers start
             "aai-storehouse",
-            "aai-warehouse", -- aai-containers end
+            "aai-warehouse",            -- aai-containers end
         },
         mul = settings.startup["x-custom-game-container-performance-multiplier"].value,
-        modify_parameter = { -- 修改参数
+        modify_parameter = {                 -- 修改参数
             {
                 path = { "inventory_size" }, -- 库存大小
                 max_value = 2000
@@ -36,13 +36,13 @@ local data_raw_container_catalog = {
             }
         }
     },
-    ["logistic-container"] = { -- 物流箱子
+    ["logistic-container"] = {                 -- 物流箱子
         orig = {
-            "logistic-chest-active-provider", -- 主动供货箱(紫箱)
-            "logistic-chest-buffer", -- 主动存货箱(绿箱)
+            "logistic-chest-active-provider",  -- 主动供货箱(紫箱)
+            "logistic-chest-buffer",           -- 主动存货箱(绿箱)
             "logistic-chest-passive-provider", -- 被动供货箱(红箱)
-            "logistic-chest-requester", -- 优先集货箱(蓝箱)
-            "logistic-chest-storage", -- 被动存货箱(黄箱)
+            "logistic-chest-requester",        -- 优先集货箱(蓝箱)
+            "logistic-chest-storage",          -- 被动存货箱(黄箱)
         },
         mod = {
             "kr-medium-active-provider-container", -- Krastorio2
@@ -54,7 +54,7 @@ local data_raw_container_catalog = {
             "kr-big-buffer-container",
             "kr-big-passive-provider-container",
             "kr-big-requester-container",
-            "kr-big-storage-container", -- Krastorio2
+            "kr-big-storage-container",          -- Krastorio2
             "logistic-chest-passive-provider-2", -- boblogistics
             "logistic-chest-active-provider-2",
             "logistic-chest-storage-2",
@@ -64,7 +64,7 @@ local data_raw_container_catalog = {
             "logistic-chest-active-provider-3",
             "logistic-chest-storage-3",
             "logistic-chest-buffer-3",
-            "logistic-chest-requester-3", -- boblogistics
+            "logistic-chest-requester-3",     -- boblogistics
             "aai-strongbox-passive-provider", -- aai-containers start
             "aai-strongbox-active-provider",
             "aai-strongbox-storage",
@@ -82,7 +82,7 @@ local data_raw_container_catalog = {
             "aai-warehouse-requester", -- aai-containers end
         },
         mul = settings.startup["x-custom-game-container-performance-multiplier"].value,
-        modify_parameter = { -- 修改参数
+        modify_parameter = {                 -- 修改参数
             {
                 path = { "inventory_size" }, -- 库存大小
                 max_value = 2000
@@ -92,7 +92,7 @@ local data_raw_container_catalog = {
             }
         }
     },
-    ["storage-tank"] = { -- 储液罐
+    ["storage-tank"] = {   -- 储液罐
         orig = {
             "storage-tank" -- 储液罐
         },
@@ -105,9 +105,9 @@ local data_raw_container_catalog = {
             "se-space-pipe-long-j-7",
             "se-space-pipe-long-s-9",
             "se-space-pipe-long-s-15", -- space-exploration
-            "kr-fluid-storage-1", -- Krastorio2
-            "kr-fluid-storage-2", -- Krastorio2
-            "storage-tank-2", -- boblogistics
+            "kr-fluid-storage-1",      -- Krastorio2
+            "kr-fluid-storage-2",      -- Krastorio2
+            "storage-tank-2",          -- boblogistics
             "storage-tank-3",
             "storage-tank-4",
             "bob-storage-tank-all-corners",
@@ -116,11 +116,11 @@ local data_raw_container_catalog = {
             "bob-storage-tank-all-corners-4",
             "bob-valve",
             "bob-overflow-valve",
-            "bob-topup-valve", -- boblogistics
+            "bob-topup-valve",                     -- boblogistics
             "large-storage-tank-rampant-industry", -- RampantIndustry
         },
         mul = settings.startup["x-custom-game-storage-tank-performance-multiplier"].value,
-        modify_parameter = { -- 修改参数
+        modify_parameter = {                         -- 修改参数
             {
                 path = { "fluid_box", "base_area" }, -- 流体箱的总流体容量为 base_area × height × 100
             },
@@ -129,20 +129,20 @@ local data_raw_container_catalog = {
             }
         }
     },
-    ["cargo-wagon"] = { -- 货运车厢
+    ["cargo-wagon"] = {   -- 货运车厢
         orig = {
             "cargo-wagon" -- 货运车厢
         },
         mod = {
             "cargo-wagon-immortal-mk2", -- fast_trans
             "cargo-wagon-immortal-mk3", -- fast_trans
-            "bob-cargo-wagon-2", -- boblogistics
+            "bob-cargo-wagon-2",        -- boblogistics
             "bob-cargo-wagon-3",
             "bob-armoured-cargo-wagon",
             "bob-armoured-cargo-wagon-2" -- boblogistics
         },
         mul = settings.startup["x-custom-game-locomotive-inventory-size-multiplier"].value,
-        modify_parameter = { -- 修改参数
+        modify_parameter = {                -- 修改参数
             {
                 path = { "inventory_size" } -- 货车库存的大小
             },
@@ -154,20 +154,20 @@ local data_raw_container_catalog = {
             }
         }
     },
-    ["fluid-wagon"] = { -- 液罐车厢
+    ["fluid-wagon"] = {   -- 液罐车厢
         orig = {
             "fluid-wagon" -- 液罐车厢
         },
         mod = {
             "fluid-wagon-immortal-mk2", -- fast_trans
             "fluid-wagon-immortal-mk3", -- fast_trans
-            "bob-fluid-wagon-2", -- boblogistics
+            "bob-fluid-wagon-2",        -- boblogistics
             "bob-fluid-wagon-3",
             "bob-armoured-fluid-wagon",
             "bob-armoured-fluid-wagon-2" -- boblogistics
         },
         mul = settings.startup["x-custom-game-locomotive-inventory-size-multiplier"].value,
-        modify_parameter = { -- 修改参数
+        modify_parameter = {          -- 修改参数
             {
                 path = { "capacity" } -- 容量
             },
@@ -184,6 +184,10 @@ local data_raw_container_catalog = {
 -- 开始修改
 log("\n\n\n------------------容器 start------------------\n\n\n")
 
+-- 增加未测试的项目
+if settings.startup["x-custom-game-affects-other-untested-mod-flags"].value then
+    common_data_raw:add_other_untested_list(data_raw_container_catalog)
+end
 common_data_raw:execute_modify(data_raw_container_catalog)
 
 log("\n\n\n------------------容器 end------------------\n\n\n")

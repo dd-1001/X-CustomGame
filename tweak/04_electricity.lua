@@ -353,6 +353,10 @@ log("\n\n\n------------------电力系统 start------------------\n\n\n")
 -- local data_raw = common_data_raw(data_raw_modifi_catalog)
 -- data_raw:execute_modify()
 
+if settings.startup["x-custom-game-affects-other-untested-mod-flags"].value then
+    common_data_raw:add_other_untested_list(data_raw_production_catalog)
+    common_data_raw:add_other_untested_list(data_raw_transmission_catalog)
+end
 common_data_raw:execute_modify(data_raw_production_catalog)
 common_data_raw:execute_modify(data_raw_transmission_catalog)
 

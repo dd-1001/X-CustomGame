@@ -120,6 +120,10 @@ local data_raw_robot_catalog = {
                 max_value = 125
             },
             {
+                path = { "logistics_connection_distance" }, -- 物流_连接_距离
+                max_value = 150
+            },
+            {
                 path = { "robot_slots_count" }, -- 机器人插槽数
                 max_value = 30
             },
@@ -156,6 +160,9 @@ local data_raw_robot_catalog = {
 -- 开始修改
 log("\n\n\n------------------机器人系统 start------------------\n\n\n")
 
+if settings.startup["x-custom-game-affects-other-untested-mod-flags"].value then
+    common_data_raw:add_other_untested_list(data_raw_robot_catalog)
+end
 common_data_raw:execute_modify(data_raw_robot_catalog)
 
 log("\n\n\n------------------机器人系统 end------------------\n\n\n")

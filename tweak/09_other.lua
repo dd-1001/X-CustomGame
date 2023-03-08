@@ -637,6 +637,9 @@ local data_raw_module_slot_all_type_allowed_catalog = {
 log("\n\n\n------------------其他 start------------------\n\n\n")
 
 if settings.startup["x-custom-game-module-slot-all-type-allowed-flags"].value then
+    if settings.startup["x-custom-game-affects-other-untested-mod-flags"].value then
+        common_data_raw:add_other_untested_list(data_raw_module_slot_all_type_allowed_catalog)
+    end
     common_data_raw:execute_modify(data_raw_module_slot_all_type_allowed_catalog)
     table.insert(data_raw_speed_module_catalog.module.modify_parameter, {
         path = { "limitation" }, -- 限制配方
@@ -652,6 +655,9 @@ if settings.startup["x-custom-game-module-slot-all-type-allowed-flags"].value th
     })
 end
 
+if settings.startup["x-custom-game-affects-other-untested-mod-flags"].value then
+    common_data_raw:add_other_untested_list(data_raw_other_catalog)
+end
 common_data_raw:execute_modify(data_raw_other_catalog)
 common_data_raw:execute_modify(data_raw_spidertron_equipment_grid_catalog)
 common_data_raw:execute_modify(data_raw_speed_module_catalog)

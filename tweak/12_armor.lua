@@ -94,6 +94,10 @@ local data_raw_equipment_grid_catalog = {
 -- 开始修改
 log("\n\n\n------------------护甲 start------------------\n\n\n")
 
+if settings.startup["x-custom-game-affects-other-untested-mod-flags"].value then
+    common_data_raw:add_other_untested_list(data_raw_armor_catalog)
+    common_data_raw:add_other_untested_list(data_raw_equipment_grid_catalog)
+end
 common_data_raw:execute_modify(data_raw_armor_catalog)
 common_data_raw:execute_modify(data_raw_equipment_grid_catalog)
 

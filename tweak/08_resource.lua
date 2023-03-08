@@ -10,7 +10,7 @@ local data_raw_fuel_value_catalog = {
             "wood", -- 木板
             "coal", -- 煤矿
             "solid-fuel", -- 固体燃料
-            -- "rocket-fuel", -- 火箭燃料(space-exploration会检测它的热值，这里不做修改。下面加入调试模式做修改)
+            "rocket-fuel", -- 火箭燃料
             "nuclear-fuel", -- 核能燃料
             "uranium-fuel-cell" -- 铀燃料棒
         },
@@ -72,10 +72,13 @@ local data_raw_fuel_value_catalog = {
     }
 }
 
--- 调试模式加入修改火箭燃料的性能(需修改__space-exploration__/scripts/essential.detect_breaking_prototypes = function() global.items_banned_from_transport = {} end)
-if X_CUSTOM_GAME_IS_DEBUG or
-    not mods["space-exploration"] then
-    table.insert(data_raw_fuel_value_catalog.item.orig, "rocket-fuel")
+-- space-exploration会检测火箭燃料的热值，需修改__space-exploration__/scripts/essential.detect_breaking_prototypes = function() global.items_banned_from_transport = {} end)
+if mods["space-exploration"] and not X_CUSTOM_GAME_IS_DEBUG then
+    for index, name in ipairs(data_raw_fuel_value_catalog.item.orig) do
+        if name == "rocket-fuel" then
+            table.remove(data_raw_fuel_value_catalog.item.orig, index)
+        end
+    end
 end
 
 -- 发射卫星带回的资源

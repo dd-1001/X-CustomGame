@@ -97,7 +97,7 @@ function x_resource.x_refill(entity)
         end
     end
 
-    if settings.startup["x-custom-game-effect-mod-flags"].value and
+    if settings.startup["x-custom-game-affect-mod-flags"].value and
         not is_need_modify then
         -- 匹配mod资源
         tmp_tab = tmp_type.mod

@@ -174,7 +174,7 @@ function Data_raw:insert_data_raw_field_value(field_path, value)
     for i = 1, path_count - 1, 1 do
         if type(tmp_pos[field_path[i]]) ~= "nil" then -- 字段存在
             tmp_pos = tmp_pos[field_path[i]]
-        else -- 字段不存在
+        else                                          -- 字段不存在
             -- 当field_path[i] == "_" 插入一个空表
             if field_path[i] ~= "_" then
                 tmp_pos[field_path[i]] = {}
@@ -254,7 +254,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
         -- prot_modify_param = 修改参数：{ orig = { "boiler" }, mod = { }, mul = value, modify_parameter = {}...}
 
         local prot_name_tab = prot_modify_param.orig
-        local is_moded = false
+        local is_moded, is_other = false, false
 
         if prot_name_tab == nil then
             goto JUDG_MOD
@@ -295,7 +295,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                 local old_value = self:get_data_raw_field_value(modify_field_path)
                 local new_value = nil
 
-                if old_value then -- 存在相应字段
+                if old_value then                         -- 存在相应字段
                     if not single_modify_param.value then -- 不存在指定设置的值
                         -- 获取原字段单位
                         local field_units
@@ -335,11 +335,11 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                         if field_units then
                             new_value = new_value .. field_units
                         end
-                    elseif single_modify_param.value == "nil" then -- 存在指定设置的值 nil
+                    elseif single_modify_param.value == "nil" then   -- 存在指定设置的值 nil
                         new_value = nil
                     elseif single_modify_param.value == "false" then -- 存在指定设置的值 false
                         new_value = false
-                    else -- 存在指定设置的值
+                    else                                             -- 存在指定设置的值
                         new_value = single_modify_param.value
                     end
 
@@ -355,7 +355,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                             old_value = common_core:serpent_line(old_value)
                         end
                         log(table.concat(modify_field_path, ".") ..
-                        " : " .. tostring(old_value) .. " ---> " .. tostring(new_value))
+                            " : " .. tostring(old_value) .. " ---> " .. tostring(new_value))
                     end
                 elseif single_modify_param.operation == "Extend" then -- 不存在相应字段，进行扩展字段
                     -- 校验是否存在相应的实体
@@ -387,7 +387,7 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
 
         -- 判断对mod进行处理
         ::JUDG_MOD::
-        if settings.startup["x-custom-game-effect-mod-flags"].value and
+        if settings.startup["x-custom-game-affect-mod-flags"].value and
             not is_moded and
             prot_modify_param.mod then
             prot_name_tab = prot_modify_param.mod
@@ -395,9 +395,54 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
 
             goto PROCESS_PROT_NAME
         end
+
+        if settings.startup["x-custom-game-affects-other-untested-mod-flags"].value and
+            not is_other and
+            prot_modify_param.other then
+            prot_name_tab = prot_modify_param.other
+            is_other = true
+            goto PROCESS_PROT_NAME
+        end
     end
 
     return true
+end
+
+function Data_raw:add_other_untested_list(source_table)
+    local moded_list = {}
+    for prot_type, prot_type_data in pairs(source_table) do
+        if not moded_list[prot_type] then
+            moded_list[prot_type] = {}
+        end
+
+        if prot_type_data.orig then
+            for _, prot_name in ipairs(prot_type_data.orig) do
+                moded_list[prot_type][prot_name] = true
+            end
+        end
+
+        if prot_type_data.mod then
+            for _, prot_name in ipairs(prot_type_data.mod) do
+                moded_list[prot_type][prot_name] = true
+            end
+        end
+    end
+
+    for source_prot_type, _ in pairs(source_table) do
+        local other_untested_list = {}
+
+        for prot_name, _ in pairs(data.raw[source_prot_type]) do
+            if not moded_list[source_prot_type][prot_name] then
+                table.insert(other_untested_list, prot_name)
+            end
+        end
+
+        if table_size(other_untested_list) > 0 then
+            source_table[source_prot_type].other = other_untested_list
+            log(source_prot_type ..
+                ".other_untested_list: \n" .. common_core:serpent_block(source_table[source_prot_type].other))
+        end
+    end
 end
 
 -- from __stdlib__/stdlib/utils/string，增加一个大写 K

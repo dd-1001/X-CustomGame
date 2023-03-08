@@ -478,6 +478,10 @@ local data_raw_equipment_shape_size_catalog = {
 -- 开始修改
 log("\n\n\n------------------装备 start------------------\n\n\n")
 
+if settings.startup["x-custom-game-affects-other-untested-mod-flags"].value then
+    common_data_raw:add_other_untested_list(data_raw_equipment_catalog)
+    common_data_raw:add_other_untested_list(data_raw_equipment_shape_size_catalog)
+end
 common_data_raw:execute_modify(data_raw_equipment_catalog)
 if settings.startup["x-custom-game-equipment-size-flags"].value then
     common_data_raw:execute_modify(data_raw_equipment_shape_size_catalog)
