@@ -5,9 +5,10 @@ local log = common_core.Log
 
 -- 电力生产相关目录
 local data_raw_production_catalog = {
-    boiler = { -- 锅炉
+    boiler = {
+                             -- 锅炉
         orig = {
-            "boiler", -- 锅炉
+            "boiler",        -- 锅炉
             "heat-exchanger" -- 换热器
         },
         mod = {
@@ -15,7 +16,7 @@ local data_raw_production_catalog = {
             "se-naquium-heat-pipe-long--+-----+--",
             "se-big-heat-exchanger",
             "se-energy-transmitter-chamber", -- space-exploration
-            "boiler-2", -- bobpower
+            "boiler-2",                      -- bobpower
             "boiler-3",
             "boiler-4",
             "boiler-5",
@@ -28,7 +29,7 @@ local data_raw_production_catalog = {
             "heat-exchanger-4" -- bobpower
         },
         mul = settings.startup["x-custom-game-boiler-performance-multiplier"].value,
-        modify_parameter = { -- 修改参数
+        modify_parameter = {                    -- 修改参数
             {
                 path = { "energy_consumption" } -- 能量消耗
             },
@@ -37,7 +38,7 @@ local data_raw_production_catalog = {
             },
             {
                 path = { "energy_source", "emissions_per_minute" }, -- 可选的。一个实体在全能量消耗下每分钟排放的污染。正是实体工具提示中显示的值。
-                operation = "Division" -- Mul 做乘法， Division 做除法
+                operation = "Division"                              -- Mul 做乘法， Division 做除法
             },
             {
                 path = { "energy_source", "max_transfer" } -- 最大传输量
@@ -57,7 +58,8 @@ local data_raw_production_catalog = {
             }
         }
     },
-    generator = { -- 发电机
+    generator = {
+                            -- 发电机
         orig = {
             "steam-engine", -- 蒸汽机
             "steam-turbine" -- 汽轮机
@@ -67,9 +69,9 @@ local data_raw_production_catalog = {
             "se-fluid-burner-generator",
             "se-big-turbine-generator-NW",
             "se-big-turbine-generator-SE", -- space-exploration
-            "kr-advanced-steam-turbine", -- Krastorio2
-            "kr-gas-power-station", -- Krastorio2
-            "steam-engine-2", -- bobpower
+            "kr-advanced-steam-turbine",   -- Krastorio2
+            "kr-gas-power-station",        -- Krastorio2
+            "steam-engine-2",              -- bobpower
             "steam-engine-3",
             "steam-engine-4",
             "steam-engine-5",
@@ -77,7 +79,7 @@ local data_raw_production_catalog = {
             "steam-turbine-3",
             "fluid-generator",
             "fluid-generator-2",
-            "fluid-generator-3", -- bobpower
+            "fluid-generator-3",                      -- bobpower
             "basic-fluid-generator-rampant-industry", -- RampantIndustry
         },
         mul = settings.startup["x-custom-game-generator-performance-multiplier"].value,
@@ -99,8 +101,8 @@ local data_raw_production_catalog = {
         },
         mod = {
             "kr-antimatter-reactor", -- Krastorio2
-            "bob-burner-generator", -- bobpower
-            "burner-turbine", -- aai-industry
+            "bob-burner-generator",  -- bobpower
+            "burner-turbine",        -- aai-industry
         },
         mul = settings.startup["x-custom-game-generator-performance-multiplier"].value,
         modify_parameter = {
@@ -116,26 +118,26 @@ local data_raw_production_catalog = {
             }
         }
     },
-    ["solar-panel"] = { -- 太阳能板
+    ["solar-panel"] = {   -- 太阳能板
         orig             = {
             "solar-panel" -- 太阳能板
         },
         mod              = {
-            "se-space-solar-panel", -- space-exploration
+            "se-space-solar-panel",    -- space-exploration
             "se-space-solar-panel-2",
-            "se-space-solar-panel-3", -- space-exploration
+            "se-space-solar-panel-3",  -- space-exploration
             "kr-advanced-solar-panel", -- Krastorio2
-            "solar-panel-small", -- bobpower
+            "solar-panel-small",       -- bobpower
             "solar-panel-large",
             "solar-panel-small-2",
             "solar-panel-2",
             "solar-panel-large-2",
             "solar-panel-small-3",
             "solar-panel-3",
-            "solar-panel-large-3", -- bobpower
-            "advanced-solar", -- Advanced-Electric-Revamped-v16
+            "solar-panel-large-3",                   -- bobpower
+            "advanced-solar",                        -- Advanced-Electric-Revamped-v16
             "elite-solar",
-            "ultimate-solar", -- Advanced-Electric-Revamped-v16
+            "ultimate-solar",                        -- Advanced-Electric-Revamped-v16
             "advanced-solar-panel-rampant-industry", -- RampantIndustry
         },
         mul              = settings.startup["x-custom-game-solar-panel-performance-multiplier"].value,
@@ -148,25 +150,26 @@ local data_raw_production_catalog = {
             }
         }
     },
-    accumulator = { -- 蓄电池
+    accumulator = {
+                          -- 蓄电池
         orig             = {
             "accumulator" -- 蓄电池
         },
         mod              = {
             "kr-energy-storage", -- Krastorio2
-            "fast-accumulator", -- bobpower
+            "fast-accumulator",  -- bobpower
             "slow-accumulator",
             "large-accumulator-2",
             "fast-accumulator-2",
             "slow-accumulator-2",
             "large-accumulator-3",
             "fast-accumulator-3",
-            "slow-accumulator-3", -- bobpower
-            "advanced-accumulator", -- Advanced-Electric-Revamped-v16
+            "slow-accumulator-3",                    -- bobpower
+            "advanced-accumulator",                  -- Advanced-Electric-Revamped-v16
             "elite-accumulator",
-            "ultimate-accumulator", -- Advanced-Electric-Revamped-v16
-            "se-space-accumulator", -- space-exploration
-            "se-space-accumulator-2", -- space-exploration
+            "ultimate-accumulator",                  -- Advanced-Electric-Revamped-v16
+            "se-space-accumulator",                  -- space-exploration
+            "se-space-accumulator-2",                -- space-exploration
             "advanced-accumulator-rampant-industry", -- RampantIndustry
         },
         mul              = settings.startup["x-custom-game-accumulator-performance-multiplier"].value,
@@ -185,15 +188,16 @@ local data_raw_production_catalog = {
             }
         }
     },
-    reactor = { -- 核反应堆
+    reactor = {
+                              -- 核反应堆
         orig             = {
             "nuclear-reactor" -- 核反应堆
         },
         mod              = {
             "se-antimatter-reactor", -- space-exploration
             "se-energy-transmitter-injector-reactor",
-            "se-energy-receiver", -- space-exploration
-            "burner-reactor", -- bobpower
+            "se-energy-receiver",    -- space-exploration
+            "burner-reactor",        -- bobpower
             "burner-reactor-2",
             "fluid-reactor",
             "fluid-reactor-2",
@@ -223,15 +227,15 @@ local data_raw_production_catalog = {
             }
         }
     },
-    ["heat-pipe"] = { -- 热管
+    ["heat-pipe"] = {   -- 热管
         orig             = {
             "heat-pipe" -- 核反应堆
         },
         mod              = {
             "se-naquium-heat-pipe", -- space-exploration
-            "heat-pipe-2", -- bobpower
+            "heat-pipe-2",          -- bobpower
             "heat-pipe-3",
-            "heat-pipe-4" -- bobpower
+            "heat-pipe-4"           -- bobpower
         },
         mul              = settings.startup["x-custom-game-heat-pipe-performance-multiplier"].value,
         modify_parameter = {
@@ -250,9 +254,9 @@ local data_raw_production_catalog = {
             }
         }
     },
-    ["electric-energy-interface"] = { -- 电能接口
+    ["electric-energy-interface"] = {          -- 电能接口
         orig             = {
-            "electric-energy-interface", -- 电能接口
+            "electric-energy-interface",       -- 电能接口
             "hidden-electric-energy-interface" -- 隐藏电能接口
         },
         mod              = {
@@ -290,12 +294,12 @@ local data_raw_production_catalog = {
 
 -- 电力输送相关目录
 local data_raw_transmission_catalog = {
-    ["electric-pole"] = { -- 电线杆
+    ["electric-pole"] = {           -- 电线杆
         orig = {
-            "small-electric-pole", -- 小型电线杆
+            "small-electric-pole",  -- 小型电线杆
             "medium-electric-pole", -- 中型型电线杆
-            "big-electric-pole", -- 大型电线杆
-            "substation" -- 广域配电站
+            "big-electric-pole",    -- 大型电线杆
+            "substation"            -- 广域配电站
         },
         mod = {
             "lighted-small-electric-pole", -- LightedPolesPlus
@@ -309,7 +313,7 @@ local data_raw_transmission_catalog = {
             "lighted-se-pylon-substation",
             "lighted-se-pylon-construction",
             "lighted-se-pylon-construction-radar", -- LightedPolesPlus
-            "se-addon-power-pole", -- space-exploration
+            "se-addon-power-pole",                 -- space-exploration
             "se-pylon",
             "se-pylon-substation",
             "se-pylon-construction",
@@ -318,8 +322,8 @@ local data_raw_transmission_catalog = {
             "se-spaceship-clamp-power-pole-external-west",
             "se-spaceship-clamp-power-pole-external-east",
             "se-space-elevator-energy-pole", -- space-exploration
-            "kr-substation-mk2", -- Krastorio2
-            "medium-electric-pole-2", -- bobpower
+            "kr-substation-mk2",             -- Krastorio2
+            "medium-electric-pole-2",        -- bobpower
             "medium-electric-pole-3",
             "medium-electric-pole-4",
             "big-electric-pole-2",
@@ -327,14 +331,14 @@ local data_raw_transmission_catalog = {
             "big-electric-pole-4",
             "substation-2",
             "substation-3",
-            "substation-4", -- bobpower
+            "substation-4",             -- bobpower
             "small-iron-electric-pole", -- aai-industry
         },
         mul = settings.startup["x-custom-game-electricity-transmission-performance-multiplier"].value,
-        modify_parameter = { -- 修改参数
+        modify_parameter = {                        -- 修改参数
             {
                 path = { "maximum_wire_distance" }, -- 电线最大距离。最大为64
-                max_value = 64 -- 可设置的最大值
+                max_value = 64                      -- 可设置的最大值
             },
             {
                 path = { "supply_area_distance" }, -- 供应区域距离。最大为64

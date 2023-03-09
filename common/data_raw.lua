@@ -24,7 +24,7 @@ X_CUSTOM_GAME_IS_RECORD = true
 X_CUSTOM_GAME_TAB_RECORD = {}
 
 function Data_raw:record(data_type, data_name)
-    if data_type == nil or data_name == nil then
+    if not X_CUSTOM_GAME_IS_RECORD then
         return
     end
 
@@ -264,11 +264,6 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
         for _, prot_name in ipairs(prot_name_tab) do
             -- prot_name = 原型名字："boiler"...
 
-            -- 做记录
-            if X_CUSTOM_GAME_IS_RECORD then
-                self:record(prot_type, prot_name)
-            end
-
             -- 没有修改参数则跳过此名字
             if prot_modify_param.modify_parameter == nil then
                 goto NEXT_PROT_NAME
@@ -357,6 +352,10 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                         log(table.concat(modify_field_path, ".") ..
                             " : " .. tostring(old_value) .. " ---> " .. tostring(new_value))
                     end
+
+                    -- 做记录
+                    self:record(prot_type, prot_name)
+                    --
                 elseif single_modify_param.operation == "Extend" then -- 不存在相应字段，进行扩展字段
                     -- 校验是否存在相应的实体
                     if self:get_data_raw_field_value({ prot_type, prot_name }) == nil then
@@ -373,6 +372,10 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
                         end
                         log(table.concat(modify_field_path, ".") .. " : insert value ---> " .. tostring(new_value))
                     end
+
+                    -- 做记录
+                    self:record(prot_type, prot_name)
+                    --
                 else -- 不存在相应字段
                     if self.is_log then
                         log(table.concat(modify_field_path, ".") .. " is nil")
