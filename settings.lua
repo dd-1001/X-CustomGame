@@ -524,7 +524,7 @@ data:extend({
         type = "string-setting",
         name = "x-custom-game-infinite-technology-cost-formula", -- 无限科技花费公式
         setting_type = "startup",
-        default_value = "1.1^(L-7)*1000",
+        default_value = "L*100",
         order = "x-custom-game-117002"
     },
     {

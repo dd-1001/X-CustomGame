@@ -2529,6 +2529,8 @@ local data_raw_recipe_delete_ingredients_catalog = {
     ["se-quantum-phenomenon-data"] = {}, -- 量子现象数据
     ["se-material-testing-pack"] = {},   -- 材料测试包
     ["laser-turret"] = {},               -- 激光炮塔
+    ["heavy-water"] = {},                -- 重水
+    ["se-bioelectrics-data"] = {},       -- 生物电数据
 }
 
 if X_CUSTOM_GAME_IS_DEBUG or mods["space-exploration"] then
