@@ -16,4 +16,4 @@ require("tweak.15_character") -- 角色-------角色属性
 require("tweak.16_recipe") -- 配方-------配方修改
 require("tweak.17_technology") -- 科技-------科技修改
 
-require("tweak.test") -- 测试
+require("tweak.100_game_startup_test") -- 测试

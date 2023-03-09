@@ -262,8 +262,6 @@ function Data_raw:execute_modify(data_raw_modifi_catalog)
 
         ::PROCESS_PROT_NAME::
         for _, prot_name in ipairs(prot_name_tab) do
-            -- prot_name = 原型名字："boiler"...
-
             -- 没有修改参数则跳过此名字
             if prot_modify_param.modify_parameter == nil then
                 goto NEXT_PROT_NAME

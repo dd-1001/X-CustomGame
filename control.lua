@@ -1,5 +1,6 @@
 local common_core = require("common/core")
 local x_database = require("tweak.99_database")
+local x_runtime_test = require("tweak.101_game_runtime_test")
 local log = common_core.Log
 local lib_string = common_core.lib_string
 
@@ -143,6 +144,8 @@ local function set_game_start_bonus()
 end
 
 local function on_init()
+    x_runtime_test.on_init_test()
+
     if settings.player["x-custom-game-start-bouns-items-flag"].value then
         set_game_start_bonus()
     end

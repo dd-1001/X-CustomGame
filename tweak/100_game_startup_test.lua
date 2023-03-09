@@ -9,7 +9,7 @@ if not X_CUSTOM_GAME_IS_DEBUG then
 end
 
 
-log("\n\n\n------------------test start------------------\n\n\n")
+log("\n\n\n------------------game_startup_test start------------------\n\n\n")
 
 -- log("x_database: \n" .. common_core:serpent_block(x_database))
 
@@ -18,13 +18,14 @@ log("\n\n\n------------------test start------------------\n\n\n")
 
 -- log("Moded List: \n" .. common_core:serpent_block(X_CUSTOM_GAME_TAB_RECORD))
 
-local unmod_list = common_data_raw:check_not_in_record("source")
--- local tab_list = common_data_raw:check_not_in_record("record")
+-- local unmod_list = common_data_raw:check_not_in_record("source")
+local unmod_list = common_data_raw:check_not_in_record("record")
 
 -- 排除
 local exclude_info = {}
 local possible_exclude_list = {}
 local check_record_exclude_type = x_database.check_record_exclude_type
+-- check_record_exclude_type = {}
 for prot_type, _ in pairs(unmod_list) do
     if check_record_exclude_type[prot_type] then
         exclude_info[prot_type] = unmod_list[prot_type]
@@ -42,7 +43,7 @@ end
 
 -- 打印日志
 log("possible_exclude_list: \n" .. common_core:serpent_block(possible_exclude_list))
-log("exclude_info: \n" .. common_core:serpent_block(exclude_info))
+-- log("exclude_info: \n" .. common_core:serpent_block(exclude_info))
 log("unmod_list: \n" .. common_core:serpent_block(unmod_list))
 -- 打印原型定义
 if false then
@@ -63,4 +64,4 @@ end
 -- end
 -- log("catalogue List: \n" .. common_core:serpent_block(tab_list))
 
-log("\n\n\n------------------test end------------------\n\n\n")
+log("\n\n\n------------------game_startup_test end------------------\n\n\n")
