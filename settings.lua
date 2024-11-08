@@ -1,17 +1,11 @@
 data:extend({
     {
         type = "bool-setting",
-        name = "x-custom-game-affect-mod-flags",
+        name = "x_custom_game_debug",
         setting_type = "startup",
         default_value = true,
+        hidden = false,
         order = "1001"
-    },
-    {
-        type = "bool-setting",
-        name = "x-custom-game-affects-other-untested-mod-flags",
-        setting_type = "startup",
-        default_value = false,
-        order = "1002"
     },
     {
         type = "double-setting",
@@ -33,13 +27,26 @@ data:extend({
     },
     {
         type = "double-setting",
-        name = "x-custom-game-locomotive-inventory-size-multiplier", -- 机车车厢库存
+        name = "x-custom-game-cargo-wagon-performance-multiplier", -- 货运车厢
         setting_type = "startup",
         default_value = 5,
         minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-101003"
     },
+    {
+        type = "double-setting",
+        name = "x-custom-game-fluid-wagon-performance-multiplier", -- 液罐车厢
+        setting_type = "startup",
+        default_value = 20,
+        minimum_value = 0.01,
+        maximum_value = 1000,
+        order = "x-custom-game-101004"
+    },
+
+
+
+
     {
         type = "double-setting",
         name = "x-custom-game-belt-performance-multiplier", -- 传送带

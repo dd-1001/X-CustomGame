@@ -8,7 +8,6 @@ local Data_raw = {
     data_raw_modifi_catalog = nil -- data.raw修改目录
 }
 
-Data_raw.__index = Data_raw
 setmetatable(Data_raw, Data_raw)
 
 function Data_raw:new(data_raw_modifi_catalog)
@@ -472,9 +471,7 @@ local exponent_multipliers = {
 }
 
 -- from __stdlib__/stdlib/utils/string，增加一个大写 K
---- Convert a metric string prefix to a number value.
--- @tparam string str
--- @treturn float
+--- 将单位字符串前缀转换为数值
 function Data_raw:exponent_number(str)
     if type(str) == 'string' then
         local value, exp = str:match('([%-+]?[0-9]*%.?[0-9]+)([yzafpnumcdhkKMGTPEZY]?)') -- 增加一个大写 K

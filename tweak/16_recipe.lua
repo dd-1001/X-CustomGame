@@ -2533,7 +2533,7 @@ local data_raw_recipe_delete_ingredients_catalog = {
     ["se-bioelectrics-data"] = {},       -- 生物电数据
 }
 
-if X_CUSTOM_GAME_IS_DEBUG or mods["space-exploration"] then
+if X_CUSTOM_GAME_DEBUG or mods["space-exploration"] then
     local add_list = {
         ["se-astronomic-catalogue-1"] = {}, -- 各种目录
         ["se-astronomic-catalogue-2"] = {},

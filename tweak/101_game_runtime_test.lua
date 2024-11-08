@@ -9,7 +9,7 @@ x_runtime_test.__index = x_runtime_test
 setmetatable(x_runtime_test, x_runtime_test)
 
 function x_runtime_test.on_init_test()
-    if not X_CUSTOM_GAME_IS_DEBUG then
+    if not X_CUSTOM_GAME_DEBUG then
         return
     end
 

@@ -73,7 +73,7 @@ local data_raw_fuel_value_catalog = {
 }
 
 -- space-exploration会检测火箭燃料的热值，需修改__space-exploration__/scripts/essential.detect_breaking_prototypes = function() global.items_banned_from_transport = {} end)
-if mods["space-exploration"] and not X_CUSTOM_GAME_IS_DEBUG then
+if mods["space-exploration"] and not X_CUSTOM_GAME_DEBUG then
     for index, name in ipairs(data_raw_fuel_value_catalog.item.orig) do
         if name == "rocket-fuel" then
             table.remove(data_raw_fuel_value_catalog.item.orig, index)
@@ -166,7 +166,7 @@ if settings.startup["x-custom-game-infinite-resources-flag"].value then
     common_data_raw:execute_modify(data_raw_resource_catalog)
 end
 
-if X_CUSTOM_GAME_IS_DEBUG then
+if X_CUSTOM_GAME_DEBUG then
     -- 找出含有热值，但没被修改的项目
     local item_unmod = common_data_raw:find_item_with_key_word("fuel_value")
     -- log("fuel_value list: \n" .. common_core:serpent_block(item_unmod))
