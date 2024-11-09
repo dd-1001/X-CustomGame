@@ -16,6 +16,16 @@ log("\n\n\n100_game_startup_test start\n\n\n")
 -- log(data.raw["cargo-wagon"])
 -- log(data.raw["fluid-wagon"])
 -- log(data.raw["logistic-container"])
+-- log(data.raw["transport-belt"])
+-- log(data.raw["underground-belt"])
+-- log(data.raw["splitter"])
+-- log(data.raw["inserter"])
+-- log(data.raw["electric-pole"])
+-- log(data.raw["boiler"])
+-- log(data.raw["generator"])
+-- log(data.raw["solar-panel"])
+-- log(data.raw["accumulator"])
+-- log(data.raw["reactor"])
 
 
 

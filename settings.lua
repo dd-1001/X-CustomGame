@@ -43,34 +43,30 @@ data:extend({
         maximum_value = 1000,
         order = "x-custom-game-101004"
     },
-
-
-
-
     {
         type = "double-setting",
-        name = "x-custom-game-belt-performance-multiplier", -- 传送带
+        name = "x-custom-game-transport-performance-multiplier", -- 传送带、分流器
         setting_type = "startup",
         default_value = 4,
         minimum_value = 0.1,
-        maximum_value = 20,
+        maximum_value = 10,
         order = "x-custom-game-102001"
     },
     {
         type = "double-setting",
         name = "x-custom-game-inserter-performance-multiplier", -- 机械臂
         setting_type = "startup",
-        default_value = 5,
+        default_value = 4,
         minimum_value = 0.1,
-        maximum_value = 20,
+        maximum_value = 10,
         order = "x-custom-game-103001"
     },
     {
         type = "double-setting",
-        name = "x-custom-game-electricity-transmission-performance-multiplier", -- 电力输送：电线杆
+        name = "x-custom-game-electric-pole-performance-multiplier", -- 电线杆
         setting_type = "startup",
         default_value = 10,
-        minimum_value = 0.01,
+        minimum_value = 0.1,
         maximum_value = 100,
         order = "x-custom-game-104001"
     },
@@ -85,7 +81,7 @@ data:extend({
     },
     {
         type = "double-setting",
-        name = "x-custom-game-generator-performance-multiplier", -- 发电机
+        name = "x-custom-game-generator-performance-multiplier", -- 蒸汽机
         setting_type = "startup",
         default_value = 10,
         minimum_value = 0.01,
@@ -110,6 +106,10 @@ data:extend({
         maximum_value = 100,
         order = "x-custom-game-104005"
     },
+
+
+
+
     {
         type = "double-setting",
         name = "x-custom-game-reactor-performance-multiplier", -- 核反应堆

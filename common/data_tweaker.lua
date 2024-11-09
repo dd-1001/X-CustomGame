@@ -89,10 +89,18 @@ function DataTweaker.modify_data(target_table, instructions)
                                 -- 执行修改
                                 if operation.type == "set" then
                                     original_value = operation.value
-                                elseif operation.type == "add" then
-                                    original_value = original_value + operation.value
+                                elseif operation.type == "division" then
+                                    original_value = original_value / operation.value
                                 elseif operation.type == "multiply" then
                                     original_value = original_value * operation.value
+                                end
+
+                                -- 应用最大值和最小值约束
+                                if operation.max_value then
+                                    original_value = math.min(original_value, operation.max_value)
+                                end
+                                if operation.min_value then
+                                    original_value = math.max(original_value, operation.min_value)
                                 end
 
                                 -- 记录修改后的值
@@ -110,7 +118,7 @@ function DataTweaker.modify_data(target_table, instructions)
 
                                 -- 打印调试日志
                                 log(string.format("%s.%s.%s: %s --> %s", target_type, name, field, old_value,
-                                value[field_part]))
+                                    value[field_part]))
                             else
                                 log(string.format("Warn: %s.%s.%s: Not exist", target_type, name, field))
                             end
