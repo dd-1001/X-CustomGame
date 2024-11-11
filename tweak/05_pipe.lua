@@ -1,113 +1,50 @@
-local common_core = require("common/core")
-local common_data_raw = require("common/data_raw")
+local Core = require("common.core")
+local DataTweaker = require("common.data_tweaker")
+local log = Core.Log
 
-local log = common_core.Log
-
--- 管道系统
-local data_raw_pipe_catalog = {
-    pipe = { -- 管道
-        orig = {
-            "pipe" -- 管道
-        },
-        mod = {
-            "se-space-pipe", -- space-exploration
-            "kr-steel-pipe", -- Krastorio2
-            "stone-pipe", -- boblogistics
-            "copper-pipe",
-            "steel-pipe",
-            "plastic-pipe" -- boblogistics
-        },
-        mul = settings.startup["x-custom-game-pipe-system-performance-multiplier"].value,
-        modify_parameter = { -- 修改参数
-            {
-                path = { "fluid_box", "base_area" }, -- 流体箱的总流体容量为 base_area × height × 100
-                max_value = 10
-            },
-            {
-                path = { "max_health" } -- 最大血量
-            }
+-- 指令表配置
+local set_value_pipe_system = settings.startup["x-custom-game-pipe-system-performance-multiplier"].value
+local instructions_pipe_system = {
+    {
+        type = "pipe", -- 管道
+        name = "*",
+        exclude_names = {},
+        operations = {
+            ["fluid_box.volume"] = { type = "multiply", value = set_value_pipe_system }, -- 体积
         }
     },
-    ["pipe-to-ground"] = { -- 地下管道
-        orig = {
-            "pipe-to-ground" -- 地下管道
-        },
-        mod = {
-            "se-space-pipe-to-ground", -- space-exploration
-            "kr-steel-pipe-to-ground", -- Krastorio2
-            "stone-pipe-to-ground", -- boblogistics
-            "copper-pipe-to-ground",
-            "steel-pipe-to-ground",
-            "plastic-pipe-to-ground" -- boblogistics
-        },
-        mul = settings.startup["x-custom-game-pipe-system-performance-multiplier"].value,
-        modify_parameter = { -- 修改参数
-            {
-                path = { "fluid_box", "base_area" }, -- 流体箱的总流体容量为 base_area × height × 100
-                max_value = 10
-            },
-            {
-                path = { "fluid_box", "pipe_connections", 2, "max_underground_distance" }, -- 最大地下距离
-                max_value = 81
-            },
-            {
-                path = { "max_health" } -- 最大血量
-            }
+    {
+        type = "pipe-to-ground", -- 地下管道
+        name = "*",
+        exclude_names = {},
+        operations = {
+            ["fluid_box.volume"] = { type = "multiply", value = set_value_pipe_system },                                                       -- 体积
+            ["fluid_box.pipe_connections[2].max_underground_distance"] = { type = "multiply", value = set_value_pipe_system, max_value = 81 }, -- 连接距离
         }
     },
-    pump = { -- 管道泵
-        orig = {
-            "pump" -- 管道泵
-        },
-        mod = {
-            "kr-steel-pump", -- Krastorio2
-            "bob-pump-2", -- boblogistics
-            "bob-pump-3",
-            "bob-pump-4" -- boblogistics
-        },
-        mul = settings.startup["x-custom-game-pipe-system-performance-multiplier"].value,
-        modify_parameter = { -- 修改参数
-            {
-                path = { "fluid_box", "height" }, -- 流体箱的总流体容量为 base_area × height × 100
-                max_value = 10
-            },
-            {
-                path = { "pumping_speed" } -- 泵送速度
-            },
-            {
-                path = { "max_health" } -- 最大血量
-            }
-        }
-    },
-    ["offshore-pump"] = { -- 供水泵
-        orig = {
-            "offshore-pump" -- 供水泵
-        },
-        mod = {
-            "stone-waterwell", -- StoneWaterWell
-        },
-        mul = settings.startup["x-custom-game-pipe-system-performance-multiplier"].value,
-        modify_parameter = { -- 修改参数
-            {
-                path = { "fluid_box", "base_area" }, -- 流体箱的总流体容量为 base_area × height × 100
-                max_value = 10
-            },
-            {
-                path = { "pumping_speed" } -- 泵送速度
-            },
-            {
-                path = { "max_health" } -- 最大血量
-            }
+    {
+        type = "pump", -- 管道泵
+        name = "*",
+        exclude_names = {},
+        operations = {
+            energy_usage = { type = "division", value = set_value_pipe_system },         -- 耗能
+            pumping_speed = { type = "multiply", value = set_value_pipe_system },        -- 泵速
+            ["fluid_box.volume"] = { type = "multiply", value = set_value_pipe_system }, -- 体积
         }
     }
 }
 
--- 开始修改
-log("\n\n\n------------------管道系统 start------------------\n\n\n")
 
-if settings.startup["x-custom-game-affects-other-untested-mod-flags"].value then
-    common_data_raw:add_other_untested_list(data_raw_pipe_catalog)
+
+-- 调用修改数据函数
+local modified_items = DataTweaker.modify_data(data.raw, instructions_pipe_system)
+log("instructions_pipe_system modified_items: \n" .. Core:serpent_block(modified_items))
+
+-- 记录已修改的类型
+if (Core.x_custom_game_debug) then
+    for prototype, _ in pairs(modified_items or {}) do
+        if not DataTweaker.table_contains(X_CUSTOM_GAME_MODIFIED_TYPE, prototype) then
+            table.insert(X_CUSTOM_GAME_MODIFIED_TYPE, prototype)
+        end
+    end
 end
-common_data_raw:execute_modify(data_raw_pipe_catalog)
-
-log("\n\n\n------------------管道系统 end------------------\n\n\n")

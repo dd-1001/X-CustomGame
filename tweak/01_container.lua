@@ -25,12 +25,12 @@ local instructions_container = {
         }
     },
     {
-        type = "storage-tank",  -- 储液罐
+        type = "storage-tank", -- 储液罐
         name = "*",
         exclude_names = {},
         operations = {
-            flow_length_in_ticks = { type = "multiply", value = set_value_storage_tank },   -- 流速
-            ["fluid_box.volume"] = { type = "multiply", value = set_value_storage_tank }    -- 体积
+            flow_length_in_ticks = { type = "multiply", value = set_value_storage_tank }, -- 流速
+            ["fluid_box.volume"] = { type = "multiply", value = set_value_storage_tank }  -- 体积
         }
     },
     {
@@ -42,11 +42,11 @@ local instructions_container = {
         }
     },
     {
-        type = "fluid-wagon",  -- 液罐车厢
+        type = "fluid-wagon", -- 液罐车厢
         name = "*",
         exclude_names = {},
         operations = {
-            capacity = { type = "multiply", value = set_value_fluid_wagon }   -- 体积
+            capacity = { type = "multiply", value = set_value_fluid_wagon } -- 体积
         }
     }
 }
@@ -56,3 +56,12 @@ local instructions_container = {
 -- 调用修改数据函数
 local modified_items = DataTweaker.modify_data(data.raw, instructions_container)
 log("instructions_container modified_items: \n" .. Core:serpent_block(modified_items))
+
+-- 记录已修改的类型
+if (Core.x_custom_game_debug) then
+    for prototype, _ in pairs(modified_items or {}) do
+        if not DataTweaker.table_contains(X_CUSTOM_GAME_MODIFIED_TYPE, prototype) then
+            table.insert(X_CUSTOM_GAME_MODIFIED_TYPE, prototype)
+        end
+    end
+end

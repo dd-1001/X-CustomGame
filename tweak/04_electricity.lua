@@ -8,6 +8,8 @@ local set_value_boiler = settings.startup["x-custom-game-boiler-performance-mult
 local set_value_generator = settings.startup["x-custom-game-generator-performance-multiplier"].value
 local set_value_solar_panel = settings.startup["x-custom-game-solar-panel-performance-multiplier"].value
 local set_value_accumulator = settings.startup["x-custom-game-accumulator-performance-multiplier"].value
+local set_value_reactor = settings.startup["x-custom-game-reactor-performance-multiplier"].value
+local set_value_heat_pipe = settings.startup["x-custom-game-heat-pipe-performance-multiplier"].value
 local instructions_electric = {
     {
         type = "electric-pole", -- 电线杆
@@ -57,9 +59,34 @@ local instructions_electric = {
         name = "*",
         exclude_names = {},
         operations = {
-            ["energy_source.buffer_capacity"] = { type = "multiply", value = set_value_accumulator }, -- 电池容量
-            ["energy_source.input_flow_limit"] = { type = "multiply", value = set_value_accumulator }, -- 输入限制
+            ["energy_source.buffer_capacity"] = { type = "multiply", value = set_value_accumulator },   -- 电池容量
+            ["energy_source.input_flow_limit"] = { type = "multiply", value = set_value_accumulator },  -- 输入限制
             ["energy_source.output_flow_limit"] = { type = "multiply", value = set_value_accumulator }, -- 输出限制
+        }
+    },
+    {
+        type = "reactor", -- 反应堆
+        name = "*",
+        exclude_names = {},
+        operations = {
+            consumption = { type = "division", value = set_value_reactor },                                      -- 消耗能量
+            ["energy_source.effectivity"] = { type = "multiply", value = set_value_reactor },                    -- 效率
+            ["energy_source.burnt_inventory_size"] = { type = "multiply", value = set_value_reactor },           -- 燃料库存大小
+            ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_reactor },            -- 燃料库存大小
+            ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_reactor }, -- 污染
+            ["heat_buffer.max_temperature"] = { type = "multiply", value = set_value_reactor },                  -- 最大温度
+            ["heat_buffer.max_transfer"] = { type = "multiply", value = set_value_reactor },                     -- 最大传输热量
+            ["heat_buffer.specific_heat"] = { type = "division", value = set_value_reactor },                    -- 比热容
+        }
+    },
+    {
+        type = "heat-pipe", -- 热管
+        name = "*",
+        exclude_names = {},
+        operations = {
+            ["heat_buffer.max_temperature"] = { type = "multiply", value = set_value_heat_pipe }, -- 最大温度
+            ["heat_buffer.max_transfer"] = { type = "multiply", value = set_value_heat_pipe },    -- 最大传输热量
+            ["heat_buffer.specific_heat"] = { type = "division", value = set_value_heat_pipe },   -- 比热容
         }
     }
 }
@@ -69,3 +96,12 @@ local instructions_electric = {
 -- 调用修改数据函数
 local modified_items = DataTweaker.modify_data(data.raw, instructions_electric)
 log("instructions_electric modified_items: \n" .. Core:serpent_block(modified_items))
+
+-- 记录已修改的类型
+if (Core.x_custom_game_debug) then
+    for prototype, _ in pairs(modified_items or {}) do
+        if not DataTweaker.table_contains(X_CUSTOM_GAME_MODIFIED_TYPE, prototype) then
+            table.insert(X_CUSTOM_GAME_MODIFIED_TYPE, prototype)
+        end
+    end
+end

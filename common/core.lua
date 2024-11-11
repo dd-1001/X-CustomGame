@@ -1,7 +1,7 @@
 local Core = {
     lib_core_util = require("__core__/lualib/util"),
     lib_serpent = require("common/serpent"),
-    lib_string = require("common/string"),
+    x_string = require("common.x_string"),
     -- serpent_block_format = { indent = "\t", comment = false, maxlevel = 2 },
     serpent_block_format = { indent = "\t", comment = false },
     serpent_line_format = { sortkeys = true, comment = false },
@@ -23,7 +23,6 @@ end
 
 -- 日志记录函数
 function Core.Log(msg)
-
     -- 检查是否在调试模式
     if not Core.x_custom_game_debug then
         return
