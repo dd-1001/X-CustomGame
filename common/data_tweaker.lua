@@ -16,6 +16,36 @@ function DataTweaker.table_contains(table, element)
     return false
 end
 
+-- 辅助函数：解析嵌套字段路径
+local function resolve_nested_field(table, path)
+    local current_value = table
+    local parent, last_field
+
+    for part in path:gmatch("[^.]+") do
+        local field, index = part:match("([%w_]+)%[(%d+)%]")
+
+        if field then
+            -- 处理带索引的字段（如 `some_field[2]`）
+            current_value = current_value[field]
+            index = tonumber(index)
+            parent, last_field = current_value, index
+            current_value = current_value[index]
+        else
+            -- 普通字段（不带索引的部分，如 `field_name`）
+            parent, last_field = current_value, part
+            current_value = current_value[part]
+        end
+
+        -- 如果字段不存在，提前退出
+        if current_value == nil then
+            break
+        end
+    end
+
+    -- 返回最后一级字段的父表和字段名称
+    return parent, last_field
+end
+
 -- 主函数：根据指令表修改目标数据表
 function DataTweaker.modify_data(target_table, instructions)
     local modified_items = {} -- 用于保存修改过的项目
@@ -27,73 +57,55 @@ function DataTweaker.modify_data(target_table, instructions)
         for name, prototype in pairs(target_table[target_type] or {}) do
             if (instruction.name == "*" or instruction.name == name) and not DataTweaker.table_contains(exclude_names, name) then
                 for field, operation in pairs(instruction.operations) do
-                    -- 使用路径解析修改嵌套属性
-                    local value = prototype
-                    local fields = {}
-                    for field_part in field:gmatch("[^.]+") do
-                        table.insert(fields, field_part)
-                    end
+                    local parent, last_field = resolve_nested_field(prototype, field)
 
-                    for i, field_part in ipairs(fields) do
-                        -- 获取可能的索引（如 pipe_connections[2]）
-                        local part, index = field_part:match("([%w_]+)%[(%d+)%]")
+                    if parent and parent[last_field] then
+                        local old_value = parent[last_field]
+                        local new_value = old_value
 
-                        if part then
-                            -- 存在索引的情况
-                            value = value[part]
-                            value = value[tonumber(index)]
+                        -- 处理单位
+                        local original_value, unit = x_string.exponent_number(old_value)
+                        local modified_value = original_value
+
+                        -- 执行修改
+                        if operation.type == "set" then
+                            modified_value = operation.value
+                        elseif operation.type == "division" then
+                            modified_value = original_value / operation.value
+                        elseif operation.type == "multiply" then
+                            modified_value = original_value * operation.value
+                        end
+
+                        -- 应用最大值和最小值约束
+                        if operation.max_value then
+                            modified_value = math.min(modified_value, operation.max_value)
+                        end
+                        if operation.min_value then
+                            modified_value = math.max(modified_value, operation.min_value)
+                        end
+
+                        -- 将修改后的值更新到原始位置
+                        if unit == "" then
+                            new_value = modified_value                                           -- 没有单位的情况下直接存为数值
                         else
-                            -- 没有索引的情况
-                            value = value[field_part]
+                            new_value = x_string.number_to_exponent_string(modified_value, unit) -- 含有单位则存为字符串
                         end
 
-                        -- 检查是否到达最终字段
-                        if i == #fields then
-                            if value then
-                                local old_value = value
-                                -- 处理单位
-                                local original_value, unit = x_string.exponent_number(value)
-
-                                -- 执行修改
-                                if operation.type == "set" then
-                                    original_value = operation.value
-                                elseif operation.type == "division" then
-                                    original_value = original_value / operation.value
-                                elseif operation.type == "multiply" then
-                                    original_value = original_value * operation.value
-                                end
-
-                                -- 应用最大值和最小值约束
-                                if operation.max_value then
-                                    original_value = math.min(original_value, operation.max_value)
-                                end
-                                if operation.min_value then
-                                    original_value = math.max(original_value, operation.min_value)
-                                end
-
-                                -- 记录修改后的值
-                                if unit == "" then
-                                    value = original_value                   -- 没有单位的情况下直接存为数值
-                                else
-                                    value = tostring(original_value) .. unit -- 含有单位则存为字符串
-                                end
-
-                                -- 记录修改过的项
-                                modified_items[target_type] = modified_items[target_type] or {}
-                                if not DataTweaker.table_contains(modified_items[target_type], name) then
-                                    table.insert(modified_items[target_type], name)
-                                end
-
-                                -- 打印调试日志
-                                log(string.format("%s.%s.%s: %s --> %s", target_type, name, field, old_value,
-                                    value))
-                            else
-                                log(string.format("Warn: %s.%s.%s: Not exist", target_type, name, field))
-                            end
+                        -- 记录修改过的项
+                        modified_items[target_type] = modified_items[target_type] or {}
+                        if not DataTweaker.table_contains(modified_items[target_type], name) then
+                            table.insert(modified_items[target_type], name)
                         end
 
-                        -- 如果任何层级为空则退出
-                        if not value then break end
+                        -- 打印调试日志
+                        log(string.format("%s.%s.%s: %s --> %s", target_type, name, field, old_value,
+                            Core.format_log_value(new_value)))
+                    elseif parent and operation.type == "insert" then
+                        parent[last_field] = operation.value
+                        log(string.format("%s.%s.%s: inserted --> %s", target_type, name, field,
+                        Core.format_log_value(operation.value)))
+                    else
+                        log(string.format("Warn: %s.%s.%s: Not exist", target_type, name, field))
                     end
                 end
             end

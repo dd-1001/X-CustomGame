@@ -4,6 +4,7 @@ local log = Core.Log
 
 -- 指令表配置
 local set_value_robot = settings.startup["x-custom-game-robot-performance-multiplier"].value
+local set_value_roboport = settings.startup["x-custom-game-roboport-performance-multiplier"].value
 local instructions_robot = {
     {
         type = "logistic-robot", -- 物流机器人
@@ -36,14 +37,15 @@ local instructions_robot = {
         name = "*",
         exclude_names = {},
         operations = {
-            charge_approach_distance = { type = "multiply", value = set_value_robot },             -- 充电距离
-            charging_energy = { type = "multiply", value = set_value_robot },                      -- 充电最大功率
-            ["energy_source.buffer_capacity"] = { type = "multiply", value = set_value_robot },    -- 充电站缓存电量
-            ["energy_source.input_flow_limit"] = { type = "multiply", value = set_value_robot },   -- 充电站电量输入限制
-            construction_radius = { type = "multiply", value = set_value_robot },                  -- 建设机器人施工半径
-            logistics_radius = { type = "multiply", value = set_value_robot },                     -- 物流机器人物流半径
-            material_slots_count = { type = "multiply", value = set_value_robot, max_value = 30 }, -- 修理包槽位数量
-            robot_slots_count = { type = "multiply", value = set_value_robot, max_value = 30 },    -- 机器人槽位数量
+            charge_approach_distance = { type = "multiply", value = set_value_roboport },             -- 充电距离
+            charging_energy = { type = "multiply", value = set_value_roboport },                      -- 充电最大功率
+            ["energy_source.buffer_capacity"] = { type = "multiply", value = set_value_roboport },    -- 充电站缓存电量
+            ["energy_source.input_flow_limit"] = { type = "multiply", value = set_value_roboport },   -- 充电站电量输入限制
+            construction_radius = { type = "multiply", value = set_value_roboport },                  -- 建设机器人施工半径
+            logistics_radius = { type = "multiply", value = set_value_roboport },                     -- 物流机器人物流半径
+            material_slots_count = { type = "multiply", value = set_value_roboport, max_value = 30 }, -- 修理包槽位数量
+            robot_slots_count = { type = "multiply", value = set_value_roboport, max_value = 30 },    -- 机器人槽位数量
+            charging_station_count = { type = "insert", value = 16 },                                 -- 平台充电口数量
         }
     }
 }

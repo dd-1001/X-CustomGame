@@ -46,4 +46,24 @@ function XString.exponent_number(str)
     error("Expected a string or number, got: " .. tostring(str))
 end
 
+-- 将数值转换为标准化单位字符串
+function XString.number_to_exponent_string(value, unit)
+    -- 计算数值的数量级，并将其调整为最接近的3的倍数
+    local exponent = math.floor(math.log(math.abs(value)) / math.log(10) / 3) * 3
+    -- 将数值缩放到适当范围
+    local scaled_value = value / 10 ^ exponent
+    local prefix = ""
+
+    -- 查找与数量级相匹配的单位前缀
+    for k, v in pairs(exponent_multipliers) do
+        if math.abs(v - 10 ^ exponent) < 1e-10 then
+            prefix = k
+            break
+        end
+    end
+
+    -- 格式化数值到字符串，保留两位小数，并添加单位前缀和基本单位
+    return string.format("%.2f%s%s", scaled_value, prefix, unit)
+end
+
 return XString

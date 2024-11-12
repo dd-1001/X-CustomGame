@@ -21,6 +21,15 @@ function Core:serpent_line(tab)
     return self.lib_serpent.line(tab, self.serpent_line_format)
 end
 
+-- 日志辅助函数，处理值为表和简单值的情况
+function Core.format_log_value(value)
+    if type(value) == "table" then
+        return Core:serpent_line(value)
+    else
+        return tostring(value)
+    end
+end
+
 -- 日志记录函数
 function Core.Log(msg)
     -- 检查是否在调试模式

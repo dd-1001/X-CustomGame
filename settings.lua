@@ -142,10 +142,6 @@ data:extend({
         maximum_value = 20,
         order = "x-custom-game-106001"
     },
-
-
-
-
     {
         type = "double-setting",
         name = "x-custom-game-roboport-performance-multiplier", -- 机器人指令平台
@@ -155,6 +151,10 @@ data:extend({
         maximum_value = 100,
         order = "x-custom-game-106002"
     },
+
+
+
+
     {
         type = "double-setting",
         name = "x-custom-game-mining-drill-performance-multiplier", -- 采矿-钻探
