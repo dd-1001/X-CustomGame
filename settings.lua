@@ -126,6 +126,24 @@ data:extend({
     },
     {
         type = "double-setting",
+        name = "x-custom-game-fusion-reactor-performance-multiplier", -- 聚变反应堆
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 0.01,
+        maximum_value = 100,
+        order = "x-custom-game-104008"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-fusion-generator-performance-multiplier", -- 聚变发电机
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 0.01,
+        maximum_value = 100,
+        order = "x-custom-game-104009"
+    },
+    {
+        type = "double-setting",
         name = "x-custom-game-pipe-system-performance-multiplier", -- 管道系统
         setting_type = "startup",
         default_value = 3,
@@ -151,13 +169,9 @@ data:extend({
         maximum_value = 100,
         order = "x-custom-game-106002"
     },
-
-
-
-
     {
         type = "double-setting",
-        name = "x-custom-game-mining-drill-performance-multiplier", -- 采矿-钻探
+        name = "x-custom-game-mining-drill-performance-multiplier", -- 采矿机
         setting_type = "startup",
         default_value = 15,
         minimum_value = 0.1,
@@ -175,13 +189,17 @@ data:extend({
     },
     {
         type = "double-setting",
-        name = "x-custom-game-assembling-machine-performance-multiplier", -- 装配机
+        name = "x-custom-game-assembling-machine-performance-multiplier", -- 组装机
         setting_type = "startup",
         default_value = 15,
         minimum_value = 0.1,
         maximum_value = 20,
         order = "x-custom-game-107003"
     },
+
+
+
+
     {
         type = "double-setting",
         name = "x-custom-game-fuel-performance-multiplier", -- 燃料：木板、煤矿、核能燃料等

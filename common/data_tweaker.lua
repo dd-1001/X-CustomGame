@@ -61,7 +61,6 @@ function DataTweaker.modify_data(target_table, instructions)
 
                     if parent and parent[last_field] then
                         local old_value = parent[last_field]
-                        local new_value = old_value
 
                         -- 处理单位
                         local original_value, unit = x_string.exponent_number(old_value)
@@ -86,9 +85,9 @@ function DataTweaker.modify_data(target_table, instructions)
 
                         -- 将修改后的值更新到原始位置
                         if unit == "" then
-                            new_value = modified_value                                           -- 没有单位的情况下直接存为数值
+                            parent[last_field] = modified_value                                           -- 没有单位的情况下直接存为数值
                         else
-                            new_value = x_string.number_to_exponent_string(modified_value, unit) -- 含有单位则存为字符串
+                            parent[last_field] = x_string.number_to_exponent_string(modified_value, unit) -- 含有单位则存为字符串
                         end
 
                         -- 记录修改过的项
@@ -99,11 +98,18 @@ function DataTweaker.modify_data(target_table, instructions)
 
                         -- 打印调试日志
                         log(string.format("%s.%s.%s: %s --> %s", target_type, name, field, old_value,
-                            Core.format_log_value(new_value)))
+                            Core.format_log_value(parent[last_field])))
                     elseif parent and operation.type == "insert" then
+                        -- 如果已存在，则跳过
+                        if parent[last_field] then
+                            log(string.format("Warn: %s.%s.%s: Is existed --> %s", target_type, name, field,
+                            Core.format_log_value(parent[last_field])))
+                            break
+                        end
+
                         parent[last_field] = operation.value
                         log(string.format("%s.%s.%s: inserted --> %s", target_type, name, field,
-                        Core.format_log_value(operation.value)))
+                            Core.format_log_value(operation.value)))
                     else
                         log(string.format("Warn: %s.%s.%s: Not exist", target_type, name, field))
                     end

@@ -31,6 +31,16 @@ local instructions_pipe_system = {
             pumping_speed = { type = "multiply", value = set_value_pipe_system },        -- 泵速
             ["fluid_box.volume"] = { type = "multiply", value = set_value_pipe_system }, -- 体积
         }
+    },
+    {
+        type = "offshore-pump", -- 供水泵
+        name = "*",
+        exclude_names = {},
+        operations = {
+            energy_usage = { type = "division", value = set_value_pipe_system },         -- 耗能
+            pumping_speed = { type = "multiply", value = set_value_pipe_system },        -- 泵速
+            ["fluid_box.volume"] = { type = "multiply", value = set_value_pipe_system }, -- 体积
+        }
     }
 }
 
