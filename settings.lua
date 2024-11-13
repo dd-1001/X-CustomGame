@@ -173,42 +173,78 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-mining-drill-performance-multiplier", -- 采矿机
         setting_type = "startup",
-        default_value = 15,
+        default_value = 16,
         minimum_value = 0.1,
-        maximum_value = 20,
+        maximum_value = 32,
         order = "x-custom-game-107001"
     },
     {
         type = "double-setting",
         name = "x-custom-game-furnace-performance-multiplier", -- 熔炉
         setting_type = "startup",
-        default_value = 15,
+        default_value = 16,
         minimum_value = 0.1,
-        maximum_value = 20,
+        maximum_value = 32,
         order = "x-custom-game-107002"
     },
     {
         type = "double-setting",
         name = "x-custom-game-assembling-machine-performance-multiplier", -- 组装机
         setting_type = "startup",
-        default_value = 15,
+        default_value = 16,
         minimum_value = 0.1,
-        maximum_value = 20,
+        maximum_value = 32,
         order = "x-custom-game-107003"
     },
-
-
-
-
     {
         type = "double-setting",
-        name = "x-custom-game-fuel-performance-multiplier", -- 燃料：木板、煤矿、核能燃料等
+        name = "x-custom-game-agricultural-tower-performance-multiplier", -- 农业塔
         setting_type = "startup",
-        default_value = 10,
+        default_value = 16,
+        minimum_value = 0.1,
+        maximum_value = 32,
+        order = "x-custom-game-107004"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-lab-performance-multiplier", -- 研究中心
+        setting_type = "startup",
+        default_value = 20,
         minimum_value = 0.01,
         maximum_value = 100,
+        order = "x-custom-game-107005"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-lightning-attractor-performance-multiplier", -- 避雷针
+        setting_type = "startup",
+        default_value = 20,
+        minimum_value = 0.01,
+        maximum_value = 100,
+        order = "x-custom-game-107006"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-stack-size-multiplier", -- 堆叠大小
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 0.1,
+        maximum_value = 20,
         order = "x-custom-game-108001"
     },
+    {
+        type = "double-setting",
+        name = "x-custom-game-fuel-multiplier", -- 燃料乘数
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 0.1,
+        maximum_value = 100,
+        order = "x-custom-game-108002"
+    },
+
+
+
+
     {
         type = "bool-setting",
         name = "x-custom-game-infinite-resources-flag", -- 无限资源
@@ -265,15 +301,6 @@ data:extend({
         minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-109004"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-lab-performance-multiplier", -- 研究中心
-        setting_type = "startup",
-        default_value = 20,
-        minimum_value = 0.01,
-        maximum_value = 100,
-        order = "x-custom-game-109005"
     },
     {
         type = "int-setting",

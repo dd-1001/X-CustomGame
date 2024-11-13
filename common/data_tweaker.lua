@@ -1,4 +1,5 @@
-local Core = require("core") -- 引入Core模块
+local Core = require("core")
+local deepcopy = Core.lib_core_util.table.deepcopy
 local x_string = Core.x_string
 local log = Core.Log
 
@@ -60,7 +61,7 @@ function DataTweaker.modify_data(target_table, instructions)
                     local parent, last_field = resolve_nested_field(prototype, field)
 
                     if parent and parent[last_field] then
-                        local old_value = parent[last_field]
+                        local old_value = deepcopy(parent[last_field])
 
                         -- 处理单位
                         local original_value, unit = x_string.exponent_number(old_value)
@@ -75,19 +76,21 @@ function DataTweaker.modify_data(target_table, instructions)
                             modified_value = original_value * operation.value
                         end
 
-                        -- 应用最大值和最小值约束
-                        if operation.max_value then
-                            modified_value = math.min(modified_value, operation.max_value)
-                        end
-                        if operation.min_value then
-                            modified_value = math.max(modified_value, operation.min_value)
+                        if operation.type ~= "set" then
+                            -- 应用最大值和最小值约束
+                            if operation.max_value then
+                                modified_value = math.min(modified_value, operation.max_value)
+                            end
+                            if operation.min_value then
+                                modified_value = math.max(modified_value, operation.min_value)
+                            end
                         end
 
                         -- 将修改后的值更新到原始位置
                         if unit == "" then
-                            parent[last_field] = modified_value                                           -- 没有单位的情况下直接存为数值
+                            parent[last_field] = deepcopy(modified_value)
                         else
-                            parent[last_field] = x_string.number_to_exponent_string(modified_value, unit) -- 含有单位则存为字符串
+                            parent[last_field] = x_string.number_to_exponent_string(modified_value, unit)
                         end
 
                         -- 记录修改过的项
@@ -97,13 +100,13 @@ function DataTweaker.modify_data(target_table, instructions)
                         end
 
                         -- 打印调试日志
-                        log(string.format("%s.%s.%s: %s --> %s", target_type, name, field, old_value,
-                            Core.format_log_value(parent[last_field])))
+                        log(string.format("%s.%s.%s: %s --> %s", target_type, name, field,
+                            Core.format_log_value(old_value), Core.format_log_value(parent[last_field])))
                     elseif parent and operation.type == "insert" then
                         -- 如果已存在，则跳过
                         if parent[last_field] then
                             log(string.format("Warn: %s.%s.%s: Is existed --> %s", target_type, name, field,
-                            Core.format_log_value(parent[last_field])))
+                                Core.format_log_value(parent[last_field])))
                             break
                         end
 

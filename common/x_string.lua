@@ -40,10 +40,9 @@ function XString.exponent_number(str)
         else
             error("Invalid string format: " .. tostring(str))
         end
-    elseif type(str) == 'number' then
-        return str, "" -- 如果输入是数字，直接返回数值和空单位
+    else
+        return str, "" -- 如果不是字符串，则返回原值
     end
-    error("Expected a string or number, got: " .. tostring(str))
 end
 
 function XString.number_to_exponent_string(value, unit)

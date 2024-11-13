@@ -6,6 +6,9 @@ local log = Core.Log
 local set_value_mining_drill = settings.startup["x-custom-game-mining-drill-performance-multiplier"].value
 local set_value_furnace = settings.startup["x-custom-game-furnace-performance-multiplier"].value
 local set_value_assembling_machine = settings.startup["x-custom-game-assembling-machine-performance-multiplier"].value
+local set_value_agricultural_tower = settings.startup["x-custom-game-agricultural-tower-performance-multiplier"].value
+local set_value_lab = settings.startup["x-custom-game-lab-performance-multiplier"].value
+local set_value_lightning_attractor = settings.startup["x-custom-game-lightning-attractor-performance-multiplier"].value
 local instructions_machine = {
     {
         type = "mining-drill", -- 采矿机
@@ -47,6 +50,47 @@ local instructions_machine = {
             ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_assembling_machine }, -- 燃烧室污染
             ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_assembling_machine },            -- 燃烧室燃料库存
             energy_usage = { type = "division", value = set_value_assembling_machine },                                     -- 能量消耗
+        }
+    },
+    {
+        type = "agricultural-tower", -- 农业塔
+        name = "*",
+        exclude_names = {},
+        operations = {
+            ["crane.speed.arm.extension_speed"] = { type = "multiply", value = set_value_agricultural_tower },           -- 起重机手臂延展速度
+            ["crane.speed.arm.turn_rate"] = { type = "multiply", value = set_value_agricultural_tower },                 -- 起重机手臂转速
+            ["crane.speed.grappler.extension_speed"] = { type = "multiply", value = set_value_agricultural_tower },      -- 起重机抓取器延展速度
+            ["crane.speed.grappler.horizontal_turn_rate"] = { type = "multiply", value = set_value_agricultural_tower }, -- 起重机抓取器水平转速
+            ["crane.speed.grappler.vertical_turn_rate"] = { type = "multiply", value = set_value_agricultural_tower },   -- 起重机抓取器垂直转速
+            ["crane.telescope_default_extention"] = { type = "multiply", value = set_value_agricultural_tower },         -- 起重机伸展长度
+            crane_energy_usage = { type = "division", value = set_value_agricultural_tower },                            -- 起重机能量消耗
+            energy_usage = { type = "division", value = set_value_agricultural_tower },                                  -- 能量消耗
+            ["energy_source.emissions_per_minute.spores"] = { type = "division", value = set_value_agricultural_tower }, -- 污染
+            input_inventory_size = { type = "multiply", value = set_value_agricultural_tower },                          -- 输入库存大小
+            radius = { type = "multiply", value = set_value_agricultural_tower, max_value = 5 },                         -- 半径
+        }
+    },
+    {
+        type = "lab", -- 研究中心
+        name = "*",
+        exclude_names = {},
+        operations = {
+            ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_lab }, -- 污染
+            energy_usage = { type = "division", value = set_value_lab },                                     -- 能量消耗
+            researching_speed = { type = "multiply", value = set_value_lab },                                -- 研究速度
+            science_pack_drain_rate_percent = { type = "division", value = set_value_lab },                  -- 科学包消耗率百分比
+        }
+    },
+    {
+        type = "lightning-attractor", -- 避雷针
+        name = "*",
+        exclude_names = {},
+        operations = {
+            efficiency = { type = "multiply", value = set_value_lightning_attractor },                          -- 效率
+            ["energy_source.buffer_capacity"] = { type = "multiply", value = set_value_lightning_attractor },   -- 缓冲容量
+            ["energy_source.drain"] = { type = "multiply", value = set_value_lightning_attractor },             -- 单位时间排放能量
+            ["energy_source.output_flow_limit"] = { type = "multiply", value = set_value_lightning_attractor }, -- 输出能量限制
+            range_elongation = { type = "multiply", value = set_value_lightning_attractor },                    -- 范围延长
         }
     }
 }
