@@ -12,7 +12,7 @@ local set_value_lightning_attractor = settings.startup["x-custom-game-lightning-
 local instructions_machine = {
     {
         type = "mining-drill", -- 采矿机
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             ["energy_source.effectivity"] = { type = "multiply", value = set_value_mining_drill },                    -- 燃烧室效率
@@ -28,7 +28,7 @@ local instructions_machine = {
     },
     {
         type = "furnace", -- 熔炉
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             -- source_inventory_size = { type = "multiply", value = set_value_furnace, max_value = 3 }, -- 输入槽的数量
@@ -42,7 +42,7 @@ local instructions_machine = {
     },
     {
         type = "assembling-machine", -- 组装机
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             crafting_speed = { type = "multiply", value = set_value_assembling_machine },                                   -- 制作速度
@@ -54,7 +54,7 @@ local instructions_machine = {
     },
     {
         type = "agricultural-tower", -- 农业塔
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             ["crane.speed.arm.extension_speed"] = { type = "multiply", value = set_value_agricultural_tower },           -- 起重机手臂延展速度
@@ -72,7 +72,7 @@ local instructions_machine = {
     },
     {
         type = "lab", -- 研究中心
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_lab }, -- 污染
@@ -83,7 +83,7 @@ local instructions_machine = {
     },
     {
         type = "lightning-attractor", -- 避雷针
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             efficiency = { type = "multiply", value = set_value_lightning_attractor },                          -- 效率

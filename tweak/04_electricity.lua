@@ -15,7 +15,7 @@ local set_value_fusion_generator = settings.startup["x-custom-game-fusion-genera
 local instructions_electric = {
     {
         type = "electric-pole", -- 电线杆
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             maximum_wire_distance = { type = "multiply", value = set_value_electric_pole, max_value = 64 }, -- 最大连接距离，max：64
@@ -24,7 +24,7 @@ local instructions_electric = {
     },
     {
         type = "boiler", -- 锅炉
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             target_temperature = { type = "multiply", value = set_value_boiler },                               -- 设定的目标温度
@@ -40,7 +40,7 @@ local instructions_electric = {
     },
     {
         type = "generator", -- 蒸汽机
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             effectivity = { type = "multiply", value = set_value_generator },          -- 效率
@@ -50,7 +50,7 @@ local instructions_electric = {
     },
     {
         type = "solar-panel", -- 太阳能板
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             production = { type = "multiply", value = set_value_solar_panel }, -- 发电功率
@@ -58,7 +58,7 @@ local instructions_electric = {
     },
     {
         type = "accumulator", -- 蓄电池
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             ["energy_source.buffer_capacity"] = { type = "multiply", value = set_value_accumulator },   -- 电池容量
@@ -68,7 +68,7 @@ local instructions_electric = {
     },
     {
         type = "reactor", -- 反应堆
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             consumption = { type = "division", value = set_value_reactor },                                      -- 消耗能量
@@ -83,7 +83,7 @@ local instructions_electric = {
     },
     {
         type = "heat-pipe", -- 热管
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             ["heat_buffer.max_temperature"] = { type = "multiply", value = set_value_heat_pipe }, -- 最大温度
@@ -93,7 +93,7 @@ local instructions_electric = {
     },
     {
         type = "fusion-reactor", -- 聚变反应堆
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             ["burner.effectivity"] = { type = "multiply", value = set_value_fusion_reactor },         -- 燃烧室效率
@@ -106,7 +106,7 @@ local instructions_electric = {
     },
     {
         type = "fusion-generator", -- 聚变发电机
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             ["energy_source.output_flow_limit"] = { type = "multiply", value = set_value_fusion_generator }, -- 发电量

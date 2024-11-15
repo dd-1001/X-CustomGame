@@ -7,7 +7,7 @@ local set_value_transport = settings.startup["x-custom-game-transport-performanc
 local instructions_transport = {
     {
         type = "transport-belt", -- 传送带
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             speed = { type = "multiply", value = set_value_transport }
@@ -15,7 +15,7 @@ local instructions_transport = {
     },
     {
         type = "underground-belt", -- 地下传送带
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             speed = { type = "multiply", value = set_value_transport },
@@ -24,7 +24,7 @@ local instructions_transport = {
     },
     {
         type = "splitter", -- 分流器
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             speed = { type = "multiply", value = set_value_transport },

@@ -7,7 +7,7 @@ local set_value_pipe_system = settings.startup["x-custom-game-pipe-system-perfor
 local instructions_pipe_system = {
     {
         type = "pipe", -- 管道
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             ["fluid_box.volume"] = { type = "multiply", value = set_value_pipe_system }, -- 体积
@@ -15,7 +15,7 @@ local instructions_pipe_system = {
     },
     {
         type = "pipe-to-ground", -- 地下管道
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             ["fluid_box.volume"] = { type = "multiply", value = set_value_pipe_system },                                                       -- 体积
@@ -24,7 +24,7 @@ local instructions_pipe_system = {
     },
     {
         type = "pump", -- 管道泵
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             energy_usage = { type = "division", value = set_value_pipe_system },         -- 耗能
@@ -34,7 +34,7 @@ local instructions_pipe_system = {
     },
     {
         type = "offshore-pump", -- 供水泵
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             energy_usage = { type = "division", value = set_value_pipe_system },         -- 耗能

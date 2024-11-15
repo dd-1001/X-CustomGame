@@ -225,12 +225,42 @@ data:extend({
     },
     {
         type = "double-setting",
+        name = "x-custom-game-beacon-performance-multiplier", -- 插件效果分享塔
+        setting_type = "startup",
+        default_value = 20,
+        minimum_value = 0.01,
+        maximum_value = 100,
+        order = "x-custom-game-108001"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-module-performance-multiplier", -- 插件
+        setting_type = "startup",
+        default_value = 5,
+        minimum_value = 0.01,
+        maximum_value = 100,
+        order = "x-custom-game-108002"
+    },
+
+
+
+
+
+    {
+        type = "bool-setting",
+        name = "x-custom-game-module-slot-all-type-allowed-flags", -- 插件槽允许所有类型的插件
+        setting_type = "startup",
+        default_value = true,
+        order = "x-custom-game-108003"
+    },
+    {
+        type = "double-setting",
         name = "x-custom-game-stack-size-multiplier", -- 堆叠大小
         setting_type = "startup",
         default_value = 10,
         minimum_value = 0.1,
         maximum_value = 20,
-        order = "x-custom-game-108001"
+        order = "x-custom-game-109001"
     },
     {
         type = "double-setting",
@@ -239,19 +269,21 @@ data:extend({
         default_value = 10,
         minimum_value = 0.1,
         maximum_value = 100,
-        order = "x-custom-game-108002"
+        order = "x-custom-game-109002"
     },
-
-
-
-
     {
         type = "bool-setting",
-        name = "x-custom-game-infinite-resources-flag", -- 无限资源
+        name = "x_custom_game_infinite_resource", -- 无限矿石
         setting_type = "startup",
         default_value = true,
-        order = "x-custom-game-108002"
+        order = "x-custom-game-110001"
     },
+
+
+
+
+
+
     {
         type = "bool-setting",
         name = "x-custom-game-start-bouns-items-flag", -- 开局物品
@@ -310,31 +342,6 @@ data:extend({
         minimum_value = 1,
         maximum_value = 30,
         order = "x-custom-game-109006"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-beacon-performance-multiplier", -- 插件效果分享塔
-        setting_type = "startup",
-        default_value = 10,
-        minimum_value = 0.01,
-        maximum_value = 100,
-        order = "x-custom-game-109007"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-module-performance-multiplier", -- 插件
-        setting_type = "startup",
-        default_value = 5,
-        minimum_value = 0.01,
-        maximum_value = 100,
-        order = "x-custom-game-109008"
-    },
-    {
-        type = "bool-setting",
-        name = "x-custom-game-module-slot-all-type-allowed-flags", -- 插件槽允许所有类型的插件
-        setting_type = "startup",
-        default_value = true,
-        order = "x-custom-game-109009"
     },
     {
         type = "double-setting",

@@ -10,7 +10,7 @@ local set_value_fluid_wagon = settings.startup["x-custom-game-fluid-wagon-perfor
 local instructions_container = {
     {
         type = "container", -- 容器：箱子
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             inventory_size = { type = "multiply", value = set_value_container }
@@ -18,7 +18,7 @@ local instructions_container = {
     },
     {
         type = "logistic-container", -- 容器：物流箱子
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             inventory_size = { type = "multiply", value = set_value_container }
@@ -26,7 +26,7 @@ local instructions_container = {
     },
     {
         type = "storage-tank", -- 储液罐
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             flow_length_in_ticks = { type = "multiply", value = set_value_storage_tank }, -- 流速
@@ -35,7 +35,7 @@ local instructions_container = {
     },
     {
         type = "cargo-wagon", -- 货运车厢
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             inventory_size = { type = "multiply", value = set_value_cargo_wagon }
@@ -43,7 +43,7 @@ local instructions_container = {
     },
     {
         type = "fluid-wagon", -- 液罐车厢
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             capacity = { type = "multiply", value = set_value_fluid_wagon } -- 体积

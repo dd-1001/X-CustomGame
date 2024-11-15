@@ -55,66 +55,67 @@ function DataTweaker.modify_data(target_table, instructions)
         local target_type = instruction.type
         local exclude_names = instruction.exclude_names or {}
 
-        for name, prototype in pairs(target_table[target_type] or {}) do
-            if (instruction.name == "*" or instruction.name == name) and not DataTweaker.table_contains(exclude_names, name) then
-                for field, operation in pairs(instruction.operations) do
-                    local parent, last_field = resolve_nested_field(prototype, field)
+        for _, target_name in pairs(instruction.name) do
+            for name_in_table, prototype in pairs(target_table[target_type] or {}) do
+                if (target_name == "*" or target_name == name_in_table) and not DataTweaker.table_contains(exclude_names, name_in_table) then
+                    for field, operation in pairs(instruction.operations) do
+                        local parent, last_field = resolve_nested_field(prototype, field)
 
-                    if parent and parent[last_field] then
-                        local old_value = deepcopy(parent[last_field])
-
-                        -- 处理单位
-                        local original_value, unit = x_string.exponent_number(old_value)
-                        local modified_value = original_value
-
-                        -- 执行修改
-                        if operation.type == "set" then
-                            modified_value = operation.value
-                        elseif operation.type == "division" then
-                            modified_value = original_value / operation.value
-                        elseif operation.type == "multiply" then
-                            modified_value = original_value * operation.value
-                        end
-
-                        if operation.type ~= "set" then
-                            -- 应用最大值和最小值约束
-                            if operation.max_value then
-                                modified_value = math.min(modified_value, operation.max_value)
+                        if parent and operation.type == "insert" then
+                            -- 如果已存在，则跳过
+                            if parent[last_field] then
+                                log(string.format("Warn: %s.%s.%s: Is existed --> %s", target_type, name_in_table, field,
+                                    Core.format_log_value(parent[last_field])))
+                            else
+                                parent[last_field] = deepcopy(operation.value)
+                                log(string.format("%s.%s.%s: inserted --> %s", target_type, name_in_table, field,
+                                    Core.format_log_value(operation.value)))
                             end
-                            if operation.min_value then
-                                modified_value = math.max(modified_value, operation.min_value)
-                            end
-                        end
+                        elseif parent and parent[last_field] then
+                            local old_value = deepcopy(parent[last_field])
 
-                        -- 将修改后的值更新到原始位置
-                        if unit == "" then
-                            parent[last_field] = deepcopy(modified_value)
+                            -- 处理单位
+                            local original_value, unit = x_string.exponent_number(old_value)
+                            local modified_value = original_value
+
+                            -- 执行修改
+                            if operation.type == "set" then
+                                modified_value = operation.value
+                            elseif operation.type == "division" then
+                                modified_value = original_value / operation.value
+                            elseif operation.type == "multiply" then
+                                modified_value = original_value * operation.value
+                            end
+
+                            if operation.type ~= "set" then
+                                -- 应用最大值和最小值约束
+                                if operation.max_value then
+                                    modified_value = math.min(modified_value, operation.max_value)
+                                end
+                                if operation.min_value then
+                                    modified_value = math.max(modified_value, operation.min_value)
+                                end
+                            end
+
+                            -- 将修改后的值更新到原始位置
+                            if unit == "" then
+                                parent[last_field] = deepcopy(modified_value)
+                            else
+                                parent[last_field] = x_string.number_to_exponent_string(modified_value, unit)
+                            end
+
+                            -- 记录修改过的项
+                            modified_items[target_type] = modified_items[target_type] or {}
+                            if not DataTweaker.table_contains(modified_items[target_type], name_in_table) then
+                                table.insert(modified_items[target_type], name_in_table)
+                            end
+
+                            -- 打印调试日志
+                            log(string.format("%s.%s.%s: %s --> %s", target_type, name_in_table, field,
+                                Core.format_log_value(old_value), Core.format_log_value(parent[last_field])))
                         else
-                            parent[last_field] = x_string.number_to_exponent_string(modified_value, unit)
+                            log(string.format("Warn: %s.%s.%s: Not exist", target_type, name_in_table, field))
                         end
-
-                        -- 记录修改过的项
-                        modified_items[target_type] = modified_items[target_type] or {}
-                        if not DataTweaker.table_contains(modified_items[target_type], name) then
-                            table.insert(modified_items[target_type], name)
-                        end
-
-                        -- 打印调试日志
-                        log(string.format("%s.%s.%s: %s --> %s", target_type, name, field,
-                            Core.format_log_value(old_value), Core.format_log_value(parent[last_field])))
-                    elseif parent and operation.type == "insert" then
-                        -- 如果已存在，则跳过
-                        if parent[last_field] then
-                            log(string.format("Warn: %s.%s.%s: Is existed --> %s", target_type, name, field,
-                                Core.format_log_value(parent[last_field])))
-                            break
-                        end
-
-                        parent[last_field] = operation.value
-                        log(string.format("%s.%s.%s: inserted --> %s", target_type, name, field,
-                            Core.format_log_value(operation.value)))
-                    else
-                        log(string.format("Warn: %s.%s.%s: Not exist", target_type, name, field))
                     end
                 end
             end

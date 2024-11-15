@@ -8,7 +8,7 @@ local set_value_roboport = settings.startup["x-custom-game-roboport-performance-
 local instructions_robot = {
     {
         type = "logistic-robot", -- 物流机器人
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             speed = { type = "multiply", value = set_value_robot },                                                -- 飞行速度
@@ -21,7 +21,7 @@ local instructions_robot = {
     },
     {
         type = "construction-robot", -- 建设机器人
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             speed = { type = "multiply", value = set_value_robot },                                                -- 飞行速度
@@ -34,7 +34,7 @@ local instructions_robot = {
     },
     {
         type = "roboport", -- 机器人指令平台
-        name = "*",
+        name = { "*" },
         exclude_names = {},
         operations = {
             charge_approach_distance = { type = "multiply", value = set_value_roboport },             -- 充电距离

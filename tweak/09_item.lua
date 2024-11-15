@@ -8,7 +8,7 @@ local set_value_fuel = settings.startup["x-custom-game-fuel-multiplier"].value
 local instructions_item = {
     {
         type = "item", -- 中间产品
-        name = "*",
+        name = { "*" },
         exclude_names = {
             "red-wire",
             "green-wire",
