@@ -1,5 +1,6 @@
 local Core = require("common.core")
 local DataTweaker = require("common.data_tweaker")
+local x_util = Core.x_util
 local log = Core.Log
 
 -- 指令表配置
@@ -104,7 +105,7 @@ log("instructions_machine modified_items: \n" .. Core:serpent_block(modified_ite
 -- 记录已修改的类型
 if (Core.x_custom_game_debug) then
     for prototype, _ in pairs(modified_items or {}) do
-        if not DataTweaker.table_contains(X_CUSTOM_GAME_MODIFIED_TYPE, prototype) then
+        if not x_util.table_contains(X_CUSTOM_GAME_MODIFIED_TYPE, prototype) then
             table.insert(X_CUSTOM_GAME_MODIFIED_TYPE, prototype)
         end
     end

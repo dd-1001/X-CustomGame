@@ -236,7 +236,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-module-performance-multiplier", -- 插件
         setting_type = "startup",
-        default_value = 5,
+        default_value = 10,
         minimum_value = 0.01,
         maximum_value = 100,
         order = "x-custom-game-108002"

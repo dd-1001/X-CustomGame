@@ -1,417 +1,371 @@
 {
-	["efficiency-module"] = {
-		art_style = "vanilla",
-		beacon_tint = {
-			primary = {
-				0,
-				1,
-				0
-			},
-			secondary = {
-				0.37000000000000002,
-				1,
-				0.37000000000000002,
-				1
-			}
-		},
-		category = "efficiency",
-		color_hint = {
-			text = "E"
-		},
-		drop_sound = {
-			aggregation = {
-				max_count = 1,
-				remove = true
-			},
-			filename = "__base__/sound/item/module-inventory-move.ogg",
-			volume = 0.8
-		},
-		effect = {
-			consumption = -0.3
-		},
-		icon = "__base__/graphics/icons/efficiency-module.png",
-		inventory_move_sound = nil,
-		localised_description = {
-			"item-description.efficiency-module"
-		},
-		name = "efficiency-module",
-		order = "c[efficiency]-a[efficiency-module-1]",
-		pick_sound = {
-			aggregation = {
-				max_count = 1,
-				remove = true
-			},
-			filename = "__base__/sound/item/module-inventory-pickup.ogg",
-			volume = 0.8
-		},
-		requires_beacon_alt_mode = false,
-		stack_size = 50,
-		subgroup = "module",
-		tier = 1,
-		type = "module",
-		weight = 20000
+	ammo = {
+		"uranium-rounds-magazine",
+		"flamethrower-ammo",
+		"rocket",
+		"explosive-rocket",
+		"atomic-bomb",
+		"piercing-shotgun-shell",
+		"cannon-shell",
+		"explosive-cannon-shell",
+		"uranium-cannon-shell",
+		"explosive-uranium-cannon-shell",
+		"artillery-shell",
+		"firearm-magazine",
+		"piercing-rounds-magazine",
+		"shotgun-shell",
+		"railgun-ammo",
+		"capture-robot-rocket",
+		"tesla-ammo"
 	},
-	["efficiency-module-2"] = {
-		art_style = "vanilla",
-		beacon_tint = {
-			primary = {
-				0,
-				1,
-				0
-			},
-			secondary = {
-				0.37000000000000002,
-				1,
-				0.37000000000000002,
-				1
-			}
-		},
-		category = "efficiency",
-		color_hint = {
-			text = "E"
-		},
-		drop_sound = nil,
-		effect = {
-			consumption = -0.4
-		},
-		icon = "__base__/graphics/icons/efficiency-module-2.png",
-		inventory_move_sound = nil,
-		localised_description = {
-			"item-description.efficiency-module"
-		},
-		name = "efficiency-module-2",
-		order = "c[efficiency]-b[efficiency-module-2]",
-		pick_sound = nil,
-		requires_beacon_alt_mode = false,
-		stack_size = 50,
-		subgroup = "module",
-		tier = 2,
-		type = "module",
-		weight = 20000
+	armor = {
+		"modular-armor",
+		"power-armor",
+		"power-armor-mk2",
+		"light-armor",
+		"heavy-armor",
+		"mech-armor"
 	},
-	["efficiency-module-3"] = {
-		art_style = "vanilla",
-		beacon_tint = {
-			primary = {
-				0,
-				1,
-				0
-			},
-			secondary = {
-				0.37000000000000002,
-				1,
-				0.37000000000000002,
-				1
-			}
-		},
-		category = "efficiency",
-		color_hint = {
-			text = "E"
-		},
-		drop_sound = nil,
-		effect = {
-			consumption = -0.5
-		},
-		icon = "__base__/graphics/icons/efficiency-module-3.png",
-		inventory_move_sound = nil,
-		localised_description = {
-			"item-description.efficiency-module"
-		},
-		name = "efficiency-module-3",
-		order = "c[efficiency]-c[efficiency-module-3]",
-		pick_sound = nil,
-		requires_beacon_alt_mode = false,
-		stack_size = 50,
-		subgroup = "module",
-		tier = 3,
-		type = "module",
-		weight = 20000
+	blueprint = {
+		"blueprint"
 	},
-	["productivity-module"] = {
-		category = "productivity",
-		color_hint = {
-			text = "P"
-		},
-		drop_sound = nil,
-		effect = {
-			consumption = 0.4,
-			pollution = 0.05,
-			productivity = 0.04,
-			speed = -0.05
-		},
-		icon = "__base__/graphics/icons/productivity-module.png",
-		inventory_move_sound = nil,
-		localised_description = {
-			"item-description.productivity-module"
-		},
-		name = "productivity-module",
-		order = "c[productivity]-a[productivity-module-1]",
-		pick_sound = nil,
-		stack_size = 50,
-		subgroup = "module",
-		tier = 1,
-		type = "module",
-		weight = 20000
+	["blueprint-book"] = {
+		"blueprint-book"
 	},
-	["productivity-module-2"] = {
-		category = "productivity",
-		color_hint = {
-			text = "P"
-		},
-		drop_sound = nil,
-		effect = {
-			consumption = 0.6,
-			pollution = 0.070000000000000009,
-			productivity = 0.06,
-			speed = -0.1
-		},
-		icon = "__base__/graphics/icons/productivity-module-2.png",
-		inventory_move_sound = nil,
-		localised_description = {
-			"item-description.productivity-module"
-		},
-		name = "productivity-module-2",
-		order = "c[productivity]-b[productivity-module-2]",
-		pick_sound = nil,
-		stack_size = 50,
-		subgroup = "module",
-		tier = 2,
-		type = "module",
-		weight = 20000
+	capsule = {
+		"raw-fish",
+		"grenade",
+		"defender-capsule",
+		"cluster-grenade",
+		"poison-capsule",
+		"slowdown-capsule",
+		"distractor-capsule",
+		"destroyer-capsule",
+		"cliff-explosives",
+		"discharge-defense-remote",
+		"artillery-targeting-remote",
+		"yumako",
+		"jellynut",
+		"yumako-mash",
+		"jelly",
+		"bioflux"
 	},
-	["productivity-module-3"] = {
-		category = "productivity",
-		color_hint = {
-			text = "P"
-		},
-		drop_sound = nil,
-		effect = {
-			consumption = 0.8,
-			pollution = 0.1,
-			productivity = 0.1,
-			speed = -0.15
-		},
-		icon = "__base__/graphics/icons/productivity-module-3.png",
-		inventory_move_sound = nil,
-		localised_description = {
-			"item-description.productivity-module"
-		},
-		name = "productivity-module-3",
-		order = "c[productivity]-c[productivity-module-3]",
-		pick_sound = nil,
-		stack_size = 50,
-		subgroup = "module",
-		tier = 3,
-		type = "module",
-		weight = 20000
+	["copy-paste-tool"] = {
+		"copy-paste-tool",
+		"cut-paste-tool"
 	},
-	["quality-module"] = {
-		category = "quality",
-		color_hint = {
-			text = "Q"
-		},
-		drop_sound = {
-			aggregation = {
-				max_count = 1,
-				remove = true
-			},
-			filename = "__base__/sound/item/module-inventory-move.ogg",
-			volume = 0.8
-		},
-		effect = {
-			quality = 0.1,
-			speed = -0.05
-		},
-		icon = "__quality__/graphics/icons/quality-module.png",
-		inventory_move_sound = nil,
-		localised_description = {
-			"item-description.quality-module"
-		},
-		name = "quality-module",
-		order = "d[quality]-a[quality-module-1]",
-		pick_sound = {
-			aggregation = {
-				max_count = 1,
-				remove = true
-			},
-			filename = "__base__/sound/item/module-inventory-pickup.ogg",
-			volume = 0.8
-		},
-		stack_size = 50,
-		subgroup = "module",
-		tier = 1,
-		type = "module",
-		weight = 20000
+	["deconstruction-item"] = {
+		"deconstruction-planner"
 	},
-	["quality-module-2"] = {
-		category = "quality",
-		color_hint = {
-			text = "Q"
-		},
-		drop_sound = nil,
-		effect = {
-			quality = 0.2,
-			speed = -0.05
-		},
-		icon = "__quality__/graphics/icons/quality-module-2.png",
-		inventory_move_sound = nil,
-		localised_description = {
-			"item-description.quality-module"
-		},
-		name = "quality-module-2",
-		order = "d[quality]-b[quality-module-2]",
-		pick_sound = nil,
-		stack_size = 50,
-		subgroup = "module",
-		tier = 2,
-		type = "module",
-		weight = 20000
+	gun = {
+		"flamethrower",
+		"tank-machine-gun",
+		"tank-flamethrower",
+		"rocket-launcher",
+		"combat-shotgun",
+		"tank-cannon",
+		"artillery-wagon-cannon",
+		"spidertron-rocket-launcher-1",
+		"spidertron-rocket-launcher-2",
+		"spidertron-rocket-launcher-3",
+		"spidertron-rocket-launcher-4",
+		"pistol",
+		"submachine-gun",
+		"vehicle-machine-gun",
+		"shotgun",
+		"railgun",
+		"teslagun"
 	},
-	["quality-module-3"] = {
-		category = "quality",
-		color_hint = {
-			text = "Q"
-		},
-		drop_sound = nil,
-		effect = {
-			quality = 0.25,
-			speed = -0.05
-		},
-		icon = "__quality__/graphics/icons/quality-module-3.png",
-		inventory_move_sound = nil,
-		localised_description = {
-			"item-description.quality-module"
-		},
-		name = "quality-module-3",
-		order = "d[quality]-c[quality-module-3]",
-		pick_sound = nil,
-		stack_size = 50,
-		subgroup = "module",
-		tier = 3,
-		type = "module",
-		weight = 20000
+	item = {
+		"item-unknown",
+		"parameter-0",
+		"parameter-1",
+		"parameter-2",
+		"parameter-3",
+		"parameter-4",
+		"parameter-5",
+		"parameter-6",
+		"parameter-7",
+		"parameter-8",
+		"parameter-9",
+		"stone-brick",
+		"wood",
+		"coal",
+		"stone",
+		"iron-ore",
+		"copper-ore",
+		"iron-plate",
+		"copper-plate",
+		"copper-cable",
+		"iron-stick",
+		"iron-gear-wheel",
+		"electronic-circuit",
+		"wooden-chest",
+		"stone-furnace",
+		"burner-mining-drill",
+		"electric-mining-drill",
+		"burner-inserter",
+		"inserter",
+		"fast-inserter",
+		"long-handed-inserter",
+		"offshore-pump",
+		"pipe",
+		"boiler",
+		"steam-engine",
+		"small-electric-pole",
+		"radar",
+		"small-lamp",
+		"pipe-to-ground",
+		"assembling-machine-1",
+		"assembling-machine-2",
+		"red-wire",
+		"green-wire",
+		"copper-wire",
+		"stone-wall",
+		"lab",
+		"steel-plate",
+		"engine-unit",
+		"electric-furnace",
+		"solid-fuel",
+		"rocket-fuel",
+		"iron-chest",
+		"big-electric-pole",
+		"medium-electric-pole",
+		"steel-furnace",
+		"gate",
+		"steel-chest",
+		"solar-panel",
+		"train-stop",
+		"rail-signal",
+		"rail-chain-signal",
+		"concrete",
+		"refined-concrete",
+		"hazard-concrete",
+		"refined-hazard-concrete",
+		"landfill",
+		"accumulator",
+		"uranium-ore",
+		"transport-belt",
+		"fast-transport-belt",
+		"express-transport-belt",
+		"bulk-inserter",
+		"assembling-machine-3",
+		"underground-belt",
+		"fast-underground-belt",
+		"express-underground-belt",
+		"splitter",
+		"lane-splitter",
+		"fast-splitter",
+		"express-splitter",
+		"loader",
+		"fast-loader",
+		"express-loader",
+		"advanced-circuit",
+		"processing-unit",
+		"logistic-robot",
+		"construction-robot",
+		"passive-provider-chest",
+		"active-provider-chest",
+		"storage-chest",
+		"buffer-chest",
+		"requester-chest",
+		"rocket-silo",
+		"cargo-landing-pad",
+		"roboport",
+		"coin",
+		"substation",
+		"beacon",
+		"storage-tank",
+		"pump",
+		"pumpjack",
+		"oil-refinery",
+		"chemical-plant",
+		"sulfur",
+		"barrel",
+		"plastic-bar",
+		"electric-engine-unit",
+		"explosives",
+		"battery",
+		"flying-robot-frame",
+		"low-density-structure",
+		"nuclear-fuel",
+		"rocket-part",
+		"electric-energy-interface",
+		"heat-interface",
+		"nuclear-reactor",
+		"uranium-235",
+		"uranium-238",
+		"centrifuge",
+		"uranium-fuel-cell",
+		"depleted-uranium-fuel-cell",
+		"heat-exchanger",
+		"steam-turbine",
+		"heat-pipe",
+		"simple-entity-with-force",
+		"simple-entity-with-owner",
+		"infinity-chest",
+		"infinity-pipe",
+		"burner-generator",
+		"linked-chest",
+		"linked-belt",
+		"empty-module-slot",
+		"land-mine",
+		"solar-panel-equipment",
+		"fission-reactor-equipment",
+		"battery-equipment",
+		"battery-mk2-equipment",
+		"belt-immunity-equipment",
+		"exoskeleton-equipment",
+		"personal-roboport-equipment",
+		"personal-roboport-mk2-equipment",
+		"night-vision-equipment",
+		"energy-shield-equipment",
+		"energy-shield-mk2-equipment",
+		"personal-laser-defense-equipment",
+		"discharge-defense-equipment",
+		"gun-turret",
+		"laser-turret",
+		"flamethrower-turret",
+		"artillery-turret",
+		"arithmetic-combinator",
+		"decider-combinator",
+		"constant-combinator",
+		"selector-combinator",
+		"power-switch",
+		"programmable-speaker",
+		"display-panel",
+		"science",
+		"rail-support",
+		"recycler",
+		"space-platform-foundation",
+		"turbo-transport-belt",
+		"turbo-underground-belt",
+		"turbo-splitter",
+		"turbo-loader",
+		"toolbelt-equipment",
+		"battery-mk3-equipment",
+		"cargo-bay",
+		"metallic-asteroid-chunk",
+		"carbonic-asteroid-chunk",
+		"oxide-asteroid-chunk",
+		"promethium-asteroid-chunk",
+		"asteroid-collector",
+		"crusher",
+		"thruster",
+		"ice",
+		"carbon",
+		"calcite",
+		"tungsten-ore",
+		"tungsten-plate",
+		"big-mining-drill",
+		"tungsten-carbide",
+		"foundry",
+		"railgun-turret",
+		"copper-bacteria",
+		"iron-bacteria",
+		"yumako-seed",
+		"jellynut-seed",
+		"nutrients",
+		"artificial-yumako-soil",
+		"overgrowth-yumako-soil",
+		"artificial-jellynut-soil",
+		"overgrowth-jellynut-soil",
+		"agricultural-tower",
+		"biochamber",
+		"biolab",
+		"captive-biter-spawner",
+		"biter-egg",
+		"pentapod-egg",
+		"carbon-fiber",
+		"stack-inserter",
+		"rocket-turret",
+		"holmium-ore",
+		"holmium-plate",
+		"lithium",
+		"lithium-plate",
+		"scrap",
+		"lightning-rod",
+		"lightning-collector",
+		"heating-tower",
+		"electromagnetic-plant",
+		"superconductor",
+		"supercapacitor",
+		"tesla-turret",
+		"quantum-processor",
+		"fusion-reactor-equipment",
+		"fusion-power-cell",
+		"fusion-reactor",
+		"fusion-generator",
+		"cryogenic-plant",
+		"spoilage",
+		"ice-platform",
+		"foundation",
+		"space-platform-hub",
+		"tree-seed",
+		"water-barrel",
+		"sulfuric-acid-barrel",
+		"crude-oil-barrel",
+		"heavy-oil-barrel",
+		"light-oil-barrel",
+		"petroleum-gas-barrel",
+		"lubricant-barrel",
+		"fluoroketone-cold-barrel",
+		"fluoroketone-hot-barrel"
 	},
-	["speed-module"] = {
-		art_style = "vanilla",
-		beacon_tint = {
-			primary = {
-				0.44100000000000001,
-				0.71399999999999997,
-				1,
-				1
-			},
-			secondary = {
-				0.38799999999999999,
-				0.97599999999999998,
-				1,
-				1
-			}
-		},
-		category = "speed",
-		color_hint = {
-			text = "S"
-		},
-		drop_sound = nil,
-		effect = {
-			consumption = 0.5,
-			quality = -0.1,
-			speed = 0.2
-		},
-		icon = "__base__/graphics/icons/speed-module.png",
-		inventory_move_sound = nil,
-		localised_description = {
-			"item-description.speed-module"
-		},
-		name = "speed-module",
-		order = "a[speed]-a[speed-module-1]",
-		pick_sound = nil,
-		requires_beacon_alt_mode = false,
-		stack_size = 50,
-		subgroup = "module",
-		tier = 1,
-		type = "module",
-		weight = 20000
+	["item-with-entity-data"] = {
+		"car",
+		"locomotive",
+		"cargo-wagon",
+		"fluid-wagon",
+		"artillery-wagon",
+		"tank",
+		"spidertron"
 	},
-	["speed-module-2"] = {
-		art_style = "vanilla",
-		beacon_tint = {
-			primary = {
-				0.44100000000000001,
-				0.71399999999999997,
-				1,
-				1
-			},
-			secondary = {
-				0.38799999999999999,
-				0.97599999999999998,
-				1,
-				1
-			}
-		},
-		category = "speed",
-		color_hint = {
-			text = "S"
-		},
-		drop_sound = nil,
-		effect = {
-			consumption = 0.6,
-			quality = -0.15,
-			speed = 0.3
-		},
-		icon = "__base__/graphics/icons/speed-module-2.png",
-		inventory_move_sound = nil,
-		localised_description = {
-			"item-description.speed-module"
-		},
-		name = "speed-module-2",
-		order = "a[speed]-b[speed-module-2]",
-		pick_sound = nil,
-		requires_beacon_alt_mode = false,
-		stack_size = 50,
-		subgroup = "module",
-		tier = 2,
-		type = "module",
-		weight = 20000
+	module = {
+		"speed-module",
+		"speed-module-2",
+		"speed-module-3",
+		"efficiency-module",
+		"efficiency-module-2",
+		"efficiency-module-3",
+		"productivity-module",
+		"productivity-module-2",
+		"productivity-module-3",
+		"quality-module",
+		"quality-module-2",
+		"quality-module-3"
 	},
-	["speed-module-3"] = {
-		art_style = "vanilla",
-		beacon_tint = {
-			primary = {
-				0.44100000000000001,
-				0.71399999999999997,
-				1,
-				1
-			},
-			secondary = {
-				0.38799999999999999,
-				0.97599999999999998,
-				1,
-				1
-			}
-		},
-		category = "speed",
-		color_hint = {
-			text = "S"
-		},
-		drop_sound = nil,
-		effect = {
-			consumption = 0.7,
-			quality = -0.25,
-			speed = 0.5
-		},
-		icon = "__base__/graphics/icons/speed-module-3.png",
-		inventory_move_sound = nil,
-		localised_description = {
-			"item-description.speed-module"
-		},
-		name = "speed-module-3",
-		order = "a[speed]-c[speed-module-3]",
-		pick_sound = nil,
-		requires_beacon_alt_mode = false,
-		stack_size = 50,
-		subgroup = "module",
-		tier = 3,
-		type = "module",
-		weight = 20000
+	["rail-planner"] = {
+		"rail",
+		"rail-ramp"
+	},
+	["repair-tool"] = {
+		"repair-pack"
+	},
+	["selection-tool"] = {
+		"selection-tool"
+	},
+	["space-platform-starter-pack"] = {
+		"space-platform-starter-pack"
+	},
+	["spidertron-remote"] = {
+		"spidertron-remote"
+	},
+	tool = {
+		"automation-science-pack",
+		"logistic-science-pack",
+		"chemical-science-pack",
+		"military-science-pack",
+		"production-science-pack",
+		"utility-science-pack",
+		"space-science-pack",
+		"metallurgic-science-pack",
+		"electromagnetic-science-pack",
+		"agricultural-science-pack",
+		"cryogenic-science-pack",
+		"promethium-science-pack"
+	},
+	["upgrade-item"] = {
+		"upgrade-planner"
 	}
 }

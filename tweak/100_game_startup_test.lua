@@ -1,6 +1,7 @@
 local Core = require("common.core")
 local DataTweaker = require("common.data_tweaker")
 local log = Core.Log
+local x_util = Core.x_util
 
 log("\n\n\n100_game_startup_test start\n\n\n")
 
@@ -32,6 +33,9 @@ for _, protype in pairs(X_CUSTOM_GAME_MODIFIED_TYPE) do
 end
 log("\nNot modified type:\n" .. Core:serpent_block(unModified_type))
 
+-- 查找实例
+-- local data_raw_stack_size = x_util.find_with_keyword(data.raw, "stack_size")
+-- log("\ndata_raw_stack_size:\n".. Core:serpent_block(data_raw_stack_size))
 
 
 log("\n\n\n100_game_startup_test end\n\n\n")

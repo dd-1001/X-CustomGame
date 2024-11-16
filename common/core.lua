@@ -2,6 +2,7 @@ local Core = {
     lib_core_util = require("__core__/lualib/util"),
     lib_serpent = require("common/serpent"),
     x_string = require("common.x_string"),
+    x_util = require("common.x_util"),
     -- serpent_block_format = { indent = "\t", comment = false, maxlevel = 2 },
     serpent_block_format = { indent = "\t", comment = false },
     serpent_line_format = { sortkeys = true, comment = false },

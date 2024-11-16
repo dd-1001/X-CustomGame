@@ -1,21 +1,12 @@
 local Core = require("core")
 local deepcopy = Core.lib_core_util.table.deepcopy
 local x_string = Core.x_string
+local x_util = Core.x_util
 local log = Core.Log
 
 local DataTweaker = {}
 
 setmetatable(DataTweaker, DataTweaker)
-
--- 帮助函数：检查一个表是否包含特定值
-function DataTweaker.table_contains(table, element)
-    for _, value in pairs(table) do
-        if value == element then
-            return true
-        end
-    end
-    return false
-end
 
 -- 辅助函数：解析嵌套字段路径
 local function resolve_nested_field(table, path)
@@ -57,7 +48,7 @@ function DataTweaker.modify_data(target_table, instructions)
 
         for _, target_name in pairs(instruction.name) do
             for name_in_table, prototype in pairs(target_table[target_type] or {}) do
-                if (target_name == "*" or target_name == name_in_table) and not DataTweaker.table_contains(exclude_names, name_in_table) then
+                if (target_name == "*" or target_name == name_in_table) and not x_util.table_contains(exclude_names, name_in_table) then
                     for field, operation in pairs(instruction.operations) do
                         local parent, last_field = resolve_nested_field(prototype, field)
 
@@ -106,7 +97,7 @@ function DataTweaker.modify_data(target_table, instructions)
 
                             -- 记录修改过的项
                             modified_items[target_type] = modified_items[target_type] or {}
-                            if not DataTweaker.table_contains(modified_items[target_type], name_in_table) then
+                            if not x_util.table_contains(modified_items[target_type], name_in_table) then
                                 table.insert(modified_items[target_type], name_in_table)
                             end
 
