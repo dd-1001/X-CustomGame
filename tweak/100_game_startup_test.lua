@@ -34,8 +34,15 @@ end
 log("\nNot modified type:\n" .. Core:serpent_block(unModified_type))
 
 -- 查找实例
--- local data_raw_stack_size = x_util.find_with_keyword(data.raw, "stack_size")
--- log("\ndata_raw_stack_size:\n".. Core:serpent_block(data_raw_stack_size))
+-- local function filter(tbl)
+--     if tbl.module_slots then
+--         return true
+--     else
+--         return false
+--     end
+-- end
+-- local data_raw_filter = x_util.find_with_filter(data.raw, filter)
+-- log("\ndata_raw_filter:\n" .. Core:serpent_block(data_raw_filter))
 
 
 log("\n\n\n100_game_startup_test end\n\n\n")

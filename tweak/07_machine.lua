@@ -10,6 +10,7 @@ local set_value_assembling_machine = settings.startup["x-custom-game-assembling-
 local set_value_agricultural_tower = settings.startup["x-custom-game-agricultural-tower-performance-multiplier"].value
 local set_value_lab = settings.startup["x-custom-game-lab-performance-multiplier"].value
 local set_value_lightning_attractor = settings.startup["x-custom-game-lightning-attractor-performance-multiplier"].value
+local set_value_rocket_silo = settings.startup["x-custom-game-rocket-silo-performance-multiplier"].value
 local instructions_machine = {
     {
         type = "mining-drill", -- 采矿机
@@ -92,6 +93,18 @@ local instructions_machine = {
             ["energy_source.drain"] = { type = "multiply", value = set_value_lightning_attractor },             -- 单位时间排放能量
             ["energy_source.output_flow_limit"] = { type = "multiply", value = set_value_lightning_attractor }, -- 输出能量限制
             range_elongation = { type = "multiply", value = set_value_lightning_attractor },                    -- 范围延长
+        }
+    },
+    {
+        type = "rocket-silo", -- 火箭发射井
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            active_energy_usage = { type = "division", value = set_value_rocket_silo },                                                     -- 激活时耗能
+            energy_usage = { type = "division", value = set_value_rocket_silo },                                                            -- 耗能
+            crafting_speed = { type = "multiply", value = set_value_rocket_silo },                                                          -- 制作速度
+            logistic_trash_inventory_size = { type = "multiply", value = set_value_rocket_silo, min_value = 10, max_value = 80 },           -- 物流回收库存大小
+            to_be_inserted_to_rocket_inventory_size = { type = "multiply", value = set_value_rocket_silo, min_value = 10, max_value = 80 }, -- 运载仓库存大小
         }
     }
 }

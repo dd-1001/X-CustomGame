@@ -6,6 +6,8 @@ local log = Core.Log
 -- 指令表配置
 local set_value_beacon = settings.startup["x-custom-game-beacon-performance-multiplier"].value
 local set_value_module = settings.startup["x-custom-game-module-performance-multiplier"].value
+local set_value_module_slots = settings.startup["x-custom-game-module-slots-multiplier"].value
+local set_value_module_slots_allowed_flag = settings.startup["x-custom-game-module-slot-all-type-allowed-flags"].value
 local instructions_module = {
     {
         type = "beacon", -- 插件效果分享塔
@@ -60,6 +62,51 @@ local instructions_module = {
 }
 
 
+-- 查找含有module_slots的原型
+local function filter_module_slots(tbl)
+    return tbl.module_slots ~= nil
+end
+local data_raw_module_slots = x_util.find_with_filter(data.raw, filter_module_slots)
+-- log("\ndata_raw_module_slots:\n" .. Core:serpent_block(data_raw_module_slots))
+
+-- 组装修改module_slots属性的指令
+for prototype, protonames in pairs(data_raw_module_slots) do
+    for _, protoname in ipairs(protonames) do
+        local instructions_template = {}
+        instructions_template["type"] = prototype
+        instructions_template["name"] = { protoname }
+        instructions_template["operations"] = {
+            module_slots = { type = "multiply", value = set_value_module_slots, max_value = 30 }, -- 模块槽位数量
+        }
+
+        table.insert(instructions_module, instructions_template)
+    end
+end
+-- log("\ninstructions_module:\n" .. Core:serpent_block(instructions_module))
+
+if set_value_module_slots_allowed_flag then
+    -- 查找含有allowed_effects的原型
+    local function filter_allowed_effects(tbl)
+        return tbl.allowed_effects ~= nil
+    end
+    local data_raw_allowed_effects = x_util.find_with_filter(data.raw, filter_allowed_effects)
+    -- log("\ndata_raw_allowed_effects:\n" .. Core:serpent_block(data_raw_allowed_effects))
+
+    -- 组装修改allowed_effects属性的指令
+    for prototype, protonames in pairs(data_raw_allowed_effects) do
+        for _, protoname in ipairs(protonames) do
+            local instructions_template = {}
+            instructions_template["type"] = prototype
+            instructions_template["name"] = { protoname }
+            instructions_template["operations"] = {
+                allowed_effects = { type = "set", value = { "speed", "productivity", "consumption", "pollution", "quality" } }, -- 允许所有类型的插件
+            }
+
+            table.insert(instructions_module, instructions_template)
+        end
+    end
+    -- log("\ninstructions_module:\n" .. Core:serpent_block(instructions_module))
+end
 
 -- 调用修改数据函数
 local modified_items = DataTweaker.modify_data(data.raw, instructions_module)

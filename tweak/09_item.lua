@@ -6,18 +6,42 @@ local log = Core.Log
 -- 指令表配置
 local set_value_stack_size = settings.startup["x-custom-game-stack-size-multiplier"].value
 local set_value_fuel = settings.startup["x-custom-game-fuel-multiplier"].value
+local set_value_lamp = settings.startup["x-custom-game-lamp-performance-multiplier"].value
+local set_value_repair_tool = settings.startup["x-custom-game-repair-tool-performance-multiplier"].value
+local set_value_radar = settings.startup["x-custom-game-radar-performance-multiplier"].value
 local instructions_item = {
-    -- {
-    --     type = "item",
-    --     name = { "*" },
-    --     exclude_names = {},
-    --     operations = {
-    --         -- stack_size = { type = "multiply", value = set_value_stack_size },             -- 堆叠大小
-    --         fuel_acceleration_multiplier = { type = "multiply", value = set_value_fuel }, -- 燃料加速乘数
-    --         fuel_top_speed_multiplier = { type = "multiply", value = set_value_fuel },    -- 燃料最高速度倍增
-    --         fuel_value = { type = "multiply", value = set_value_fuel },                   -- 燃料值
-    --     }
-    -- }
+    {
+        type = "lamp", --灯
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            energy_usage_per_tick = { type = "division", value = set_value_lamp },                                   -- 耗能
+            ["light.intensity"] = { type = "multiply", value = set_value_lamp, min_value = 0.01, max_value = 0.99 }, -- 亮度
+            ["light.size"] = { type = "multiply", value = set_value_lamp },                                          -- 光圈半径
+        }
+    },
+    {
+        type = "repair-tool", --修理包
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            speed = { type = "multiply", value = set_value_repair_tool },      -- 修理速度
+            durability = { type = "multiply", value = set_value_repair_tool }, -- 耐久度
+        }
+    },
+    {
+        type = "radar", --雷达
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            energy_per_nearby_scan = { type = "division", value = set_value_radar },                                -- 扫描耗能
+            energy_per_sector = { type = "division", value = set_value_radar },                                     -- 扫描扇区耗能
+            energy_usage = { type = "division", value = set_value_radar },                                          -- 耗能
+            max_distance_of_nearby_sector_revealed = { type = "multiply", value = set_value_radar, max_value = 9 }, -- 该雷达不断显示的区域半径
+            max_distance_of_sector_revealed = { type = "multiply", value = set_value_radar, max_value = 36 },       -- 扫描扇区的最大距离
+            rotation_speed = { type = "multiply", value = set_value_radar },                                        -- 旋转速度
+        }
+    }
 }
 
 -- 查找含有fuel_value属性的原型
@@ -32,11 +56,10 @@ for prototype, protonames in pairs(data_raw_fuel_value) do
     for _, protoname in ipairs(protonames) do
         local instructions_template = {}
         instructions_template["type"] = prototype
-        instructions_template["name"] = {}
-        instructions_template["name"][1] = protoname
+        instructions_template["name"] = { protoname }
         instructions_template["operations"] = {
             fuel_acceleration_multiplier = { type = "multiply", value = set_value_fuel }, -- 燃料加速乘数
-            fuel_top_speed_multiplier = { type = "multiply", value = set_value_fuel },    -- 燃料最高速度倍增
+            fuel_top_speed_multiplier = { type = "multiply", value = set_value_fuel },    -- 燃料最高速度加成
             fuel_value = { type = "multiply", value = set_value_fuel },                   -- 燃料值
         }
 
@@ -69,8 +92,7 @@ for prototype, protonames in pairs(data_raw_stack_size) do
         if not x_util.table_contains(stack_size_exclude_names, protoname) then
             local instructions_template = {}
             instructions_template["type"] = prototype
-            instructions_template["name"] = {}
-            instructions_template["name"][1] = protoname
+            instructions_template["name"] = { protoname }
             instructions_template["operations"] = {
                 stack_size = { type = "multiply", value = set_value_stack_size }, -- 堆叠大小
             }

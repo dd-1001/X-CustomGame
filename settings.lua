@@ -54,6 +54,33 @@ data:extend({
     },
     {
         type = "double-setting",
+        name = "x-custom-game-locomotive-performance-multiplier", -- 内燃机车
+        setting_type = "startup",
+        default_value = 1.5,
+        minimum_value = 0.1,
+        maximum_value = 10,
+        order = "x-custom-game-102002"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-car-performance-multiplier", -- 车
+        setting_type = "startup",
+        default_value = 1.5,
+        minimum_value = 0.1,
+        maximum_value = 10,
+        order = "x-custom-game-102003"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-spider-vehicle-performance-multiplier", -- 蜘蛛机甲
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.1,
+        maximum_value = 10,
+        order = "x-custom-game-102004"
+    },
+    {
+        type = "double-setting",
         name = "x-custom-game-inserter-performance-multiplier", -- 机械臂
         setting_type = "startup",
         default_value = 4,
@@ -225,6 +252,22 @@ data:extend({
     },
     {
         type = "double-setting",
+        name = "x-custom-game-rocket-silo-performance-multiplier", -- 火箭发射井
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 0.01,
+        maximum_value = 100,
+        order = "x-custom-game-107007"
+    },
+
+
+
+
+
+
+
+    {
+        type = "double-setting",
         name = "x-custom-game-beacon-performance-multiplier", -- 插件效果分享塔
         setting_type = "startup",
         default_value = 20,
@@ -241,17 +284,21 @@ data:extend({
         maximum_value = 100,
         order = "x-custom-game-108002"
     },
-
-
-
-
-
+    {
+        type = "double-setting",
+        name = "x-custom-game-module-slots-multiplier", -- 插件槽数量
+        setting_type = "startup",
+        default_value = 30,
+        minimum_value = 1,
+        maximum_value = 30,
+        order = "x-custom-game-108004"
+    },
     {
         type = "bool-setting",
         name = "x-custom-game-module-slot-all-type-allowed-flags", -- 插件槽允许所有类型的插件
         setting_type = "startup",
         default_value = true,
-        order = "x-custom-game-108003"
+        order = "x-custom-game-108005"
     },
     {
         type = "double-setting",
@@ -272,12 +319,43 @@ data:extend({
         order = "x-custom-game-109002"
     },
     {
+        type = "double-setting",
+        name = "x-custom-game-lamp-performance-multiplier", -- 灯
+        setting_type = "startup",
+        default_value = 3,
+        minimum_value = 0.5,
+        maximum_value = 10,
+        order = "x-custom-game-109003"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-repair-tool-performance-multiplier", -- 修理包
+        setting_type = "startup",
+        default_value = 3,
+        minimum_value = 0.5,
+        maximum_value = 10,
+        order = "x-custom-game-109004"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-radar-performance-multiplier", -- 雷达
+        setting_type = "startup",
+        default_value = 5,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-109005"
+    },
+    {
         type = "bool-setting",
         name = "x_custom_game_infinite_resource", -- 无限矿石
         setting_type = "startup",
         default_value = true,
         order = "x-custom-game-110001"
     },
+
+
+
+
 
 
 
@@ -300,84 +378,12 @@ data:extend({
     },
     {
         type = "double-setting",
-        name = "x-custom-game-locomotive-performance-multiplier", -- 机车
-        setting_type = "startup",
-        default_value = 0.5,
-        minimum_value = 0.01,
-        maximum_value = 100,
-        order = "x-custom-game-109001"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-repair-tool-performance-multiplier", -- 修理工具
-        setting_type = "startup",
-        default_value = 10,
-        minimum_value = 0.01,
-        maximum_value = 100,
-        order = "x-custom-game-109002"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-car-performance-multiplier", -- 车(包括坦克)
-        setting_type = "startup",
-        default_value = 2,
-        minimum_value = 0.1,
-        maximum_value = 10,
-        order = "x-custom-game-109003"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-spider-vehicle-performance-multiplier", -- 蜘蛛机甲
-        setting_type = "startup",
-        default_value = 2,
-        minimum_value = 0.1,
-        maximum_value = 10,
-        order = "x-custom-game-109004"
-    },
-    {
-        type = "int-setting",
-        name = "x-custom-game-number-of-module-slots", -- 插槽数量
-        setting_type = "startup",
-        default_value = 30,
-        minimum_value = 1,
-        maximum_value = 30,
-        order = "x-custom-game-109006"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-rocket-silo-performance-multiplier", -- 火箭发射井
-        setting_type = "startup",
-        default_value = 10,
-        minimum_value = 0.01,
-        maximum_value = 100,
-        order = "x-custom-game-109010"
-    },
-    {
-        type = "double-setting",
         name = "x-custom-game-satellite-performance-multiplier", -- 卫星
         setting_type = "startup",
         default_value = 50,
         minimum_value = 0.01,
         maximum_value = 1000,
         order = "x-custom-game-109011"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-radar-performance-multiplier", -- 雷达
-        setting_type = "startup",
-        default_value = 5,
-        minimum_value = 0.01,
-        maximum_value = 10,
-        order = "x-custom-game-109012"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-lamp-performance-multiplier", -- 灯
-        setting_type = "startup",
-        default_value = 3,
-        minimum_value = 0.5,
-        maximum_value = 10,
-        order = "x-custom-game-109013"
     },
     {
         type = "double-setting",
@@ -588,39 +594,3 @@ data:extend({
     }
 })
 
---[[ 测试
-data:extend(
-{
-    type = "bool-setting",
-    name = "x-custom-game-test-setting1",
-    setting_type = "startup",
-    default_value = true,
-    order = "1001"
-},
-{
-    type = "int-setting",
-    name = "x-custom-game-test-setting2",
-    setting_type = "startup",
-    default_value = 1,
-    minimum_value = 0,
-    maximum_value = 100,
-    order = "1002"
-},
-{
-    type = "double-setting",
-    name = "x-custom-game-test-setting3",
-    setting_type = "startup",
-    default_value = 1.0,
-    minimum_value = 0.0,
-    maximum_value = 100.0,
-    order = "1003"
-},
-{
-    type = "string-setting",
-    name = "x-custom-game-test-setting4",
-    setting_type = "startup",
-    default_value = "option-02",
-    allowed_values = {"option-01", "option-02", "option-03"},
-    order = "1004"
-})
-]]
