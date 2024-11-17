@@ -255,15 +255,55 @@ data:extend({
         name = "x-custom-game-rocket-silo-performance-multiplier", -- 火箭发射井
         setting_type = "startup",
         default_value = 10,
-        minimum_value = 0.01,
+        minimum_value = 0.1,
         maximum_value = 100,
         order = "x-custom-game-107007"
     },
-
-
-
-
-
+    {
+        type = "double-setting",
+        name = "x-custom-game-cargo-landing-pad-performance-multiplier", -- 物流接驳站
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 0.1,
+        maximum_value = 100,
+        order = "x-custom-game-107007"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-cargo-bay-performance-multiplier", -- 货舱
+        setting_type = "startup",
+        default_value = 3,
+        minimum_value = 0.5,
+        maximum_value = 10,
+        order = "x-custom-game-107008"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-asteroid-collector-performance-multiplier", -- 星岩抓取臂
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 0.1,
+        maximum_value = 10,
+        order = "x-custom-game-107009"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-thruster-performance-multiplier", -- 推进器
+        setting_type = "startup",
+        default_value = 1.5,
+        minimum_value = 0.5,
+        maximum_value = 10,
+        order = "x-custom-game-107010"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-space-platform-hub-performance-multiplier", -- 太空平台枢纽
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.5,
+        maximum_value = 10,
+        order = "x-custom-game-107011"
+    },
 
 
     {

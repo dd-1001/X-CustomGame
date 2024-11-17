@@ -11,6 +11,11 @@ local set_value_agricultural_tower = settings.startup["x-custom-game-agricultura
 local set_value_lab = settings.startup["x-custom-game-lab-performance-multiplier"].value
 local set_value_lightning_attractor = settings.startup["x-custom-game-lightning-attractor-performance-multiplier"].value
 local set_value_rocket_silo = settings.startup["x-custom-game-rocket-silo-performance-multiplier"].value
+local set_value_cargo_landing_pad = settings.startup["x-custom-game-cargo-landing-pad-performance-multiplier"].value
+local set_value_cargo_bay = settings.startup["x-custom-game-cargo-bay-performance-multiplier"].value
+local set_value_asteroid_collector = settings.startup["x-custom-game-asteroid-collector-performance-multiplier"].value
+local set_value_thruster = settings.startup["x-custom-game-thruster-performance-multiplier"].value
+local set_value_space_platform_hub = settings.startup["x-custom-game-space-platform-hub-performance-multiplier"].value
 local instructions_machine = {
     {
         type = "mining-drill", -- 采矿机
@@ -105,6 +110,70 @@ local instructions_machine = {
             crafting_speed = { type = "multiply", value = set_value_rocket_silo },                                                          -- 制作速度
             logistic_trash_inventory_size = { type = "multiply", value = set_value_rocket_silo, min_value = 10, max_value = 80 },           -- 物流回收库存大小
             to_be_inserted_to_rocket_inventory_size = { type = "multiply", value = set_value_rocket_silo, min_value = 10, max_value = 80 }, -- 运载仓库存大小
+        }
+    },
+    {
+        type = "cargo-landing-pad", -- 物流接驳站
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            inventory_size = { type = "multiply", value = set_value_cargo_landing_pad, min_value = 40, max_value = 200 },      -- 库存大小
+            radar_range = { type = "multiply", value = set_value_cargo_landing_pad, min_value = 4, max_value = 9 },            -- 雷达范围
+            trash_inventory_size = { type = "multiply", value = set_value_cargo_landing_pad, min_value = 10, max_value = 80 }, -- 物流库存大小
+        }
+    },
+    {
+        type = "cargo-bay", -- 货舱
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            inventory_size_bonus = { type = "multiply", value = set_value_cargo_bay, min_value = 10, max_value = 60 }, -- 库存大小
+        }
+    },
+    {
+        type = "asteroid-collector", -- 星岩抓取臂
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            arm_angular_speed_cap_base = { type = "multiply", value = set_value_asteroid_collector, min_value = 0.1, max_value = 2 },               -- 臂式角速度上限
+            arm_angular_speed_cap_quality_scaling = { type = "multiply", value = set_value_asteroid_collector, min_value = 0.01, max_value = 0.5 }, -- 臂式角速度品质缩放比例
+            arm_count_base = { type = "multiply", value = set_value_asteroid_collector, min_value = 1, max_value = 9 },                             -- 臂数量
+            arm_count_quality_scaling = { type = "multiply", value = set_value_asteroid_collector, min_value = 1, max_value = 6 },                  -- 臂数量品质缩放比例
+            arm_energy_usage = { type = "division", value = set_value_asteroid_collector },                                                         -- 臂能量消耗
+            arm_inventory_size = { type = "multiply", value = set_value_asteroid_collector, min_value = 1, max_value = 10 },                        -- 臂库存大小
+            arm_slow_energy_usage = { type = "division", value = set_value_asteroid_collector },                                                    -- 臂低能耗耗能
+            arm_speed_base = { type = "multiply", value = set_value_asteroid_collector, min_value = 1, max_value = 2 },                             -- 臂速度
+            arm_speed_quality_scaling = { type = "multiply", value = set_value_asteroid_collector, min_value = 0.01, max_value = 0.5 },             -- 臂速度品质缩放比例
+            collection_radius = { type = "multiply", value = set_value_asteroid_collector, min_value = 7.5, max_value = 30 },                       -- 收集半径
+            deposit_radius = { type = "multiply", value = set_value_asteroid_collector, min_value = 1.5, max_value = 6 },                           -- 存入半径
+            energy_usage_quality_scaling = { type = "multiply", value = set_value_asteroid_collector, min_value = 0.05, max_value = 1 },            -- 耗能品质缩放比例
+            head_collection_radius = { type = "multiply", value = set_value_asteroid_collector, min_value = 0.6, max_value = 2.4 },                 -- 头部采集半径
+            inventory_size = { type = "multiply", value = set_value_asteroid_collector },                                                           -- 库存大小
+            inventory_size_quality_increase = { type = "multiply", value = set_value_asteroid_collector, min_value = 1, max_value = 10 },           -- 库存大小品质增加
+            passive_energy_usage = { type = "division", value = set_value_asteroid_collector },                                                     -- 被动能量消耗
+        }
+    },
+    {
+        type = "thruster", -- 推进器
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            ["fuel_fluid_box.volume"] = { type = "multiply", value = set_value_thruster },        -- 燃料库存
+            ["max_performance.effectivity"] = { type = "multiply", value = set_value_thruster },  -- 最大性能.效率
+            ["max_performance.fluid_usage"] = { type = "division", value = set_value_thruster },  -- 最大性能.燃料用量
+            ["max_performance.fluid_volume"] = { type = "division", value = set_value_thruster }, -- 最大性能.燃料体积
+            ["min_performance.effectivity"] = { type = "multiply", value = set_value_thruster },  -- 最小性能.效率
+            ["min_performance.fluid_usage"] = { type = "division", value = set_value_thruster },  -- 最小性能.燃料用量
+            ["min_performance.fluid_volume"] = { type = "division", value = set_value_thruster }, -- 最小性能.燃料体积
+        }
+    },
+    {
+        type = "space-platform-hub", -- 太空平台枢纽
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            inventory_size = { type = "multiply", value = set_value_space_platform_hub },                 -- 库存大小
+            platform_repair_speed_modifier = { type = "multiply", value = set_value_space_platform_hub }, -- 平台修复速度
         }
     }
 }
