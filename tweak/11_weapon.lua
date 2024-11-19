@@ -9,7 +9,7 @@ local set_value_ammo_turret = settings.startup["x-custom-game-ammo-turret-perfor
 local set_value_electric_turret = settings.startup["x-custom-game-electric-turret-performance-multiplier"].value
 local set_value_fluid_turret = settings.startup["x-custom-game-fluid-turret-performance-multiplier"].value
 local set_value_artillery_turret = settings.startup["x-custom-game-artillery-turret-performance-multiplier"].value
-local instructions_gun = {
+local instructions_weapon = {
     {
         type = "gun", -- 枪
         name = { "*" },
@@ -92,8 +92,8 @@ local instructions_gun = {
 
 
 -- 调用修改数据函数
-local modified_items = DataTweaker.modify_data(data.raw, instructions_gun)
-log("instructions_gun modified_items: \n" .. Core:serpent_block(modified_items))
+local modified_items = DataTweaker.modify_data(data.raw, instructions_weapon)
+log("instructions_weapon modified_items: \n" .. Core:serpent_block(modified_items))
 
 -- 记录已修改的类型
 if (Core.x_custom_game_debug) then

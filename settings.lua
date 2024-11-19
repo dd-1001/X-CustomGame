@@ -435,8 +435,33 @@ data:extend({
         maximum_value = 10,
         order = "x-custom-game-111005"
     },
-
-
+    {
+        type = "double-setting",
+        name = "x-custom-game-ammo-performance-multiplier", -- 弹药
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-112001"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-projectile-performance-multiplier", -- 抛射弹药(手雷、胶囊、抛射弹药)
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-112002"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-land-mine-performance-multiplier", -- 地雷
+        setting_type = "startup",
+        default_value = 3,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-112003"
+    },
 
 
 
@@ -467,51 +492,7 @@ data:extend({
         order = "x-custom-game-109011"
     },
     
-    {
-        type = "double-setting",
-        name = "x-custom-game-land-mine-performance-multiplier", -- 地雷
-        setting_type = "startup",
-        default_value = 2,
-        minimum_value = 0.01,
-        maximum_value = 10,
-        order = "x-custom-game-110002"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-ammo-performance-multiplier", -- 弹药
-        setting_type = "startup",
-        default_value = 2,
-        minimum_value = 0.01,
-        maximum_value = 10,
-        order = "x-custom-game-110003"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-grenade-performance-multiplier", -- 手雷
-        setting_type = "startup",
-        default_value = 2,
-        minimum_value = 0.01,
-        maximum_value = 10,
-        order = "x-custom-game-111001"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-capsule-performance-multiplier", -- 胶囊
-        setting_type = "startup",
-        default_value = 2,
-        minimum_value = 0.01,
-        maximum_value = 10,
-        order = "x-custom-game-111002"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-combat-robot-performance-multiplier", -- 战斗机器人
-        setting_type = "startup",
-        default_value = 2,
-        minimum_value = 0.01,
-        maximum_value = 10,
-        order = "x-custom-game-111003"
-    },
+    
     {
         type = "double-setting",
         name = "x-custom-game-armor-performance-multiplier", -- 护甲
