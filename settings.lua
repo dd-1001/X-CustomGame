@@ -304,8 +304,6 @@ data:extend({
         maximum_value = 10,
         order = "x-custom-game-107011"
     },
-
-
     {
         type = "double-setting",
         name = "x-custom-game-beacon-performance-multiplier", -- 插件效果分享塔
@@ -392,8 +390,51 @@ data:extend({
         default_value = true,
         order = "x-custom-game-110001"
     },
-
-
+    {
+        type = "double-setting",
+        name = "x-custom-game-gun-performance-multiplier", -- 枪
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-111001"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-ammo-turret-performance-multiplier", -- 机枪炮塔
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-111002"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-electric-turret-performance-multiplier", -- 激光炮塔
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-111003"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-fluid-turret-performance-multiplier", -- 火焰炮塔
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-111004"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-artillery-turret-performance-multiplier", -- 重炮炮塔
+        setting_type = "startup",
+        default_value = 3,
+        minimum_value = 0.01,
+        maximum_value = 10,
+        order = "x-custom-game-111005"
+    },
 
 
 
@@ -425,15 +466,7 @@ data:extend({
         maximum_value = 1000,
         order = "x-custom-game-109011"
     },
-    {
-        type = "double-setting",
-        name = "x-custom-game-gun-performance-multiplier", -- 枪
-        setting_type = "startup",
-        default_value = 2,
-        minimum_value = 0.01,
-        maximum_value = 10,
-        order = "x-custom-game-110001"
-    },
+    
     {
         type = "double-setting",
         name = "x-custom-game-land-mine-performance-multiplier", -- 地雷
@@ -513,42 +546,7 @@ data:extend({
         maximum_value = 10,
         order = "x-custom-game-114001"
     },
-    {
-        type = "double-setting",
-        name = "x-custom-game-ammo-turret-performance-multiplier", -- 弹药炮塔
-        setting_type = "startup",
-        default_value = 5,
-        minimum_value = 0.01,
-        maximum_value = 10,
-        order = "x-custom-game-114002"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-electric-turret-performance-multiplier", -- 电炮塔
-        setting_type = "startup",
-        default_value = 5,
-        minimum_value = 0.01,
-        maximum_value = 10,
-        order = "x-custom-game-114003"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-fluid-turret-performance-multiplier", -- 流体炮塔
-        setting_type = "startup",
-        default_value = 5,
-        minimum_value = 0.01,
-        maximum_value = 10,
-        order = "x-custom-game-114004"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-artillery-turret-performance-multiplier", -- 重炮炮塔
-        setting_type = "startup",
-        default_value = 5,
-        minimum_value = 0.01,
-        maximum_value = 10,
-        order = "x-custom-game-114005"
-    },
+    
     {
         type = "double-setting",
         name = "x-custom-game-character-distance-multiplier", -- 角色距离相关

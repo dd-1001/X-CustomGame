@@ -21,7 +21,9 @@ local function resolve_nested_field(table, path)
             current_value = current_value[field]
             index = tonumber(index)
             parent, last_field = current_value, index
-            current_value = current_value[index]
+            if current_value then
+                current_value = current_value[index]
+            end
         else
             -- 普通字段（不带索引的部分，如 `field_name`）
             parent, last_field = current_value, part
