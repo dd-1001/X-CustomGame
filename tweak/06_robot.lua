@@ -42,8 +42,8 @@ local instructions_robot = {
             charging_energy = { type = "multiply", value = set_value_roboport },                      -- 充电最大功率
             ["energy_source.buffer_capacity"] = { type = "multiply", value = set_value_roboport },    -- 充电站缓存电量
             ["energy_source.input_flow_limit"] = { type = "multiply", value = set_value_roboport },   -- 充电站电量输入限制
-            construction_radius = { type = "multiply", value = set_value_roboport },                  -- 建设机器人施工半径
-            logistics_radius = { type = "multiply", value = set_value_roboport },                     -- 物流机器人物流半径
+            construction_radius = { type = "multiply", value = set_value_roboport, max_value = 256 }, -- 建设机器人施工半径
+            logistics_radius = { type = "multiply", value = set_value_roboport, max_value = 128 },    -- 物流机器人物流半径
             material_slots_count = { type = "multiply", value = set_value_roboport, max_value = 30 }, -- 修理包槽位数量
             robot_slots_count = { type = "multiply", value = set_value_roboport, max_value = 30 },    -- 机器人槽位数量
             charging_station_count = { type = "insert", value = 16 },                                 -- 平台充电口数量

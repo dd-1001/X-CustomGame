@@ -237,7 +237,7 @@ data:extend({
         name = "x-custom-game-lab-performance-multiplier", -- 研究中心
         setting_type = "startup",
         default_value = 20,
-        minimum_value = 0.01,
+        minimum_value = 0.1,
         maximum_value = 100,
         order = "x-custom-game-107005"
     },
@@ -246,7 +246,7 @@ data:extend({
         name = "x-custom-game-lightning-attractor-performance-multiplier", -- 避雷针
         setting_type = "startup",
         default_value = 20,
-        minimum_value = 0.01,
+        minimum_value = 0.1,
         maximum_value = 100,
         order = "x-custom-game-107006"
     },
@@ -309,7 +309,7 @@ data:extend({
         name = "x-custom-game-beacon-performance-multiplier", -- 插件效果分享塔
         setting_type = "startup",
         default_value = 20,
-        minimum_value = 0.01,
+        minimum_value = 0.1,
         maximum_value = 100,
         order = "x-custom-game-108001"
     },
@@ -333,7 +333,7 @@ data:extend({
     },
     {
         type = "bool-setting",
-        name = "x-custom-game-module-slot-all-type-allowed-flags", -- 插件槽允许所有类型的插件
+        name = "x-custom-game-module-slot-all-type-allowed-flag", -- 插件槽允许所有类型的插件
         setting_type = "startup",
         default_value = true,
         order = "x-custom-game-108005"
@@ -379,7 +379,7 @@ data:extend({
         name = "x-custom-game-radar-performance-multiplier", -- 雷达
         setting_type = "startup",
         default_value = 5,
-        minimum_value = 0.01,
+        minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-109005"
     },
@@ -395,7 +395,7 @@ data:extend({
         name = "x-custom-game-gun-performance-multiplier", -- 枪
         setting_type = "startup",
         default_value = 2,
-        minimum_value = 0.01,
+        minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-111001"
     },
@@ -404,7 +404,7 @@ data:extend({
         name = "x-custom-game-ammo-turret-performance-multiplier", -- 机枪炮塔
         setting_type = "startup",
         default_value = 2,
-        minimum_value = 0.01,
+        minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-111002"
     },
@@ -413,7 +413,7 @@ data:extend({
         name = "x-custom-game-electric-turret-performance-multiplier", -- 激光炮塔
         setting_type = "startup",
         default_value = 2,
-        minimum_value = 0.01,
+        minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-111003"
     },
@@ -422,7 +422,7 @@ data:extend({
         name = "x-custom-game-fluid-turret-performance-multiplier", -- 火焰炮塔
         setting_type = "startup",
         default_value = 2,
-        minimum_value = 0.01,
+        minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-111004"
     },
@@ -431,7 +431,7 @@ data:extend({
         name = "x-custom-game-artillery-turret-performance-multiplier", -- 重炮炮塔
         setting_type = "startup",
         default_value = 3,
-        minimum_value = 0.01,
+        minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-111005"
     },
@@ -440,7 +440,7 @@ data:extend({
         name = "x-custom-game-ammo-performance-multiplier", -- 弹药
         setting_type = "startup",
         default_value = 2,
-        minimum_value = 0.01,
+        minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-112001"
     },
@@ -449,7 +449,7 @@ data:extend({
         name = "x-custom-game-projectile-performance-multiplier", -- 抛射弹药(手雷、胶囊、抛射弹药)
         setting_type = "startup",
         default_value = 2,
-        minimum_value = 0.01,
+        minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-112002"
     },
@@ -458,16 +458,48 @@ data:extend({
         name = "x-custom-game-land-mine-performance-multiplier", -- 地雷
         setting_type = "startup",
         default_value = 3,
-        minimum_value = 0.01,
+        minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-112003"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-armor-performance-multiplier", -- 护甲
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.1,
+        maximum_value = 10,
+        order = "x-custom-game-113001"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-equipment-grid-performance-multiplier", -- 装备网格
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.1,
+        maximum_value = 10,
+        order = "x-custom-game-113002"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-equipment-performance-multiplier", -- 装备模块
+        setting_type = "startup",
+        default_value = 100,
+        minimum_value = 0.1,
+        maximum_value = 1000,
+        order = "x-custom-game-114001"
+    },
+    {
+        type = "bool-setting",
+        name = "x-custom-game-equipment-size-flag", -- 装备尺寸为1*1
+        setting_type = "startup",
+        default_value = true,
+        order = "x-custom-game-113002"
     },
 
 
 
-
-
-
+    
     {
         type = "bool-setting",
         name = "x-custom-game-start-bouns-items-flag", -- 开局物品
@@ -482,42 +514,7 @@ data:extend({
         default_value = "transport-belt, 100; underground-belt, 100;",
         order = "x-custom-game-108004"
     },
-    {
-        type = "double-setting",
-        name = "x-custom-game-satellite-performance-multiplier", -- 卫星
-        setting_type = "startup",
-        default_value = 50,
-        minimum_value = 0.01,
-        maximum_value = 1000,
-        order = "x-custom-game-109011"
-    },
     
-    
-    {
-        type = "double-setting",
-        name = "x-custom-game-armor-performance-multiplier", -- 护甲
-        setting_type = "startup",
-        default_value = 2,
-        minimum_value = 0.01,
-        maximum_value = 10,
-        order = "x-custom-game-112001"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-equipment-performance-multiplier", -- 装备模块
-        setting_type = "startup",
-        default_value = 100,
-        minimum_value = 0.01,
-        maximum_value = 1000,
-        order = "x-custom-game-113001"
-    },
-    {
-        type = "bool-setting",
-        name = "x-custom-game-equipment-size-flags", -- 装备尺寸为1*1
-        setting_type = "startup",
-        default_value = true,
-        order = "x-custom-game-113002"
-    },
     {
         type = "double-setting",
         name = "x-custom-game-wall-performance-multiplier", -- 墙
@@ -527,7 +524,7 @@ data:extend({
         maximum_value = 10,
         order = "x-custom-game-114001"
     },
-    
+
     {
         type = "double-setting",
         name = "x-custom-game-character-distance-multiplier", -- 角色距离相关
@@ -583,14 +580,14 @@ data:extend({
     },
     {
         type = "bool-setting",
-        name = "x-custom-game-author-custom-balance-flags", -- 自定义平衡
+        name = "x-custom-game-author-custom-balance-flag", -- 自定义平衡
         setting_type = "startup",
         default_value = false,
         order = "x-custom-game-116001"
     },
     {
         type = "bool-setting",
-        name = "x-custom-game-infinite-technology-flags", -- 无限科技
+        name = "x-custom-game-infinite-technology-flag", -- 无限科技
         setting_type = "startup",
         default_value = false,
         order = "x-custom-game-117001"
@@ -612,4 +609,3 @@ data:extend({
         order = "x-custom-game-117003"
     }
 })
-

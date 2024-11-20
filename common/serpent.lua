@@ -191,7 +191,7 @@ return {
     block = function(a, opts) return s(a, merge({ indent = '  ', sortkeys = true, comment = true }, opts)) end
 }
 
--- Serpent提供了三个函数，它们是同一内部函数的快捷方式，但默认设置了不同的选项。
+-- Serpent提供了三个函数
 -- dump(a[, {...}]) -- 完全序列化。集合和选项：name compact sparse
 -- line(a[, {...}]) -- 单行漂亮的打印，没有自述部分。集合和选项：sortkeys comment
 -- block(a[, {...}]) -- 多行缩进的漂亮打印，没有自述部分。集合和选项：indent sortkeys comment

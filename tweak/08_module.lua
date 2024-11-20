@@ -7,7 +7,7 @@ local log = Core.Log
 local set_value_beacon = settings.startup["x-custom-game-beacon-performance-multiplier"].value
 local set_value_module = settings.startup["x-custom-game-module-performance-multiplier"].value
 local set_value_module_slots = settings.startup["x-custom-game-module-slots-multiplier"].value
-local set_value_module_slots_allowed_flag = settings.startup["x-custom-game-module-slot-all-type-allowed-flags"].value
+local set_value_module_slots_allowed_flag = settings.startup["x-custom-game-module-slot-all-type-allowed-flag"].value
 local instructions_module = {
     {
         type = "beacon", -- 插件效果分享塔
