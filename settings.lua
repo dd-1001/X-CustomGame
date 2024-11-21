@@ -494,8 +494,99 @@ data:extend({
         name = "x-custom-game-equipment-size-flag", -- 装备尺寸为1*1
         setting_type = "startup",
         default_value = true,
-        order = "x-custom-game-113002"
+        order = "x-custom-game-114002"
     },
+    {
+        type = "double-setting",
+        name = "x-custom-game-character-distance-multiplier", -- 角色距离相关
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 1,
+        maximum_value = 1000,
+        order = "x-custom-game-115001"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-character-mining-speed-multiplier", -- 角色采矿速度
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 1,
+        maximum_value = 1000,
+        order = "x-custom-game-115002"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-character-running-speed-multiplier", -- 角色奔跑速度
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 1,
+        maximum_value = 100,
+        order = "x-custom-game-115003"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-character-health-multiplier", -- 角色血量
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 1,
+        maximum_value = 100,
+        order = "x-custom-game-115004"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-character-inventory-size-multiplier", -- 角色库存
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 1,
+        maximum_value = 10,
+        order = "x-custom-game-115005"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-character-collision-box-multiplier", -- 角色碰撞盒子
+        setting_type = "startup",
+        default_value = 0.33,
+        minimum_value = 0,
+        maximum_value = 1,
+        order = "x-custom-game-115006"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-wall-performance-multiplier", -- 墙
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.1,
+        maximum_value = 10,
+        order = "x-custom-game-116001"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-tool-performance-multiplier", -- tool
+        setting_type = "startup",
+        default_value = 0.25,
+        minimum_value = 0.1,
+        maximum_value = 100,
+        order = "x-custom-game-116002"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-item-health-multiplier", -- 物品生命值
+        setting_type = "startup",
+        default_value = 4,
+        minimum_value = 0.1,
+        maximum_value = 100,
+        order = "x-custom-game-116003"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-enemy-health-multiplier", -- 敌方生命值
+        setting_type = "startup",
+        default_value = 1.5,
+        minimum_value = 0.1,
+        maximum_value = 100,
+        order = "x-custom-game-116004"
+    },
+
 
 
 
@@ -513,77 +604,6 @@ data:extend({
         setting_type = "runtime-global",
         default_value = "transport-belt, 100; underground-belt, 100;",
         order = "x-custom-game-108004"
-    },
-    
-    {
-        type = "double-setting",
-        name = "x-custom-game-wall-performance-multiplier", -- 墙
-        setting_type = "startup",
-        default_value = 2,
-        minimum_value = 0.01,
-        maximum_value = 10,
-        order = "x-custom-game-114001"
-    },
-
-    {
-        type = "double-setting",
-        name = "x-custom-game-character-distance-multiplier", -- 角色距离相关
-        setting_type = "startup",
-        default_value = 10,
-        minimum_value = 0.5,
-        maximum_value = 100,
-        order = "x-custom-game-115001"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-character-mining-speed-multiplier", -- 角色采矿速度
-        setting_type = "startup",
-        default_value = 10,
-        minimum_value = 0.5,
-        maximum_value = 100,
-        order = "x-custom-game-115002"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-character-running-speed-multiplier", -- 角色奔跑速度
-        setting_type = "startup",
-        default_value = 2,
-        minimum_value = 0.5,
-        maximum_value = 100,
-        order = "x-custom-game-115003"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-character-health-multiplier", -- 角色血量
-        setting_type = "startup",
-        default_value = 100,
-        minimum_value = 0.5,
-        maximum_value = 1000,
-        order = "x-custom-game-115004"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-character-inventory-size-multiplier", -- 角色库存
-        setting_type = "startup",
-        default_value = 4,
-        minimum_value = 0.5,
-        maximum_value = 10,
-        order = "x-custom-game-115005"
-    },
-    {
-        type = "string-setting",
-        name = "x-custom-game-character-collision-box-multiplier", -- 角色碰撞盒子
-        setting_type = "startup",
-        default_value = "25%",
-        allowed_values = { "100%", "75%", "50%", "25%", "0%" },
-        order = "x-custom-game-115006"
-    },
-    {
-        type = "bool-setting",
-        name = "x-custom-game-author-custom-balance-flag", -- 自定义平衡
-        setting_type = "startup",
-        default_value = false,
-        order = "x-custom-game-116001"
     },
     {
         type = "bool-setting",

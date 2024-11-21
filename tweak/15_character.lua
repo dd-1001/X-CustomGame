@@ -1,219 +1,48 @@
-local common_core = require("common/core")
-local common_data_raw = require("common/data_raw")
+local Core = require("common.core")
+local DataTweaker = require("common.data_tweaker")
+local x_util = Core.x_util
+local log = Core.Log
 
-local log = common_core.Log
-
--- character distance
-local data_raw_character_distance_catalog = {
-    character = { -- 角色
-        orig = {
-            "character", -- 角色
-        },
-        mod = {
-            "se-spaceship-enemy-proxy", -- space-exploration
-            "se-spaceship-enemy-proxy-jetpack", -- space-exploration
-            "character-jetpack", -- jetpack
-        },
-        mul = settings.startup["x-custom-game-character-distance-multiplier"].value,
-        modify_parameter = { -- 修改参数
-            {
-                path = { "build_distance" } -- 建造距离
-            },
-            {
-                path = { "drop_item_distance" } -- 掉落物品距离
-            },
-            {
-                path = { "item_pickup_distance" } -- 物品提取距离
-            },
-            {
-                path = { "loot_pickup_distance" } -- 捡拾战利品的距离
-            },
-            {
-                path = { "reach_distance" } -- 够到距离
-            },
-            {
-                path = { "reach_resource_distance" } -- 够到资源距离
-            }
+-- 指令表配置
+local set_value_character_distance = settings.startup["x-custom-game-character-distance-multiplier"].value
+local set_value_character_mining_speed = settings.startup["x-custom-game-character-mining-speed-multiplier"].value
+local set_value_character_running_speed = settings.startup["x-custom-game-character-running-speed-multiplier"].value
+local set_value_character_health = settings.startup["x-custom-game-character-health-multiplier"].value
+local set_value_character_inventory_size = settings.startup["x-custom-game-character-inventory-size-multiplier"].value
+local set_value_character_collision_box = settings.startup["x-custom-game-character-collision-box-multiplier"].value
+local instructions_character = {
+    {
+        type = "character", -- 角色属性
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            build_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                            -- 构建距离
+            drop_item_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                        -- 放置物品距离
+            item_pickup_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                      -- 取货距离
+            loot_pickup_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                      -- 拾取战利品的距离
+            reach_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                            -- 到达距离
+            reach_resource_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                   -- 到达资源距离
+            mining_speed = { type = "multiply", value = set_value_character_mining_speed },                                                                                                                                          -- 挖矿速度
+            running_speed = { type = "multiply", value = set_value_character_running_speed },                                                                                                                                        -- 奔跑速度
+            max_health = { type = "multiply", value = set_value_character_health },                                                                                                                                                  -- 最大血量
+            healing_per_tick = { type = "multiply", value = set_value_character_health },                                                                                                                                            -- 血量恢复
+            inventory_size = { type = "multiply", value = set_value_character_inventory_size },                                                                                                                                      -- 库存大小
+            collision_box = { type = "set", value = { { -0.2 * set_value_character_collision_box, -0.2 * set_value_character_collision_box }, { 0.2 * set_value_character_collision_box, 0.2 * set_value_character_collision_box } } }, -- 碰撞箱
         }
     }
 }
 
--- character mining speed
-local data_raw_character_mining_speed_catalog = {
-    character = { -- 角色
-        orig = {
-            "character", -- 角色
-        },
-        mod = {
-            "se-spaceship-enemy-proxy", -- space-exploration
-            "se-spaceship-enemy-proxy-jetpack", -- space-exploration
-            "character-jetpack", -- jetpack
-        },
-        mul = settings.startup["x-custom-game-character-mining-speed-multiplier"].value,
-        modify_parameter = { -- 修改参数
-            {
-                path = { "mining_speed" } -- 采矿速度
-            }
-        }
-    }
-}
 
--- character running speed
-local data_raw_character_running_speed_catalog = {
-    character = { -- 角色
-        orig = {
-            "character", -- 角色
-        },
-        mod = {
-            "se-spaceship-enemy-proxy", -- space-exploration
-            "se-spaceship-enemy-proxy-jetpack", -- space-exploration
-            "character-jetpack", -- jetpack
-        },
-        mul = settings.startup["x-custom-game-character-running-speed-multiplier"].value,
-        modify_parameter = { -- 修改参数
-            {
-                path = { "running_speed" } -- 奔跑速度
-            }
-        }
-    }
-}
 
--- character health
-local data_raw_character_health_catalog = {
-    character = { -- 角色
-        orig = {
-            "character", -- 角色
-        },
-        mod = {
-            "se-spaceship-enemy-proxy", -- space-exploration
-            "se-spaceship-enemy-proxy-jetpack", -- space-exploration
-            "character-jetpack", -- jetpack
-        },
-        mul = settings.startup["x-custom-game-character-health-multiplier"].value,
-        modify_parameter = { -- 修改参数
-            {
-                path = { "max_health" }, -- 最大血量
-                max_value = 2500
-            },
-            {
-                path = { "healing_per_tick" } -- 血量恢复
-            }
-        }
-    }
-}
+-- 调用修改数据函数
+local modified_items = DataTweaker.modify_data(data.raw, instructions_character)
+log("instructions_character modified_items: \n" .. Core:serpent_block(modified_items))
 
--- character inventory_size
-local data_raw_character_inventory_size_catalog = {
-    character = { -- 角色
-        orig = {
-            "character", -- 角色
-        },
-        mod = {
-            "se-spaceship-enemy-proxy", -- space-exploration
-            "se-spaceship-enemy-proxy-jetpack", -- space-exploration
-            "character-jetpack", -- jetpack
-        },
-        mul = settings.startup["x-custom-game-character-inventory-size-multiplier"].value,
-        modify_parameter = { -- 修改参数
-            {
-                path = { "inventory_size" } -- 角色库存
-            }
-        }
-    }
-}
-
--- character collision_box
-local setting_value = settings.startup["x-custom-game-character-collision-box-multiplier"].value
--- local setting_value = "50%"
-local function get_collision_box()
-    local mul = 1.0
-    if setting_value == "100%" then
-        mul = 1.0
-    elseif setting_value == "75%" then
-        mul = 0.75
-    elseif setting_value == "50%" then
-        mul = 0.5
-    elseif setting_value == "25%" then
-        mul = 0.25
-    elseif setting_value == "0%" then
-        mul = 0.0
-    end
-
-    local box = data.raw["character"]["character"]["collision_box"]
-    return { { box[1][1] * mul, box[1][2] * mul },
-        { box[2][1] * mul, box[2][2] * mul } }
-end
-
-local new_collision_box = get_collision_box()
-local data_raw_character_collision_box_catalog = {
-    character = { -- 角色
-        orig = {
-            "character", -- 角色
-        },
-        mod = {
-            "se-spaceship-enemy-proxy", -- space-exploration
-            "se-spaceship-enemy-proxy-jetpack", -- space-exploration
-            "character-jetpack", -- jetpack
-        },
-        modify_parameter = { -- 修改参数
-            {
-                path = { "collision_box" }, -- 碰撞盒子
-                value = new_collision_box
-            }
-        }
-    }
-}
-
--- character crafting_categories
-local function get_new_crafting_categories()
-    -- 待添加的新条目
-    local add_crafting_categories = {
-        "lifesupport",
-        "space-crafting",
-        "space-manufacturing",
-    }
-
-    -- 添加新条目
-    local new_crafting_categories = data.raw.character.character.crafting_categories
-    for _, name in ipairs(add_crafting_categories) do
-        if data.raw["recipe-category"][name] then
-            table.insert(new_crafting_categories, name)
+-- 记录已修改的类型
+if (Core.x_custom_game_debug) then
+    for prototype, _ in pairs(modified_items or {}) do
+        if not x_util.table_contains(X_CUSTOM_GAME_MODIFIED_TYPE, prototype) then
+            table.insert(X_CUSTOM_GAME_MODIFIED_TYPE, prototype)
         end
     end
-
-    return new_crafting_categories
 end
-
-local new_crafting_categories = get_new_crafting_categories()
-local data_raw_character_crafting_categories_catalog = {
-    character = { -- 角色
-        orig = {
-            "character", -- 角色
-        },
-        mod = {
-            "character-jetpack", -- jetpack
-        },
-        modify_parameter = { -- 修改参数
-            {
-                path = { "crafting_categories" }, -- 可制作的配方目录
-                value = new_crafting_categories
-            }
-        }
-    }
-}
-
--- 开始修改
-log("\n\n\n------------------Character start------------------\n\n\n")
-
-common_data_raw:execute_modify(data_raw_character_distance_catalog)
-common_data_raw:execute_modify(data_raw_character_mining_speed_catalog)
-common_data_raw:execute_modify(data_raw_character_running_speed_catalog)
-common_data_raw:execute_modify(data_raw_character_health_catalog)
-common_data_raw:execute_modify(data_raw_character_inventory_size_catalog)
-common_data_raw:execute_modify(data_raw_character_collision_box_catalog)
-
-if settings.startup["x-custom-game-author-custom-balance-flags"].value then
-    common_data_raw:execute_modify(data_raw_character_crafting_categories_catalog)
-end
-
-log("\n\n\n------------------Character end------------------\n\n\n")

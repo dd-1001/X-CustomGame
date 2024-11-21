@@ -61,7 +61,7 @@ local instructions_equipment = {
             charging_station_count = { type = "multiply", value = set_value_equipment, max_value = 8 },       -- 充电头个数
             charging_threshold_distance = { type = "multiply", value = set_value_equipment, max_value = 10 }, -- 充电阈值距离
             construction_radius = { type = "multiply", value = set_value_equipment, max_value = 64 },         -- 建设机器人施工半径
-            robot_limit = { type = "multiply", value = set_value_equipment, max_value = 81 },                 -- 机器人个数限制
+            robot_limit = { type = "multiply", value = set_value_equipment, max_value = 50 },                 -- 机器人个数限制
             ["energy_source.buffer_capacity"] = { type = "multiply", value = set_value_equipment },           -- 电池电量
             ["energy_source.input_flow_limit"] = { type = "multiply", value = set_value_equipment },          -- 电池输入限制
         }
