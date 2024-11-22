@@ -586,11 +586,32 @@ data:extend({
         maximum_value = 100,
         order = "x-custom-game-116004"
     },
+    {
+        type = "double-setting",
+        name = "x-custom-game-technology-cost-multiplier", -- 科技花费
+        setting_type = "startup",
+        default_value = 1,
+        minimum_value = 0.01,
+        maximum_value = 1000,
+        order = "x-custom-game-117001"
+    },
+    {
+        type = "bool-setting",
+        name = "x-custom-game-modify-infinite-technology-flag", -- 是否启用-无限科技花费公式
+        setting_type = "startup",
+        default_value = false,
+        order = "x-custom-game-117002"
+    },
+    {
+        type = "string-setting",
+        name = "x-custom-game-infinite-technology-count-formula", -- 无限科技花费公式
+        setting_type = "startup",
+        default_value = "L*100",
+        order = "x-custom-game-117003"
+    },
 
 
 
-
-    
     {
         type = "bool-setting",
         name = "x-custom-game-start-bouns-items-flag", -- 开局物品
@@ -604,28 +625,6 @@ data:extend({
         setting_type = "runtime-global",
         default_value = "transport-belt, 100; underground-belt, 100;",
         order = "x-custom-game-108004"
-    },
-    {
-        type = "bool-setting",
-        name = "x-custom-game-infinite-technology-flag", -- 无限科技
-        setting_type = "startup",
-        default_value = false,
-        order = "x-custom-game-117001"
-    },
-    {
-        type = "string-setting",
-        name = "x-custom-game-infinite-technology-cost-formula", -- 无限科技花费公式
-        setting_type = "startup",
-        default_value = "L*100",
-        order = "x-custom-game-117002"
-    },
-    {
-        type = "double-setting",
-        name = "x-custom-game-technology-cost-multiplier", -- 科技花费
-        setting_type = "startup",
-        default_value = 0.5,
-        minimum_value = 0.001,
-        maximum_value = 1000,
-        order = "x-custom-game-117003"
     }
+
 })

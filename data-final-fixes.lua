@@ -16,7 +16,7 @@ require("tweak.13_armor")        -- 护甲-------护甲、装备网格
 require("tweak.14_equipment")    -- 装备-------个人装备模块
 require("tweak.15_character")    -- 角色-------角色属性
 require("tweak.16_other")        -- 其他-------墙、闸门、tool(科技包)
--- require("tweak.16_recipe") -- 配方-------配方修改
--- require("tweak.17_technology") -- 科技-------科技修改
+require("tweak.17_technology")   -- 科技-------科技修改
+-- require("tweak.18_recipe") -- 配方-------配方修改
 
 require("tweak.100_game_startup_test") -- 测试
