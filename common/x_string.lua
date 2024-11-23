@@ -46,6 +46,11 @@ function XString.exponent_number(str)
 end
 
 function XString.number_to_exponent_string(value, unit)
+    -- 处理数值为零的特殊情况
+    if value == 0 then
+        return "0" .. (unit or "")
+    end
+
     -- 计算数值的数量级，并将其调整为最接近的3的倍数
     local exponent = math.floor(math.log(math.abs(value)) / math.log(10) / 3) * 3
     -- 将数值缩放到适当范围

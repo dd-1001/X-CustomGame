@@ -1,3 +1,4 @@
+---------------------------------------------------------------------------------------------------
 Version: 1.2.8
 Date: 2023-3-9
   Features:
@@ -102,7 +103,6 @@ Date: 2023-1-18
   Features:
     - Add equipment configuration
     - Add defense-related configuration
-    -
     - The basic functions have been completed.
     - The next step is to refine and adapt the mod.
 ---------------------------------------------------------------------------------------------------

@@ -8,8 +8,6 @@ local Core = {
     serpent_line_format = { sortkeys = true, comment = false },
 }
 
-setmetatable(Core, Core)
-
 -- 从 settings.lua 获取调试模式配置
 Core.x_custom_game_debug = settings.startup["x_custom_game_debug"].value
 

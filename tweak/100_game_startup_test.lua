@@ -1,7 +1,7 @@
 local Core = require("common.core")
 local DataTweaker = require("common.data_tweaker")
-local log = Core.Log
 local x_util = Core.x_util
+local log = Core.Log
 
 log("\n\n\n100_game_startup_test start\n\n\n")
 

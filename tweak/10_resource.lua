@@ -4,6 +4,7 @@ local x_util = Core.x_util
 local log = Core.Log
 
 -- 指令表配置
+local instructions_resource = {}
 local set_value_infinite_resource = settings.startup["x_custom_game_infinite_resource"].value
 local instructions_infinite_resource = {
     {
@@ -31,14 +32,16 @@ local instructions_infinite_resource = {
     }
 }
 
-if not set_value_infinite_resource then
-    return
+if set_value_infinite_resource then
+    for _, instruction in ipairs(instructions_infinite_resource) do
+        table.insert(instructions_resource, instruction)
+    end
 end
 
 
 -- 调用修改数据函数
-local modified_items = DataTweaker.modify_data(data.raw, instructions_infinite_resource)
-log("instructions_infinite_resource modified_items: \n" .. Core:serpent_block(modified_items))
+local modified_items = DataTweaker.modify_data(data.raw, instructions_resource)
+log("instructions_resource modified_items: \n" .. Core:serpent_block(modified_items))
 
 -- 记录已修改的类型
 if (Core.x_custom_game_debug) then

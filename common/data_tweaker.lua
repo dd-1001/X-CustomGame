@@ -6,8 +6,6 @@ local log = Core.Log
 
 local DataTweaker = {}
 
-setmetatable(DataTweaker, DataTweaker)
-
 -- 辅助函数：解析嵌套字段路径
 local function resolve_nested_field(table, path)
     local current_value = table
