@@ -68,7 +68,7 @@ function XString.number_to_exponent_string(value, unit)
     -- 确保格式化结果中没有多余空格
     local formatted_value = string.format("%.2f", scaled_value)
     if prefix == ' ' then
-        prefix = ""  -- 当 prefix 为 ' ' 时，将其视为空字符串
+        prefix = "" -- 当 prefix 为 ' ' 时，将其视为空字符串
     end
 
     -- 拼接并返回结果

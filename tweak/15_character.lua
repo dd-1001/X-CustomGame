@@ -16,17 +16,17 @@ local instructions_character = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            build_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                            -- 构建距离
-            drop_item_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                        -- 放置物品距离
-            item_pickup_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                      -- 取货距离
-            loot_pickup_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                      -- 拾取战利品的距离
-            reach_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                            -- 到达距离
-            reach_resource_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                   -- 到达资源距离
-            mining_speed = { type = "multiply", value = set_value_character_mining_speed },                                                                                                                                          -- 挖矿速度
-            running_speed = { type = "multiply", value = set_value_character_running_speed },                                                                                                                                        -- 奔跑速度
-            max_health = { type = "multiply", value = set_value_character_health },                                                                                                                                                  -- 最大血量
-            healing_per_tick = { type = "multiply", value = set_value_character_health },                                                                                                                                            -- 血量恢复
-            inventory_size = { type = "multiply", value = set_value_character_inventory_size },                                                                                                                                      -- 库存大小
+            build_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                               -- 构建距离
+            drop_item_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                           -- 放置物品距离
+            item_pickup_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                         -- 取货距离
+            loot_pickup_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                         -- 拾取战利品的距离
+            reach_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                               -- 到达距离
+            reach_resource_distance = { type = "multiply", value = set_value_character_distance },                                                                                                                                      -- 到达资源距离
+            mining_speed = { type = "multiply", value = set_value_character_mining_speed },                                                                                                                                             -- 挖矿速度
+            running_speed = { type = "multiply", value = set_value_character_running_speed },                                                                                                                                           -- 奔跑速度
+            max_health = { type = "multiply", value = set_value_character_health },                                                                                                                                                     -- 最大血量
+            healing_per_tick = { type = "multiply", value = set_value_character_health },                                                                                                                                               -- 血量恢复
+            inventory_size = { type = "multiply", value = set_value_character_inventory_size },                                                                                                                                         -- 库存大小
             collision_box = { type = "set", value = { { -0.2 * set_value_character_collision_box, -0.2 * set_value_character_collision_box }, { 0.2 * set_value_character_collision_box, 0.2 * set_value_character_collision_box } } }, -- 碰撞箱
         }
     }
@@ -41,8 +41,8 @@ log("instructions_character modified_items: \n" .. Core:serpent_block(modified_i
 -- 记录已修改的类型
 if (Core.x_custom_game_debug) then
     for prototype, _ in pairs(modified_items or {}) do
-        if not x_util.table_contains(X_CUSTOM_GAME_MODIFIED_TYPE, prototype) then
-            table.insert(X_CUSTOM_GAME_MODIFIED_TYPE, prototype)
+        if not X_CUSTOM_GAME_MODIFIED_TYPE[prototype] then
+            X_CUSTOM_GAME_MODIFIED_TYPE[prototype] = true
         end
     end
 end

@@ -79,9 +79,9 @@ local instructions_ammunition = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            ["action.action_delivery.source_effects[1].action.radius"] = { type = "multiply", value = set_value_land_mine }, -- 半径
+            ["action.action_delivery.source_effects[1].action.radius"] = { type = "multiply", value = set_value_land_mine },                                          -- 半径
             ["action.action_delivery.source_effects[1].action.action_delivery.target_effects[1].damage.amount"] = { type = "multiply", value = set_value_land_mine }, -- 伤害
-            ["action.action_delivery.source_effects[3].damage.amount"] = { type = "multiply", value = set_value_land_mine }, -- 伤害
+            ["action.action_delivery.source_effects[3].damage.amount"] = { type = "multiply", value = set_value_land_mine },                                          -- 伤害
         }
     }
 }
@@ -96,8 +96,8 @@ log("instructions_ammunition modified_items: \n" .. Core:serpent_block(modified_
 -- 记录已修改的类型
 if (Core.x_custom_game_debug) then
     for prototype, _ in pairs(modified_items or {}) do
-        if not x_util.table_contains(X_CUSTOM_GAME_MODIFIED_TYPE, prototype) then
-            table.insert(X_CUSTOM_GAME_MODIFIED_TYPE, prototype)
+        if not X_CUSTOM_GAME_MODIFIED_TYPE[prototype] then
+            X_CUSTOM_GAME_MODIFIED_TYPE[prototype] = true
         end
     end
 end

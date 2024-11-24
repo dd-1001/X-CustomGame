@@ -26,5 +26,4 @@ function XUtil.find_with_filter(target_table, filter_function)
     return result
 end
 
-
 return XUtil

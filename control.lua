@@ -54,14 +54,51 @@ function x_control.set_player_initial_items(event)
         return
     end
 
-    local inserted = 0
-    for _, item in pairs(x_database.game_start_bonus_items) do
-        inserted = player.insert(item)
-        game.print("Inserted item: " .. item.name .. ", Amount: " .. inserted)
-    end
+    local inserted = x_control.insert_items_to_player(player, x_database.game_start_bonus_items)
 
     if inserted > 0 then
         x_control.is_seted_player_items[player.index] = true
+    end
+end
+
+-- 给玩家插入物品
+function x_control.insert_items_to_player(player, items)
+    local total_inserted = 0
+
+    for _, item in pairs(items) do
+        if prototypes.item[item.name] then
+            local inserted = player.insert(item)
+            total_inserted = total_inserted + inserted
+            game.print("Inserted item: " .. item.name .. ", Amount: " .. inserted)
+        else
+            game.print("Invalid item: " .. item.name .. " cannot be inserted.")
+        end
+    end
+
+    return total_inserted
+end
+
+-- 解析配置字符串并返回物品列表
+function x_control.parse_item_config(config_string)
+    local items = {}
+    for item_string in string.gmatch(config_string, "([^;]+)") do
+        local name, count = string.match(item_string, "([^,]+),%s*(%d+)")
+        if name and count then
+            name = name:match("^%s*(.-)%s*$")
+            table.insert(items, { name = name, count = tonumber(count) })
+        end
+    end
+    return items
+end
+
+-- 处理配置改变事件
+function x_control.on_runtime_mod_setting_changed(event)
+    if event.setting == "x-custom-game-get-items" then
+        local item_config = settings.global["x-custom-game-get-items"].value
+        local items = x_control.parse_item_config(item_config)
+        for _, player in pairs(game.players) do
+            x_control.insert_items_to_player(player, items)
+        end
     end
 end
 
@@ -69,7 +106,4 @@ end
 script.on_init(x_control.init)
 script.on_event(defines.events.on_player_created, x_control.on_player_created)
 script.on_event(defines.events.on_cutscene_cancelled, x_control.on_cutscene_cancelled)
-
-if x_database == nil then
-    error("x_database is nil")
-end
+script.on_event(defines.events.on_runtime_mod_setting_changed, x_control.on_runtime_mod_setting_changed)

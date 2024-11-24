@@ -45,27 +45,27 @@ local data_raw_max_health = x_util.find_with_filter(data.raw, filter_max_health)
 
 -- 组装修改max_health属性的指令
 for prototype, protonames in pairs(data_raw_max_health) do
-    if x_util.table_contains(x_database.modify_item_health_type, prototype) then
+    if x_database.modify_item_health_type[prototype] then
         -- item health
         for _, protoname in ipairs(protonames) do
             local instructions_template = {}
             instructions_template["type"] = prototype
             instructions_template["name"] = { protoname }
             instructions_template["operations"] = {
-                max_health = { type = "multiply", value = set_value_item_health },     -- 最大生命值
+                max_health = { type = "multiply", value = set_value_item_health }, -- 最大生命值
             }
 
             table.insert(instructions_other, instructions_template)
         end
-    elseif x_util.table_contains(x_database.modify_enemy_health_type, prototype) then
+    elseif x_database.modify_enemy_health_type[prototype] then
         -- enemy health
         for _, protoname in ipairs(protonames) do
             local instructions_template = {}
             instructions_template["type"] = prototype
             instructions_template["name"] = { protoname }
             instructions_template["operations"] = {
-                max_health = { type = "multiply", value = set_value_enemy_health },           -- 最大生命值
-                healing_per_tick = { type = "multiply", value = set_value_enemy_health },     -- 回复血量
+                max_health = { type = "multiply", value = set_value_enemy_health },       -- 最大生命值
+                healing_per_tick = { type = "multiply", value = set_value_enemy_health }, -- 回复血量
             }
 
             table.insert(instructions_other, instructions_template)
@@ -82,8 +82,8 @@ log("instructions_other modified_items: \n" .. Core:serpent_block(modified_items
 -- 记录已修改的类型
 if (Core.x_custom_game_debug) then
     for prototype, _ in pairs(modified_items or {}) do
-        if not x_util.table_contains(X_CUSTOM_GAME_MODIFIED_TYPE, prototype) then
-            table.insert(X_CUSTOM_GAME_MODIFIED_TYPE, prototype)
+        if not X_CUSTOM_GAME_MODIFIED_TYPE[prototype] then
+            X_CUSTOM_GAME_MODIFIED_TYPE[prototype] = true
         end
     end
 end

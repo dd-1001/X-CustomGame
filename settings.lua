@@ -609,22 +609,19 @@ data:extend({
         default_value = "L*100",
         order = "x-custom-game-117003"
     },
-
-
-
     {
         type = "bool-setting",
         name = "x-custom-game-start-bouns-items-flag", -- 开局物品
         setting_type = "runtime-per-user",
         default_value = true,
-        order = "x-custom-game-108003"
+        order = "x-custom-game-120001"
     },
     {
         type = "string-setting",
         name = "x-custom-game-get-items", -- 游戏中获得物品
         setting_type = "runtime-global",
         default_value = "transport-belt, 100; underground-belt, 100;",
-        order = "x-custom-game-108004"
+        order = "x-custom-game-120002"
     }
 
 })

@@ -111,8 +111,8 @@ log("instructions_item modified_items: \n" .. Core:serpent_block(modified_items)
 -- 记录已修改的类型
 if (Core.x_custom_game_debug) then
     for prototype, _ in pairs(modified_items or {}) do
-        if not x_util.table_contains(X_CUSTOM_GAME_MODIFIED_TYPE, prototype) then
-            table.insert(X_CUSTOM_GAME_MODIFIED_TYPE, prototype)
+        if not X_CUSTOM_GAME_MODIFIED_TYPE[prototype] then
+            X_CUSTOM_GAME_MODIFIED_TYPE[prototype] = true
         end
     end
 end

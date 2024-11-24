@@ -5,12 +5,6 @@ local log = Core.Log
 
 log("\n\n\n100_game_startup_test start\n\n\n")
 
--- 测试DataTweaker:exponent_number
--- local value, unit = DataTweaker:exponent_number("100MJ")
--- log("value = " .. value .. ", type = " .. type(value))
--- log("unit = " .. unit .. ", type = " .. type(unit))
-
-
 -- 打印原型
 -- log("data.raw.technology:\n" .. Core:serpent_block(data.raw.technology) .. "\n")
 -- for protype, _ in pairs(data.raw) do
@@ -18,21 +12,21 @@ log("\n\n\n100_game_startup_test start\n\n\n")
 -- end
 
 -- 检查未修改的类型
--- log("\nX_CUSTOM_GAME_MODIFIED_TYPE:\n" .. Core:serpent_block(X_CUSTOM_GAME_MODIFIED_TYPE))
+log("\nX_CUSTOM_GAME_MODIFIED_TYPE:\n" .. Core:serpent_block(X_CUSTOM_GAME_MODIFIED_TYPE))
+
+-- local modified_type = {}
+-- for _, protype in pairs(X_CUSTOM_GAME_MODIFIED_TYPE) do
+--     modified_type[protype] = true
+-- end
+-- log("\nmodified_type:\n" .. Core:serpent_block(modified_type))
+
 local unModified_type = {}
 for protype, _ in pairs(data.raw) do
-    table.insert(unModified_type, protype)
-end
--- log("\ndata.raw all type:\n" .. Core:serpent_block(unModified_type))
-for _, protype in pairs(X_CUSTOM_GAME_MODIFIED_TYPE) do
-    for index = #unModified_type, 1, -1 do
-        if unModified_type[index] == protype then
-            table.remove(unModified_type, index)
-            break
-        end
+    if not X_CUSTOM_GAME_MODIFIED_TYPE[protype] then
+        unModified_type[protype] = true
     end
 end
-log("\nNot modified type:\n" .. Core:serpent_block(unModified_type))
+log("\nunModified_type:\n" .. Core:serpent_block(unModified_type))
 
 -- 查找实例
 -- local function filter(tbl)
