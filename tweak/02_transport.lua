@@ -75,7 +75,7 @@ local instructions_transport = {
             braking_power = { type = "multiply", value = set_value_car },                                                       -- 制动力
             turret_rotation_speed = { type = "multiply", value = set_value_car },                                               -- 炮塔旋转速度
             turret_return_timeout = { type = "division", value = set_value_car },                                               -- 炮塔回转超时
-            trash_inventory_size = { type = "multiply", value = set_value_car },                                                -- 垃圾库存大小
+            trash_inventory_size = { type = "multiply", value = set_value_car },                                                -- 物流库存大小
             friction = { type = "multiply", value = set_value_car, min_value = 0.004, max_value = 0.01 },                       -- 摩擦力
         }
     },
@@ -87,7 +87,7 @@ local instructions_transport = {
             chunk_exploration_radius = { type = "multiply", value = set_value_spider_vehicle, min_value = 3, max_value = 9 }, -- 探索半径
             inventory_size = { type = "multiply", value = set_value_spider_vehicle },                                         -- 库存
             movement_energy_consumption = { type = "division", value = set_value_spider_vehicle },                            -- 移动能量消耗
-            trash_inventory_size = { type = "multiply", value = set_value_spider_vehicle },                                   -- 垃圾库存大小
+            trash_inventory_size = { type = "multiply", value = set_value_spider_vehicle },                                   -- 物流库存大小
             torso_rotation_speed = { type = "multiply", value = set_value_spider_vehicle },                                   -- 躯干旋转速度
             braking_force = { type = "multiply", value = set_value_spider_vehicle },                                          -- 制动力
             chain_shooting_cooldown_modifier = { type = "multiply", value = set_value_spider_vehicle },                       -- 连环射击冷却修改器

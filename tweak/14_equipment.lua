@@ -73,8 +73,8 @@ local instructions_equipment = {
         operations = {
             color_lookup = { type = "set", value = { { 0.95, "__core__/graphics/color_luts/nightvision.png" } } }, -- 亮度
             -- energy_input = { type = "division", value = set_value_equipment }, -- 能量输入
-            ["energy_source.buffer_capacity"] = { type = "multiply", value = set_value_equipment },                -- 电池电量
-            ["energy_source.input_flow_limit"] = { type = "multiply", value = set_value_equipment },               -- 电池输入限制
+            ["energy_source.buffer_capacity"] = { type = "multiply", value = set_value_equipment },  -- 电池电量
+            ["energy_source.input_flow_limit"] = { type = "multiply", value = set_value_equipment }, -- 电池输入限制
         }
     },
     {

@@ -24,13 +24,12 @@ local instructions_machine = {
         operations = {
             ["energy_source.effectivity"] = { type = "multiply", value = set_value_mining_drill },                    -- 燃烧室效率
             ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_mining_drill }, -- 燃烧室污染
-            ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_mining_drill },            -- 燃烧室燃料库存
+            -- ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_mining_drill },            -- 燃烧室燃料库存
             energy_usage = { type = "division", value = set_value_mining_drill },                                     -- 能量消耗
             mining_speed = { type = "multiply", value = set_value_mining_drill },                                     -- 钻头速度
             -- resource_searching_radius = { type = "multiply", value = set_value_mining_drill },                        -- 钻机采矿半径
-            ["input_fluid_box.volume"] = { type = "multiply", value = set_value_mining_drill },                       -- 输入流体体积
-            ["output_fluid_box.volume"] = { type = "multiply", value = set_value_mining_drill },                      -- 输出流体体积
-
+            ["input_fluid_box.volume"] = { type = "multiply", value = set_value_mining_drill, max_value = 1000 },     -- 输入流体体积
+            ["output_fluid_box.volume"] = { type = "multiply", value = set_value_mining_drill, max_value = 1000 },    -- 输出流体体积
         }
     },
     {
@@ -43,7 +42,7 @@ local instructions_machine = {
             crafting_speed = { type = "multiply", value = set_value_furnace },                                   -- 制作速度
             ["energy_source.effectivity"] = { type = "multiply", value = set_value_furnace },                    -- 燃烧室效率
             ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_furnace }, -- 燃烧室污染
-            ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_furnace },            -- 燃烧室燃料库存
+            -- ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_furnace },            -- 燃烧室燃料库存
             energy_usage = { type = "division", value = set_value_furnace },                                     -- 能量消耗
         }
     },
@@ -55,7 +54,7 @@ local instructions_machine = {
             crafting_speed = { type = "multiply", value = set_value_assembling_machine },                                   -- 制作速度
             ["energy_source.effectivity"] = { type = "multiply", value = set_value_assembling_machine },                    -- 燃烧室效率
             ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_assembling_machine }, -- 燃烧室污染
-            ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_assembling_machine },            -- 燃烧室燃料库存
+            -- ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_assembling_machine },            -- 燃烧室燃料库存
             energy_usage = { type = "division", value = set_value_assembling_machine },                                     -- 能量消耗
         }
     },
@@ -73,7 +72,7 @@ local instructions_machine = {
             crane_energy_usage = { type = "division", value = set_value_agricultural_tower },                            -- 起重机能量消耗
             energy_usage = { type = "division", value = set_value_agricultural_tower },                                  -- 能量消耗
             ["energy_source.emissions_per_minute.spores"] = { type = "division", value = set_value_agricultural_tower }, -- 污染
-            input_inventory_size = { type = "multiply", value = set_value_agricultural_tower },                          -- 输入库存大小
+            -- input_inventory_size = { type = "multiply", value = set_value_agricultural_tower },                          -- 输入库存大小
             radius = { type = "multiply", value = set_value_agricultural_tower, max_value = 5 },                         -- 半径
         }
     },

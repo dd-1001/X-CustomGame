@@ -66,7 +66,7 @@ local instructions_weapon = {
             call_for_help_radius = { type = "multiply", value = set_value_fluid_turret },                    -- 求助半径
             fluid_buffer_input_flow = { type = "multiply", value = set_value_fluid_turret },                 -- 流体缓冲区输入限制
             fluid_buffer_size = { type = "multiply", value = set_value_fluid_turret },                       -- 流体缓冲区大小
-            ["fluid_box.volume"] = { type = "multiply", value = set_value_fluid_turret },                    -- 流体缓冲区大小
+            ["fluid_box.volume"] = { type = "multiply", value = set_value_fluid_turret, max_value = 1000 },  -- 流体缓冲区大小
             prepare_range = { type = "multiply", value = set_value_fluid_turret },                           -- 准备距离
             ["attack_parameters.cooldown"] = { type = "division", value = set_value_fluid_turret },          -- 射击冷却时间
             ["attack_parameters.fluid_consumption"] = { type = "division", value = set_value_fluid_turret }, -- 流体消耗

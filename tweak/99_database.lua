@@ -2,7 +2,38 @@ local x_database = {}
 
 -- 游戏开局物品
 x_database.game_start_bonus_items = {
-	{ name = "iron-chest", count = 100 },          --铁箱
+	{ name = "power-armor",                 count = 1 }, --能量装甲
+	{ name = "solar-panel-equipment",       count = 5 }, --太阳能模块
+	{ name = "battery-equipment",           count = 2 }, --电池组模块
+	{ name = "belt-immunity-equipment",     count = 1 }, --锚定模块
+	{ name = "exoskeleton-equipment",       count = 1 }, --外骨骼模块
+	{ name = "personal-roboport-equipment", count = 1 }, --机器人指令模块
+	{ name = "night-vision-equipment",      count = 1 }, --夜视模块
+	{ name = "energy-shield-equipment",     count = 1 }, --能量盾模块
+	{ name = "roboport",                    count = 10 }, --机器人指令平台
+	{ name = "logistic-robot",              count = 100 }, --物流机器人
+	{ name = "construction-robot",          count = 50 }, --建设机器人
+	{ name = "offshore-pump",               count = 10 }, --抽取机
+	{ name = "boiler",                      count = 10 }, --锅炉
+	{ name = "steam-engine",                count = 10 }, --蒸汽机
+	{ name = "pipe",                        count = 1000 }, --管道
+	{ name = "pipe-to-ground",              count = 1000 }, --地下管道
+	{ name = "solar-panel",                 count = 10 }, --太阳能板
+	{ name = "accumulator",                 count = 10 }, --蓄电器
+	{ name = "small-electric-pole",         count = 10 }, --小型电线杆
+	{ name = "transport-belt",              count = 1000 }, --基础传送带
+	{ name = "underground-belt",            count = 1000 }, --基础地下传送带
+	{ name = "splitter",                    count = 1000 }, --基础分流器
+	{ name = "inserter",                    count = 100 }, --电力机械臂
+	{ name = "electric-mining-drill",       count = 200 }, --电力采矿机
+	{ name = "burner-mining-drill",         count = 10 }, --热能采矿机
+	{ name = "stone-furnace",               count = 100 }, --石炉
+	{ name = "iron-chest",                  count = 100 }, --铁箱
+	{ name = "active-provider-chest",       count = 100 }, --主动供货箱（紫箱）
+	{ name = "passive-provider-chest",      count = 100 }, --被动供货箱（红箱）
+	{ name = "storage-chest",               count = 100 }, --被动存货箱（黄箱）
+	{ name = "buffer-chest",                count = 100 }, --主动存货箱（绿箱）
+	{ name = "requester-chest",             count = 100 }, --优先集货箱（蓝箱）
 }
 
 -- item最大生命值修改类型
@@ -109,14 +140,14 @@ x_database.modify_item_health_type = {
 
 -- enemy最大生命值修改类型
 x_database.modify_enemy_health_type = {
-	["unit"] = true,           -- 虫子
-	["unit-spawner"] = true,   -- 虫巢
-	["turret"] = true,         -- 沙虫
-	["segment"] = true,        -- 撼地虫
+	["unit"] = true,        -- 虫子
+	["unit-spawner"] = true, -- 虫巢
+	["turret"] = true,      -- 沙虫
+	["segment"] = true,     -- 撼地虫
 	["segmented-unit"] = true, -- 撼地虫
 }
 
--- 2024年11月25日前修改过的类型
+-- 2.0.20版本 前修改过的类型
 x_database.modified_type = {
 	accumulator = true,
 	["active-defense-equipment"] = true,
@@ -249,7 +280,7 @@ x_database.modified_type = {
 	wall = true
 }
 
--- 2024年11月25日前未修改过的类型
+-- 2.0.20版本 未修改过的类型
 x_database.unModified_type = {
 	achievement = true,
 	["airborne-pollutant"] = true,

@@ -1,5 +1,6 @@
 local Core = require("common.core")
 local DataTweaker = require("common.data_tweaker")
+local x_database = require("99_database")
 local x_util = Core.x_util
 local log = Core.Log
 
@@ -12,7 +13,7 @@ log("\n\n\n100_game_startup_test start\n\n\n")
 -- end
 
 -- 检查未修改的类型
-log("\nX_CUSTOM_GAME_MODIFIED_TYPE:\n" .. Core:serpent_block(X_CUSTOM_GAME_MODIFIED_TYPE))
+-- log("\nX_CUSTOM_GAME_MODIFIED_TYPE:\n" .. Core:serpent_block(X_CUSTOM_GAME_MODIFIED_TYPE))
 
 -- local modified_type = {}
 -- for _, protype in pairs(X_CUSTOM_GAME_MODIFIED_TYPE) do
@@ -26,7 +27,15 @@ for protype, _ in pairs(data.raw) do
         unModified_type[protype] = true
     end
 end
-log("\nunModified_type:\n" .. Core:serpent_block(unModified_type))
+-- log("\nunModified_type:\n" .. Core:serpent_block(unModified_type))
+
+local new_unModified_type = {}
+for protype, _ in pairs(unModified_type) do
+    if not x_database.unModified_type[protype] then
+        new_unModified_type[protype] = true
+    end
+end
+log("\nnew_unModified_type:\n" .. Core:serpent_block(new_unModified_type))
 
 -- 查找实例
 -- local function filter(tbl)

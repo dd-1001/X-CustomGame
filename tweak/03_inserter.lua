@@ -16,7 +16,7 @@ local instructions_inserter = {
             energy_per_movement = { type = "division", value = set_value_inserter },                   -- 每次移动的能量
             energy_per_rotation = { type = "division", value = set_value_inserter },                   -- 每次旋转的能量
             ["energy_source.effectivity"] = { type = "multiply", value = set_value_inserter },         -- 能量效率
-            ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_inserter }, -- 燃料物品库存
+            -- ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_inserter }, -- 燃料物品库存
             ["energy_source.drain"] = { type = "division", value = set_value_inserter },               -- 耗电
         }
     }

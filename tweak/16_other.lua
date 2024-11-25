@@ -1,6 +1,6 @@
 local Core = require("common.core")
 local DataTweaker = require("common.data_tweaker")
-local x_database = require("tweak.99_database")
+local x_database = require("99_database")
 local x_util = Core.x_util
 local log = Core.Log
 
