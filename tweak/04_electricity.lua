@@ -33,7 +33,8 @@ local instructions_electric = {
             ["energy_source.effectivity"] = { type = "multiply", value = set_value_boiler },                    -- 效率
             -- ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_boiler },            -- 燃料库存大小
             ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_boiler }, -- 污染
-            ["fluid_box.volume"] = { type = "multiply", value = set_value_boiler, max_value = 1000 },           -- 体积
+            ["fluid_box.volume"] = { type = "multiply", value = set_value_boiler, max_value = 1000 },           -- 水体积
+            ["output_fluid_box.volume"] = { type = "multiply", value = set_value_boiler, max_value = 2000 },    -- 输出蒸汽体积
             ["energy_source.max_temperature"] = { type = "multiply", value = set_value_boiler },                -- 最大温度
             ["energy_source.max_transfer"] = { type = "multiply", value = set_value_boiler },                   -- 最大传输热量
             ["energy_source.specific_heat"] = { type = "division", value = set_value_boiler }                   -- 比热容

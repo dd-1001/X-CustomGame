@@ -11,7 +11,7 @@ x_database.game_start_bonus_items = {
 	{ name = "night-vision-equipment",      count = 1 }, --夜视模块
 	{ name = "energy-shield-equipment",     count = 1 }, --能量盾模块
 	{ name = "roboport",                    count = 10 }, --机器人指令平台
-	{ name = "logistic-robot",              count = 100 }, --物流机器人
+	{ name = "logistic-robot",              count = 1000 }, --物流机器人
 	{ name = "construction-robot",          count = 50 }, --建设机器人
 	{ name = "offshore-pump",               count = 10 }, --抽取机
 	{ name = "boiler",                      count = 10 }, --锅炉
@@ -20,20 +20,20 @@ x_database.game_start_bonus_items = {
 	{ name = "pipe-to-ground",              count = 1000 }, --地下管道
 	{ name = "solar-panel",                 count = 10 }, --太阳能板
 	{ name = "accumulator",                 count = 10 }, --蓄电器
-	{ name = "small-electric-pole",         count = 10 }, --小型电线杆
+	{ name = "medium-electric-pole",        count = 100 }, --中型电线杆
 	{ name = "transport-belt",              count = 1000 }, --基础传送带
-	{ name = "underground-belt",            count = 1000 }, --基础地下传送带
-	{ name = "splitter",                    count = 1000 }, --基础分流器
-	{ name = "inserter",                    count = 100 }, --电力机械臂
+	{ name = "underground-belt",            count = 100 }, --基础地下传送带
+	{ name = "splitter",                    count = 100 }, --基础分流器
+	{ name = "inserter",                    count = 200 }, --电力机械臂
 	{ name = "electric-mining-drill",       count = 200 }, --电力采矿机
-	{ name = "burner-mining-drill",         count = 10 }, --热能采矿机
-	{ name = "stone-furnace",               count = 100 }, --石炉
+	{ name = "steel-furnace",               count = 100 }, --钢炉
 	{ name = "iron-chest",                  count = 100 }, --铁箱
-	{ name = "active-provider-chest",       count = 100 }, --主动供货箱（紫箱）
-	{ name = "passive-provider-chest",      count = 100 }, --被动供货箱（红箱）
-	{ name = "storage-chest",               count = 100 }, --被动存货箱（黄箱）
-	{ name = "buffer-chest",                count = 100 }, --主动存货箱（绿箱）
-	{ name = "requester-chest",             count = 100 }, --优先集货箱（蓝箱）
+	{ name = "active-provider-chest",       count = 200 }, --主动供货箱（紫箱）
+	{ name = "passive-provider-chest",      count = 200 }, --被动供货箱（红箱）
+	{ name = "storage-chest",               count = 200 }, --被动存货箱（黄箱）
+	{ name = "buffer-chest",                count = 200 }, --主动存货箱（绿箱）
+	{ name = "requester-chest",             count = 200 }, --优先集货箱（蓝箱）
+	{ name = "cliff-explosives",            count = 200 }, --悬崖炸药
 }
 
 -- item最大生命值修改类型

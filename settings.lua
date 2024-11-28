@@ -110,7 +110,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-generator-performance-multiplier", -- 蒸汽机
         setting_type = "startup",
-        default_value = 10,
+        default_value = 4,
         minimum_value = 0.01,
         maximum_value = 100,
         order = "x-custom-game-104003"
@@ -200,7 +200,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-mining-drill-performance-multiplier", -- 采矿机
         setting_type = "startup",
-        default_value = 16,
+        default_value = 8,
         minimum_value = 0.1,
         maximum_value = 32,
         order = "x-custom-game-107001"
@@ -209,7 +209,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-furnace-performance-multiplier", -- 熔炉
         setting_type = "startup",
-        default_value = 16,
+        default_value = 8,
         minimum_value = 0.1,
         maximum_value = 32,
         order = "x-custom-game-107002"
@@ -218,7 +218,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-assembling-machine-performance-multiplier", -- 组装机
         setting_type = "startup",
-        default_value = 16,
+        default_value = 8,
         minimum_value = 0.1,
         maximum_value = 32,
         order = "x-custom-game-107003"
@@ -227,7 +227,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-agricultural-tower-performance-multiplier", -- 农业塔
         setting_type = "startup",
-        default_value = 16,
+        default_value = 8,
         minimum_value = 0.1,
         maximum_value = 32,
         order = "x-custom-game-107004"
@@ -236,7 +236,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-lab-performance-multiplier", -- 研究中心
         setting_type = "startup",
-        default_value = 20,
+        default_value = 10,
         minimum_value = 0.1,
         maximum_value = 100,
         order = "x-custom-game-107005"
@@ -326,9 +326,9 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-module-slots-multiplier", -- 插件槽数量
         setting_type = "startup",
-        default_value = 30,
+        default_value = 20,
         minimum_value = 1,
-        maximum_value = 30,
+        maximum_value = 20,
         order = "x-custom-game-108004"
     },
     {
@@ -620,8 +620,15 @@ data:extend({
         type = "string-setting",
         name = "x-custom-game-get-items", -- 游戏中获得物品
         setting_type = "runtime-global",
-        default_value = "transport-belt, 100; underground-belt, 100;",
+        default_value = "transport-belt, 200; underground-belt, 200;",
         order = "x-custom-game-120002"
+    },
+    {
+        type = "bool-setting",
+        name = "x-custom-game-author-custom-balance-flag", -- 作者自定义平衡
+        setting_type = "startup",
+        default_value = false,
+        order = "x-custom-game-195001"
     }
 
 })

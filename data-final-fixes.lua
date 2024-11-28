@@ -19,4 +19,5 @@ require("tweak.16_other")        -- 其他-------墙、闸门、tool(科技包)
 require("tweak.17_technology")   -- 科技-------科技修改
 -- require("tweak.18_recipe") -- 配方-------配方修改
 
+require("tweak.95_custom_balance") -- 作者自定义平衡
 require("tweak.100_game_startup_test") -- 测试

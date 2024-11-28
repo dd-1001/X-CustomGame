@@ -27,7 +27,7 @@ local instructions_module = {
         exclude_names = {},
         operations = {
             ["effect.consumption"] = { type = "division", value = set_value_module, min_value = 0.25 }, -- 效果-耗能增加
-            ["effect.quality"] = { type = "set", value = nil },                                         -- 效果-品质减小
+            ["effect.quality"] = { type = "division", value = set_value_module },                       -- 效果-品质减小
             ["effect.speed"] = { type = "multiply", value = set_value_module },                         -- 效果-速度增加
         }
     },
@@ -44,10 +44,10 @@ local instructions_module = {
         name = { "productivity-module", "productivity-module-2", "productivity-module-3" },
         exclude_names = {},
         operations = {
-            ["effect.consumption"] = { type = "division", value = set_value_module, min_value = 0.2 }, -- 效果-耗能增加
-            ["effect.pollution"] = { type = "division", value = set_value_module, min_value = 0.01 },  -- 效果-污染增加
-            ["effect.quality"] = { type = "multiply", value = set_value_module, max_value = 0.2 },     -- 效果-品质增加
-            ["effect.speed"] = { type = "set", value = nil },                                          -- 效果-速度减小
+            ["effect.consumption"] = { type = "division", value = set_value_module, min_value = 0.2 },  -- 效果-耗能增加
+            ["effect.pollution"] = { type = "division", value = set_value_module, min_value = 0.01 },   -- 效果-污染增加
+            ["effect.productivity"] = { type = "multiply", value = set_value_module, max_value = 0.2 }, -- 效果-产能增加
+            ["effect.speed"] = { type = "division", value = set_value_module, min_value = -0.025 },     -- 效果-速度减小
         }
     },
     {
@@ -55,8 +55,8 @@ local instructions_module = {
         name = { "quality-module", "quality-module-2", "quality-module-3" },
         exclude_names = {},
         operations = {
-            ["effect.quality"] = { type = "multiply", value = set_value_module }, -- 效果-品质增加
-            ["effect.speed"] = { type = "set", value = nil },                     -- 效果-速度减小
+            ["effect.quality"] = { type = "multiply", value = set_value_module },                   -- 效果-品质增加
+            ["effect.speed"] = { type = "division", value = set_value_module, min_value = -0.025 }, -- 效果-速度减小
         }
     }
 }
@@ -76,7 +76,7 @@ for prototype, protonames in pairs(data_raw_module_slots) do
         instructions_template["type"] = prototype
         instructions_template["name"] = { protoname }
         instructions_template["operations"] = {
-            module_slots = { type = "multiply", value = set_value_module_slots, max_value = 30 }, -- 模块槽位数量
+            module_slots = { type = "multiply", value = set_value_module_slots, max_value = 20 }, -- 模块槽位数量
         }
 
         table.insert(instructions_module, instructions_template)
