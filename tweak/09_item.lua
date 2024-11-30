@@ -106,7 +106,7 @@ end
 
 -- 调用修改数据函数
 local modified_items = DataTweaker.modify_data(data.raw, instructions_item)
-log("instructions_item modified_items: \n" .. Core:serpent_block(modified_items))
+-- log("instructions_item modified_items: \n" .. Core:serpent_block(modified_items))
 
 -- 记录已修改的类型
 if (Core.x_custom_game_debug) then

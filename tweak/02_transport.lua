@@ -35,6 +35,22 @@ local instructions_transport = {
         }
     },
     {
+        type = "loader", -- 装载机
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            speed = { type = "multiply", value = set_value_transport },
+        }
+    },
+    {
+        type = "loader-1x1", -- 装载机
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            speed = { type = "multiply", value = set_value_transport },
+        }
+    },
+    {
         type = "locomotive", -- 内燃机车
         name = { "*" },
         exclude_names = {},

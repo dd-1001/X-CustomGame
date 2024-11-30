@@ -2,16 +2,16 @@ local XString = {}
 
 -- 单位转换字典
 local exponent_multipliers = {
-    ['y'] = 1e-24,
-    ['z'] = 1e-21,
-    ['a'] = 1e-18,
-    ['f'] = 1e-15,
-    ['p'] = 1e-12,
-    ['n'] = 1e-9,
-    ['u'] = 1e-6,
-    ['m'] = 1e-3,
-    ['c'] = 1e-2,
-    ['d'] = 1e-1,
+    -- ['y'] = 1e-24,
+    -- ['z'] = 1e-21,
+    -- ['a'] = 1e-18,
+    -- ['f'] = 1e-15,
+    -- ['p'] = 1e-12,
+    -- ['n'] = 1e-9,
+    -- ['u'] = 1e-6,
+    -- ['m'] = 1e-3,
+    -- ['c'] = 1e-2,
+    -- ['d'] = 1e-1,
     [' '] = 1,
     ['h'] = 1e2,
     ['k'] = 1e3,
@@ -49,6 +49,11 @@ function XString.number_to_exponent_string(value, unit)
     -- 处理数值为零的特殊情况
     if value == 0 then
         return "0" .. (unit or "")
+    end
+
+    -- 确保小数点处理正确
+    if value < 1 then
+        return string.format("%.3f%s", value, unit)
     end
 
     -- 计算数值的数量级，并将其调整为最接近的3的倍数

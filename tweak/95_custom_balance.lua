@@ -29,7 +29,39 @@ local instructions_custom_balance = {
         operations = {
             ["effect.speed"] = { type = "set", value = nil }, -- 效果-速度减小
         }
-    }
+    },
+    {
+        type = "module", -- 插件-品质1
+        name = { "quality-module" },
+        exclude_names = {},
+        operations = {
+            ["effect.quality"] = { type = "set", value = 2.5 }, -- 效果-品质增加
+        }
+    },
+    {
+        type = "module", -- 插件-品质2
+        name = { "quality-module-2" },
+        exclude_names = {},
+        operations = {
+            ["effect.quality"] = { type = "set", value = 5 }, -- 效果-品质增加
+        }
+    },
+    {
+        type = "module", -- 插件-品质3
+        name = { "quality-module-3" },
+        exclude_names = {},
+        operations = {
+            ["effect.quality"] = { type = "set", value = 10 }, -- 效果-品质增加
+        }
+    },
+    {
+        type = "night-vision-equipment", -- 夜视模块
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            color_lookup = { type = "set", value = { { 0.96, "__core__/graphics/color_luts/lut-sunset.png" } } }, -- 亮度
+        }
+    },
 }
 
 if not set_author_custom_balance then

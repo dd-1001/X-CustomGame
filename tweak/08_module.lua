@@ -44,10 +44,10 @@ local instructions_module = {
         name = { "productivity-module", "productivity-module-2", "productivity-module-3" },
         exclude_names = {},
         operations = {
-            ["effect.consumption"] = { type = "division", value = set_value_module, min_value = 0.2 },  -- 效果-耗能增加
-            ["effect.pollution"] = { type = "division", value = set_value_module, min_value = 0.01 },   -- 效果-污染增加
-            ["effect.productivity"] = { type = "multiply", value = set_value_module, max_value = 0.2 }, -- 效果-产能增加
-            ["effect.speed"] = { type = "division", value = set_value_module, min_value = -0.025 },     -- 效果-速度减小
+            ["effect.consumption"] = { type = "division", value = set_value_module, min_value = 0.2 }, -- 效果-耗能增加
+            ["effect.pollution"] = { type = "division", value = set_value_module, min_value = 0.01 },  -- 效果-污染增加
+            ["effect.productivity"] = { type = "multiply", value = set_value_module },                 -- 效果-产能增加
+            ["effect.speed"] = { type = "division", value = set_value_module, min_value = -0.025 },    -- 效果-速度减小
         }
     },
     {

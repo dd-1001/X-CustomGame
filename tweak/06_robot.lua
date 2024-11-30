@@ -36,7 +36,11 @@ local instructions_robot = {
     {
         type = "roboport", -- 机器人指令平台
         name = { "*" },
-        exclude_names = {},
+        exclude_names = {
+            "repair-turret",       -- mod
+            "aai-signal-sender",   -- mod
+            "aai-signal-receiver", -- mod
+        },
         operations = {
             charge_approach_distance = { type = "multiply", value = set_value_roboport },             -- 充电距离
             charging_energy = { type = "multiply", value = set_value_roboport },                      -- 充电最大功率
