@@ -25,7 +25,7 @@ local instructions_machine = {
             ["energy_source.effectivity"] = { type = "multiply", value = set_value_mining_drill },                    -- 燃烧室效率
             ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_mining_drill }, -- 燃烧室污染
             -- ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_mining_drill },            -- 燃烧室燃料库存
-            energy_usage = { type = "division", value = set_value_mining_drill },                                     -- 能量消耗
+            energy_usage = { type = "multiply", value = set_value_mining_drill },                                     -- 能量消耗
             mining_speed = { type = "multiply", value = set_value_mining_drill },                                     -- 钻头速度
             -- resource_searching_radius = { type = "multiply", value = set_value_mining_drill },                        -- 钻机采矿半径
             ["input_fluid_box.volume"] = { type = "multiply", value = set_value_mining_drill, max_value = 1000 },     -- 输入流体体积
@@ -43,7 +43,7 @@ local instructions_machine = {
             ["energy_source.effectivity"] = { type = "multiply", value = set_value_furnace },                    -- 燃烧室效率
             ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_furnace }, -- 燃烧室污染
             -- ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_furnace },            -- 燃烧室燃料库存
-            energy_usage = { type = "division", value = set_value_furnace },                                     -- 能量消耗
+            energy_usage = { type = "multiply", value = set_value_furnace },                                     -- 能量消耗
         }
     },
     {
@@ -55,7 +55,7 @@ local instructions_machine = {
             ["energy_source.effectivity"] = { type = "multiply", value = set_value_assembling_machine },                    -- 燃烧室效率
             ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_assembling_machine }, -- 燃烧室污染
             -- ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_assembling_machine },            -- 燃烧室燃料库存
-            energy_usage = { type = "division", value = set_value_assembling_machine },                                     -- 能量消耗
+            energy_usage = { type = "multiply", value = set_value_assembling_machine },                                     -- 能量消耗
         }
     },
     {
@@ -69,8 +69,8 @@ local instructions_machine = {
             ["crane.speed.grappler.horizontal_turn_rate"] = { type = "multiply", value = set_value_agricultural_tower }, -- 起重机抓取器水平转速
             ["crane.speed.grappler.vertical_turn_rate"] = { type = "multiply", value = set_value_agricultural_tower },   -- 起重机抓取器垂直转速
             ["crane.telescope_default_extention"] = { type = "multiply", value = set_value_agricultural_tower },         -- 起重机伸展长度
-            crane_energy_usage = { type = "division", value = set_value_agricultural_tower },                            -- 起重机能量消耗
-            energy_usage = { type = "division", value = set_value_agricultural_tower },                                  -- 能量消耗
+            crane_energy_usage = { type = "multiply", value = set_value_agricultural_tower },                            -- 起重机能量消耗
+            energy_usage = { type = "multiply", value = set_value_agricultural_tower },                                  -- 能量消耗
             ["energy_source.emissions_per_minute.spores"] = { type = "division", value = set_value_agricultural_tower }, -- 污染
             -- input_inventory_size = { type = "multiply", value = set_value_agricultural_tower },                          -- 输入库存大小
             radius = { type = "multiply", value = set_value_agricultural_tower, max_value = 5 },                         -- 半径
@@ -82,7 +82,7 @@ local instructions_machine = {
         exclude_names = {},
         operations = {
             ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_lab }, -- 污染
-            energy_usage = { type = "division", value = set_value_lab },                                     -- 能量消耗
+            energy_usage = { type = "multiply", value = set_value_lab },                                     -- 能量消耗
             researching_speed = { type = "multiply", value = set_value_lab },                                -- 研究速度
             science_pack_drain_rate_percent = { type = "division", value = set_value_lab },                  -- 科学包消耗率百分比
         }
@@ -104,8 +104,8 @@ local instructions_machine = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            active_energy_usage = { type = "division", value = set_value_rocket_silo },                                                     -- 激活时耗能
-            energy_usage = { type = "division", value = set_value_rocket_silo },                                                            -- 耗能
+            active_energy_usage = { type = "multiply", value = set_value_rocket_silo },                                                     -- 激活时耗能
+            energy_usage = { type = "multiply", value = set_value_rocket_silo },                                                            -- 耗能
             crafting_speed = { type = "multiply", value = set_value_rocket_silo },                                                          -- 制作速度
             logistic_trash_inventory_size = { type = "multiply", value = set_value_rocket_silo, min_value = 10, max_value = 80 },           -- 物流回收库存大小
             to_be_inserted_to_rocket_inventory_size = { type = "multiply", value = set_value_rocket_silo, min_value = 10, max_value = 80 }, -- 运载仓库存大小
@@ -138,9 +138,9 @@ local instructions_machine = {
             arm_angular_speed_cap_quality_scaling = { type = "multiply", value = set_value_asteroid_collector, min_value = 0.01, max_value = 0.5 }, -- 臂式角速度品质缩放比例
             arm_count_base = { type = "multiply", value = set_value_asteroid_collector, min_value = 1, max_value = 9 },                             -- 臂数量
             arm_count_quality_scaling = { type = "multiply", value = set_value_asteroid_collector, min_value = 1, max_value = 6 },                  -- 臂数量品质缩放比例
-            arm_energy_usage = { type = "division", value = set_value_asteroid_collector },                                                         -- 臂能量消耗
+            arm_energy_usage = { type = "multiply", value = set_value_asteroid_collector },                                                         -- 臂能量消耗
             arm_inventory_size = { type = "multiply", value = set_value_asteroid_collector, min_value = 1, max_value = 10 },                        -- 臂库存大小
-            arm_slow_energy_usage = { type = "division", value = set_value_asteroid_collector },                                                    -- 臂低能耗耗能
+            arm_slow_energy_usage = { type = "multiply", value = set_value_asteroid_collector },                                                    -- 臂低能耗耗能
             arm_speed_base = { type = "multiply", value = set_value_asteroid_collector, min_value = 1, max_value = 2 },                             -- 臂速度
             arm_speed_quality_scaling = { type = "multiply", value = set_value_asteroid_collector, min_value = 0.01, max_value = 0.5 },             -- 臂速度品质缩放比例
             collection_radius = { type = "multiply", value = set_value_asteroid_collector, min_value = 7.5, max_value = 30 },                       -- 收集半径
@@ -149,7 +149,7 @@ local instructions_machine = {
             head_collection_radius = { type = "multiply", value = set_value_asteroid_collector, min_value = 0.6, max_value = 2.4 },                 -- 头部采集半径
             inventory_size = { type = "multiply", value = set_value_asteroid_collector },                                                           -- 库存大小
             inventory_size_quality_increase = { type = "multiply", value = set_value_asteroid_collector, min_value = 1, max_value = 10 },           -- 库存大小品质增加
-            passive_energy_usage = { type = "division", value = set_value_asteroid_collector },                                                     -- 被动能量消耗
+            passive_energy_usage = { type = "multiply", value = set_value_asteroid_collector },                                                     -- 被动能量消耗
         }
     },
     {

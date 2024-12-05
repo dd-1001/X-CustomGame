@@ -73,7 +73,7 @@ local instructions_electric = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            consumption = { type = "division", value = set_value_reactor },                   -- 消耗能量
+            consumption = { type = "multiply", value = set_value_reactor },                   -- 消耗能量
             ["energy_source.effectivity"] = { type = "multiply", value = set_value_reactor }, -- 效率
             -- ["energy_source.burnt_inventory_size"] = { type = "multiply", value = set_value_reactor },           -- 燃料库存大小
             -- ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_reactor },            -- 燃料库存大小

@@ -34,7 +34,7 @@ local instructions_weapon = {
             call_for_help_radius = { type = "multiply", value = set_value_ammo_turret },                         -- 求助半径
             inventory_size = { type = "multiply", value = set_value_ammo_turret, min_value = 1, max_value = 3 }, -- 库存大小
             rotation_speed = { type = "multiply", value = set_value_ammo_turret },                               -- 旋转速度
-            energy_per_shot = { type = "division", value = set_value_ammo_turret },                              -- 射击耗能
+            energy_per_shot = { type = "multiply", value = set_value_ammo_turret },                              -- 射击耗能
             ["energy_source.buffer_capacity"] = { type = "multiply", value = set_value_ammo_turret },            -- 缓存能量
             ["energy_source.input_flow_limit"] = { type = "multiply", value = set_value_ammo_turret },           -- 缓存能量输入
         }
@@ -47,7 +47,7 @@ local instructions_weapon = {
             ["attack_parameters.cooldown"] = { type = "division", value = set_value_electric_turret },                                                                             -- 射击冷却时间
             ["attack_parameters.range"] = { type = "multiply", value = set_value_electric_turret },                                                                                -- 射击范围
             ["attack_parameters.damage_modifier"] = { type = "multiply", value = set_value_electric_turret },                                                                      -- 伤害修正
-            ["attack_parameters.ammo_type.energy_consumption"] = { type = "division", value = set_value_electric_turret },                                                         -- 激光能量消耗
+            ["attack_parameters.ammo_type.energy_consumption"] = { type = "multiply", value = set_value_electric_turret },                                                         -- 激光能量消耗
             ["attack_parameters.ammo_type.action.action_delivery.max_length"] = { type = "multiply", value = set_value_electric_turret },                                          -- 激光最长距离
             ["attack_parameters.ammo_type.action.action_delivery.target_effects[2].action.action_delivery.max_length"] = { type = "multiply", value = set_value_electric_turret }, -- 激光最长距离
             call_for_help_radius = { type = "multiply", value = set_value_electric_turret },                                                                                       -- 求助半径

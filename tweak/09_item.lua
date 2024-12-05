@@ -15,7 +15,7 @@ local instructions_item = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            energy_usage_per_tick = { type = "division", value = set_value_lamp },                                   -- 耗能
+            energy_usage_per_tick = { type = "multiply", value = set_value_lamp },                                   -- 耗能
             ["light.intensity"] = { type = "multiply", value = set_value_lamp, min_value = 0.01, max_value = 0.99 }, -- 亮度
             ["light.size"] = { type = "multiply", value = set_value_lamp },                                          -- 光圈半径
         }
@@ -34,9 +34,9 @@ local instructions_item = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            energy_per_nearby_scan = { type = "division", value = set_value_radar },                                -- 扫描耗能
-            energy_per_sector = { type = "division", value = set_value_radar },                                     -- 扫描扇区耗能
-            energy_usage = { type = "division", value = set_value_radar },                                          -- 耗能
+            energy_per_nearby_scan = { type = "multiply", value = set_value_radar },                                -- 扫描耗能
+            energy_per_sector = { type = "multiply", value = set_value_radar },                                     -- 扫描扇区耗能
+            energy_usage = { type = "multiply", value = set_value_radar },                                          -- 耗能
             max_distance_of_nearby_sector_revealed = { type = "multiply", value = set_value_radar, max_value = 9 }, -- 该雷达不断显示的区域半径
             max_distance_of_sector_revealed = { type = "multiply", value = set_value_radar, max_value = 36 },       -- 扫描扇区的最大距离
             rotation_speed = { type = "multiply", value = set_value_radar },                                        -- 旋转速度

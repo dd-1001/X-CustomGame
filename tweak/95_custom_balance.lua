@@ -62,6 +62,22 @@ local instructions_custom_balance = {
             color_lookup = { type = "set", value = { { 0.96, "__core__/graphics/color_luts/lut-sunset.png" } } }, -- 亮度
         }
     },
+    {
+        type = "logistic-robot", -- 物流机器人
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            max_payload_size = { type = "set", value = 47 }, -- 机器人货物承载
+        }
+    },
+    {
+        type = "construction-robot", -- 建设机器人
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            max_payload_size = { type = "set", value = 47 }, -- 机器人货物承载
+        }
+    }
 }
 
 if not set_author_custom_balance then

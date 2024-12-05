@@ -16,7 +16,7 @@ local instructions_module = {
         operations = {
             distribution_effectivity = { type = "multiply", value = set_value_beacon, max_value = 3 },                         -- 模块效果的乘数，当在邻居之间共享时
             distribution_effectivity_bonus_per_quality_level = { type = "multiply", value = set_value_beacon, max_value = 3 }, -- 模块效果的乘数，当在邻居之间共享时
-            energy_usage = { type = "division", value = set_value_beacon },                                                    -- 耗能
+            energy_usage = { type = "multiply", value = set_value_beacon },                                                    -- 耗能
             module_slots = { type = "multiply", value = set_value_beacon, max_value = 30 },                                    -- 模块槽位数量
             supply_area_distance = { type = "multiply", value = set_value_beacon, max_value = 64 },                            -- 效果分享范围
         }
@@ -26,7 +26,7 @@ local instructions_module = {
         name = { "speed-module", "speed-module-2", "speed-module-3" },
         exclude_names = {},
         operations = {
-            ["effect.consumption"] = { type = "division", value = set_value_module, min_value = 0.25 }, -- 效果-耗能增加
+            ["effect.consumption"] = { type = "multiply", value = set_value_module, min_value = 0.25 }, -- 效果-耗能增加
             ["effect.quality"] = { type = "division", value = set_value_module },                       -- 效果-品质减小
             ["effect.speed"] = { type = "multiply", value = set_value_module },                         -- 效果-速度增加
         }
@@ -44,7 +44,7 @@ local instructions_module = {
         name = { "productivity-module", "productivity-module-2", "productivity-module-3" },
         exclude_names = {},
         operations = {
-            ["effect.consumption"] = { type = "division", value = set_value_module, min_value = 0.2 }, -- 效果-耗能增加
+            ["effect.consumption"] = { type = "multiply", value = set_value_module, min_value = 0.2 }, -- 效果-耗能增加
             ["effect.pollution"] = { type = "division", value = set_value_module, min_value = 0.01 },  -- 效果-污染增加
             ["effect.productivity"] = { type = "multiply", value = set_value_module },                 -- 效果-产能增加
             ["effect.speed"] = { type = "division", value = set_value_module, min_value = -0.025 },    -- 效果-速度减小

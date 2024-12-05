@@ -28,7 +28,7 @@ local instructions_pipe_system = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            energy_usage = { type = "division", value = set_value_pipe_system },         -- 耗能
+            energy_usage = { type = "multiply", value = set_value_pipe_system },         -- 耗能
             pumping_speed = { type = "multiply", value = set_value_pipe_system },        -- 泵速
             ["fluid_box.volume"] = { type = "multiply", value = set_value_pipe_system }, -- 体积
         }
@@ -38,7 +38,7 @@ local instructions_pipe_system = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            energy_usage = { type = "division", value = set_value_pipe_system },         -- 耗能
+            energy_usage = { type = "multiply", value = set_value_pipe_system },         -- 耗能
             pumping_speed = { type = "multiply", value = set_value_pipe_system },        -- 泵速
             ["fluid_box.volume"] = { type = "multiply", value = set_value_pipe_system }, -- 体积
         }
