@@ -9,6 +9,7 @@ local set_value_wall = settings.startup["x-custom-game-wall-performance-multipli
 local set_value_tool = settings.startup["x-custom-game-tool-performance-multiplier"].value
 local set_value_item_health = settings.startup["x-custom-game-item-health-multiplier"].value
 local set_value_enemy_health = settings.startup["x-custom-game-enemy-health-multiplier"].value
+local set_value_rocket_lift_weight = settings.startup["x-custom-game-rocket-lift-weight-multiplier"].value
 local instructions_other = {
     {
         type = "wall", -- 墙
@@ -32,6 +33,14 @@ local instructions_other = {
         exclude_names = {},
         operations = {
             durability = { type = "multiply", value = set_value_tool }, -- 耐用性
+        }
+    },
+    {
+        type = "utility-constants", -- 公共常量
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            rocket_lift_weight = { type = "multiply", value = set_value_rocket_lift_weight }, -- 火箭升力重量
         }
     }
 }

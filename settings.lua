@@ -570,12 +570,21 @@ data:extend({
     },
     {
         type = "double-setting",
+        name = "x-custom-game-rocket-lift-weight-multiplier", -- 火箭升力重量
+        setting_type = "startup",
+        default_value = 10,
+        minimum_value = 0.1,
+        maximum_value = 100,
+        order = "x-custom-game-116003"
+    },
+    {
+        type = "double-setting",
         name = "x-custom-game-item-health-multiplier", -- 物品生命值
         setting_type = "startup",
         default_value = 4,
         minimum_value = 0.1,
         maximum_value = 100,
-        order = "x-custom-game-116003"
+        order = "x-custom-game-116004"
     },
     {
         type = "double-setting",
@@ -584,7 +593,7 @@ data:extend({
         default_value = 1.5,
         minimum_value = 0.1,
         maximum_value = 100,
-        order = "x-custom-game-116004"
+        order = "x-custom-game-116005"
     },
     {
         type = "double-setting",
@@ -608,6 +617,15 @@ data:extend({
         setting_type = "startup",
         default_value = "L*100",
         order = "x-custom-game-117003"
+    },
+    {
+        type = "double-setting",
+        name = "x-custom-game-recipe-productivity-limit-multiplier", -- 配方产能限制
+        setting_type = "startup",
+        default_value = 2,
+        minimum_value = 0.01,
+        maximum_value = 100,
+        order = "x-custom-game-118001"
     },
     {
         type = "bool-setting",

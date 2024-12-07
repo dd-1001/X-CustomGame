@@ -77,6 +77,15 @@ local instructions_custom_balance = {
         operations = {
             max_payload_size = { type = "set", value = 47 }, -- 机器人货物承载
         }
+    },
+    {
+        type = "tool", -- 科技包
+        name = { "agricultural-science-pack" },
+        exclude_names = {},
+        operations = {
+            spoil_ticks = { type = "set", value = nil },                          -- 变质时间
+            spoil_result = { type = "set", value = "agricultural-science-pack" }, -- 变质结果
+        }
     }
 }
 

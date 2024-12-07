@@ -7,7 +7,7 @@ local log = Core.Log
 log("\n\n\n100_game_startup_test start\n\n\n")
 
 -- 打印原型
--- log("data.raw.technology:\n" .. Core:serpent_block(data.raw.technology) .. "\n")
+-- log("data.raw.recipe:\n" .. Core:serpent_block(data.raw.recipe) .. "\n")
 -- for protype, _ in pairs(data.raw) do
 --     log("data.raw." .. protype .. " = \n" .. Core:serpent_block(data.raw[protype]) .. "\n")
 -- end

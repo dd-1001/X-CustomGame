@@ -36,7 +36,7 @@ local instructions_module = {
         name = { "efficiency-module", "efficiency-module-2", "efficiency-module-3", },
         exclude_names = {},
         operations = {
-            ["effect.consumption"] = { type = "multiply", value = set_value_module, max_value = 0.8 }, -- 效果-耗能减少
+            ["effect.consumption"] = { type = "multiply", value = set_value_module }, -- 效果-耗能减少
         }
     },
     {
