@@ -147,7 +147,7 @@ x_database.modify_item_health_type = {
 	["transport-belt"] = true,
 	-- ["tree"] = true,
 	["underground-belt"] = true,
-	["wall"] = true
+	-- ["wall"] = true
 }
 
 -- enemy最大生命值修改类型

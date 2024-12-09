@@ -16,6 +16,7 @@ local instructions_other = {
         name = { "*" },
         exclude_names = {},
         operations = {
+            max_health = { type = "multiply", value = set_value_wall }, -- 血量
             repair_speed_modifier = { type = "multiply", value = set_value_wall }, -- 修复速度修正
         }
     },

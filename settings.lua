@@ -17,13 +17,20 @@ data:extend({
         order = "x-custom-game-101001"
     },
     {
+        type = "bool-setting",
+        name = "x-custom-game-some-container-build-on-spaceplatform-flag", -- 部分箱子可以建在太空
+        setting_type = "startup",
+        default_value = false,
+        order = "x-custom-game-101002"
+    },
+    {
         type = "double-setting",
         name = "x-custom-game-storage-tank-performance-multiplier", -- 储液罐
         setting_type = "startup",
         default_value = 20,
         minimum_value = 0.01,
         maximum_value = 1000,
-        order = "x-custom-game-101002"
+        order = "x-custom-game-101003"
     },
     {
         type = "double-setting",
@@ -32,7 +39,7 @@ data:extend({
         default_value = 5,
         minimum_value = 0.1,
         maximum_value = 10,
-        order = "x-custom-game-101003"
+        order = "x-custom-game-101004"
     },
     {
         type = "double-setting",
@@ -41,7 +48,7 @@ data:extend({
         default_value = 20,
         minimum_value = 0.01,
         maximum_value = 1000,
-        order = "x-custom-game-101004"
+        order = "x-custom-game-101005"
     },
     {
         type = "double-setting",
@@ -290,7 +297,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-thruster-performance-multiplier", -- 推进器
         setting_type = "startup",
-        default_value = 1.5,
+        default_value = 2,
         minimum_value = 0.5,
         maximum_value = 10,
         order = "x-custom-game-107010"
@@ -299,9 +306,9 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-space-platform-hub-performance-multiplier", -- 太空平台枢纽
         setting_type = "startup",
-        default_value = 2,
+        default_value = 10,
         minimum_value = 0.5,
-        maximum_value = 10,
+        maximum_value = 100,
         order = "x-custom-game-107011"
     },
     {
@@ -335,7 +342,7 @@ data:extend({
         type = "bool-setting",
         name = "x-custom-game-module-slot-all-type-allowed-flag", -- 插件槽允许所有类型的插件
         setting_type = "startup",
-        default_value = true,
+        default_value = false,
         order = "x-custom-game-108005"
     },
     {
@@ -403,7 +410,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-ammo-turret-performance-multiplier", -- 机枪炮塔
         setting_type = "startup",
-        default_value = 2,
+        default_value = 3,
         minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-111002"
@@ -439,18 +446,18 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-ammo-performance-multiplier", -- 弹药
         setting_type = "startup",
-        default_value = 2,
+        default_value = 3,
         minimum_value = 0.1,
-        maximum_value = 10,
+        maximum_value = 100,
         order = "x-custom-game-112001"
     },
     {
         type = "double-setting",
         name = "x-custom-game-projectile-performance-multiplier", -- 抛射弹药(手雷、胶囊、抛射弹药)
         setting_type = "startup",
-        default_value = 2,
+        default_value = 3,
         minimum_value = 0.1,
-        maximum_value = 10,
+        maximum_value = 100,
         order = "x-custom-game-112002"
     },
     {
@@ -459,7 +466,7 @@ data:extend({
         setting_type = "startup",
         default_value = 3,
         minimum_value = 0.1,
-        maximum_value = 10,
+        maximum_value = 100,
         order = "x-custom-game-112003"
     },
     {
@@ -554,9 +561,9 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-wall-performance-multiplier", -- 墙
         setting_type = "startup",
-        default_value = 2,
+        default_value = 10,
         minimum_value = 0.1,
-        maximum_value = 10,
+        maximum_value = 1000,
         order = "x-custom-game-116001"
     },
     {

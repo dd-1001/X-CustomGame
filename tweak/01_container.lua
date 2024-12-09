@@ -8,6 +8,8 @@ local set_value_container = settings.startup["x-custom-game-container-performanc
 local set_value_storage_tank = settings.startup["x-custom-game-storage-tank-performance-multiplier"].value
 local set_value_cargo_wagon = settings.startup["x-custom-game-cargo-wagon-performance-multiplier"].value
 local set_value_fluid_wagon = settings.startup["x-custom-game-fluid-wagon-performance-multiplier"].value
+local set_value_build_on_spaceplatform_flag = settings.startup
+["x-custom-game-some-container-build-on-spaceplatform-flag"].value
 local instructions_container = {
     {
         type = "container", -- 容器：箱子
@@ -52,6 +54,18 @@ local instructions_container = {
     }
 }
 
+if set_value_build_on_spaceplatform_flag then
+    local instructions_build_on_space = {
+        type = "container", -- 容器
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            surface_conditions = { type = "set", value = nil }, -- 表面条件
+        }
+    }
+
+    table.insert(instructions_container, instructions_build_on_space)
+end
 
 
 -- 调用修改数据函数

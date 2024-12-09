@@ -116,9 +116,9 @@ local instructions_machine = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            inventory_size = { type = "multiply", value = set_value_cargo_landing_pad, min_value = 40, max_value = 200 },      -- 库存大小
-            radar_range = { type = "multiply", value = set_value_cargo_landing_pad, min_value = 4, max_value = 9 },            -- 雷达范围
-            trash_inventory_size = { type = "multiply", value = set_value_cargo_landing_pad, min_value = 10, max_value = 80 }, -- 物流库存大小
+            inventory_size = { type = "multiply", value = set_value_cargo_landing_pad, min_value = 40 },            -- 库存大小
+            radar_range = { type = "multiply", value = set_value_cargo_landing_pad, min_value = 4, max_value = 9 }, -- 雷达范围
+            trash_inventory_size = { type = "multiply", value = set_value_cargo_landing_pad, min_value = 10 },      -- 物流库存大小
         }
     },
     {
@@ -126,7 +126,7 @@ local instructions_machine = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            inventory_size_bonus = { type = "multiply", value = set_value_cargo_bay, min_value = 10, max_value = 60 }, -- 库存大小
+            inventory_size_bonus = { type = "multiply", value = set_value_cargo_bay, min_value = 10 }, -- 库存大小
         }
     },
     {
@@ -157,13 +157,14 @@ local instructions_machine = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            ["fuel_fluid_box.volume"] = { type = "multiply", value = set_value_thruster },        -- 燃料库存
-            ["max_performance.effectivity"] = { type = "multiply", value = set_value_thruster },  -- 最大性能.效率
-            ["max_performance.fluid_usage"] = { type = "division", value = set_value_thruster },  -- 最大性能.燃料用量
-            ["max_performance.fluid_volume"] = { type = "division", value = set_value_thruster }, -- 最大性能.燃料体积
-            ["min_performance.effectivity"] = { type = "multiply", value = set_value_thruster },  -- 最小性能.效率
-            ["min_performance.fluid_usage"] = { type = "division", value = set_value_thruster },  -- 最小性能.燃料用量
-            ["min_performance.fluid_volume"] = { type = "division", value = set_value_thruster }, -- 最小性能.燃料体积
+            ["fuel_fluid_box.volume"] = { type = "multiply", value = set_value_thruster, min_value = 500, max_value = 2000 },       -- 燃料库存
+            ["oxidizer_fluid_box.volume"] = { type = "multiply", value = set_value_thruster, min_value = 500, max_value = 2000 },   -- 氧化剂库存
+            ["max_performance.effectivity"] = { type = "multiply", value = set_value_thruster },                                    -- 最大性能.效率
+            ["max_performance.fluid_usage"] = { type = "multiply", value = set_value_thruster, min_value = 1, max_value = 6 },      -- 最大性能.燃料用量
+            ["max_performance.fluid_volume"] = { type = "multiply", value = set_value_thruster, min_value = 0.4, max_value = 2.4 }, -- 最大性能.燃料体积
+            ["min_performance.effectivity"] = { type = "multiply", value = set_value_thruster },                                    -- 最小性能.效率
+            ["min_performance.fluid_usage"] = { type = "multiply", value = set_value_thruster, min_value = 0.05, max_value = 0.3 }, -- 最小性能.燃料用量
+            ["min_performance.fluid_volume"] = { type = "multiply", value = set_value_thruster, min_value = 0.05, max_value = 0.3 }, -- 最小性能.燃料体积
         }
     },
     {

@@ -86,7 +86,30 @@ local instructions_custom_balance = {
             spoil_ticks = { type = "set", value = nil },                          -- 变质时间
             spoil_result = { type = "set", value = "agricultural-science-pack" }, -- 变质结果
         }
-    }
+    },
+    {
+        type = "thruster", -- 火箭推进器
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            ["fuel_fluid_box.pipe_connections[1]"] = {
+                type = "set",
+                value = { direction = 12, enable_working_visualisations = { "pipe-4" }, flow_direction = "input-output", position = { -1.5, -2 } }
+            }, -- 燃料接口位置
+            ["fuel_fluid_box.pipe_connections[2]"] = {
+                type = "set",
+                value = { direction = 4, enable_working_visualisations = { "pipe-1" }, flow_direction = "input-output", position = { 1.5, -2 } }
+            }, -- 燃料接口位置
+            ["oxidizer_fluid_box.pipe_connections[1]"] = {
+                type = "set",
+                value = { direction = 12, enable_working_visualisations = { "pipe-3" }, flow_direction = "input-output", position = { -1.5, 0 } }
+            }, -- 氧化剂接口位置
+            ["oxidizer_fluid_box.pipe_connections[2]"] = {
+                type = "set",
+                value = { direction = 4, enable_working_visualisations = { "pipe-2" }, flow_direction = "input-output", position = { 1.5, 0 } }
+            }, -- 氧化剂接口位置
+        }
+    },
 }
 
 if not set_author_custom_balance then

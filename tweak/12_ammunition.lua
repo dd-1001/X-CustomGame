@@ -15,6 +15,7 @@ local instructions_ammunition = {
         operations = {
             magazine_size = { type = "multiply", value = set_value_ammo, min_value = 1 },                                                             -- 弹匣大小
             ["ammo_type.action[1].action_delivery[1].target_effects[2].damage.amount"] = { type = "multiply", value = set_value_ammo },               -- 弹匣.伤害
+            ["ammo_type.action.action_delivery.target_effects[2].damage.amount"] = { type = "multiply", value = set_value_ammo },               -- 弹匣.伤害
             ["ammo_type.action[2].repeat_count"] = { type = "multiply", value = set_value_ammo, min_value = 1 },                                      -- 霰弹.重复次数
             ["ammo_type.action[2].action_delivery.max_range"] = { type = "multiply", value = set_value_ammo },                                        -- 霰弹.最大距离
             ["ammo_type.action[2].action_delivery.starting_speed"] = { type = "multiply", value = set_value_ammo },                                   -- 霰弹.起始速度
