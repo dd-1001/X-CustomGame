@@ -82,17 +82,17 @@ local instructions_transport = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            consumption = { type = "division", value = set_value_car },                                                         -- 消耗
-            effectivity = { type = "multiply", value = set_value_car },                                                         -- 内燃机输出到车轮的传递效率
+            consumption = { type = "multiply", value = set_value_car },                                                         -- 能量消耗
+            effectivity = { type = "multiply", value = set_value_car },                                                         -- 能量传递效率
             ["energy_source.effectivity"] = { type = "multiply", value = set_value_car },                                       -- 内燃机效率
             ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_car, min_value = 1, max_value = 5 }, -- 燃料库存
-            inventory_size = { type = "multiply", value = set_value_car },                                                      -- 汽车库存量
-            rotation_speed = { type = "multiply", value = set_value_car },                                                      -- 旋转速度
+            inventory_size = { type = "multiply", value = set_value_car },                                                      -- 汽车库存大小
+            -- rotation_speed = { type = "multiply", value = set_value_car },                                                      -- 旋转速度
             braking_power = { type = "multiply", value = set_value_car },                                                       -- 制动力
             turret_rotation_speed = { type = "multiply", value = set_value_car },                                               -- 炮塔旋转速度
-            turret_return_timeout = { type = "division", value = set_value_car },                                               -- 炮塔回转超时
+            -- turret_return_timeout = { type = "division", value = set_value_car },                                               -- 炮塔回转超时
             trash_inventory_size = { type = "multiply", value = set_value_car },                                                -- 物流库存大小
-            friction = { type = "multiply", value = set_value_car, min_value = 0.004, max_value = 0.01 },                       -- 摩擦力
+            -- friction = { type = "multiply", value = set_value_car, min_value = 0.004, max_value = 0.01 },                       -- 摩擦力
         }
     },
     {

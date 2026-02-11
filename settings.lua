@@ -3,7 +3,7 @@ data:extend({
         type = "bool-setting",
         name = "x_custom_game_debug",
         setting_type = "startup",
-        default_value = true,
+        default_value = false,
         hidden = false,
         order = "1001"
     },
@@ -18,7 +18,7 @@ data:extend({
     },
     {
         type = "bool-setting",
-        name = "x-custom-game-some-container-build-on-spaceplatform-flag", -- 部分箱子可以建在太空
+        name = "x-custom-game-reguar-container-build-on-spaceplatform-flag", -- 普通箱子可以放置在太空
         setting_type = "startup",
         default_value = false,
         order = "x-custom-game-101002"
@@ -346,6 +346,13 @@ data:extend({
         order = "x-custom-game-108005"
     },
     {
+        type = "bool-setting",
+        name = "x-custom-game-module-slot-allow-productivity-flag", -- 所有配方允许产能插件
+        setting_type = "startup",
+        default_value = false,
+        order = "x-custom-game-108006"
+    },
+    {
         type = "double-setting",
         name = "x-custom-game-stack-size-multiplier", -- 堆叠大小
         setting_type = "startup",
@@ -629,7 +636,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-recipe-productivity-limit-multiplier", -- 配方产能限制
         setting_type = "startup",
-        default_value = 2,
+        default_value = 10,
         minimum_value = 0.01,
         maximum_value = 100,
         order = "x-custom-game-118001"

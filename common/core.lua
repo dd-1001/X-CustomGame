@@ -30,18 +30,17 @@ function Core.format_log_value(value)
 end
 
 -- 日志记录函数
-function Core.Log(msg)
-    -- 检查是否在调试模式
-    if not Core.x_custom_game_debug then
-        return
+if Core.x_custom_game_debug then
+    function Core.Log(msg)
+        if type(msg) == "table" then
+            msg = Core.serpent_block(msg) or "nil after serpent_block"
+        end
+        log(msg)
     end
-
-    -- 转换为字符串
-    if type(msg) == "table" then
-        msg = Core:serpent_block(msg) or "nil after serpent_block"
+else
+    function Core.Log(msg)
+        -- 空函数
     end
-
-    log(msg)
 end
 
 return Core

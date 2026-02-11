@@ -15,9 +15,9 @@ local instructions_item = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            energy_usage_per_tick = { type = "multiply", value = set_value_lamp },                                   -- 耗能
-            ["light.intensity"] = { type = "multiply", value = set_value_lamp, min_value = 0.01, max_value = 0.99 }, -- 亮度
-            ["light.size"] = { type = "multiply", value = set_value_lamp },                                          -- 光圈半径
+            energy_usage_per_tick = { type = "multiply", value = set_value_lamp },                                     -- 耗能
+            ["light.intensity"] = { type = "multiply", value = set_value_lamp, min_value = 0.001, max_value = 0.999 }, -- 亮度
+            ["light.size"] = { type = "multiply", value = set_value_lamp },                                            -- 光圈半径
         }
     },
     {

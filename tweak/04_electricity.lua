@@ -28,10 +28,8 @@ local instructions_electric = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            -- target_temperature = { type = "multiply", value = set_value_boiler },                               -- 设定的目标温度
             energy_consumption = { type = "multiply", value = set_value_boiler },                               -- 能量消耗
             ["energy_source.effectivity"] = { type = "multiply", value = set_value_boiler },                    -- 效率
-            -- ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_boiler },            -- 燃料库存大小
             ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_boiler }, -- 污染
             ["fluid_box.volume"] = { type = "multiply", value = set_value_boiler, max_value = 1000 },           -- 水体积
             ["output_fluid_box.volume"] = { type = "multiply", value = set_value_boiler, max_value = 2000 },    -- 输出蒸汽体积
@@ -75,8 +73,6 @@ local instructions_electric = {
         operations = {
             consumption = { type = "multiply", value = set_value_reactor },                   -- 消耗能量
             ["energy_source.effectivity"] = { type = "multiply", value = set_value_reactor }, -- 效率
-            -- ["energy_source.burnt_inventory_size"] = { type = "multiply", value = set_value_reactor },           -- 燃料库存大小
-            -- ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_reactor },            -- 燃料库存大小
             ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_reactor }, -- 污染
             ["heat_buffer.max_temperature"] = { type = "multiply", value = set_value_reactor },                  -- 最大温度
             ["heat_buffer.max_transfer"] = { type = "multiply", value = set_value_reactor },                     -- 最大传输热量
@@ -99,11 +95,10 @@ local instructions_electric = {
         exclude_names = {},
         operations = {
             ["burner.effectivity"] = { type = "multiply", value = set_value_fusion_reactor },                        -- 燃烧室效率
-            -- ["burner.fuel_inventory_size"] = { type = "multiply", value = set_value_fusion_reactor }, -- 燃烧室燃料库存
             ["input_fluid_box.volume"] = { type = "multiply", value = set_value_fusion_reactor, max_value = 1000 },  -- 输入流体体积
             ["output_fluid_box.volume"] = { type = "multiply", value = set_value_fusion_reactor, max_value = 1000 }, -- 输出流体体积
-            max_fluid_usage = { type = "division", value = set_value_fusion_reactor },                               -- 单位时间流体使用量
-            power_input = { type = "division", value = set_value_fusion_reactor },                                   -- 输入能量消耗
+            max_fluid_usage = { type = "multiply", value = set_value_fusion_reactor },                               -- 单位时间流体使用量
+            power_input = { type = "multiply", value = set_value_fusion_reactor },                                   -- 输入能量消耗
         }
     },
     {

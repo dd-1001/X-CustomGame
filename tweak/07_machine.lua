@@ -24,10 +24,8 @@ local instructions_machine = {
         operations = {
             ["energy_source.effectivity"] = { type = "multiply", value = set_value_mining_drill },                    -- 燃烧室效率
             ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_mining_drill }, -- 燃烧室污染
-            -- ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_mining_drill },            -- 燃烧室燃料库存
             energy_usage = { type = "multiply", value = set_value_mining_drill },                                     -- 能量消耗
             mining_speed = { type = "multiply", value = set_value_mining_drill },                                     -- 钻头速度
-            -- resource_searching_radius = { type = "multiply", value = set_value_mining_drill },                        -- 钻机采矿半径
             ["input_fluid_box.volume"] = { type = "multiply", value = set_value_mining_drill, max_value = 1000 },     -- 输入流体体积
             ["output_fluid_box.volume"] = { type = "multiply", value = set_value_mining_drill, max_value = 1000 },    -- 输出流体体积
         }
@@ -37,12 +35,9 @@ local instructions_machine = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            -- source_inventory_size = { type = "multiply", value = set_value_furnace, max_value = 3 }, -- 输入槽的数量
-            -- result_inventory_size = { type = "multiply", value = set_value_furnace, max_value = 3 }, -- 输出槽的数量
             crafting_speed = { type = "multiply", value = set_value_furnace },                                   -- 制作速度
             ["energy_source.effectivity"] = { type = "multiply", value = set_value_furnace },                    -- 燃烧室效率
             ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_furnace }, -- 燃烧室污染
-            -- ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_furnace },            -- 燃烧室燃料库存
             energy_usage = { type = "multiply", value = set_value_furnace },                                     -- 能量消耗
         }
     },
@@ -54,7 +49,6 @@ local instructions_machine = {
             crafting_speed = { type = "multiply", value = set_value_assembling_machine },                                   -- 制作速度
             ["energy_source.effectivity"] = { type = "multiply", value = set_value_assembling_machine },                    -- 燃烧室效率
             ["energy_source.emissions_per_minute.pollution"] = { type = "division", value = set_value_assembling_machine }, -- 燃烧室污染
-            -- ["energy_source.fuel_inventory_size"] = { type = "multiply", value = set_value_assembling_machine },            -- 燃烧室燃料库存
             energy_usage = { type = "multiply", value = set_value_assembling_machine },                                     -- 能量消耗
         }
     },
@@ -72,7 +66,6 @@ local instructions_machine = {
             crane_energy_usage = { type = "multiply", value = set_value_agricultural_tower },                            -- 起重机能量消耗
             energy_usage = { type = "multiply", value = set_value_agricultural_tower },                                  -- 能量消耗
             ["energy_source.emissions_per_minute.spores"] = { type = "division", value = set_value_agricultural_tower }, -- 污染
-            -- input_inventory_size = { type = "multiply", value = set_value_agricultural_tower },                          -- 输入库存大小
             radius = { type = "multiply", value = set_value_agricultural_tower, max_value = 5 },                         -- 半径
         }
     },
@@ -107,8 +100,8 @@ local instructions_machine = {
             active_energy_usage = { type = "multiply", value = set_value_rocket_silo },                                                     -- 激活时耗能
             energy_usage = { type = "multiply", value = set_value_rocket_silo },                                                            -- 耗能
             crafting_speed = { type = "multiply", value = set_value_rocket_silo },                                                          -- 制作速度
-            logistic_trash_inventory_size = { type = "multiply", value = set_value_rocket_silo, min_value = 10, max_value = 80 },           -- 物流回收库存大小
-            to_be_inserted_to_rocket_inventory_size = { type = "multiply", value = set_value_rocket_silo, min_value = 10, max_value = 80 }, -- 运载仓库存大小
+            logistic_trash_inventory_size = { type = "multiply", value = set_value_rocket_silo, min_value = 10, max_value = 60 },           -- 物流回收库存大小
+            to_be_inserted_to_rocket_inventory_size = { type = "multiply", value = set_value_rocket_silo, min_value = 10, max_value = 60 }, -- 运载仓库存大小
         }
     },
     {
@@ -116,9 +109,9 @@ local instructions_machine = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            inventory_size = { type = "multiply", value = set_value_cargo_landing_pad, min_value = 40 },            -- 库存大小
-            radar_range = { type = "multiply", value = set_value_cargo_landing_pad, min_value = 4, max_value = 9 }, -- 雷达范围
-            trash_inventory_size = { type = "multiply", value = set_value_cargo_landing_pad, min_value = 10 },      -- 物流库存大小
+            inventory_size = { type = "multiply", value = set_value_cargo_landing_pad, min_value = 40 },                       -- 库存大小
+            radar_range = { type = "multiply", value = set_value_cargo_landing_pad, min_value = 4, max_value = 9 },            -- 雷达范围
+            trash_inventory_size = { type = "multiply", value = set_value_cargo_landing_pad, min_value = 10, max_value = 60 }, -- 物流库存大小
         }
     },
     {
@@ -157,13 +150,13 @@ local instructions_machine = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            ["fuel_fluid_box.volume"] = { type = "multiply", value = set_value_thruster, min_value = 500, max_value = 2000 },       -- 燃料库存
-            ["oxidizer_fluid_box.volume"] = { type = "multiply", value = set_value_thruster, min_value = 500, max_value = 2000 },   -- 氧化剂库存
-            ["max_performance.effectivity"] = { type = "multiply", value = set_value_thruster },                                    -- 最大性能.效率
-            ["max_performance.fluid_usage"] = { type = "multiply", value = set_value_thruster, min_value = 1, max_value = 6 },      -- 最大性能.燃料用量
-            ["max_performance.fluid_volume"] = { type = "multiply", value = set_value_thruster, min_value = 0.4, max_value = 2.4 }, -- 最大性能.燃料体积
-            ["min_performance.effectivity"] = { type = "multiply", value = set_value_thruster },                                    -- 最小性能.效率
-            ["min_performance.fluid_usage"] = { type = "multiply", value = set_value_thruster, min_value = 0.05, max_value = 0.3 }, -- 最小性能.燃料用量
+            ["fuel_fluid_box.volume"] = { type = "multiply", value = set_value_thruster, min_value = 500, max_value = 2000 },        -- 燃料库存
+            ["oxidizer_fluid_box.volume"] = { type = "multiply", value = set_value_thruster, min_value = 500, max_value = 2000 },    -- 氧化剂库存
+            ["max_performance.effectivity"] = { type = "multiply", value = set_value_thruster },                                     -- 最大性能.效率
+            ["max_performance.fluid_usage"] = { type = "multiply", value = set_value_thruster, min_value = 1, max_value = 6 },       -- 最大性能.燃料用量
+            ["max_performance.fluid_volume"] = { type = "multiply", value = set_value_thruster, min_value = 0.4, max_value = 2.4 },  -- 最大性能.燃料体积
+            ["min_performance.effectivity"] = { type = "multiply", value = set_value_thruster },                                     -- 最小性能.效率
+            ["min_performance.fluid_usage"] = { type = "multiply", value = set_value_thruster, min_value = 0.05, max_value = 0.3 },  -- 最小性能.燃料用量
             ["min_performance.fluid_volume"] = { type = "multiply", value = set_value_thruster, min_value = 0.05, max_value = 0.3 }, -- 最小性能.燃料体积
         }
     },

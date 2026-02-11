@@ -35,7 +35,7 @@ for protype, _ in pairs(unModified_type) do
         new_unModified_type[protype] = true
     end
 end
-log("\nnew_unModified_type:\n" .. Core:serpent_block(new_unModified_type))
+-- log("\nnew_unModified_type:\n" .. Core:serpent_block(new_unModified_type))
 
 -- 查找实例
 -- local function filter(tbl)

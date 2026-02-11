@@ -13,7 +13,7 @@ local instructions_robot = {
         exclude_names = {},
         operations = {
             speed = { type = "multiply", value = set_value_robot },                                                -- 飞行速度
-            speed_multiplier_when_out_of_energy = { type = "multiply", value = set_value_robot, max_value = 0.6 }, -- 耗光能量的飞行速度
+            speed_multiplier_when_out_of_energy = { type = "multiply", value = set_value_robot, max_value = 0.5 }, -- 耗光能量的飞行速度
             energy_per_move = { type = "division", value = set_value_robot },                                      -- 移动1图格耗能
             energy_per_tick = { type = "division", value = set_value_robot },                                      -- 飞行1刻耗能
             max_energy = { type = "multiply", value = set_value_robot },                                           -- 电池最大容量
@@ -26,7 +26,7 @@ local instructions_robot = {
         exclude_names = {},
         operations = {
             speed = { type = "multiply", value = set_value_robot },                                                -- 飞行速度
-            speed_multiplier_when_out_of_energy = { type = "multiply", value = set_value_robot, max_value = 0.6 }, -- 耗光能量的飞行速度
+            speed_multiplier_when_out_of_energy = { type = "multiply", value = set_value_robot, max_value = 0.5 }, -- 耗光能量的飞行速度
             energy_per_move = { type = "division", value = set_value_robot },                                      -- 移动1图格耗能
             energy_per_tick = { type = "division", value = set_value_robot },                                      -- 飞行1刻耗能
             max_energy = { type = "multiply", value = set_value_robot },                                           -- 电池最大容量

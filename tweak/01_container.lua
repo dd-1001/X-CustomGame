@@ -9,7 +9,7 @@ local set_value_storage_tank = settings.startup["x-custom-game-storage-tank-perf
 local set_value_cargo_wagon = settings.startup["x-custom-game-cargo-wagon-performance-multiplier"].value
 local set_value_fluid_wagon = settings.startup["x-custom-game-fluid-wagon-performance-multiplier"].value
 local set_value_build_on_spaceplatform_flag = settings.startup
-["x-custom-game-some-container-build-on-spaceplatform-flag"].value
+["x-custom-game-reguar-container-build-on-spaceplatform-flag"].value
 local instructions_container = {
     {
         type = "container", -- 容器：箱子
