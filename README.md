@@ -1,69 +1,57 @@
-# X-CustomGame
+# X-CustomGame | 自定义游戏模组
 
-如意如意，按我心意。  
-As you wish, as I wish.
+> **如意如意，按我心意。**  
+> **As you wish, as I wish.**
 
-你可以自定义游戏。  
-You can customize the game.
+---
 
-## 简介 / Introduction
+### 📖 简介 / Introduction
 
-如果你觉得原版游戏太费时间，或者太简单，这个模组可以通过调整箱子、熔炉、机器、科技等参数，帮你加快或加大难度，打造适合自己的游戏节奏。  
-If you feel the vanilla game is either too time-consuming or too easy, this mod lets you tweak chests, furnaces, machines, technologies and more, so you can speed up or increase the challenge to match your preferred play style.
+如果你觉得原版游戏太费时间，或者太简单，这个模组可以帮你打造适合自己的游戏节奏。你可以通过调整各项参数，优化物流、生产、战斗及科技体验，而不被固定数值束缚。
 
-通过调整各种设置，你可以优化自己的游戏体验，而不必被固定数值束缚。  
-By tuning various settings, you can optimize your experience instead of being constrained by fixed vanilla values.
+If the vanilla game feels too time-consuming or too easy, this mod helps you create your own pace. Tweak parameters to optimize logistics, production, combat, and technology without being constrained by fixed values.
 
-## 主要功能 / Key Features
+---
 
-- **性能倍数调整 / Performance multipliers**  
-  调整箱子、熔炉、组装机等实体的性能倍数，优化物流和生产效率。  
-  Optimize logistics and production efficiency by adjusting performance multipliers of containers, furnaces, assembling machines, etc.
+### 🚀 主要功能 / Key Features
 
-- **角色属性调整 / Character attributes**  
-  自定义采矿速度、奔跑速度、血量等角色属性，提升可玩性。  
-  Customize mining speed, running speed, health and other character attributes to enhance gameplay.
+#### 🏗️ 物流与生产 | Logistics & Production
 
-- **科技与资源管理 / Technology & resources**  
-  调整科技花费和资源获取方式，适配不同策略。  
-  Adjust technology costs and resource acquisition methods to suit different strategies.
+- **效率倍数调整 (Performance Multipliers):** 优化箱子、熔炉、组装机、机械臂等实体的性能。  
+  Optimize efficiency for containers, furnaces, assemblers, and inserters.
+- **无限资源 (Infinite Resources):** 启用无限矿石，将重心放在建造与布局上。   
+  Enable infinite ores to focus on base design and layout. 
+- **太空优化 (Space Optimization):** 允许在太空平台上放置普通箱子。   
+  Allows regular containers to be built on space platforms. 
 
-- **装备与武器 / Equipment & weapons**  
-  通过修改模块和武器的性能倍数，增强战斗与防御能力。  
-  Enhance combat and defense by tweaking equipment modules and weapons.
+#### 🏃 角色与装备 | Character & Equipment
 
-- **无限资源 / Infinite resources**  
-  启用无限矿石等选项，轻松获取资源，把重心放在建造和布局。  
-  Enable infinite ore options so you can focus on building and layout.
+- **属性自定义 (Attributes):** 调整采矿速度、奔跑速度、血量及库存大小。   
+  Customize mining speed, movement speed, health, and inventory size. 
+- **装备增强 (Equipment Buffs):** 提升模块性能，或将所有装备尺寸统一为 1 X 1。   
+  Boost module performance or set all equipment grid modules to 1 X 1. 
 
-- **开局物品 / Starting items**  
-  自定义开局物品组合，快速进入中后期玩法。  
-  Customize starting items to jump quickly into mid/late-game gameplay.
+#### 🧪 科技与战略 | Tech & Strategy
 
-- **科技花费公式 / Technology cost formula**  
-  支持自定义科技花费公式，打造独特的研究节奏。  
-  Customize technology cost formulas to create a unique research pace.
+- **研究节奏 (Research Pace):** 调整科技花费倍率，支持自定义无限科技公式。   
+  Set research cost multipliers or unique infinite technology formulas. 
+- **产能解锁 (Productivity Unlocked):** 允许在所有配方中使用产能插件。  
+  Allow productivity modules in all recipes by bypassing vanilla restrictions.
 
-## 配置说明 / Configuration
+---
 
-本模组的大部分功能都通过「模组设置」进行调整，建议在新存档开始前先配置好：  
-Most features are configured via the Mod Settings menu; it is recommended to set them up before starting a new save:
+### ⚙️ 配置说明 / Configuration
 
-- **物流与生产相关**：如箱子容量、熔炉和组装机速度、传送带与机器人效率等。  
-  **Logistics & production**: chest capacity, furnace and assembler speed, belt and robot efficiency, etc.
-- **角色与战斗相关**：如角色移动速度、采矿速度、血量、武器与防御装备倍率等。  
-  **Character & combat**: movement and mining speed, health, weapon and defense multipliers, etc.
-- **科技与资源相关**：科技花费倍率、自定义科技公式、资源产量与获取方式等。  
-  **Technology & resources**: research cost multipliers, custom research formulas, resource yield and acquisition methods, etc.
+- **启动设置 (Startup Settings):** 大部分功能（如性能倍数、插槽倍率）需在主菜单的“模组设置”中预先配置。  
+  Most settings (multipliers, slots) must be configured in **Settings -> Mod Settings -> Startup**.
+- **实时调整 (Runtime Settings):** 开局物品及即时获取物品配置可在游戏内实时生效。  
+  Settings like "Bonus Items" and "Get Items" can be adjusted during gameplay.
 
-具体选项名称和默认值可在游戏内设置界面查看，本 README 仅作概览。  
-For exact option names and default values, refer to the in-game settings; this README provides only an overview.
+---
 
-## 兼容性与注意事项 / Compatibility & Notes
+### ⚠️ 注意事项 / Notes
 
-- 一些大整合或全面改造类模组（如对全部实体和科技做重写）可能会覆盖或改变本模组的效果。  
-  Some large overhaul mods (that rewrite most entities and technologies) may override or change the effects of this mod.
-- 如果发现数值异常或设置无效，优先检查是否有其它模组在同一部分做了修改。  
-  If you notice strange values or ineffective settings, first check whether other mods modify the same aspects.
-- 建议在正式长期游玩前，先在测试存档中尝试不同配置组合，找到最适合自己的节奏。  
-  Before a long-term playthrough, try different configurations in a test save to find the pacing you like.
+- **兼容性 (Compatibility):** 大型覆盖类模组（Overhaul mods）可能会覆盖本模组的修改效果。  
+  Some overhaul mods may override or conflict with this mod's adjustments.
+- **测试建议 (Testing):** 建议在正式游玩前，先在测试存档中尝试不同的配置组合。  
+  Try different configurations in a test save before starting a long-term playthrough.

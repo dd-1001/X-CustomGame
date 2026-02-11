@@ -346,13 +346,6 @@ data:extend({
         order = "x-custom-game-108005"
     },
     {
-        type = "bool-setting",
-        name = "x-custom-game-module-slot-allow-productivity-flag", -- 所有配方允许产能插件
-        setting_type = "startup",
-        default_value = false,
-        order = "x-custom-game-108006"
-    },
-    {
         type = "double-setting",
         name = "x-custom-game-stack-size-multiplier", -- 堆叠大小
         setting_type = "startup",
@@ -640,6 +633,13 @@ data:extend({
         minimum_value = 0.01,
         maximum_value = 100,
         order = "x-custom-game-118001"
+    },
+    {
+        type = "bool-setting",
+        name = "x-custom-game-module-slot-allow-productivity-flag", -- 所有配方允许产能插件
+        setting_type = "startup",
+        default_value = false,
+        order = "x-custom-game-118002"
     },
     {
         type = "bool-setting",
