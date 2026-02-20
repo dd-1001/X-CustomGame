@@ -5,6 +5,11 @@ local log = Core.Log
 
 -- 指令表配置
 local set_author_custom_balance = settings.startup["x-custom-game-author-custom-balance-flag"].value
+
+if not set_author_custom_balance then
+    return
+end
+
 local instructions_custom_balance = {
     {
         type = "module", -- 插件-速度
@@ -59,7 +64,7 @@ local instructions_custom_balance = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            color_lookup = { type = "set", value = { { 0.96, "__core__/graphics/color_luts/lut-sunset.png" } } }, -- 亮度
+            color_lookup = { type = "set", value = { { 0.98, "__core__/graphics/color_luts/lut-sunset.png" } } }, -- 亮度
         }
     },
     {
@@ -67,7 +72,7 @@ local instructions_custom_balance = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            max_payload_size = { type = "set", value = 47 }, -- 机器人货物承载
+            max_payload_size = { type = "set", value = 97 }, -- 机器人货物承载
         }
     },
     {
@@ -75,7 +80,7 @@ local instructions_custom_balance = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            max_payload_size = { type = "set", value = 47 }, -- 机器人货物承载
+            max_payload_size = { type = "set", value = 97 }, -- 机器人货物承载
         }
     },
     {
@@ -112,9 +117,30 @@ local instructions_custom_balance = {
     -- },
 }
 
-if not set_author_custom_balance then
-    return
+-- 查找 type 为 recipe 且有 surface_conditions 字段的原型
+local function filter_recipe_without_surface_conditions(tbl)
+    return tbl.type == "recipe" and tbl.surface_conditions ~= nil and tbl.hidden == nil and tbl.results ~= nil and
+        next(tbl.results) ~= nil
 end
+local data_raw_recipe_without_surface_conditions = x_util.find_with_filter(data.raw,
+    filter_recipe_without_surface_conditions)
+-- log("\ndata_raw_recipe_without_surface_conditions:\n" ..
+-- Core:serpent_block(data_raw_recipe_without_surface_conditions))
+
+-- 组装插入 surface_conditions 属性的指令
+for prototype, protonames in pairs(data_raw_recipe_without_surface_conditions) do
+    for _, protoname in ipairs(protonames) do
+        local instructions_template = {}
+        instructions_template["type"] = prototype
+        instructions_template["name"] = { protoname }
+        instructions_template["operations"] = {
+            surface_conditions = { type = "set", value = nil },
+        }
+
+        table.insert(instructions_custom_balance, instructions_template)
+    end
+end
+-- log("\ninstructions_custom_balance:\n" .. Core:serpent_block(instructions_custom_balance))
 
 
 -- 调用修改数据函数

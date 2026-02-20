@@ -34,12 +34,12 @@ local instructions_item = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            energy_per_nearby_scan = { type = "multiply", value = set_value_radar },                                -- 扫描耗能
-            energy_per_sector = { type = "multiply", value = set_value_radar },                                     -- 扫描扇区耗能
-            energy_usage = { type = "multiply", value = set_value_radar },                                          -- 耗能
-            max_distance_of_nearby_sector_revealed = { type = "multiply", value = set_value_radar, max_value = 9 }, -- 该雷达不断显示的区域半径
-            max_distance_of_sector_revealed = { type = "multiply", value = set_value_radar, max_value = 36 },       -- 扫描扇区的最大距离
-            rotation_speed = { type = "multiply", value = set_value_radar },                                        -- 旋转速度
+            energy_per_nearby_scan = { type = "multiply", value = set_value_radar },                                 -- 扫描耗能
+            energy_per_sector = { type = "multiply", value = set_value_radar },                                      -- 扫描扇区耗能
+            energy_usage = { type = "multiply", value = set_value_radar },                                           -- 耗能
+            max_distance_of_nearby_sector_revealed = { type = "multiply", value = set_value_radar, max_value = 18 }, -- 该雷达不断显示的区域半径
+            max_distance_of_sector_revealed = { type = "multiply", value = set_value_radar, max_value = 36 },        -- 扫描扇区的最大距离
+            rotation_speed = { type = "multiply", value = set_value_radar },                                         -- 旋转速度
         }
     }
 }

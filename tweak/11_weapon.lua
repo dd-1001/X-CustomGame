@@ -18,7 +18,6 @@ local instructions_weapon = {
             ["attack_parameters.cooldown"] = { type = "division", value = set_value_gun },                  -- 射击冷却时间
             ["attack_parameters.range"] = { type = "multiply", value = set_value_gun },                     -- 射击范围
             ["attack_parameters.movement_slow_down_factor"] = { type = "division", value = set_value_gun }, -- 移动减速因子
-            -- ["attack_parameters.projectile_creation_distance"] = { type = "multiply", value = set_value_gun }, -- 弹射物的创建距离
         }
     },
     {

@@ -16,25 +16,25 @@ x_database.game_start_bonus_items = {
 	{ name = "construction-robot",               count = 50 }, --建设机器人
 	{ name = "offshore-pump",                    count = 100 }, --抽取机
 	{ name = "boiler",                           count = 10 }, --锅炉
-	{ name = "steam-engine",                     count = 10 }, --蒸汽机
+	{ name = "steam-engine",                     count = 50 }, --蒸汽机
 	{ name = "pipe",                             count = 1000 }, --管道
 	{ name = "pipe-to-ground",                   count = 200 }, --地下管道
 	{ name = "solar-panel",                      count = 10 }, --太阳能板
 	{ name = "accumulator",                      count = 10 }, --蓄电器
 	{ name = "medium-electric-pole",             count = 100 }, --中型电线杆
-	{ name = "transport-belt",                   count = 1000 }, --基础传送带
-	{ name = "underground-belt",                 count = 100 }, --基础地下传送带
-	{ name = "splitter",                         count = 100 }, --基础分流器
+	{ name = "transport-belt",                   count = 2000 }, --基础传送带
+	{ name = "underground-belt",                 count = 200 }, --基础地下传送带
+	{ name = "splitter",                         count = 200 }, --基础分流器
 	{ name = "inserter",                         count = 200 }, --电力机械臂
 	{ name = "electric-mining-drill",            count = 200 }, --电力采矿机
 	{ name = "electric-furnace",                 count = 200 }, --电炉
-	{ name = "assembling-machine-1",             count = 200 }, --组装机1
+	-- { name = "assembling-machine-1",             count = 200 }, --组装机1
 	{ name = "assembling-machine-2",             count = 200 }, --组装机2
 	{ name = "iron-chest",                       count = 100 }, --铁箱
 	{ name = "active-provider-chest",            count = 200 }, --主动供货箱（紫箱）
-	{ name = "passive-provider-chest",           count = 200 }, --被动供货箱（红箱）
+	-- { name = "passive-provider-chest",           count = 200 }, --被动供货箱（红箱）
 	{ name = "storage-chest",                    count = 200 }, --被动存货箱（黄箱）
-	{ name = "buffer-chest",                     count = 200 }, --主动存货箱（绿箱）
+	-- { name = "buffer-chest",                     count = 200 }, --主动存货箱（绿箱）
 	{ name = "requester-chest",                  count = 200 }, --优先集货箱（蓝箱）
 	-- { name = "steel-furnace",                    count = 100 }, --钢炉
 	-- { name = "cliff-explosives",                 count = 200 }, --悬崖炸药
