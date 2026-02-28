@@ -84,14 +84,30 @@ local instructions_custom_balance = {
         }
     },
     {
-        type = "tool", -- 科技包
-        name = { "agricultural-science-pack" },
+        type = "item", -- 填埋材料
+        name = { "artificial-yumako-soil", "overgrowth-yumako-soil", "artificial-jellynut-soil", "overgrowth-jellynut-soil" },
         exclude_names = {},
         operations = {
-            spoil_ticks = { type = "set", value = nil },                          -- 变质时间
-            spoil_result = { type = "set", value = "agricultural-science-pack" }, -- 变质结果
+            ["place_as_tile.tile_condition"] = { type = "set", value = nil }, -- 去掉放置地形限制
         }
     },
+    {
+        type = "recipe", -- 配方
+        name = { "yumako-processing", "jellynut-processing" },
+        exclude_names = {},
+        operations = {
+            ["results[1].probability"] = { type = "set", value = 0.75 }, -- 种子生成概率
+        }
+    },
+    -- {
+    --     type = "tool", -- 科技包
+    --     name = { "agricultural-science-pack" },
+    --     exclude_names = {},
+    --     operations = {
+    --         spoil_ticks = { type = "set", value = nil },                          -- 变质时间
+    --         spoil_result = { type = "set", value = "agricultural-science-pack" }, -- 变质结果
+    --     }
+    -- },
     -- {
     --     type = "thruster", -- 火箭推进器
     --     name = { "*" },
@@ -118,23 +134,47 @@ local instructions_custom_balance = {
 }
 
 -- 查找 type 为 recipe 且有 surface_conditions 字段的原型
-local function filter_recipe_without_surface_conditions(tbl)
+local function filter_recipe_with_surface_conditions(tbl)
     return tbl.type == "recipe" and tbl.surface_conditions ~= nil and tbl.hidden == nil and tbl.results ~= nil and
         next(tbl.results) ~= nil
 end
-local data_raw_recipe_without_surface_conditions = x_util.find_with_filter(data.raw,
-    filter_recipe_without_surface_conditions)
--- log("\ndata_raw_recipe_without_surface_conditions:\n" ..
--- Core:serpent_block(data_raw_recipe_without_surface_conditions))
+local data_raw_recipe_with_surface_conditions = x_util.find_with_filter(data.raw,
+    filter_recipe_with_surface_conditions)
+-- log("\ndata_raw_recipe_with_surface_conditions:\n" ..
+-- Core:serpent_block(data_raw_recipe_with_surface_conditions))
 
 -- 组装插入 surface_conditions 属性的指令
-for prototype, protonames in pairs(data_raw_recipe_without_surface_conditions) do
+for prototype, protonames in pairs(data_raw_recipe_with_surface_conditions) do
     for _, protoname in ipairs(protonames) do
         local instructions_template = {}
         instructions_template["type"] = prototype
         instructions_template["name"] = { protoname }
         instructions_template["operations"] = {
             surface_conditions = { type = "set", value = nil },
+        }
+
+        table.insert(instructions_custom_balance, instructions_template)
+    end
+end
+-- log("\ninstructions_custom_balance:\n" .. Core:serpent_block(instructions_custom_balance))
+
+-- 查找有 spoil_ticks 字段的原型
+local function filter_recipe_with_spoil_ticks(tbl)
+    return tbl.spoil_ticks ~= nil
+end
+local data_raw_recipe_with_spoil_ticks = x_util.find_with_filter(data.raw,
+    filter_recipe_with_spoil_ticks)
+-- log("\ndata_raw_recipe_with_spoil_ticks:\n" ..
+-- Core:serpent_block(data_raw_recipe_with_spoil_ticks))
+
+-- 组装删除 spoil_ticks 属性的指令
+for prototype, protonames in pairs(data_raw_recipe_with_spoil_ticks) do
+    for _, protoname in ipairs(protonames) do
+        local instructions_template = {}
+        instructions_template["type"] = prototype
+        instructions_template["name"] = { protoname }
+        instructions_template["operations"] = {
+            spoil_ticks = { type = "set", value = nil },
         }
 
         table.insert(instructions_custom_balance, instructions_template)

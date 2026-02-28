@@ -604,6 +604,15 @@ data:extend({
     },
     {
         type = "double-setting",
+        name = "x-custom-game-plant-growth-multiplier", -- 植物生长速度
+        setting_type = "startup",
+        default_value = 5,
+        minimum_value = 0.1,
+        maximum_value = 100,
+        order = "x-custom-game-116006"
+    },
+    {
+        type = "double-setting",
         name = "x-custom-game-technology-cost-multiplier", -- 科技花费
         setting_type = "startup",
         default_value = 1,

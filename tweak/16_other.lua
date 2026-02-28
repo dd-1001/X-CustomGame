@@ -10,13 +10,14 @@ local set_value_tool = settings.startup["x-custom-game-tool-performance-multipli
 local set_value_item_health = settings.startup["x-custom-game-item-health-multiplier"].value
 local set_value_enemy_health = settings.startup["x-custom-game-enemy-health-multiplier"].value
 local set_value_rocket_lift_weight = settings.startup["x-custom-game-rocket-lift-weight-multiplier"].value
+local set_value_plant_growth = settings.startup["x-custom-game-plant-growth-multiplier"].value
 local instructions_other = {
     {
         type = "wall", -- 墙
         name = { "*" },
         exclude_names = {},
         operations = {
-            max_health = { type = "multiply", value = set_value_wall }, -- 血量
+            max_health = { type = "multiply", value = set_value_wall },            -- 血量
             repair_speed_modifier = { type = "multiply", value = set_value_wall }, -- 修复速度修正
         }
     },
@@ -42,6 +43,14 @@ local instructions_other = {
         exclude_names = {},
         operations = {
             rocket_lift_weight = { type = "multiply", value = set_value_rocket_lift_weight }, -- 火箭升力重量
+        }
+    },
+    {
+        type = "plant", -- 植物
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            growth_ticks = { type = "division", value = set_value_plant_growth }, -- 植物生长耗时
         }
     }
 }
