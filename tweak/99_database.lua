@@ -55,13 +55,14 @@ x_database.modify_enemy_health_type = {
 	["turret"] = true,      -- 沙虫
 	["segment"] = true,     -- 撼地虫
 	["segmented-unit"] = true, -- 撼地虫
+	["spider-unit"] = true, -- 蜘蛛
+	["asteroid"] = true,    -- 星岩
 }
 
 -- 不修改最大生命值类型
 x_database.not_modify_health_type = {
-	["asteroid"] = true,   -- 星岩
 	["plant"] = true,      -- 植物
-	["simple-entity"] = true, -- 岩石之类
+	["simple-entity"] = true, -- 环境实体
 	["tree"] = true,       -- 树
 	["wall"] = true,       -- 墙
 }

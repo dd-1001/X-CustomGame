@@ -1,5 +1,6 @@
 local Core = require("common.core")
 local DataTweaker = require("common.data_tweaker")
+local x_database = require("99_database")
 local x_util = Core.x_util
 local log = Core.Log
 
@@ -197,6 +198,18 @@ for prototype, protonames in pairs(data_raw_recipe_with_spoil_ticks) do
 end
 -- log("\ninstructions_custom_balance:\n" .. Core:serpent_block(instructions_custom_balance))
 
+-- 组装删除敌人 resistances 的指令
+for prototype, _ in pairs(x_database.modify_enemy_health_type) do
+    local instructions_template = {}
+    instructions_template["type"] = prototype
+    instructions_template["name"] = { "*" }
+    instructions_template["operations"] = {
+        resistances = { type = "set", value = nil },
+    }
+
+    table.insert(instructions_custom_balance, instructions_template)
+end
+log("\n instructions_custom_balance:\n" .. Core:serpent_block(instructions_custom_balance))
 
 -- 调用修改数据函数
 local modified_items = DataTweaker.modify_data(data.raw, instructions_custom_balance)

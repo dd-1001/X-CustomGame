@@ -588,7 +588,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-item-health-multiplier", -- 物品生命值
         setting_type = "startup",
-        default_value = 4,
+        default_value = 10,
         minimum_value = 0.1,
         maximum_value = 100,
         order = "x-custom-game-116004"
@@ -597,7 +597,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-enemy-health-multiplier", -- 敌方生命值
         setting_type = "startup",
-        default_value = 1.5,
+        default_value = 10,
         minimum_value = 0.1,
         maximum_value = 100,
         order = "x-custom-game-116005"
