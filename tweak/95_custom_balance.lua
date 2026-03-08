@@ -99,6 +99,30 @@ local instructions_custom_balance = {
             ["results[1].probability"] = { type = "set", value = 0.75 }, -- 种子生成概率
         }
     },
+    {
+        type = "recipe", -- 配方
+        name = { "fish-breeding" },
+        exclude_names = {},
+        operations = {
+            ["results[1].amount"] = { type = "set", value = 100 }, -- 增加养鱼的产量
+        }
+    },
+    {
+        type = "plant", -- 植物
+        name = { "tree-plant" },
+        exclude_names = {},
+        operations = {
+            ["autoplace.tile_restriction"] = { type = "set", value = nil }, -- 去掉树种子的种植地形限制
+        }
+    },
+    {
+        type = "recipe", -- 配方
+        name = { "advanced-carbonic-asteroid-crushing", "advanced-metallic-asteroid-crushing", "advanced-oxide-asteroid-crushing" },
+        exclude_names = {},
+        operations = {
+            ["results[3].probability"] = { type = "set", value = 0.25 }, -- 增加高级星岩破碎产生星岩几率
+        }
+    },
     -- {
     --     type = "tool", -- 科技包
     --     name = { "agricultural-science-pack" },

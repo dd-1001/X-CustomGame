@@ -312,10 +312,10 @@ data:extend({
         order = "x-custom-game-107011"
     },
     {
-        type = "double-setting",
+        type = "int-setting",
         name = "x-custom-game-beacon-performance-multiplier", -- 插件效果分享塔
         setting_type = "startup",
-        default_value = 20,
+        default_value = 1,
         minimum_value = 0.1,
         maximum_value = 100,
         order = "x-custom-game-108001"

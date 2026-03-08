@@ -21,20 +21,20 @@ log("\n\n\n100_game_startup_test start\n\n\n")
 -- end
 -- log("\nmodified_type:\n" .. Core:serpent_block(modified_type))
 
-local unModified_type = {}
-for protype, _ in pairs(data.raw) do
-    if not X_CUSTOM_GAME_MODIFIED_TYPE[protype] then
-        unModified_type[protype] = true
-    end
-end
+-- local unModified_type = {}
+-- for protype, _ in pairs(data.raw) do
+--     if not X_CUSTOM_GAME_MODIFIED_TYPE[protype] then
+--         unModified_type[protype] = true
+--     end
+-- end
 -- log("\nunModified_type:\n" .. Core:serpent_block(unModified_type))
 
-local new_unModified_type = {}
-for protype, _ in pairs(unModified_type) do
-    if not x_database.unModified_type[protype] then
-        new_unModified_type[protype] = true
-    end
-end
+-- local new_unModified_type = {}
+-- for protype, _ in pairs(unModified_type) do
+--     if not x_database.unModified_type[protype] then
+--         new_unModified_type[protype] = true
+--     end
+-- end
 -- log("\nnew_unModified_type:\n" .. Core:serpent_block(new_unModified_type))
 
 -- 查找实例
