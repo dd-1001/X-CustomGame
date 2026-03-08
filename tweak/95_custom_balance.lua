@@ -40,7 +40,7 @@ local instructions_custom_balance = {
         name = { "quality-module" },
         exclude_names = {},
         operations = {
-            ["effect.quality"] = { type = "set", value = 2.5 }, -- 效果-品质增加
+            ["effect.quality"] = { type = "set", value = 25 }, -- 效果-品质增加
         }
     },
     {
@@ -48,7 +48,7 @@ local instructions_custom_balance = {
         name = { "quality-module-2" },
         exclude_names = {},
         operations = {
-            ["effect.quality"] = { type = "set", value = 5 }, -- 效果-品质增加
+            ["effect.quality"] = { type = "set", value = 50 }, -- 效果-品质增加
         }
     },
     {
@@ -56,7 +56,7 @@ local instructions_custom_balance = {
         name = { "quality-module-3" },
         exclude_names = {},
         operations = {
-            ["effect.quality"] = { type = "set", value = 10 }, -- 效果-品质增加
+            ["effect.quality"] = { type = "set", value = 100 }, -- 效果-品质增加
         }
     },
     {
@@ -123,15 +123,6 @@ local instructions_custom_balance = {
             ["results[3].probability"] = { type = "set", value = 0.25 }, -- 增加高级星岩破碎产生星岩几率
         }
     },
-    -- {
-    --     type = "tool", -- 科技包
-    --     name = { "agricultural-science-pack" },
-    --     exclude_names = {},
-    --     operations = {
-    --         spoil_ticks = { type = "set", value = nil },                          -- 变质时间
-    --         spoil_result = { type = "set", value = "agricultural-science-pack" }, -- 变质结果
-    --     }
-    -- },
     -- {
     --     type = "thruster", -- 火箭推进器
     --     name = { "*" },

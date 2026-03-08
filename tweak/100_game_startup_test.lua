@@ -4,7 +4,7 @@ local x_database = require("99_database")
 local x_util = Core.x_util
 local log = Core.Log
 
-log("\n\n\n100_game_startup_test start\n\n\n")
+log("\n\n\n 100_game_startup_test start\n\n\n")
 
 -- 打印原型
 -- log("data.raw.recipe:\n" .. Core:serpent_block(data.raw.recipe) .. "\n")
@@ -13,13 +13,13 @@ log("\n\n\n100_game_startup_test start\n\n\n")
 -- end
 
 -- 检查未修改的类型
--- log("\nX_CUSTOM_GAME_MODIFIED_TYPE:\n" .. Core:serpent_block(X_CUSTOM_GAME_MODIFIED_TYPE))
+-- log("\n X_CUSTOM_GAME_MODIFIED_TYPE:\n" .. Core:serpent_block(X_CUSTOM_GAME_MODIFIED_TYPE))
 
 -- local modified_type = {}
 -- for _, protype in pairs(X_CUSTOM_GAME_MODIFIED_TYPE) do
 --     modified_type[protype] = true
 -- end
--- log("\nmodified_type:\n" .. Core:serpent_block(modified_type))
+-- log("\n modified_type:\n" .. Core:serpent_block(modified_type))
 
 -- local unModified_type = {}
 -- for protype, _ in pairs(data.raw) do
@@ -27,7 +27,7 @@ log("\n\n\n100_game_startup_test start\n\n\n")
 --         unModified_type[protype] = true
 --     end
 -- end
--- log("\nunModified_type:\n" .. Core:serpent_block(unModified_type))
+-- log("\n unModified_type:\n" .. Core:serpent_block(unModified_type))
 
 -- local new_unModified_type = {}
 -- for protype, _ in pairs(unModified_type) do
@@ -35,7 +35,7 @@ log("\n\n\n100_game_startup_test start\n\n\n")
 --         new_unModified_type[protype] = true
 --     end
 -- end
--- log("\nnew_unModified_type:\n" .. Core:serpent_block(new_unModified_type))
+-- log("\n new_unModified_type:\n" .. Core:serpent_block(new_unModified_type))
 
 -- 查找实例
 -- local function filter(tbl)
@@ -49,4 +49,4 @@ log("\n\n\n100_game_startup_test start\n\n\n")
 -- log("\ndata_raw_filter:\n" .. Core:serpent_block(data_raw_filter))
 
 
-log("\n\n\n100_game_startup_test end\n\n\n")
+log("\n\n\n 100_game_startup_test end\n\n\n")

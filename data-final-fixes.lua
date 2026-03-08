@@ -1,5 +1,6 @@
 X_CUSTOM_GAME_MODIFIED_TYPE = {}       -- 已修改的类型
 
+-- require("tweak.100_game_startup_test") -- 测试
 require("tweak.01_container")          -- 容器-------箱子、物流箱子、储液罐、货运车厢、液罐车厢
 require("tweak.02_transport")          -- 运输-------传送带、地下传送带、分流器、内燃机车(含：重炮车厢)、车(含：坦克)、蜘蛛机甲
 require("tweak.03_inserter")           -- 机械臂-------机械臂

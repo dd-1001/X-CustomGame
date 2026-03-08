@@ -48,108 +48,6 @@ x_database.game_start_bonus_items = {
 	{ name = "warehouse-storage",                count = 200 }, --warehouse黄箱
 }
 
--- item最大生命值修改类型
-x_database.modify_item_health_type = {
-	["accumulator"] = true,
-	["agricultural-tower"] = true,
-	["ammo-turret"] = true,
-	["arithmetic-combinator"] = true,
-	["artillery-turret"] = true,
-	["artillery-wagon"] = true,
-	["assembling-machine"] = true,
-	["asteroid"] = true,
-	["asteroid-collector"] = true,
-	["beacon"] = true,
-	["boiler"] = true,
-	["burner-generator"] = true,
-	["capture-robot"] = true,
-	["car"] = true,
-	["cargo-bay"] = true,
-	["cargo-landing-pad"] = true,
-	["cargo-wagon"] = true,
-	["character"] = true,
-	["combat-robot"] = true,
-	["constant-combinator"] = true,
-	["construction-robot"] = true,
-	["container"] = true,
-	["curved-rail-a"] = true,
-	["curved-rail-b"] = true,
-	["decider-combinator"] = true,
-	["display-panel"] = true,
-	["electric-energy-interface"] = true,
-	["electric-pole"] = true,
-	["electric-turret"] = true,
-	["elevated-curved-rail-a"] = true,
-	["elevated-curved-rail-b"] = true,
-	["elevated-half-diagonal-rail"] = true,
-	["elevated-straight-rail"] = true,
-	["fish"] = true,
-	["fluid-turret"] = true,
-	["fluid-wagon"] = true,
-	["furnace"] = true,
-	["fusion-generator"] = true,
-	["fusion-reactor"] = true,
-	["gate"] = true,
-	["generator"] = true,
-	["half-diagonal-rail"] = true,
-	["heat-interface"] = true,
-	["heat-pipe"] = true,
-	["infinity-container"] = true,
-	["infinity-pipe"] = true,
-	["inserter"] = true,
-	["lab"] = true,
-	["lamp"] = true,
-	["land-mine"] = true,
-	["lane-splitter"] = true,
-	["legacy-curved-rail"] = true,
-	["legacy-straight-rail"] = true,
-	["lightning-attractor"] = true,
-	["linked-belt"] = true,
-	["linked-container"] = true,
-	["loader"] = true,
-	["loader-1x1"] = true,
-	["locomotive"] = true,
-	["logistic-container"] = true,
-	["logistic-robot"] = true,
-	["market"] = true,
-	["mining-drill"] = true,
-	["offshore-pump"] = true,
-	["pipe"] = true,
-	["pipe-to-ground"] = true,
-	["plant"] = true,
-	["power-switch"] = true,
-	["programmable-speaker"] = true,
-	["pump"] = true,
-	["radar"] = true,
-	["rail-chain-signal"] = true,
-	["rail-ramp"] = true,
-	["rail-signal"] = true,
-	["rail-support"] = true,
-	["reactor"] = true,
-	["roboport"] = true,
-	["rocket-silo"] = true,
-	["selector-combinator"] = true,
-	["simple-entity"] = true,
-	["simple-entity-with-force"] = true,
-	["simple-entity-with-owner"] = true,
-	["solar-panel"] = true,
-	["space-platform-hub"] = true,
-	["spider-leg"] = true,
-	["spider-unit"] = true,
-	["spider-vehicle"] = true,
-	["splitter"] = true,
-	["storage-tank"] = true,
-	["straight-rail"] = true,
-	["temporary-container"] = true,
-	["thruster"] = true,
-	["tile"] = true,
-	["train-stop"] = true,
-	["transport-belt"] = true,
-	-- ["tree"] = true,
-	["underground-belt"] = true,
-	-- ["wall"] = true
-}
-
 -- enemy最大生命值修改类型
 x_database.modify_enemy_health_type = {
 	["unit"] = true,        -- 虫子
@@ -157,6 +55,15 @@ x_database.modify_enemy_health_type = {
 	["turret"] = true,      -- 沙虫
 	["segment"] = true,     -- 撼地虫
 	["segmented-unit"] = true, -- 撼地虫
+}
+
+-- 不修改最大生命值类型
+x_database.not_modify_health_type = {
+	["asteroid"] = true,   -- 星岩
+	["plant"] = true,      -- 植物
+	["simple-entity"] = true, -- 岩石之类
+	["tree"] = true,       -- 树
+	["wall"] = true,       -- 墙
 }
 
 -- 2.0.20版本 前修改过的类型

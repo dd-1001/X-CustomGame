@@ -25,16 +25,15 @@ local instructions_weapon = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            ["attack_parameters.cooldown"] = { type = "division", value = set_value_ammo_turret },               -- 射击冷却时间
-            ["attack_parameters.range"] = { type = "multiply", value = set_value_ammo_turret },                  -- 射击范围
-            attacking_speed = { type = "multiply", value = set_value_ammo_turret },                              -- 攻击速度
-            automated_ammo_count = { type = "multiply", value = set_value_ammo_turret },                         -- 自动弹药数量
-            call_for_help_radius = { type = "multiply", value = set_value_ammo_turret },                         -- 求助半径
-            -- inventory_size = { type = "multiply", value = set_value_ammo_turret, min_value = 1, max_value = 3 }, -- 库存大小
-            rotation_speed = { type = "multiply", value = set_value_ammo_turret },                               -- 旋转速度
-            energy_per_shot = { type = "multiply", value = set_value_ammo_turret },                              -- 射击耗能
-            ["energy_source.buffer_capacity"] = { type = "multiply", value = set_value_ammo_turret },            -- 缓存能量
-            ["energy_source.input_flow_limit"] = { type = "multiply", value = set_value_ammo_turret },           -- 缓存能量输入
+            ["attack_parameters.cooldown"] = { type = "division", value = set_value_ammo_turret },     -- 射击冷却时间
+            ["attack_parameters.range"] = { type = "multiply", value = set_value_ammo_turret },        -- 射击范围
+            attacking_speed = { type = "multiply", value = set_value_ammo_turret },                    -- 攻击速度
+            automated_ammo_count = { type = "multiply", value = set_value_ammo_turret },               -- 自动弹药数量
+            call_for_help_radius = { type = "multiply", value = set_value_ammo_turret },               -- 求助半径
+            rotation_speed = { type = "multiply", value = set_value_ammo_turret },                     -- 旋转速度
+            energy_per_shot = { type = "multiply", value = set_value_ammo_turret },                    -- 射击耗能
+            ["energy_source.buffer_capacity"] = { type = "multiply", value = set_value_ammo_turret },  -- 缓存能量
+            ["energy_source.input_flow_limit"] = { type = "multiply", value = set_value_ammo_turret }, -- 缓存能量输入
         }
     },
     {

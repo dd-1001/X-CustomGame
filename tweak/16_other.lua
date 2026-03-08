@@ -60,23 +60,11 @@ local function filter_max_health(tbl)
     return tbl.max_health ~= nil
 end
 local data_raw_max_health = x_util.find_with_filter(data.raw, filter_max_health)
--- log("\ndata_raw_max_health:\n" .. Core:serpent_block(data_raw_max_health))
+-- log("\n data_raw_max_health:\n" .. Core:serpent_block(data_raw_max_health))
 
 -- 组装修改max_health属性的指令
 for prototype, protonames in pairs(data_raw_max_health) do
-    if x_database.modify_item_health_type[prototype] then
-        -- item health
-        for _, protoname in ipairs(protonames) do
-            local instructions_template = {}
-            instructions_template["type"] = prototype
-            instructions_template["name"] = { protoname }
-            instructions_template["operations"] = {
-                max_health = { type = "multiply", value = set_value_item_health }, -- 最大生命值
-            }
-
-            table.insert(instructions_other, instructions_template)
-        end
-    elseif x_database.modify_enemy_health_type[prototype] then
+    if x_database.modify_enemy_health_type[prototype] then
         -- enemy health
         for _, protoname in ipairs(protonames) do
             local instructions_template = {}
@@ -85,6 +73,18 @@ for prototype, protonames in pairs(data_raw_max_health) do
             instructions_template["operations"] = {
                 max_health = { type = "multiply", value = set_value_enemy_health },       -- 最大生命值
                 healing_per_tick = { type = "multiply", value = set_value_enemy_health }, -- 回复血量
+            }
+
+            table.insert(instructions_other, instructions_template)
+        end
+    elseif not x_database.not_modify_health_type[prototype] then
+        -- item health
+        for _, protoname in ipairs(protonames) do
+            local instructions_template = {}
+            instructions_template["type"] = prototype
+            instructions_template["name"] = { protoname }
+            instructions_template["operations"] = {
+                max_health = { type = "multiply", value = set_value_item_health }, -- 最大生命值
             }
 
             table.insert(instructions_other, instructions_template)
