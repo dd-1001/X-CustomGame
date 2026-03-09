@@ -28,7 +28,7 @@ local instructions_weapon = {
             ["attack_parameters.cooldown"] = { type = "division", value = set_value_ammo_turret },     -- 射击冷却时间
             ["attack_parameters.range"] = { type = "multiply", value = set_value_ammo_turret },        -- 射击范围
             attacking_speed = { type = "multiply", value = set_value_ammo_turret },                    -- 攻击速度
-            automated_ammo_count = { type = "multiply", value = set_value_ammo_turret },               -- 自动弹药数量
+            automated_ammo_count = { type = "multiply", value = set_value_ammo_turret },               -- 装填弹药数量
             call_for_help_radius = { type = "multiply", value = set_value_ammo_turret },               -- 求助半径
             rotation_speed = { type = "multiply", value = set_value_ammo_turret },                     -- 旋转速度
             energy_per_shot = { type = "multiply", value = set_value_ammo_turret },                    -- 射击耗能
@@ -77,7 +77,7 @@ local instructions_weapon = {
         exclude_names = {},
         operations = {
             ammo_stack_limit = { type = "multiply", value = set_value_artillery_turret },                             -- 弹药堆限制
-            automated_ammo_count = { type = "multiply", value = set_value_artillery_turret },                         -- 自动弹药数量
+            automated_ammo_count = { type = "multiply", value = set_value_artillery_turret },                         -- 装填弹药数量
             inventory_size = { type = "multiply", value = set_value_artillery_turret, min_value = 1, max_value = 3 }, -- 库存大小
             manual_range_modifier = { type = "multiply", value = set_value_artillery_turret },                        -- 手动范围修正器
             turn_after_shooting_cooldown = { type = "division", value = set_value_artillery_turret },                 -- 射击冷却

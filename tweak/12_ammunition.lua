@@ -7,6 +7,7 @@ local log = Core.Log
 local set_value_ammo = settings.startup["x-custom-game-ammo-performance-multiplier"].value
 local set_value_projectile = settings.startup["x-custom-game-projectile-performance-multiplier"].value
 local set_value_land_mine = settings.startup["x-custom-game-land-mine-performance-multiplier"].value
+local set_value_beam = settings.startup["x-custom-game-electric-turret-performance-multiplier"].value
 local instructions_ammunition = {
     {
         type = "ammo", -- 弹药
@@ -15,7 +16,7 @@ local instructions_ammunition = {
         operations = {
             magazine_size = { type = "multiply", value = set_value_ammo, min_value = 1 },                                                             -- 弹匣大小
             ["ammo_type.action[1].action_delivery[1].target_effects[2].damage.amount"] = { type = "multiply", value = set_value_ammo },               -- 弹匣.伤害
-            ["ammo_type.action.action_delivery.target_effects[2].damage.amount"] = { type = "multiply", value = set_value_ammo },               -- 弹匣.伤害
+            ["ammo_type.action.action_delivery.target_effects[2].damage.amount"] = { type = "multiply", value = set_value_ammo },                     -- 弹匣.伤害
             ["ammo_type.action[2].repeat_count"] = { type = "multiply", value = set_value_ammo, min_value = 1 },                                      -- 霰弹.重复次数
             ["ammo_type.action[2].action_delivery.max_range"] = { type = "multiply", value = set_value_ammo },                                        -- 霰弹.最大距离
             ["ammo_type.action[2].action_delivery.starting_speed"] = { type = "multiply", value = set_value_ammo },                                   -- 霰弹.起始速度
@@ -83,6 +84,33 @@ local instructions_ammunition = {
             ["action.action_delivery.source_effects[1].action.radius"] = { type = "multiply", value = set_value_land_mine },                                          -- 半径
             ["action.action_delivery.source_effects[1].action.action_delivery.target_effects[1].damage.amount"] = { type = "multiply", value = set_value_land_mine }, -- 伤害
             ["action.action_delivery.source_effects[3].damage.amount"] = { type = "multiply", value = set_value_land_mine },                                          -- 伤害
+        }
+    },
+    {
+        type = "beam", -- 光束
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            damage_interval = { type = "division", value = set_value_beam },                                            -- 伤害间隔
+            ["action.action_delivery.target_effects[1].damage.amount"] = { type = "multiply", value = set_value_beam }, -- 伤害
+            ["action.action_delivery.target_effects[2].distance"] = { type = "multiply", value = set_value_beam },      -- 距离
+        }
+    },
+    {
+        type = "chain-active-trigger", -- 链
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            max_jumps = { type = "multiply", value = set_value_beam },                              -- 最大跳跃次数
+            max_range_per_jump = { type = "multiply", value = set_value_beam },                     -- 最大跳跃距离
+            max_range = { type = "multiply", value = set_value_beam },                              -- 最大范围
+            jump_delay_ticks = { type = "division", value = set_value_beam },                       -- 跳跃之间延迟
+            fork_chance = { type = "multiply", value = set_value_beam },                            -- 跳跃后新分叉几率
+            fork_chance_increase_per_quality_level = { type = "multiply", value = set_value_beam }, -- 跳跃后新分叉几率
+            max_forks_per_jump = { type = "multiply", value = set_value_beam },                     -- 单次跳跃可生成的最大分支数量
+            max_forks = { type = "multiply", value = set_value_beam },                              -- 整个链条允许生成的最大分支数
+            ["action.action_delivery.duration"] = { type = "multiply", value = set_value_beam },    -- 持续时间
+            ["action.action_delivery.max_length"] = { type = "multiply", value = set_value_beam },  -- 最大距离
         }
     }
 }
