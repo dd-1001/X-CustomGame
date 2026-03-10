@@ -18,12 +18,16 @@ local instructions_ammunition = {
             ["ammo_type.action[1].action_delivery[1].target_effects[2].damage.amount"] = { type = "multiply", value = set_value_ammo },               -- 弹匣.伤害
             ["ammo_type.action.action_delivery.target_effects[2].damage.amount"] = { type = "multiply", value = set_value_ammo },                     -- 弹匣.伤害
             ["ammo_type.action[2].repeat_count"] = { type = "multiply", value = set_value_ammo, min_value = 1 },                                      -- 霰弹.重复次数
+            ["ammo_type.action[2].action_delivery.direction_deviation"] = { type = "division", value = set_value_ammo },                              -- 霰弹.方向偏差
             ["ammo_type.action[2].action_delivery.max_range"] = { type = "multiply", value = set_value_ammo },                                        -- 霰弹.最大距离
+            ["ammo_type.action[2].action_delivery.range_deviation"] = { type = "division", value = set_value_ammo },                                  -- 霰弹.距离偏差
             ["ammo_type.action[2].action_delivery.starting_speed"] = { type = "multiply", value = set_value_ammo },                                   -- 霰弹.起始速度
             ["ammo_type.range_modifier"] = { type = "multiply", value = set_value_ammo },                                                             -- 炮弹.范围修正
-            ["ammo_type.action.action_delivery.max_range"] = { type = "multiply", value = set_value_ammo },                                           -- 炮弹.范围修正
+            ["ammo_type.action.action_delivery.direction_deviation"] = { type = "division", value = set_value_ammo },                                 -- 炮弹.方向偏差
+            ["ammo_type.action.action_delivery.max_range"] = { type = "multiply", value = set_value_ammo },                                           -- 炮弹.最大距离
+            ["ammo_type.action.action_delivery.range_deviation"] = { type = "division", value = set_value_ammo },                                     -- 炮弹.距离偏差
             ["ammo_type.action.action_delivery.starting_speed"] = { type = "multiply", value = set_value_ammo },                                      -- 炮弹.起始速度
-            ["ammo_type.cooldown_modifier"] = { type = "multiply", value = set_value_ammo },                                                          -- 原子火箭弹.冷却修正
+            ["ammo_type.cooldown_modifier"] = { type = "division", value = set_value_ammo },                                                          -- 原子火箭弹.冷却修正
             ["ammo_type.action.range"] = { type = "multiply", value = set_value_ammo },                                                               -- 轨道炮弹.范围
             ["ammo_type.action.width"] = { type = "multiply", value = set_value_ammo },                                                               -- 轨道炮弹.宽度
             ["ammo_type.action.action_delivery.target_effects.damage.amount"] = { type = "multiply", value = set_value_ammo },                        -- 轨道炮弹.伤害
@@ -37,6 +41,7 @@ local instructions_ammunition = {
         exclude_names = {},
         operations = {
             acceleration = { type = "multiply", value = set_value_projectile },                                                          -- 加速度
+            max_speed = { type = "multiply", value = set_value_projectile },                                                             -- 最大速度
             ["action[2].radius"] = { type = "multiply", value = set_value_projectile },                                                  -- 手雷.半径
             ["action[2].action_delivery.target_effects[1].damage.amount"] = { type = "multiply", value = set_value_projectile },         -- 手雷.伤害
             ["action[2].cluster_count"] = { type = "multiply", value = set_value_projectile },                                           -- 集束手雷.集群数量
@@ -46,14 +51,15 @@ local instructions_ammunition = {
             ["action[1].action_delivery.target_effects.upper_damage_modifier"] = { type = "multiply", value = set_value_projectile },    -- 原子弹.上限伤害修正
             ["action[1].action_delivery.target_effects.upper_distance_threshold"] = { type = "multiply", value = set_value_projectile }, -- 原子弹.上限距离阈值
             ["action.action_delivery.target_effects[2].damage.amount"] = { type = "multiply", value = set_value_projectile },            -- 火箭弹.伤害
-            -- 还有其他属性，不想弄了，累了！！！
+            ["action.action_delivery.target_effects[4].radius"] = { type = "multiply", value = set_value_projectile },                   -- 火箭弹.半径
         }
     },
     {
-        type = "artillery-projectile", -- 抛射弹药
+        type = "artillery-projectile", -- 重炮炮弹
         name = { "*" },
         exclude_names = {},
         operations = {
+            ["action.action_delivery.target_effects[1].action.radius"] = { type = "multiply", value = set_value_projectile },                                          -- 半径
             ["action.action_delivery.target_effects[1].action.action_delivery.target_effects[1].damage.amount"] = { type = "multiply", value = set_value_projectile }, -- 伤害
             ["action.action_delivery.target_effects[1].action.action_delivery.target_effects[2].damage.amount"] = { type = "multiply", value = set_value_projectile }, -- 伤害
             ["action.action_delivery.target_effects[2].max_radius"] = { type = "multiply", value = set_value_projectile },                                             -- 最大半径
@@ -68,7 +74,7 @@ local instructions_ammunition = {
             range_from_player = { type = "multiply", value = set_value_projectile },                                                                      -- 离玩家距离
             speed = { type = "multiply", value = set_value_projectile },                                                                                  -- 速度
             time_to_live = { type = "multiply", value = set_value_projectile },                                                                           -- 存活时间
-            ["attack_parameters.cooldown"] = { type = "multiply", value = set_value_projectile },                                                         -- 冷却时间
+            ["attack_parameters.cooldown"] = { type = "division", value = set_value_projectile },                                                         -- 冷却时间
             ["attack_parameters.range"] = { type = "multiply", value = set_value_projectile },                                                            -- 距离
             ["attack_parameters.ammo_type.action.action_delivery.target_effects[2].damage.amount"] = { type = "multiply", value = set_value_projectile }, -- 伤害
             ["attack_parameters.damage_modifier"] = { type = "multiply", value = set_value_projectile },                                                  -- 伤害修正
@@ -84,6 +90,8 @@ local instructions_ammunition = {
             ["action.action_delivery.source_effects[1].action.radius"] = { type = "multiply", value = set_value_land_mine },                                          -- 半径
             ["action.action_delivery.source_effects[1].action.action_delivery.target_effects[1].damage.amount"] = { type = "multiply", value = set_value_land_mine }, -- 伤害
             ["action.action_delivery.source_effects[3].damage.amount"] = { type = "multiply", value = set_value_land_mine },                                          -- 伤害
+            ["action.action_delivery.source_effects[4].damage.amount"] = { type = "multiply", value = set_value_land_mine },                                          -- 伤害
+            ["action.action_delivery.source_effects[4].radius"] = { type = "multiply", value = set_value_land_mine },                                                 -- 半径
         }
     },
     {

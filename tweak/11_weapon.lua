@@ -44,7 +44,7 @@ local instructions_weapon = {
             ["attack_parameters.cooldown"] = { type = "division", value = set_value_electric_turret },                                                                             -- 射击冷却时间
             ["attack_parameters.range"] = { type = "multiply", value = set_value_electric_turret },                                                                                -- 射击范围
             ["attack_parameters.damage_modifier"] = { type = "multiply", value = set_value_electric_turret },                                                                      -- 伤害修正
-            ["attack_parameters.ammo_type.energy_consumption"] = { type = "multiply", value = set_value_electric_turret },                                                         -- 激光能量消耗
+            ["attack_parameters.ammo_type.energy_consumption"] = { type = "division", value = set_value_electric_turret },                                                         -- 激光能量消耗
             ["attack_parameters.ammo_type.action.action_delivery.max_length"] = { type = "multiply", value = set_value_electric_turret },                                          -- 激光最长距离
             ["attack_parameters.ammo_type.action.action_delivery.target_effects[2].action.action_delivery.max_length"] = { type = "multiply", value = set_value_electric_turret }, -- 激光最长距离
             call_for_help_radius = { type = "multiply", value = set_value_electric_turret },                                                                                       -- 求助半径
@@ -63,12 +63,22 @@ local instructions_weapon = {
             call_for_help_radius = { type = "multiply", value = set_value_fluid_turret },                    -- 求助半径
             fluid_buffer_input_flow = { type = "multiply", value = set_value_fluid_turret },                 -- 流体缓冲区输入限制
             fluid_buffer_size = { type = "multiply", value = set_value_fluid_turret },                       -- 流体缓冲区大小
-            ["fluid_box.volume"] = { type = "multiply", value = set_value_fluid_turret, max_value = 1000 },  -- 流体缓冲区大小
+            ["fluid_box.volume"] = { type = "multiply", value = set_value_fluid_turret, max_value = 2000 },  -- 流体缓冲区大小
             prepare_range = { type = "multiply", value = set_value_fluid_turret },                           -- 准备距离
+            preparing_speed = { type = "multiply", value = set_value_fluid_turret },                         -- 准备速度
+            rotation_speed = { type = "multiply", value = set_value_fluid_turret },                          -- 旋转速度
             ["attack_parameters.cooldown"] = { type = "division", value = set_value_fluid_turret },          -- 射击冷却时间
             ["attack_parameters.fluid_consumption"] = { type = "division", value = set_value_fluid_turret }, -- 流体消耗
-            ["attack_parameters.fire_penalty"] = { type = "multiply", value = set_value_fluid_turret },      -- 火焰伤害
             ["attack_parameters.range"] = { type = "multiply", value = set_value_fluid_turret },             -- 射击范围
+        }
+    },
+    {
+        type = "stream", -- 流体
+        name = { "flamethrower-fire-stream" },
+        exclude_names = {},
+        operations = {
+            ["action[1].radius"] = { type = "multiply", value = set_value_fluid_turret },                                          -- 范围
+            ["action[1].action_delivery.target_effects[2].damage.amount"] = { type = "multiply", value = set_value_fluid_turret }, -- 伤害
         }
     },
     {
@@ -76,12 +86,11 @@ local instructions_weapon = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            ammo_stack_limit = { type = "multiply", value = set_value_artillery_turret },                             -- 弹药堆限制
-            automated_ammo_count = { type = "multiply", value = set_value_artillery_turret },                         -- 装填弹药数量
-            inventory_size = { type = "multiply", value = set_value_artillery_turret, min_value = 1, max_value = 3 }, -- 库存大小
-            manual_range_modifier = { type = "multiply", value = set_value_artillery_turret },                        -- 手动范围修正器
-            turn_after_shooting_cooldown = { type = "division", value = set_value_artillery_turret },                 -- 射击冷却
-            turret_rotation_speed = { type = "multiply", value = set_value_artillery_turret },                        -- 旋转速度
+            ammo_stack_limit = { type = "multiply", value = set_value_artillery_turret },             -- 弹药堆限制
+            automated_ammo_count = { type = "multiply", value = set_value_artillery_turret },         -- 装填弹药数量
+            manual_range_modifier = { type = "multiply", value = set_value_artillery_turret },        -- 手动范围修正器
+            turn_after_shooting_cooldown = { type = "division", value = set_value_artillery_turret }, -- 射击冷却
+            turret_rotation_speed = { type = "multiply", value = set_value_artillery_turret },        -- 旋转速度
         }
     }
 }

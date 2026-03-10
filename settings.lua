@@ -428,7 +428,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-fluid-turret-performance-multiplier", -- 火焰炮塔
         setting_type = "startup",
-        default_value = 2,
+        default_value = 3,
         minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-111004"

@@ -13,9 +13,9 @@ local instructions_technology = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            ["research_trigger.count"] = { type = "multiply", value = set_value_technology_cost,min_value = 1 },
-            ["unit.count"] = { type = "multiply", value = set_value_technology_cost,min_value = 1 },
-            ["unit.time"] = { type = "multiply", value = set_value_technology_cost,min_value = 1 },
+            ["research_trigger.count"] = { type = "multiply", value = set_value_technology_cost, min_value = 1 },
+            ["unit.count"] = { type = "multiply", value = set_value_technology_cost, min_value = 1 },
+            ["unit.time"] = { type = "multiply", value = set_value_technology_cost, min_value = 1 },
         }
     }
 }

@@ -36,7 +36,6 @@ local instructions_equipment = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            -- energy_consumption = { type = "division", value = set_value_equipment }, -- 消耗
             ["energy_source.buffer_capacity"] = { type = "multiply", value = set_value_equipment },  -- 电池容量
             ["energy_source.input_flow_limit"] = { type = "multiply", value = set_value_equipment }, -- 输入限制
         }
@@ -46,7 +45,6 @@ local instructions_equipment = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            -- energy_consumption = { type = "division", value = set_value_equipment }, -- 消耗
             movement_bonus = { type = "multiply", value = set_value_equipment, max_value = 2 }, -- 移动加成
         }
     },
@@ -72,7 +70,6 @@ local instructions_equipment = {
         exclude_names = {},
         operations = {
             color_lookup = { type = "set", value = { { 0.96, "__core__/graphics/color_luts/nightvision.png" } } }, -- 亮度
-            -- energy_input = { type = "division", value = set_value_equipment }, -- 能量输入
             ["energy_source.buffer_capacity"] = { type = "multiply", value = set_value_equipment },                -- 电池电量
             ["energy_source.input_flow_limit"] = { type = "multiply", value = set_value_equipment },               -- 电池输入限制
         }
@@ -107,7 +104,7 @@ local instructions_equipment = {
             ["attack_parameters.range"] = { type = "multiply", value = set_value_equipment, max_value = 36 },                                             -- 攻击范围
             ["attack_parameters.ammo_type.energy_consumption"] = { type = "division", value = set_value_equipment },                                      -- 消耗
             ["attack_parameters.ammo_type.action.action_delivery.duration"] = { type = "multiply", value = set_value_equipment, max_value = 80 },         -- 持续时间
-            ["attack_parameters.ammo_type.action.action_delivery.max_length"] = { type = "multiply", value = set_value_equipment, max_value = 30 },       -- 最大长度
+            ["attack_parameters.ammo_type.action.action_delivery.max_length"] = { type = "multiply", value = set_value_equipment, max_value = 36 },       -- 最大长度
             ["attack_parameters.ammo_type.action[1].radius"] = { type = "multiply", value = set_value_equipment, max_value = 16 },                        -- 半径
             ["attack_parameters.ammo_type.action[1].action_delivery[2].duration"] = { type = "multiply", value = set_value_equipment, max_value = 30 },   -- 持续时间
             ["attack_parameters.ammo_type.action[1].action_delivery[2].max_length"] = { type = "multiply", value = set_value_equipment, max_value = 32 }, -- 最大长度
