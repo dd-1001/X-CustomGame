@@ -209,7 +209,7 @@ for prototype, _ in pairs(x_database.modify_enemy_health_type) do
 
     table.insert(instructions_custom_balance, instructions_template)
 end
-log("\n instructions_custom_balance:\n" .. Core:serpent_block(instructions_custom_balance))
+-- log("\n instructions_custom_balance:\n" .. Core:serpent_block(instructions_custom_balance))
 
 -- 调用修改数据函数
 local modified_items = DataTweaker.modify_data(data.raw, instructions_custom_balance)

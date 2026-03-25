@@ -13,6 +13,17 @@ function x_control.init()
         script.on_event(defines.events.on_chunk_generated, x_control.on_chunk_generated)
         script.on_event(defines.events.on_surface_created, x_control.on_surface_created)
     end
+
+    -- 设置开局启用科技
+    if settings.startup["x-custom-game-author-custom-balance-flag"].value then
+        for _, force in pairs(game.forces) do
+            for tech_name, _ in pairs(x_database.game_start_tech) do
+                if force.technologies[tech_name] then
+                    force.technologies[tech_name].researched = true
+                end
+            end
+        end
+    end
 end
 
 -- 补充资源

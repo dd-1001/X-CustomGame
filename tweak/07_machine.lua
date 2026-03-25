@@ -127,17 +127,17 @@ local instructions_machine = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            arm_angular_speed_cap_base = { type = "multiply", value = set_value_asteroid_collector, min_value = 0.1, max_value = 2 },               -- 臂式角速度上限
+            arm_angular_speed_cap_base = { type = "multiply", value = set_value_asteroid_collector, min_value = 0.1, max_value = 3 },               -- 臂式角速度上限
             arm_angular_speed_cap_quality_scaling = { type = "multiply", value = set_value_asteroid_collector, min_value = 0.01, max_value = 0.5 }, -- 臂式角速度品质缩放比例
             arm_count_base = { type = "multiply", value = set_value_asteroid_collector, min_value = 1, max_value = 9 },                             -- 臂数量
             arm_count_quality_scaling = { type = "multiply", value = set_value_asteroid_collector, min_value = 1, max_value = 6 },                  -- 臂数量品质缩放比例
             arm_energy_usage = { type = "multiply", value = set_value_asteroid_collector },                                                         -- 臂能量消耗
             arm_inventory_size = { type = "multiply", value = set_value_asteroid_collector, min_value = 1, max_value = 10 },                        -- 臂库存大小
             arm_slow_energy_usage = { type = "multiply", value = set_value_asteroid_collector },                                                    -- 臂低能耗耗能
-            arm_speed_base = { type = "multiply", value = set_value_asteroid_collector, min_value = 1, max_value = 2 },                             -- 臂速度
+            arm_speed_base = { type = "multiply", value = set_value_asteroid_collector, min_value = 1, max_value = 3 },                             -- 臂速度
             arm_speed_quality_scaling = { type = "multiply", value = set_value_asteroid_collector, min_value = 0.01, max_value = 0.5 },             -- 臂速度品质缩放比例
-            collection_radius = { type = "multiply", value = set_value_asteroid_collector, min_value = 7.5, max_value = 30 },                       -- 收集半径
-            deposit_radius = { type = "multiply", value = set_value_asteroid_collector, min_value = 1.5, max_value = 6 },                           -- 存入半径
+            collection_radius = { type = "multiply", value = set_value_asteroid_collector, min_value = 7.5, max_value = 96 },                       -- 收集半径
+            deposit_radius = { type = "multiply", value = set_value_asteroid_collector, min_value = 1.5, max_value = 3 },                           -- 存入半径
             energy_usage_quality_scaling = { type = "multiply", value = set_value_asteroid_collector, min_value = 0.05, max_value = 1 },            -- 耗能品质缩放比例
             head_collection_radius = { type = "multiply", value = set_value_asteroid_collector, min_value = 0.6, max_value = 2.4 },                 -- 头部采集半径
             inventory_size = { type = "multiply", value = set_value_asteroid_collector },                                                           -- 库存大小
@@ -150,8 +150,8 @@ local instructions_machine = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            ["fuel_fluid_box.volume"] = { type = "multiply", value = set_value_thruster, min_value = 500, max_value = 2000 },        -- 燃料库存
-            ["oxidizer_fluid_box.volume"] = { type = "multiply", value = set_value_thruster, min_value = 500, max_value = 2000 },    -- 氧化剂库存
+            ["fuel_fluid_box.volume"] = { type = "multiply", value = set_value_thruster, min_value = 500, max_value = 3000 },        -- 燃料库存
+            ["oxidizer_fluid_box.volume"] = { type = "multiply", value = set_value_thruster, min_value = 500, max_value = 3000 },    -- 氧化剂库存
             ["max_performance.effectivity"] = { type = "multiply", value = set_value_thruster },                                     -- 最大性能.效率
             ["max_performance.fluid_usage"] = { type = "multiply", value = set_value_thruster, min_value = 1, max_value = 6 },       -- 最大性能.燃料用量
             ["max_performance.fluid_volume"] = { type = "multiply", value = set_value_thruster, min_value = 0.4, max_value = 2.4 },  -- 最大性能.燃料体积

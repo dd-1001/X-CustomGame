@@ -44,8 +44,14 @@ x_database.game_start_bonus_items = {
 	-- { name = "chemical-science-pack",            count = 2000 }, --蓝瓶
 	-- mod分割线 --
 	{ name = "aai-loader",                       count = 2000 }, --装载机
-	{ name = "warehouse-passive-provider",       count = 200 }, --warehouse红箱
+	-- { name = "warehouse-passive-provider",       count = 200 }, --warehouse红箱
 	{ name = "warehouse-storage",                count = 200 }, --warehouse黄箱
+}
+
+-- 游戏开局启用科技
+x_database.game_start_tech = {
+	["epic-quality"] = true, -- 史诗品质
+	["legendary-quality"] = true, -- 传说品质
 }
 
 -- enemy最大生命值修改类型
