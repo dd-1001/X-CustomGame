@@ -54,7 +54,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-transport-performance-multiplier", -- 传送带、分流器
         setting_type = "startup",
-        default_value = 5,
+        default_value = 6,
         minimum_value = 0.1,
         maximum_value = 10,
         order = "x-custom-game-102001"

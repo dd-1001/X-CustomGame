@@ -15,13 +15,14 @@ x_database.game_start_bonus_items = {
 	{ name = "logistic-robot",                   count = 1000 }, --物流机器人
 	{ name = "construction-robot",               count = 50 }, --建设机器人
 	{ name = "offshore-pump",                    count = 100 }, --抽取机
-	{ name = "boiler",                           count = 10 }, --锅炉
-	{ name = "steam-engine",                     count = 50 }, --蒸汽机
+	{ name = "boiler",                           count = 20 }, --锅炉
+	{ name = "steam-engine",                     count = 100 }, --蒸汽机
 	{ name = "pipe",                             count = 1000 }, --管道
 	{ name = "pipe-to-ground",                   count = 200 }, --地下管道
-	{ name = "solar-panel",                      count = 10 }, --太阳能板
-	{ name = "accumulator",                      count = 10 }, --蓄电器
-	{ name = "medium-electric-pole",             count = 100 }, --中型电线杆
+	{ name = "solar-panel",                      count = 500 }, --太阳能板
+	{ name = "accumulator",                      count = 1000 }, --蓄电器
+	{ name = "medium-electric-pole",             count = 500 }, --中型电线杆
+	{ name = "small-lamp",                       count = 500 }, --灯
 	{ name = "transport-belt",                   count = 2000 }, --基础传送带
 	{ name = "underground-belt",                 count = 200 }, --基础地下传送带
 	{ name = "splitter",                         count = 200 }, --基础分流器
@@ -31,9 +32,9 @@ x_database.game_start_bonus_items = {
 	-- { name = "assembling-machine-1",             count = 200 }, --组装机1
 	{ name = "assembling-machine-2",             count = 200 }, --组装机2
 	{ name = "iron-chest",                       count = 100 }, --铁箱
-	{ name = "active-provider-chest",            count = 200 }, --主动供货箱（紫箱）
+	-- { name = "active-provider-chest",            count = 200 }, --主动供货箱（紫箱）
 	-- { name = "passive-provider-chest",           count = 200 }, --被动供货箱（红箱）
-	{ name = "storage-chest",                    count = 200 }, --被动存货箱（黄箱）
+	-- { name = "storage-chest",                    count = 200 }, --被动存货箱（黄箱）
 	-- { name = "buffer-chest",                     count = 200 }, --主动存货箱（绿箱）
 	{ name = "requester-chest",                  count = 200 }, --优先集货箱（蓝箱）
 	-- { name = "steel-furnace",                    count = 100 }, --钢炉
@@ -44,13 +45,22 @@ x_database.game_start_bonus_items = {
 	-- { name = "chemical-science-pack",            count = 2000 }, --蓝瓶
 	-- mod分割线 --
 	{ name = "aai-loader",                       count = 2000 }, --装载机
-	-- { name = "warehouse-passive-provider",       count = 200 }, --warehouse红箱
-	{ name = "warehouse-storage",                count = 200 }, --warehouse黄箱
+	{ name = "warehouse-basic",                  count = 150 }, --warehouse大仓库
+	-- { name = "warehouse-passive-provider",       count = 150 }, --warehouse红箱
+	{ name = "warehouse-storage",                count = 150 }, --warehouse黄箱
+	{ name = "speed-module",                     count = 2000 }, --速度1插件
+	{ name = "productivity-module",              count = 2000 }, --产能1插件
+	{ name = "quality-module",                   count = 2000 }, --品质1插件
+	{ name = "waterfill-dark",                   count = 2000 }, --填充水
+	{ name = "arithmetic-combinator",            count = 2000 }, --算术运算器
+	{ name = "decider-combinator",               count = 2000 }, --判断运算器
+	{ name = "selector-combinator",              count = 2000 }, --选择运算器
 }
 
 -- 游戏开局启用科技
 x_database.game_start_tech = {
-	["epic-quality"] = true, -- 史诗品质
+	["quality-module"] = true, -- 品质插件
+	["epic-quality"] = true,   -- 史诗品质
 	["legendary-quality"] = true, -- 传说品质
 }
 

@@ -41,7 +41,7 @@ local instructions_custom_balance = {
         name = { "quality-module" },
         exclude_names = {},
         operations = {
-            ["effect.quality"] = { type = "set", value = 25 }, -- 效果-品质增加
+            ["effect.quality"] = { type = "set", value = 40.96 }, -- 效果-品质增加
         }
     },
     {
@@ -49,7 +49,7 @@ local instructions_custom_balance = {
         name = { "quality-module-2" },
         exclude_names = {},
         operations = {
-            ["effect.quality"] = { type = "set", value = 50 }, -- 效果-品质增加
+            ["effect.quality"] = { type = "set", value = 81.915 }, -- 效果-品质增加
         }
     },
     {
@@ -57,7 +57,15 @@ local instructions_custom_balance = {
         name = { "quality-module-3" },
         exclude_names = {},
         operations = {
-            ["effect.quality"] = { type = "set", value = 100 }, -- 效果-品质增加
+            ["effect.quality"] = { type = "set", value = 163.83 }, -- 效果-品质增加
+        }
+    },
+    {
+        type = "quality", -- 品质
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            next_probability = { type = "set", value = 0.25 }, -- 增加品质跳级概率
         }
     },
     {

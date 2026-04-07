@@ -40,18 +40,21 @@ local instructions_ammunition = {
         name = { "*" },
         exclude_names = {},
         operations = {
-            acceleration = { type = "multiply", value = set_value_projectile },                                                          -- 加速度
-            max_speed = { type = "multiply", value = set_value_projectile },                                                             -- 最大速度
-            ["action[2].radius"] = { type = "multiply", value = set_value_projectile },                                                  -- 手雷.半径
-            ["action[2].action_delivery.target_effects[1].damage.amount"] = { type = "multiply", value = set_value_projectile },         -- 手雷.伤害
-            ["action[2].cluster_count"] = { type = "multiply", value = set_value_projectile },                                           -- 集束手雷.集群数量
-            ["action[1].radius"] = { type = "multiply", value = set_value_projectile },                                                  -- 原子弹.半径
-            ["action[1].action_delivery.target_effects.damage.amount"] = { type = "multiply", value = set_value_projectile },            -- 原子弹.伤害
-            ["action[1].action_delivery.target_effects.lower_damage_modifier"] = { type = "multiply", value = set_value_projectile },    -- 原子弹.下限伤害修正
-            ["action[1].action_delivery.target_effects.upper_damage_modifier"] = { type = "multiply", value = set_value_projectile },    -- 原子弹.上限伤害修正
-            ["action[1].action_delivery.target_effects.upper_distance_threshold"] = { type = "multiply", value = set_value_projectile }, -- 原子弹.上限距离阈值
-            ["action.action_delivery.target_effects[2].damage.amount"] = { type = "multiply", value = set_value_projectile },            -- 火箭弹.伤害
-            ["action.action_delivery.target_effects[4].radius"] = { type = "multiply", value = set_value_projectile },                   -- 火箭弹.半径
+            acceleration = { type = "multiply", value = set_value_projectile },                                                                                              -- 加速度
+            max_speed = { type = "multiply", value = set_value_projectile },                                                                                                 -- 最大速度
+            ["action[2].radius"] = { type = "multiply", value = set_value_projectile },                                                                                      -- 手雷.半径
+            ["action[2].action_delivery.target_effects[1].damage.amount"] = { type = "multiply", value = set_value_projectile },                                             -- 手雷.伤害
+            ["action[2].cluster_count"] = { type = "multiply", value = set_value_projectile },                                                                               -- 集束手雷.集群数量
+            ["action[1].radius"] = { type = "multiply", value = set_value_projectile },                                                                                      -- 原子弹.半径
+            ["action[1].action_delivery.target_effects.damage.amount"] = { type = "multiply", value = set_value_projectile },                                                -- 原子弹.伤害
+            ["action[1].action_delivery.target_effects.lower_damage_modifier"] = { type = "multiply", value = set_value_projectile },                                        -- 原子弹.下限伤害修正
+            ["action[1].action_delivery.target_effects.upper_damage_modifier"] = { type = "multiply", value = set_value_projectile },                                        -- 原子弹.上限伤害修正
+            ["action[1].action_delivery.target_effects.upper_distance_threshold"] = { type = "multiply", value = set_value_projectile },                                     -- 原子弹.上限距离阈值
+            ["action.action_delivery.target_effects[2].damage.amount"] = { type = "multiply", value = set_value_projectile },                                                -- 火箭弹.伤害
+            ["action.action_delivery.target_effects[4].radius"] = { type = "multiply", value = set_value_projectile },                                                       -- 火箭弹.半径
+            ["action.action_delivery.target_effects[1].damage.amount"] = { type = "multiply", value = set_value_projectile },                                                -- 爆破炮弹.伤害
+            ["final_action.action_delivery.target_effects[2].action.action_delivery.target_effects[1].damage.amount"] = { type = "multiply", value = set_value_projectile }, -- 爆破炮弹.范围伤害
+            ["final_action.action_delivery.target_effects[2].action.radius"] = { type = "multiply", value = set_value_projectile, max_value = 9 },                           -- 爆破炮弹.范围
         }
     },
     {
