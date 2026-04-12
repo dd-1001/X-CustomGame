@@ -579,7 +579,7 @@ data:extend({
         type = "double-setting",
         name = "x-custom-game-rocket-lift-weight-multiplier", -- 火箭升力重量
         setting_type = "startup",
-        default_value = 5,
+        default_value = 10,
         minimum_value = 0.1,
         maximum_value = 100,
         order = "x-custom-game-116003"

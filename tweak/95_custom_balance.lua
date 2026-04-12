@@ -4,13 +4,13 @@ local x_database = require("99_database")
 local x_util = Core.x_util
 local log = Core.Log
 
--- 指令表配置
 local set_author_custom_balance = settings.startup["x-custom-game-author-custom-balance-flag"].value
 
 if not set_author_custom_balance then
     return
 end
 
+-- 指令表配置
 local instructions_custom_balance = {
     {
         type = "module", -- 插件-速度
@@ -130,6 +130,14 @@ local instructions_custom_balance = {
         exclude_names = {},
         operations = {
             ["results[3].probability"] = { type = "set", value = 0.25 }, -- 增加高级星岩破碎产生星岩几率
+        }
+    },
+    {
+        type = "rocket-silo", -- 火箭发射井
+        name = { "*" },
+        exclude_names = {},
+        operations = {
+            fixed_quality = { type = "insert", value = "legendary" }
         }
     },
     -- {

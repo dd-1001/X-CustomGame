@@ -51,10 +51,12 @@ local instructions_ammunition = {
             ["action[1].action_delivery.target_effects.upper_damage_modifier"] = { type = "multiply", value = set_value_projectile },                                        -- 原子弹.上限伤害修正
             ["action[1].action_delivery.target_effects.upper_distance_threshold"] = { type = "multiply", value = set_value_projectile },                                     -- 原子弹.上限距离阈值
             ["action.action_delivery.target_effects[2].damage.amount"] = { type = "multiply", value = set_value_projectile },                                                -- 火箭弹.伤害
-            ["action.action_delivery.target_effects[4].radius"] = { type = "multiply", value = set_value_projectile },                                                       -- 火箭弹.半径
+            ["action.action_delivery.target_effects[5].radius"] = { type = "multiply", value = set_value_projectile },                                                       -- 火箭弹.半径
+            ["action.action_delivery.target_effects[6].action.radius"] = { type = "multiply", value = set_value_projectile },                                                -- 火箭弹.半径
+            ["action.action_delivery.target_effects[6].action.action_delivery.target_effects[1].damage.amount"] = { type = "multiply", value = set_value_projectile },       -- 火箭弹.爆炸伤害
             ["action.action_delivery.target_effects[1].damage.amount"] = { type = "multiply", value = set_value_projectile },                                                -- 爆破炮弹.伤害
             ["final_action.action_delivery.target_effects[2].action.action_delivery.target_effects[1].damage.amount"] = { type = "multiply", value = set_value_projectile }, -- 爆破炮弹.范围伤害
-            ["final_action.action_delivery.target_effects[2].action.radius"] = { type = "multiply", value = set_value_projectile, max_value = 9 },                           -- 爆破炮弹.范围
+            ["final_action.action_delivery.target_effects[2].action.radius"] = { type = "multiply", value = set_value_projectile },                                          -- 爆破炮弹.范围
         }
     },
     {
